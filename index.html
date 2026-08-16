@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annfluential — Broke to Bougie Dashboard</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --page:           #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;
+    --series-2:       #eb6834;
+    --wash-1:         rgba(42,120,214,0.10);
+    --wash-2:         rgba(235,104,52,0.10);
+    --meter-track:    rgba(42,120,214,0.16);
+    --status-critical:#d03b3b;
+    --status-serious: #ec835a;
+    --delta-good:     #006300;
+    --tooltip-bg:     #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --page:           #0d0d0d;
+      --surface-1:      #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --series-2:       #d95926;
+      --wash-1:         rgba(57,135,229,0.12);
+      --wash-2:         rgba(217,89,38,0.14);
+      --meter-track:    rgba(57,135,229,0.22);
+      --delta-good:     #0ca30c;
+      --tooltip-bg:     #242423;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body.viz-root {
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 28px clamp(16px, 4vw, 48px) 56px;
+  }
+  .sample { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--status-serious); border: 1px solid currentColor; border-radius: 999px;
+    padding: 2px 10px; margin-bottom: 10px; }
+  header.top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  h1 { font-size: 22px; font-weight: 650; letter-spacing: -0.01em; }
+  .asof { font-size: 13px; color: var(--text-muted); }
+  .sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 22px; }
+  .sub a { color: var(--series-1); }
+  section { margin-top: 26px; }
+  h2 { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+  h2 .h2sub { font-weight: 400; color: var(--text-muted); font-size: 13px; margin-left: 8px; }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 2px; min-height: 96px; }
+  .tile .label { font-size: 12.5px; color: var(--text-secondary); }
+  .tile .value { font-size: 30px; font-weight: 600; line-height: 1.15; }
+  .tile .delta { font-size: 12.5px; }
+  .delta.up   { color: var(--delta-good); }
+  .delta.flat { color: var(--text-muted); }
+  .tile svg.spark { margin-top: auto; }
+
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 18px 14px; position: relative; }
+  .cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 760px) { .cards2 { grid-template-columns: 1fr; } }
+  .card h3 { font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
+  .card .cap { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+  svg text { font-family: inherit; }
+  .tick { font-size: 11px; fill: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .endlab { font-size: 11.5px; font-weight: 600; fill: var(--text-primary); }
+  .annot { font-size: 11px; fill: var(--text-secondary); }
+
+  .tooltip { position: fixed; pointer-events: none; z-index: 10; display: none;
+    background: var(--tooltip-bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); min-width: 120px; }
+  .tooltip .tdate { color: var(--text-muted); margin-bottom: 3px; }
+  .tooltip .trow { display: flex; align-items: center; gap: 6px; }
+  .tooltip .tkey { display: inline-block; width: 12px; height: 0; border-top: 2px solid var(--series-1); }
+  .tooltip .tval { font-weight: 650; font-size: 13px; }
+  .tooltip .tname { color: var(--text-secondary); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em;
+       color: var(--text-muted); font-weight: 600; padding: 6px 10px; border-bottom: 1px solid var(--grid); }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr.hoverable:hover td { background: var(--wash-1); }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+  .dot.ig { background: var(--series-1); }
+  .dot.tt { background: var(--series-2); }
+  .cap-cell { color: var(--text-secondary); max-width: 420px; }
+  .plat { white-space: nowrap; }
+
+  /* series card */
+  .series { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface-1); }
+  .series-head { padding: 20px 22px 16px; border-bottom: 1px solid var(--grid); }
+  .series-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--series-2); }
+  .series-title { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; margin: 4px 0 2px; }
+  .series-tag { font-size: 15px; color: var(--text-secondary); }
+  .series-hook { font-size: 12.5px; color: var(--text-muted); margin-top: 6px; }
+  .series-body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; }
+  @media (max-width: 760px) { .series-body { grid-template-columns: 1fr; } }
+  .series-col { padding: 16px 22px 18px; }
+  .series-col + .series-col { border-left: 1px solid var(--grid); }
+  @media (max-width: 760px) { .series-col + .series-col { border-left: none; border-top: 1px solid var(--grid); } }
+  .series-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--text-muted); font-weight: 600; margin-bottom: 10px; }
+  .pillar { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; }
+  .pillar .pn { font-weight: 600; white-space: nowrap; }
+  .pillar .pd { color: var(--text-secondary); }
+  .ep { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; font-size: 13px; }
+  .ep .num { color: var(--series-2); font-weight: 700; font-size: 12px; white-space: nowrap; }
+  .ep .et { color: var(--text-secondary); }
+  .ep .et strong { color: var(--text-primary); font-weight: 600; }
+  .numberbox { margin-top: 12px; padding: 12px 14px; border: 1px dashed var(--baseline); border-radius: 9px;
+    font-size: 12.5px; color: var(--text-secondary); background: var(--wash-2); }
+  .numberbox strong { color: var(--text-primary); }
+  .funnel { margin-top: 12px; font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+  .funnel strong { color: var(--text-primary); font-weight: 600; }
+
+  /* best times */
+  .bt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .bt-plat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .bt-row { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px;
+    margin-bottom: 6px; background: var(--wash-1); font-size: 13px; }
+  .bt-row.top { background: var(--wash-2); }
+  .bt-time { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bt-day { color: var(--text-secondary); flex: 1; }
+  .bt-star { font-size: 11px; color: var(--status-serious); font-weight: 700; }
+  .bt-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+  .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600;
+          padding: 2px 9px; border-radius: 999px; border: 1px solid var(--border); white-space: nowrap; }
+  .chip.done    { color: var(--delta-good); }
+  .chip.ready   { color: var(--delta-good); }
+  .chip.open    { color: var(--text-secondary); }
+  .chip.next    { color: var(--text-primary); background: var(--wash-1); }
+  .chip.owner-ann     { color: var(--text-primary); background: var(--wash-1); border-color: transparent; }
+  .chip.owner-augusta { color: var(--text-primary); background: rgba(235,104,52,0.12); border-color: transparent; }
+  .chip.owner-ai  { color: var(--text-primary); background: rgba(0,131,0,0.10); border-color: transparent; }
+  .comp { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 12px; }
+  .comp-card { border: 1px solid var(--grid); border-radius: 9px; padding: 12px 14px; }
+  .comp-card .cn { font-weight: 700; font-size: 13.5px; }
+  .comp-card .cf { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+  .comp-card .cw { font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
+  .pri { font-size: 11px; font-weight: 700; letter-spacing: 0.03em; white-space: nowrap; }
+  .pri.critical { color: var(--status-critical); }
+  .pri.now      { color: var(--status-serious); }
+  .pri.high     { color: var(--text-secondary); }
+  .pri.medium   { color: var(--text-muted); }
+  .tasknote { color: var(--text-secondary); font-size: 12.5px; }
+  .counts { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+  .bio { font-size: 13.5px; line-height: 1.6; }
+  .bio-box { border: 1px solid var(--grid); border-radius: 9px; padding: 12px 14px; margin: 8px 0;
+    font-size: 13.5px; line-height: 1.55; background: var(--page); white-space: pre-line; }
+  .bio .why { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+
+  .meter { position: relative; height: 10px; border-radius: 5px; background: var(--meter-track); overflow: hidden; min-width: 120px; }
+  .meter .fill { position: absolute; inset: 0 auto 0 0; border-radius: 5px; background: var(--series-1); }
+  .mrow-note { font-size: 12px; color: var(--text-secondary); }
+
+  .prose { font-size: 13.5px; line-height: 1.55; color: var(--text-secondary); }
+  .prose strong { color: var(--text-primary); font-weight: 600; }
+  .prose p + p { margin-top: 8px; }
+  .prose a { color: var(--series-1); }
+  ul.insights { padding-left: 18px; font-size: 13.5px; line-height: 1.55; color: var(--text-secondary); }
+  ul.insights li + li { margin-top: 7px; }
+  ul.insights strong { color: var(--text-primary); font-weight: 600; }
+  footer { margin-top: 34px; font-size: 12px; color: var(--text-muted); }
+</style>
+</head>
+<body class="viz-root">
+<span class="sample">SAMPLE v3 · FOR ANN'S REVIEW · NOT YET PUBLISHED</span>
+<header class="top">
+  <h1>Annfluential — Growth Dashboard</h1>
+  <span class="asof">Data as of Aug 15, 2026</span>
+</header>
+<p class="sub">Live pull from Metricool (brand 1723721) · refreshes Wed &amp; Sat 4 AM · action tracker from the <a href="https://docs.google.com/spreadsheets/d/1T1WTlU2rKL596UGBL-x5edHCRj94iSCC5k3msroAIkk/edit">shared Google Sheet</a> · all times America/Toronto</p>
+
+<section>
+  <div class="series">
+    <div class="series-head">
+      <div class="series-kicker">THE SERIES</div>
+      <div class="series-title">Broke to Bougie</div>
+      <div class="series-tag">Making my first $100K outside my 9 to 5.</div>
+      <div class="series-hook">Episode hook: "Welcome to Broke to Bougie, ep [N]" · documenting the glow up in money, mindset and miles</div>
+    </div>
+    <div class="series-body">
+      <div class="series-col">
+        <h4>The four pillars</h4>
+        <div class="pillar"><span>💸</span><div><span class="pn">Money Moves</span> <span class="pd">· debt payoff with real numbers, the trading journey (documented, not taught), planning finance</span></div></div>
+        <div class="pillar"><span>🧘🏽‍♀️</span><div><span class="pn">Becoming Her</span> <span class="pd">· pilates day 1, workouts, habits, the best-version arc</span></div></div>
+        <div class="pillar"><span>🚁</span><div><span class="pn">Bougie Proof</span> <span class="pd">· the helicopter ride, travel, the apartment upgrade, paid-for luxuries</span></div></div>
+        <div class="pillar"><span>🎙</span><div><span class="pn">Ann Nuggets</span> <span class="pd">· dad's wisdom, talking to camera, hot takes</span></div></div>
+        <div class="numberbox"><strong>The Number: $100K outside the 9-5.</strong>
+          <div class="meter" style="margin-top:8px;"><div class="fill" style="width:0.5%"></div></div>
+          <div class="mrow-note" style="margin-top:4px;">$0 of $100,000 · counts every dollar earned outside the paycheck: brand deals, affiliate, gifts, side income, trading gains. Every episode updates this bar.</div>
+        </div>
+      </div>
+      <div class="series-col">
+        <h4>Upcoming episodes</h4>
+        <div class="ep"><span class="num">EP 1</span><span class="et"><strong>The helicopter ride</strong> · this month · Bougie Proof opener</span></div>
+        <div class="ep"><span class="num">EP 2</span><span class="et"><strong>Why I'm done renovating</strong> · the move decision story</span></div>
+        <div class="ep"><span class="num">EP 3</span><span class="et"><strong>The summer-deal math</strong> · how I negotiated the bougie apartment (and gave up the pool)</span></div>
+        <div class="ep"><span class="num">DAY 1</span><span class="et"><strong>Pilates era begins</strong> · Becoming Her opener</span></div>
+        <div class="funnel"><strong>The funnel:</strong> text-over-b-roll reels run as <strong>trial reels</strong> (shown to non-followers only) to pull strangers in · the main grid is Ann talking to camera, no more quote posts · the bio converts with affiliate links.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kpis" id="kpis"></div>
+</section>
+
+<section class="cards2">
+  <div class="card">
+    <h3>Instagram daily views</h3>
+    <p class="cap">Profile + posts views per day. The daily-posting streak started Jul 27.</p>
+    <div id="viewsChart"></div>
+  </div>
+  <div class="card">
+    <h3>Followers over 60 days</h3>
+    <p class="cap">Instagram and TikTok, each on its own scale.</p>
+    <div id="followChart"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Best times to post <span class="h2sub">top 3 per platform · from Metricool audience data · refreshed every run · America/Toronto</span></h2>
+  <div class="card">
+    <div class="bt-grid" id="bestTimes"></div>
+    <p class="bt-note">Instagram: never post after 8 PM, scores drop to 60–75. TikTok: post 15–30 min before the listed peak so the video processes in time; aim for 10 AM + 6 PM on Wed–Thu. Facebook auto-cross-posts from Instagram, nothing to schedule.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Competitor watch <span class="h2sub">Linet's numbers tracked live via Metricool · Hosanna + Binta reviewed monthly from screenshots · ideas refresh each run</span></h2>
+  <div class="card">
+    <div class="comp">
+      <div class="comp-card">
+        <div class="cn">@linetchege</div><div class="cf">68.3K from 154 posts · Atlanta · beauty/lifestyle/travel</div>
+        <div class="cw">In the Metricool competitor slot — her follower growth and posting pace appear here every refresh. What works: face-forward cohesive grid, destination highlights, 807-member broadcast channel.</div>
+      </div>
+      <div class="comp-card">
+        <div class="cn">@hosannahali</div><div class="cf">115K · careers + money for women</div>
+        <div class="cw">One-line bio value prop, pinned evergreen reels, named formats ("Career Hot Take"). The closest model for Ann's talking-head finance lane.</div>
+      </div>
+      <div class="comp-card">
+        <div class="cn">@bintasbudget</div><div class="cf">138K from 130 posts · beauty/lifestyle/money</div>
+        <div class="cw">Numbered series ("Young Ho Finance 101"), humour-first finance translation, visible brand deals, stan store. The monetization blueprint.</div>
+      </div>
+    </div>
+    <ul class="insights">
+      <li><strong>Idea to adapt: numbered series covers.</strong> Binta's episode-numbered covers make the grid a binge list — every Broke to Bougie cover gets "EP N" in the same spot, same style.</li>
+      <li><strong>Idea to adapt: the pinned trio.</strong> Hosanna pins an intro + two best performers. Pin the helicopter Ep 1, "I do enjoy my work", and the NY reel once Ep 1 is live.</li>
+      <li><strong>Idea to adapt: the comparison format.</strong> Binta's "can you taste expensive ingredients" → Ann's money version: "can you feel the expensive purchase?" (dupe vs designer, budget vs bougie apartment finds).</li>
+      <li><strong>Idea to adapt, later: broadcast channel.</strong> Linet's lounge keeps superfans close. Worth it at ~1K followers, not before.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cards2">
+  <div class="card">
+    <h3>Trial reels — the reach layer, tracked</h3>
+    <p class="cap">Instagram shows trial reels to non-followers only; no API reports them, so the loop is logged by hand and read back here.</p>
+    <ul class="insights">
+      <li><strong>Publish:</strong> Augusta posts renders as trial reels from the IG app (the Trial toggle isn't available to scheduling APIs) at the peak times above.</li>
+      <li><strong>Log:</strong> each trial gets one row in the <strong>TRIALS tab of the tracker Sheet</strong> (date, hook, views at 24h, new follows) — the Sheet is what the cloud refresh can read; hooks.xlsx stays the render queue.</li>
+      <li><strong>Read:</strong> every refresh, this card reports trials published this week, average views vs the ~250 follower-floor baseline, and flags winners (2× baseline) to re-share to followers and repeat as hook styles. No API exposes trial reels — the Sheet log is the only data path, so an unlogged trial is invisible.</li>
+      <li><strong>Now:</strong> 0 trial reels logged — starts with the first lifestyle render batch.</li>
+    </ul>
+  </div>
+  <div class="card prose">
+    <h3>Augusta's playbook</h3>
+    <p class="cap">Captions, scripts, video ideas, the trial workflow — one doc, always current.</p>
+    <p><a href="https://docs.google.com/document/d/17dX49ck0TpvuI2E2BiL4zgGhT49Yz7TPdkyIIUlIeGA/edit"><strong>Broke to Bougie — Content Playbook</strong></a> holds the voice rules (question endings, no hashtag walls, follow CTA at 3s), 10 caption starters, the one-caption-every-platform rule (write once, platform-shaped tail: IG full, TikTok short first line, Shorts hook-as-title, Facebook automatic), the episode 1 helicopter script skeleton, and 4 weeks of video ideas per pillar. Claude keeps it current as the strategy evolves.</p>
+  </div>
+</section>
+
+<section class="cards2">
+  <div class="card bio">
+    <h3>Bio revamp — applied by Ann, Aug 16 ✓</h3>
+    <p class="cap">Affiliate + lifestyle + finance positioning. Live on Instagram (TikTok mirrors it).</p>
+    <div class="bio-box">Broke to Bougie 🥂 the series
+making my first $100K outside my 9-5
+money, mindset + miles · Toronto
+⬇️ my favourites</div>
+    <p class="why">115 of Instagram's 150-character bio limit. The Name field is separate (64 chars, searchable): "Ann | Money &amp; Soft Living". The link-in-bio carries the affiliate storefront: Amazon + LTK, split into money favourites and lifestyle favourites (tracker #2). Partnership email comes once the media kit (#4) exists.</p>
+  </div>
+  <div class="card">
+    <h3>What the numbers say</h3>
+    <p class="cap">From the full 211-post audit, Aug 15</p>
+    <ul class="insights">
+      <li><strong>Caption questions lift engagement 74%</strong> (10.4 vs 6.0 per 1k reach). New rule: every caption ends with a question.</li>
+      <li><strong>Home content holds 11–14s of watch time vs 4.85s average.</strong> The apartment series is your highest-retention genre before it even starts.</li>
+      <li><strong>Products and unboxings are your all-time top posts</strong> (LV perfume 3.8K + 2.4K). They're also exactly what affiliate links monetize.</li>
+      <li><strong>Personality beats affirmations</strong>: "I do enjoy my work" 2.0K and mum reel 1.6K vs ~200 for generic quotes. The talking-head grid strategy matches your own data.</li>
+      <li><strong>Posts convert ~0 follows today</strong> — the 3-second follow CTA (tracker #8) and trial reels are the fix.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Action tracker <span class="h2sub">sorted CRITICAL → NOW → HIGH → MEDIUM · statuses read from the Sheet · done items drop off this view · Claude may add or reorder items but only Ann closes them</span></h2>
+  <div class="counts" id="counts"></div>
+  <div class="card" style="padding: 6px 4px;">
+    <table id="actions">
+      <thead><tr>
+        <th style="width:28px">#</th><th>Action</th><th>Owner</th><th>Priority</th><th>Status</th><th>Notes</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Top content by views <span class="h2sub">all-time · organic</span></h2>
+  <div class="card" style="padding: 6px 4px;">
+    <table id="topTable">
+      <thead><tr>
+        <th>Platform</th><th>Date</th><th>Post</th>
+        <th class="num">Views</th><th class="num">Interactions</th><th class="num">Eng / 1k reach</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Monetization milestones <span class="h2sub">goal: get paid from social media in 2026 · recomputed from the latest Metricool pull · every dollar earned here feeds the $100K bar</span></h2>
+  <div class="card" style="padding: 6px 4px;">
+    <table id="milestones">
+      <thead><tr>
+        <th>Milestone</th><th>Requirement</th><th style="width:24%">Progress</th>
+        <th class="num">Current</th><th class="num">Gap</th><th>Monthly potential</th><th>Status</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="cards2">
+  <div class="card">
+    <h3>Build pipeline — Ann + Claude</h3>
+    <p class="cap">The tooling side; separate from the shared action tracker</p>
+    <table><tbody id="tasks"></tbody></table>
+  </div>
+  <div class="card prose">
+    <h3 style="font-size:13.5px; font-weight:600; margin-bottom:8px;">How this system works</h3>
+    <p><strong>People write the Sheet, Claude writes everything else.</strong> Ann and Augusta update the Status column in the <a href="https://docs.google.com/spreadsheets/d/1T1WTlU2rKL596UGBL-x5edHCRj94iSCC5k3msroAIkk/edit">action tracker Sheet</a>; Claude reads it but never edits it. <strong>Tracker rules:</strong> items are sorted by priority (CRITICAL and NOW on top); anything marked done disappears from this view; Claude may add new items or re-prioritize, but an item is only ever closed when Ann explicitly says it's done. <strong>Routing:</strong> new tasks default to Augusta or AI, never auto-assigned to Ann. <strong>Augusta's daily work briefs:</strong> she works Tue–Sat; the Wednesday 4 AM run books a morning brief on the calendar for Wed, Thu and Fri, and the Saturday run books Sat and Tue — each brief = the standing basics (out-folder review, schedule at peak times, log Sound/Posted On/TRIALS) plus one or two specific priority items, so the week's open work is split across her days and she wakes up to a task list like a job. Ann's open CRITICAL/NOW items ride in the 9 AM refresh event. Every <strong>Wednesday and Saturday at 4 AM Toronto (9 AM Lagos)</strong> a scheduled run pulls Metricool + the Sheet, rebuilds this page, refreshes the best-times cheat sheet, and drops a <strong>9 AM review event on the Ann - Socials calendar</strong>. Public link (once Ann approves and uploads): jayvinservices-oss.github.io/annfluential — that link goes in the Saturday meeting invite.</p>
+    <p>Templates are retired; monetization runs on brand deals + affiliate now, community later. Trading appears as documented journey content only.</p>
+  </div>
+</section>
+
+<footer>Sources: Metricool analytics API · Annfluential Action Tracker (Google Sheets) · Facebook auto-cross-posts from Instagram · Pinterest sits on the Aiivy brand until tracker #17 is done.</footer>
+
+<div class="tooltip" id="tt"></div>
+
+<script>
+const IG_F = [["0614",310],["0615",310],["0616",310],["0617",308],["0618",308],["0619",309],["0620",309],["0621",309],["0622",308],["0623",308],["0624",308],["0625",309],["0626",309],["0627",310],["0628",309],["0629",309],["0630",309],["0701",311],["0702",312],["0703",312],["0704",313],["0705",314],["0706",314],["0707",313],["0708",313],["0709",315],["0710",315],["0711",313],["0712",315],["0713",315],["0714",314],["0715",312],["0716",315],["0717",314],["0718",314],["0719",314],["0720",315],["0721",316],["0722",317],["0723",317],["0724",316],["0725",316],["0726",314],["0727",315],["0728",314],["0729",314],["0730",315],["0731",313],["0801",314],["0802",314],["0803",314],["0804",315],["0805",316],["0806",317],["0807",317],["0808",317],["0809",317],["0810",315],["0811",316]];
+const TK_F = [["0614",595],["0615",595],["0616",595],["0617",595],["0618",595],["0619",595],["0620",595],["0621",595],["0622",595],["0623",595],["0624",595],["0625",595],["0626",594],["0627",594],["0628",594],["0629",593],["0630",593],["0701",604],["0702",605],["0703",608],["0704",608],["0705",607],["0706",606],["0707",606],["0708",606],["0709",606],["0710",609],["0711",609],["0712",607],["0713",607],["0714",607],["0715",607],["0716",608],["0717",608],["0718",609],["0719",609],["0720",608],["0721",607],["0722",606],["0723",605],["0724",605],["0725",605],["0726",605],["0727",606],["0728",606],["0729",607],["0730",606],["0731",605],["0801",602],["0802",603],["0803",604],["0804",603],["0805",605],["0806",605],["0807",605],["0808",605],["0809",604],["0810",605],["0811",606],["0812",605]];
+const IG_V = [["0614",3],["0615",1],["0616",0],["0617",16],["0618",1],["0619",17],["0620",10],["0621",12],["0622",5],["0623",246],["0624",506],["0625",242],["0626",223],["0627",142],["0628",1843],["0629",417],["0630",170],["0701",87],["0702",310],["0703",66],["0704",185],["0705",113],["0706",29],["0707",52],["0708",18],["0709",175],["0710",72],["0711",46],["0712",33],["0713",23],["0714",48],["0715",28],["0716",42],["0717",26],["0718",45],["0719",12],["0720",12],["0721",7],["0722",17],["0723",40],["0724",3],["0725",35],["0726",597],["0727",2279],["0728",754],["0729",690],["0730",675],["0731",167],["0801",77],["0802",185],["0803",427],["0804",461],["0805",314],["0806",363],["0807",201],["0808",54],["0809",2394],["0810",1039],["0811",927],["0812",21],["0813",8]];
+const BEST_TIMES = [
+  {plat:"Instagram Reels", hue:"var(--series-1)", rows:[["Mon","12:00 PM",147,true],["Sun","1:00 PM",146,false],["Thu","11:00 AM",144,false]]},
+  {plat:"TikTok", hue:"var(--series-2)", rows:[["Thu","10:00 AM",1471,true],["Wed","10:00 AM",1432,false],["Wed","6:00 PM",1386,false]]},
+  {plat:"YouTube Shorts", hue:"var(--series-1)", rows:[["Wed","4:00 PM",12033,true],["Thu","4:00 PM",11979,false],["Wed","3:00 PM",11147,false]]},
+  {plat:"Facebook (auto)", hue:"var(--series-2)", rows:[["Wed","12:00 PM",15834,true],["Wed","10:00 AM",15528,false],["Mon","10:00 AM",15247,false]]}
+];
+const TOP = [
+  {p:"IG", d:"Feb 25", c:"LV perfume unboxing (all-time best)", v:3764, i:48, e:1.6},
+  {p:"IG", d:"Mar 8",  c:"Summer bikini gym reel", v:2428, i:23, e:1.1},
+  {p:"IG", d:"Jul 28", c:"New York, friends that feel like home…", v:2285, i:84, e:5.0},
+  {p:"IG", d:"Aug 10", c:"I do enjoy my work though, just don't ask about it", v:2016, i:133, e:8.2},
+  {p:"IG", d:"Aug 12", c:"So thankful that my mum is my biggest fan", v:1637, i:95, e:8.3},
+  {p:"IG", d:"Feb 10", c:"Meet Ace, the real owner of my house", v:1373, i:32, e:2.7},
+  {p:"TT", d:"Feb 15", c:"Fragrance girlie (TikTok all-time best)", v:4942, i:38, e:1.0},
+  {p:"TT", d:"Jul 7",  c:"Vermithor lykiri (HOTD)", v:786, i:48, e:6.4}
+];
+const MILESTONES = [
+  {m:"Brand deals", req:"No follower minimum", cur:"0 deals", gap:"Pitch now", pot:"$120–600 / Reel", status:"ready"},
+  {m:"Affiliate income", req:"Links in bio", cur:"Signed up", gap:"Links → bios", pot:"$30–200", status:"ready"},
+  {m:"Instagram Gifts", req:"500 followers", cur:316, target:500, pot:"$20–150", status:"open"},
+  {m:"TikTok LIVE Gifts", req:"1,000 followers", cur:605, target:1000, pot:"$50–300", status:"open"},
+  {m:"Facebook Stars", req:"500 page followers", cur:17, target:500, pot:"$10–80", status:"open"},
+  {m:"YouTube Partner", req:"1,000 subs + 4,000 long-form hrs", cur:27, target:1000, pot:"$100–500", status:"2027 realistic"}
+];
+const ACTIONS = [
+  {n:2,  a:"Get all affiliate links from the Annfluential page", o:"Augusta", p:"CRITICAL", s:"not started", note:"Added by Ann in the Sheet, Aug 16. Feeds the bio links below."},
+  {n:3,  a:"Add top 3–5 affiliate links to IG and TikTok bios", o:"Augusta", p:"NOW", s:"not started", note:"Depends on the link gathering above. Bio text is already live."},
+  {n:3.1, a:"Mention one affiliate product per week in content", o:"Augusta", p:"HIGH", s:"not started", note:"Recurring. No extra content needed."},
+  {n:4,  a:"Build one-page media kit", o:"Ann", p:"NOW", s:"not started", note:"AI drafts it (item AI-1); Ann reviews and sends. Lead with 5–11% engagement."},
+  {n:5,  a:"DM 10 Canadian brands per week", o:"Augusta", p:"NOW", s:"not started", note:"Black-owned beauty, hair, Toronto food and lifestyle. AI supplies list + drafts (AI-2)."},
+  {n:6,  a:"Join AspireIQ, Heartbeat, Influencer.co", o:"Ann", p:"HIGH", s:"not started", note:"Nano-friendly platforms. No follower minimum. Account creation needs Ann."},
+  {n:7,  a:"Move all posting times to peak windows in Metricool", o:"Augusta", p:"HIGH", s:"not started", note:"Use the best-times card above; it refreshes every run."},
+  {n:8,  a:"Add follow CTA at the 3-second mark of every Reel", o:"Augusta", p:"CRITICAL", s:"not started", note:"184 more IG followers unlocks Gifts at 500."},
+  {n:9,  a:"Say 'subscribe if you relate' at the end of every Short", o:"Augusta", p:"MEDIUM", s:"not started", note:"52.4K views produced 27 subs. Nobody is being asked."},
+  {n:10, a:"Cross-post TikToks to YouTube Shorts, Mon–Fri 4pm", o:"Augusta", p:"MEDIUM", s:"not started", note:"Channel dormant since May 2026."},
+  {n:11, a:"Go TikTok LIVE 30 min, Wed and Thu 10am", o:"Ann", p:"HIGH", s:"not started", note:"395 followers from LIVE Gifts at 1,000."},
+  {n:12, a:"Log the Sound used for every post in hooks.xlsx", o:"Augusta", p:"HIGH", s:"not started", note:"No API exposes this. Only exists if typed."},
+  {n:13, a:"Mark Posted On for every post in hooks.xlsx", o:"Augusta", p:"HIGH", s:"not started", note:"This is how we learn what works."},
+  {n:14, a:"Check the out folder daily and schedule what is there", o:"Augusta", p:"CRITICAL", s:"not started", note:"Renders land in Annfluential/out, organised by bucket. In the daily calendar brief."},
+  {n:15, a:"Flag anything in the batch that should not go out", o:"Augusta", p:"HIGH", s:"not started", note:"Quality gate before scheduling."},
+  {n:16, a:"Research North American trends weekly, log in IDEAS tab", o:"Augusta", p:"MEDIUM", s:"not started", note:"AI takes this over via the refresh runs (AI-3)."},
+  {n:17, a:"Connect Pinterest to the Annfluential brand in Metricool", o:"Ann", p:"MEDIUM", s:"not started", note:"Currently on Aiivy. Blocks all Pinterest work."},
+  {n:18, a:"Decide the hashtag rule and tell Augusta", o:"Ann", p:"HIGH", s:"not started", note:"AI proposal ready (AI-4): 3–5 niche tags, no walls. Ann signs off."},
+  {n:19, a:"Review whether the IG audience matches the brand target", o:"Ann", p:"MEDIUM", s:"not started", note:"IG is 59.5% male, 48.1% Nigeria. Brand targets NA women."},
+  {n:20, a:"Get footage into every bucket, not just lifestyle and ace", o:"Ann", p:"CRITICAL", s:"not started", note:"13 clips in. money, products, brand, yapping, trading, travel empty."},
+  {n:21, a:"Linked reels / trial reels", o:"Augusta", p:"MEDIUM", s:"not started", note:"Added by Ann in the Sheet. Runs through the trial-reels workflow + TRIALS tab above."},
+  {n:22, a:"Add TRIALS + NOTES FROM ANN tabs to the tracker Sheet", o:"Augusta", p:"NOW", s:"not started", note:"TRIALS: one row per trial reel. NOTES FROM ANN: Ann brain-dumps; AI reads both every refresh."},
+  {n:"AI-1", a:"Build the one-page media kit draft", o:"AI", p:"NOW", s:"in progress", note:"Drafted from the audit data (5–11% engagement lead); Ann reviews. Feeds #4."},
+  {n:"AI-2", a:"Brand target list + DM drafts", o:"AI", p:"NOW", s:"not started", note:"20 Canadian brands + ready-to-send pitch messages; Augusta/Ann send (#5)."},
+  {n:"AI-3", a:"Weekly NA trend research into the IDEAS tab", o:"AI", p:"HIGH", s:"not started", note:"Folds into refresh runs so Augusta gets fresh ideas at no extra cost (#16)."},
+  {n:"AI-4", a:"Hashtag rule proposal for Ann's sign-off", o:"AI", p:"HIGH", s:"not started", note:"Recommendation drafted: 3–5 niche tags, no walls. Ann decides, Augusta applies (#18)."}
+];
+const TASKS = [
+  {s:"done",   n:"Full 211-post content audit + competitor teardown", note:"Done Aug 15 — this page's insights come from it"},
+  {s:"done",   n:"Broke to Bougie series design", note:"The Number is set: $100K outside the 9-5. Pillars, funnel, episodes above."},
+  {s:"next",   n:"Ann approves v3 → publish to GitHub Pages", note:"Upload index.html to jayvinservices-oss/annfluential, link goes in Saturday invite"},
+  {s:"next",   n:"Render first trial reels", note:"make_posts.py --only lifestyle --limit 5 · these are the reach layer of the funnel now"},
+  {s:"queued", n:"Re-enable Wed + Sat 4 AM refresh", note:"Paused until Ann approves this sample"},
+  {s:"queued", n:"Add Augusta to calendar invites", note:"After the system is proven, per Ann"}
+];
+
+const css = v => getComputedStyle(document.body).getPropertyValue(v).trim();
+const fmt = n => n.toLocaleString("en-US");
+const lab = md => { const m = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"][+md.slice(0,2)]; return m + " " + (+md.slice(2)); };
+
+/* ---- KPI tiles ---- */
+(function () {
+  const spark = (data, w, h, hue) => {
+    const vs = data.map(d => d[1]), mn = Math.min(...vs), mx = Math.max(...vs), pad = 2;
+    const x = i => pad + i * (w - 2*pad) / (vs.length - 1);
+    const y = v => mx === mn ? h/2 : (h - pad) - (v - mn) * (h - 2*pad) / (mx - mn);
+    const dstr = vs.map((v,i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
+    return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">
+      <path d="${dstr}" fill="none" stroke="${hue}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${x(vs.length-1)}" cy="${y(vs[vs.length-1])}" r="4" fill="${hue}" stroke="var(--surface-1)" stroke-width="2"/></svg>`;
+  };
+  const tiles = [
+    {l:"Total followers · 4 platforms", v:"965", d:"+19 over 60 days", cls:"up"},
+    {l:"Instagram", v:"316", d:"+6 · 60 days", cls:"up", sp: spark(IG_F, 130, 26, css("--series-1"))},
+    {l:"TikTok", v:"605", d:"+10 · 60 days", cls:"up", sp: spark(TK_F, 130, 26, css("--series-2"))},
+    {l:"YouTube subscribers", v:"27", d:"no change", cls:"flat"},
+    {l:"Facebook", v:"17", d:"+3 · 60 days", cls:"up"}
+  ];
+  document.getElementById("kpis").innerHTML = tiles.map(t => `
+    <div class="tile"><span class="label">${t.l}</span><span class="value">${t.v}</span>
+    <span class="delta ${t.cls}">${t.d}</span>${t.sp || ""}</div>`).join("");
+})();
+
+/* ---- best times ---- */
+(function () {
+  const wrap = document.getElementById("bestTimes");
+  BEST_TIMES.forEach(p => {
+    const col = document.createElement("div");
+    const h = document.createElement("div"); h.className = "bt-plat"; h.textContent = p.plat; h.style.color = p.hue;
+    col.appendChild(h);
+    p.rows.forEach(([day, time, val, best]) => {
+      const row = document.createElement("div"); row.className = "bt-row" + (best ? " top" : "");
+      const t = document.createElement("span"); t.className = "bt-time"; t.textContent = time;
+      const d = document.createElement("span"); d.className = "bt-day"; d.textContent = day + (best ? " " : "");
+      row.append(t, d);
+      if (best) { const s = document.createElement("span"); s.className = "bt-star"; s.textContent = "★ BEST"; row.appendChild(s); }
+      const v = document.createElement("span"); v.className = "mrow-note"; v.textContent = fmt(val);
+      row.appendChild(v);
+      col.appendChild(row);
+    });
+    wrap.appendChild(col);
+  });
+})();
+
+/* ---- shared tooltip ---- */
+const tt = document.getElementById("tt");
+function showTT(px, py, date, rows) {
+  tt.innerHTML = "";
+  const d = document.createElement("div"); d.className = "tdate"; d.textContent = date; tt.appendChild(d);
+  rows.forEach(r => {
+    const row = document.createElement("div"); row.className = "trow";
+    const k = document.createElement("span"); k.className = "tkey"; k.style.borderTopColor = r.hue;
+    const v = document.createElement("span"); v.className = "tval"; v.textContent = r.val;
+    const n = document.createElement("span"); n.className = "tname"; n.textContent = r.name;
+    row.append(k, v, n); tt.appendChild(row);
+  });
+  tt.style.display = "block";
+  const r = tt.getBoundingClientRect();
+  tt.style.left = Math.min(px + 14, innerWidth - r.width - 8) + "px";
+  tt.style.top  = Math.max(8, py - r.height - 12) + "px";
+}
+const hideTT = () => tt.style.display = "none";
+
+/* ---- line/area chart factory with crosshair ---- */
+function lineChart(el, data, opts) {
+  const W = el.clientWidth || 500, H = opts.h || 210;
+  const M = {t: 14, r: opts.mr || 46, b: 24, l: 40};
+  const iw = W - M.l - M.r, ih = H - M.t - M.b;
+  const vs = data.map(d => d[1]);
+  const mn = opts.zero ? 0 : Math.min(...vs), mx = Math.max(...vs);
+  const niceMax = opts.niceMax || mx;
+  const x = i => M.l + i * iw / (data.length - 1);
+  const y = v => M.t + ih - (v - mn) * ih / (niceMax - mn || 1);
+  const hue = opts.hue;
+  let path = "", area = "";
+  vs.forEach((v, i) => { path += (i ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1) + " "; });
+  if (opts.area) area = path + `L ${x(vs.length-1).toFixed(1)} ${y(mn)} L ${x(0)} ${y(mn)} Z`;
+  const ticks = opts.yticks.map(v =>
+    `<line x1="${M.l}" x2="${W - M.r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)" stroke-width="1"/>
+     <text class="tick" x="${M.l - 6}" y="${y(v) + 3.5}" text-anchor="end">${fmt(v)}</text>`).join("");
+  const xt = opts.xticks.map(i =>
+    `<text class="tick" x="${x(i)}" y="${H - 6}" text-anchor="middle">${lab(data[i][0])}</text>`).join("");
+  let annot = "";
+  if (opts.annotIdx != null) {
+    const ax = x(opts.annotIdx);
+    annot = `<line x1="${ax}" x2="${ax}" y1="${M.t}" y2="${M.t + ih}" stroke="var(--baseline)" stroke-width="1"/>
+             <text class="annot" x="${ax + 5}" y="${M.t + 10}">${opts.annotText}</text>`;
+  }
+  const endV = vs[vs.length - 1];
+  const endLab = opts.endLabel ? `<circle cx="${x(vs.length-1)}" cy="${y(endV)}" r="4.5" fill="${hue}" stroke="var(--surface-1)" stroke-width="2"/>
+    <text class="endlab" x="${x(vs.length-1) + 8}" y="${y(endV) + 4}">${fmt(endV)}</text>` : "";
+  el.innerHTML = `<svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.aria}">
+    ${ticks}
+    <line x1="${M.l}" x2="${W - M.r}" y1="${M.t + ih}" y2="${M.t + ih}" stroke="var(--baseline)" stroke-width="1"/>
+    ${annot}
+    ${area ? `<path d="${area}" fill="${opts.washHue || hue}" opacity="0.10"/>` : ""}
+    <path d="${path}" fill="none" stroke="${hue}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    ${endLab}${xt}
+    <line class="xh" x1="0" x2="0" y1="${M.t}" y2="${M.t + ih}" stroke="var(--baseline)" stroke-width="1" visibility="hidden"/>
+    <circle class="xhdot" r="4.5" fill="${hue}" stroke="var(--surface-1)" stroke-width="2" visibility="hidden"/>
+    <rect x="${M.l}" y="${M.t}" width="${iw}" height="${ih}" fill="transparent" style="cursor:crosshair"/>
+  </svg>`;
+  const svg = el.querySelector("svg"), hit = el.querySelector("rect"),
+        xh = el.querySelector(".xh"), xhdot = el.querySelector(".xhdot");
+  hit.addEventListener("pointermove", e => {
+    const box = svg.getBoundingClientRect(), sx = W / box.width;
+    const i = Math.max(0, Math.min(data.length - 1, Math.round(((e.clientX - box.left) * sx - M.l) / (iw / (data.length - 1)))));
+    const cx = x(i);
+    xh.setAttribute("x1", cx); xh.setAttribute("x2", cx); xh.setAttribute("visibility", "visible");
+    xhdot.setAttribute("cx", cx); xhdot.setAttribute("cy", y(vs[i])); xhdot.setAttribute("visibility", "visible");
+    showTT(e.clientX, e.clientY, lab(data[i][0]) + ", 2026", [{hue, val: fmt(vs[i]), name: opts.seriesName}]);
+  });
+  hit.addEventListener("pointerleave", () => { xh.setAttribute("visibility", "hidden"); xhdot.setAttribute("visibility", "hidden"); hideTT(); });
+}
+
+lineChart(document.getElementById("viewsChart"), IG_V, {
+  h: 220, hue: css("--series-1"), area: true, zero: true, niceMax: 2500,
+  yticks: [0, 1000, 2000], xticks: [0, 13, 27, 43, 60].filter(i => i < IG_V.length),
+  annotIdx: 43, annotText: "daily posting begins",
+  seriesName: "IG views", aria: "Instagram daily views, June 14 to August 13", mr: 18
+});
+
+/* ---- small multiples: followers ---- */
+(function () {
+  const wrap = document.getElementById("followChart");
+  wrap.innerHTML = `<div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+    <div><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);margin-bottom:4px;"><span style="width:12px;border-top:2px solid var(--series-1);"></span>Instagram</div><div id="fIG"></div></div>
+    <div><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);margin-bottom:4px;"><span style="width:12px;border-top:2px solid var(--series-2);"></span>TikTok</div><div id="fTT"></div></div>
+  </div>`;
+  lineChart(document.getElementById("fIG"), IG_F, {
+    h: 180, hue: css("--series-1"), yticks: [305, 315], niceMax: 320,
+    xticks: [0, 43].filter(i => i < IG_F.length), endLabel: true,
+    seriesName: "IG followers", aria: "Instagram followers trend", mr: 48
+  });
+  lineChart(document.getElementById("fTT"), TK_F, {
+    h: 180, hue: css("--series-2"), yticks: [595, 605], niceMax: 612,
+    xticks: [0, 44].filter(i => i < TK_F.length), endLabel: true,
+    seriesName: "TikTok followers", aria: "TikTok followers trend", mr: 48
+  });
+})();
+
+/* ---- monetization milestones ---- */
+(function () {
+  const tb = document.querySelector("#milestones tbody");
+  MILESTONES.forEach(r => {
+    const tr = document.createElement("tr"); tr.className = "hoverable";
+    const mk = (cls, txt) => { const td = document.createElement("td"); if (cls) td.className = cls; td.textContent = txt; return td; };
+    const name = mk(null, r.m); name.style.fontWeight = "600";
+    const prog = document.createElement("td");
+    if (typeof r.cur === "number" && r.target) {
+      const pct = Math.min(100, Math.round(r.cur / r.target * 100));
+      const meter = document.createElement("div"); meter.className = "meter";
+      meter.setAttribute("role", "img");
+      meter.setAttribute("aria-label", `${r.m}: ${r.cur} of ${r.target}, ${pct}%`);
+      const fill = document.createElement("div"); fill.className = "fill"; fill.style.width = pct + "%";
+      meter.appendChild(fill);
+      const note = document.createElement("div"); note.className = "mrow-note"; note.style.marginTop = "4px";
+      note.textContent = pct + "% of " + fmt(r.target);
+      prog.append(meter, note);
+    } else {
+      const note = document.createElement("span"); note.className = "mrow-note"; note.textContent = "—";
+      prog.appendChild(note);
+    }
+    const cur = mk("num", typeof r.cur === "number" ? fmt(r.cur) : r.cur);
+    const gap = mk("num", typeof r.cur === "number" && r.target ? fmt(r.target - r.cur) : r.gap);
+    const pot = mk(null, r.pot);
+    const st = document.createElement("td");
+    const chip = document.createElement("span");
+    if (r.status === "ready") { chip.className = "chip ready"; chip.textContent = "✓ Ready — pitch now"; }
+    else { chip.className = "chip open"; chip.textContent = "· " + (r.status === "open" ? "Open" : r.status); }
+    st.appendChild(chip);
+    tr.append(name, mk("mrow-note", r.req), prog, cur, gap, pot, st);
+    tb.appendChild(tr);
+  });
+})();
+
+/* ---- action tracker ---- */
+(function () {
+  const open = o => ACTIONS.filter(x => x.o === o && x.s !== "done").length;
+  const done = o => ACTIONS.filter(x => x.o === o && x.s === "done").length;
+  const counts = document.getElementById("counts");
+  [["Ann", "owner-ann"], ["Augusta", "owner-augusta"], ["AI", "owner-ai"]].forEach(([o, cls]) => {
+    const c = document.createElement("span"); c.className = "chip " + cls;
+    c.textContent = `${o} — ${open(o)} open` + (done(o) ? ` · ${done(o)} done` : "");
+    counts.appendChild(c);
+  });
+  const tb = document.querySelector("#actions tbody");
+  const PRI_ORDER = { "CRITICAL": 0, "NOW": 1, "HIGH": 2, "MEDIUM": 3 };
+  const visible = ACTIONS.filter(t => t.s !== "done")
+    .sort((a, b) => (PRI_ORDER[a.p] - PRI_ORDER[b.p]) || (a.n - b.n));
+  visible.forEach(t => {
+    const tr = document.createElement("tr"); tr.className = "hoverable";
+    const mk = (cls, txt) => { const td = document.createElement("td"); if (cls) td.className = cls; td.textContent = txt; return td; };
+    const num = mk("num", String(t.n)); num.style.color = "var(--text-muted)";
+    const act = mk(null, t.a); act.style.fontWeight = "500";
+    const own = document.createElement("td");
+    const oc = document.createElement("span"); oc.className = "chip owner-" + t.o.toLowerCase(); oc.textContent = t.o;
+    own.appendChild(oc);
+    const pri = document.createElement("td");
+    const ps = document.createElement("span"); ps.className = "pri " + t.p.toLowerCase();
+    ps.textContent = (t.p === "CRITICAL" ? "▲ " : t.p === "NOW" ? "● " : "") + t.p;
+    pri.appendChild(ps);
+    const st = document.createElement("td");
+    const sc = document.createElement("span");
+    sc.className = "chip " + (t.s === "done" ? "done" : t.s === "in progress" ? "next" : "open");
+    sc.textContent = t.s === "done" ? "✓ done" : (t.s === "in progress" ? "→ " : "· ") + t.s;
+    st.appendChild(sc);
+    tr.append(num, act, own, pri, st, mk("tasknote", t.note));
+    tb.appendChild(tr);
+  });
+})();
+
+/* ---- top content table ---- */
+(function () {
+  const tb = document.querySelector("#topTable tbody");
+  TOP.forEach(r => {
+    const tr = document.createElement("tr"); tr.className = "hoverable";
+    const mk = (cls, txt) => { const td = document.createElement("td"); if (cls) td.className = cls; td.textContent = txt; return td; };
+    const plat = document.createElement("td"); plat.className = "plat";
+    const dot = document.createElement("span"); dot.className = "dot " + (r.p === "IG" ? "ig" : "tt");
+    plat.appendChild(dot); plat.appendChild(document.createTextNode(r.p === "IG" ? "Instagram" : "TikTok"));
+    tr.append(plat, mk(null, r.d), mk("cap-cell", r.c), mk("num", fmt(r.v)), mk("num", fmt(r.i)), mk("num", r.e.toFixed(1)));
+    tb.appendChild(tr);
+  });
+})();
+
+/* ---- build pipeline ---- */
+(function () {
+  const chips = { done: ["done", "✓ Done"], next: ["next", "→ Next up"], queued: ["open", "· Queued"] };
+  const tb = document.getElementById("tasks");
+  TASKS.forEach(t => {
+    const tr = document.createElement("tr");
+    const c1 = document.createElement("td"); c1.style.width = "104px";
+    const chip = document.createElement("span"); chip.className = "chip " + chips[t.s][0]; chip.textContent = chips[t.s][1];
+    c1.appendChild(chip);
+    const c2 = document.createElement("td");
+    const nm = document.createElement("div"); nm.style.fontWeight = "600"; nm.textContent = t.n;
+    const nt = document.createElement("div"); nt.className = "tasknote"; nt.textContent = t.note;
+    c2.append(nm, nt);
+    tr.append(c1, c2); tb.appendChild(tr);
+  });
+})();
+</script>
+</body>
+</html>
