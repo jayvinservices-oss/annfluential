@@ -64,11 +64,16 @@
   h2 { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
   h2 .h2sub { font-weight: 400; color: var(--text-muted); font-size: 13px; margin-left: 8px; }
 
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
   .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 2px; min-height: 96px; }
-  .tile .label { font-size: 12.5px; color: var(--text-secondary); }
-  .tile .value { font-size: 30px; font-weight: 600; line-height: 1.15; }
+    padding: 10px 12px 8px; display: flex; flex-direction: column; gap: 1px; min-height: 70px; }
+  .tile .label { font-size: 11.5px; color: var(--text-secondary); }
+  .tile .value { font-size: 22px; font-weight: 600; line-height: 1.15; }
+  .wk { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .wk .w { border: 1px solid var(--grid); border-radius: 9px; padding: 10px 12px; }
+  .wk .wl { font-size: 11.5px; color: var(--text-secondary); }
+  .wk .wv { font-size: 20px; font-weight: 650; }
+  .wk .wd { font-size: 11.5px; color: var(--text-muted); }
   .tile .delta { font-size: 12.5px; }
   .delta.up   { color: var(--delta-good); }
   .delta.flat { color: var(--text-muted); }
@@ -222,6 +227,24 @@
         <div class="funnel"><strong>The funnel:</strong> text-over-b-roll reels run as <strong>trial reels</strong> (shown to non-followers only) to pull strangers in · the main grid is Ann talking to camera, no more quote posts · the bio converts with affiliate links.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <h2>This week <span class="h2sub">Aug 9 – 15 · what actually happened · refreshed every Friday before the Saturday sync</span></h2>
+  <div class="card">
+    <div class="wk">
+      <div class="w"><div class="wl">Posts published</div><div class="wv">15</div><div class="wd">8 Instagram · 7 TikTok</div></div>
+      <div class="w"><div class="wl">Followers change</div><div class="wv">±0</div><div class="wd">IG 317→316 · TikTok 604→605</div></div>
+      <div class="w"><div class="wl">Interactions</div><div class="wv">~350</div><div class="wd">across both platforms</div></div>
+      <div class="w"><div class="wl">Trial reels scheduled</div><div class="wv">0</div><div class="wd">renders pending — the bottleneck</div></div>
+      <div class="w"><div class="wl">$100K bar</div><div class="wv">$0</div><div class="wd">series starts with Ep 1</div></div>
+    </div>
+    <ul class="insights">
+      <li><strong>Best post of the week:</strong> "I do enjoy my work though" — 2,016 views, 133 interactions. Personality + humour, again.</li>
+      <li><strong>Done this week:</strong> <span class="chip owner-ann">Ann — 2</span> affiliate signups (#1) + new bio applied on IG and TikTok · <span class="chip owner-augusta">Augusta — 0</span> starts Tuesday · <span class="chip owner-ai">AI — 3</span> full content audit, series design, this dashboard system.</li>
+      <li><strong>Read on the week:</strong> daily posting continued but views cooled from the streak peak (927 → ~250/post) — the affirmation-era text reels have stopped converting strangers; exactly why the funnel switches them to trial reels and the grid goes talking-head with Ep 1.</li>
+    </ul>
   </div>
 </section>
 
@@ -548,7 +571,7 @@ function lineChart(el, data, opts) {
 }
 
 lineChart(document.getElementById("viewsChart"), IG_V, {
-  h: 220, hue: css("--series-1"), area: true, zero: true, niceMax: 2500,
+  h: 160, hue: css("--series-1"), area: true, zero: true, niceMax: 2500,
   yticks: [0, 1000, 2000], xticks: [0, 13, 27, 43, 60].filter(i => i < IG_V.length),
   annotIdx: 43, annotText: "daily posting begins",
   seriesName: "IG views", aria: "Instagram daily views, June 14 to August 13", mr: 18
@@ -562,12 +585,12 @@ lineChart(document.getElementById("viewsChart"), IG_V, {
     <div><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);margin-bottom:4px;"><span style="width:12px;border-top:2px solid var(--series-2);"></span>TikTok</div><div id="fTT"></div></div>
   </div>`;
   lineChart(document.getElementById("fIG"), IG_F, {
-    h: 180, hue: css("--series-1"), yticks: [305, 315], niceMax: 320,
+    h: 140, hue: css("--series-1"), yticks: [305, 315], niceMax: 320,
     xticks: [0, 43].filter(i => i < IG_F.length), endLabel: true,
     seriesName: "IG followers", aria: "Instagram followers trend", mr: 48
   });
   lineChart(document.getElementById("fTT"), TK_F, {
-    h: 180, hue: css("--series-2"), yticks: [595, 605], niceMax: 612,
+    h: 140, hue: css("--series-2"), yticks: [595, 605], niceMax: 612,
     xticks: [0, 44].filter(i => i < TK_F.length), endLabel: true,
     seriesName: "TikTok followers", aria: "TikTok followers trend", mr: 48
   });
