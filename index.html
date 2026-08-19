@@ -377,7 +377,7 @@
   </div>
   <div class="card prose">
     <h3 style="font-size:13.5px; font-weight:600; margin-bottom:8px;">How this system works</h3>
-    <p><strong>People write the Sheet, Claude writes everything else.</strong> Ann and Augusta update the Status column in the <a href="https://docs.google.com/spreadsheets/d/1T1WTlU2rKL596UGBL-x5edHCRj94iSCC5k3msroAIkk/edit">action tracker Sheet</a>; Claude reads it but never edits it. <strong>Tracker rules:</strong> items are sorted by priority (CRITICAL and NOW on top); anything marked done disappears from this view; Claude may add new items or re-prioritize, but an item is only ever closed when Ann explicitly says it's done. <strong>Routing:</strong> new tasks default to Augusta or AI, never auto-assigned to Ann. <strong>Augusta's daily work briefs:</strong> she works Tue–Sat; the <strong>Tuesday 4 AM run</strong> fills her brief for Tue, Wed and Thu, and the <strong>Friday 4 AM run</strong> fills Fri and Sat plus the weekend plan — each brief = the standing basics (out-folder review, schedule at peak times, publish trials from the IG app, engage) plus one or two specific priority items, so the week's open work is split across her days. Changes Ann makes over the weekend get picked up Tuesday. Ann's open CRITICAL/NOW items ride in the 9 AM refresh event. Every <strong>Tuesday and Friday at 4 AM Toronto (9 AM Lagos)</strong> a scheduled run pulls Metricool + the Sheet (including anything added manually), rebuilds this page, refreshes best times and competitor numbers, and updates the calendar briefs. Live at <strong>jayvinservices-oss.github.io/annfluential</strong>.</p>
+    <p><strong>People write the Sheet, Claude writes everything else.</strong> Ann and Augusta update the Status column in the <a href="https://docs.google.com/spreadsheets/d/1T1WTlU2rKL596UGBL-x5edHCRj94iSCC5k3msroAIkk/edit">action tracker Sheet</a>; Claude reads it but never edits it. <strong>Tracker rules:</strong> items are sorted by priority (CRITICAL and NOW on top); anything marked done disappears from this view; Claude may add new items or re-prioritize, but an item is only ever closed when Ann explicitly says it's done. <strong>Review loop:</strong> when the AI finishes a deliverable it goes to "in review" — a matching review task lands on Augusta's daily brief, and Ann gives final approval before anything closes. <strong>Routing:</strong> new tasks default to Augusta or AI, never auto-assigned to Ann. <strong>Augusta's daily work briefs:</strong> she works Tue–Sat; the <strong>Tuesday 4 AM run</strong> fills her brief for Tue, Wed and Thu, and the <strong>Friday 4 AM run</strong> fills Fri and Sat plus the weekend plan — each brief = the standing basics (out-folder review, schedule at peak times, publish trials from the IG app, engage) plus one or two specific priority items, so the week's open work is split across her days. Changes Ann makes over the weekend get picked up Tuesday. Ann's open CRITICAL/NOW items ride in the 9 AM refresh event. Every <strong>Tuesday and Friday at 4 AM Toronto (9 AM Lagos)</strong> a scheduled run pulls Metricool + the Sheet (including anything added manually), rebuilds this page, refreshes best times and competitor numbers, and updates the calendar briefs. Live at <strong>jayvinservices-oss.github.io/annfluential</strong>.</p>
     <p>Templates are retired; monetization runs on brand deals + affiliate now, community later. Trading appears as documented journey content only.</p>
   </div>
 </section>
@@ -437,7 +437,8 @@ const ACTIONS = [
   {n:20, a:"Get footage into every bucket, not just lifestyle and ace", o:"Ann", p:"CRITICAL", s:"not started", note:"13 clips in. money, products, brand, yapping, trading, travel empty."},
   {n:21, a:"Linked reels / trial reels", o:"Augusta", p:"MEDIUM", s:"not started", note:"Added by Ann in the Sheet. Runs through the trial-reels workflow + TRIALS tab above."},
   {n:22, a:"Add a NOTES FROM ANN tab to the tracker Sheet", o:"Augusta", p:"NOW", s:"not started", note:"Ann brain-dumps voice, trends and ideas there; AI reads it every run and formats them into the Hub. (Trial logging dropped — Metricool counts trials automatically.)"},
-  {n:"AI-1", a:"Build the one-page media kit draft", o:"AI", p:"NOW", s:"in progress", note:"Drafted from the audit data (5–11% engagement lead); Ann reviews. Feeds #4."},
+  {n:"AI-1", a:"Media kit draft v1 — built and published", o:"AI", p:"NOW", s:"in review", note:"Live at jayvinservices-oss.github.io/annfluential/mediakit.html with photo, Ann James, starting rates. Augusta reviews, Ann approves."},
+  {n:23, a:"Review the media kit draft", o:"Augusta", p:"NOW", s:"not started", note:"Check copy, rates, photo and links; note feedback in the Sheet. On her calendar brief. Live: /annfluential/mediakit.html"},
   {n:"AI-2", a:"Brand target list + DM drafts", o:"AI", p:"NOW", s:"not started", note:"20 Canadian brands + ready-to-send pitch messages; Augusta/Ann send (#5)."},
   {n:"AI-3", a:"Weekly NA trend research into the IDEAS tab", o:"AI", p:"HIGH", s:"not started", note:"Folds into refresh runs so Augusta gets fresh ideas at no extra cost (#16)."},
   {n:"AI-4", a:"Hashtag rule proposal for Ann's sign-off", o:"AI", p:"HIGH", s:"not started", note:"Recommendation drafted: 3–5 niche tags, no walls. Ann decides, Augusta applies (#18)."}
@@ -659,8 +660,9 @@ lineChart(document.getElementById("viewsChart"), IG_V, {
     pri.appendChild(ps);
     const st = document.createElement("td");
     const sc = document.createElement("span");
-    sc.className = "chip " + (t.s === "done" ? "done" : t.s === "in progress" ? "next" : "open");
-    sc.textContent = t.s === "done" ? "✓ done" : (t.s === "in progress" ? "→ " : "· ") + t.s;
+    const busy = t.s === "in progress" || t.s === "in review";
+    sc.className = "chip " + (t.s === "done" ? "done" : busy ? "next" : "open");
+    sc.textContent = t.s === "done" ? "✓ done" : (busy ? "→ " : "· ") + t.s;
     st.appendChild(sc);
     tr.append(num, act, own, pri, st, mk("tasknote", t.note));
     tb.appendChild(tr);
