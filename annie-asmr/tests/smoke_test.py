@@ -83,7 +83,7 @@ segments:
         cli("assemble", "smoke")
         cli("metadata", "smoke")
         cli("trailer", "smoke", "--start", "5", "--seconds", "10")
-        cli("thumb", "smoke", "--at", "3")
+        cli("thumb", "smoke")
 
         tl = json.loads((tmp / "renders/smoke.timeline.json").read_text())
         meta = json.loads((tmp / "metadata/smoke.json").read_text())
@@ -122,6 +122,17 @@ segments:
         joined = " ".join(errs + warns)
         assert "girlfriend" in joined and "roleplay" in joined and "no talking" in joined and "1 hour" in joined
         assert "fruit" in joined, warns
+
+        # opening rules: smoke plan whispers at 2s and its first chapter names no title trigger
+        opening = [w for w in meta["checks"]["warnings"] if w.startswith("opening:")]
+        assert any("a-01" in w for w in opening), opening
+        from pipeline.metadata import check_opening
+        ep["title"] = "ASMR Unwrapping Christmas Gifts | Kraft Paper & Ribbon | Whispers"
+        ep["segments"][0]["chapter"] = "Tissue rustling"
+        assert any("first chapter" in w for w in check_opening(ep)), check_opening(ep)
+        ep["segments"][0]["chapter"] = "Kraft paper crinkles"
+        ep["segments"][0]["voice"] = [{"at": 45, "text": "Hi."}]
+        assert check_opening(ep) == [], check_opening(ep)
 
         print(f"\nSMOKE TEST PASSED: {tl['length']} video, {len(probe['chapters'])} chapters, {integrated:.1f} LUFS")
     finally:

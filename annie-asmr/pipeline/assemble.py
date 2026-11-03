@@ -313,9 +313,14 @@ def trailer(ep: dict, start: float, seconds: float, x_offset: float = 0.5) -> Pa
     return out
 
 
-def thumbnail(ep: dict, at: float) -> Path:
+def thumbnail(ep: dict, at: float | None = None) -> Path:
+    """Defaults to the opening shot (the first shot of the first chapter), so the click matches the first frame."""
     require_ffmpeg()
     src = render_path(ep["slug"])
+    if not src.exists():
+        raise SystemExit("Render the long video first: python -m pipeline assemble " + ep["slug"])
+    if at is None:
+        at = float((config().get("opening") or {}).get("thumbnail_at", 3))
     out = RENDERS / f"{ep['slug']}-thumb.jpg"
     run(["ffmpeg", "-y", "-ss", at, "-i", src, "-frames:v", "1", "-vf", "scale=1280:720", "-q:v", "2", out])
     print(f"Thumbnail frame: {out} (add any text in Canva)")

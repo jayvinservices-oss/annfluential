@@ -16,31 +16,31 @@ sounds: [pen scribbling, paper cutting, sticker peeling, washi tape tearing, car
 tags: [stationery asmr, card making asmr, writing sounds asmr, christmas cards asmr]
 segments:
   - id: plan
-    chapter: Planning the design
+    chapter: Gold pen sketching
     minutes: 4
     shots: [sketch, show-card]
-    sound_bed: audio/sfx/cardstock-tap-01.wav
+    sound_bed: [audio/sfx/pen-scribble-01.wav, {file: audio/sfx/cardstock-tap-01.wav, gain_db: -6}]
     voice:
-      - {at: 5, text: "Hi. Let's make some Christmas cards, green and gold."}
+      - {at: 45, text: "Hi. Let's make some Christmas cards, green and gold."}
   - id: sketch
-    chapter: Sketching
+    chapter: Pen scribbling on cardstock
     minutes: 10
     shots: [sketch]
     sound_bed: audio/sfx/pen-scribble-01.wav
   - id: cut
-    chapter: Cutting
+    chapter: Scissors cutting paper
     minutes: 7
     shots: [cut-paper, sketch]
     sound_bed: audio/sfx/scissors-01.wav
   - id: decorate
-    chapter: Stickers and tape
+    chapter: Sticker peeling & washi tape tearing
     minutes: 8
     shots: [stickers, washi]
     sound_bed: [audio/sfx/sticker-peel-01.wav, {file: audio/sfx/washi-tear-01.wav, gain_db: -2}]
     voice:
       - {at: 30, text: "Just a little gold sticker here."}
   - id: done
-    chapter: The finished set
+    chapter: Card tapping & goodnight whispers
     minutes: 3
     shots: [show-card, stickers]
     sound_bed: audio/sfx/cardstock-tap-01.wav

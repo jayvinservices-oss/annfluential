@@ -82,6 +82,16 @@ description. `--fast` skips the chapter crossfades (hard cuts, much quicker on a
 
 Rough timing on an Intel MacBook Pro: a 30 minute 1080p render is roughly 30 to 60 minutes of encoding.
 
+### The first 5 seconds (from the YouTube Studio analysis, Nov 2026)
+The latest gum video had a 5.1% click-through rate but lost half its viewers by 0:05. So every plan now:
+- **opens on the trigger the title promises.** The first shot of the first chapter opens the video, so list
+  the strongest trigger first;
+- **keeps the first 30 seconds free of talking** (hellos go at about 45s);
+- **names chapters after the trigger** ("Knuckle cracking", not "Part 2"), so viewers can jump to their sound;
+- **takes the thumbnail from the opening shot** (`thumb <slug>` with no `--at`), so the click matches the first frame.
+
+`check` warns when a plan breaks any of these (`opening:` lines).
+
 ### What the checks catch
 - Title over 100 characters, banned words (roleplay, girlfriend, requests, "not AI"...), "no talking"
   when there are whispers, whispers claimed with none, "1 hour" when the video is 30 minutes.
@@ -110,6 +120,15 @@ Studio's Earn tab is the official figure; compare them each week.
 From 543 hours on 3 Nov 2026, reaching 4,000 by 17 Jan 2027 needs about **46 public watch hours a day**
 for 75 days. The report tracks the real daily pace against that. Hours from Shorts do not count; hours
 from scheduled live streams count once the archive is public.
+
+## Next up: viewer-requested concepts
+| plan / theme | status |
+|---|---|
+| `episodes/gum-pops-knuckles-01.yaml` (fast gum popping + knuckle cracking) | ready plan: needs real gum-pop and knuckle-crack recordings |
+| `prompts/themes/shushing-sleep.yaml` (shushing, hand movements, blanket) | theme only: sleep aid, no persona lines |
+| `prompts/themes/mic-rings-fabric.yaml` (mic brushing, ring tapping, fabric) | theme only |
+
+Start a plan from a theme with `python -m pipeline new shushing-sleep sleep-shush-01 --minutes 60`.
 
 ## Christmas run (make by 24 Nov, publish from 1 Dec)
 | plan | theme | suggested publish |

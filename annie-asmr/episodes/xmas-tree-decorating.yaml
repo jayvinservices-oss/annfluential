@@ -15,26 +15,26 @@ sounds: [glass bauble taps, ornament hooks, tinsel rustle, pine needle brushing,
 tags: [christmas tree asmr, ornament tapping asmr, glass tapping asmr, christmas asmr]
 segments:
   - id: box
-    chapter: The ornament box
+    chapter: Glass bauble tapping
     minutes: 4
     shots: [tap-baubles, admire]
-    sound_bed: audio/sfx/box-rummage-01.wav
+    sound_bed: [audio/sfx/glass-bauble-tap-01.wav, {file: audio/sfx/box-rummage-01.wav, gain_db: -8}]
     voice:
-      - {at: 5, text: "Hi. Let's decorate the tree tonight, slowly."}
+      - {at: 45, text: "Hi. Let's decorate the tree tonight, slowly."}
   - id: glass
-    chapter: Glass baubles
+    chapter: Bauble taps & ornament hooks
     minutes: 12
     shots: [tap-baubles, hang-ornament]
     sound_bed: audio/sfx/glass-bauble-tap-01.wav
     voice:
       - {at: 20, text: "Gold ones first."}
   - id: garland
-    chapter: Garland
+    chapter: Garland rustles & pine needle brushing
     minutes: 9
     shots: [tinsel, hang-ornament]
     sound_bed: [audio/sfx/garland-rustle-01.wav, {file: audio/sfx/pine-brush-01.wav, gain_db: -4}]
   - id: finish
-    chapter: Finishing touches
+    chapter: Last bauble taps & goodnight whispers
     minutes: 5
     shots: [admire, hang-ornament]
     sound_bed: audio/sfx/glass-bauble-tap-01.wav

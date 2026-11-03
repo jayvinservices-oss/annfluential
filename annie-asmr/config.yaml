@@ -31,6 +31,12 @@ audio:
   bed_gain_db: -4      # sound bed (gum, gloss, paper ...)
   voice_gain_db: 0     # whispers and talking
 
+opening:
+  # Viewers decide in the first 5 seconds. The first shot of the first chapter opens the video
+  # and is used for the thumbnail, so put the strongest trigger from the title there.
+  quiet_seconds: 30    # no talking before this; checks warn if a voice line starts earlier
+  thumbnail_at: 3      # seconds into the opening shot for the default thumbnail frame
+
 generator:
   provider: manual     # runway | replicate | manual   (you choose; manual = web UI, drop files in)
   clip_seconds: 10

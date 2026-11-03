@@ -1,0 +1,26 @@
+id: mic-rings-fabric
+name: Layered mic brushing, ring tapping and slow fabric scratching
+season: regular
+uses_hands: true
+setting: >-
+  A microphone with a fluffy cover sits just below her chin, rings on her fingers, a piece of
+  textured fabric on the table, warm soft light and a dark blurred background.
+variation_template: >-
+  Rings: {rings}. Fabric: {fabric}. Nails painted {nail_colour}.
+variation_pools:
+  rings: [stacked gold rings, chunky silver rings, gold rings with small crystals, mixed gold and pearl rings]
+  fabric: [corduroy, velvet, denim, faux leather]
+  nail_colour: [glazed chrome, deep plum, milky white, gold tips]
+sounds: [mic brushing, fluffy mic scratching, ring tapping, ring clinking, fabric scratching]
+shots:
+  mic-brush:
+    action: Her long almond nails brush slowly across a fluffy microphone cover just below her chin.
+  ring-tap:
+    action: She taps her rings rhythmically against each other and on a glass surface close to the camera.
+  fabric-scratch:
+    action: Her long nails scratch slowly across the textured fabric, close up.
+  layered:
+    action: One hand brushes the fluffy mic while the other taps rings on the table, glossy lips softly visible above.
+chapter_ideas: [Fluffy mic brushing, Ring tapping, Fabric scratching, Mic brushing & ring taps, Slow layered tingles]
+title_patterns:
+  - "ASMR Layered Mic Brushing, Ring Tapping & Fabric Scratching | Long Nails"

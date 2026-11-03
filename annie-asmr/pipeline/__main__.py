@@ -6,7 +6,7 @@
   voice <slug>              make the whisper/talking lines in your cloned voice
   assemble <slug>           stitch, loop, crossfade, level audio, chapters -> renders/<slug>.mp4
   trailer <slug> --start S  vertical Short cut that points to the long video
-  thumb <slug> --at S       grab a thumbnail frame
+  thumb <slug> [--at S]     thumbnail frame, from the opening shot unless --at is given
   metadata <slug>           build title/description/chapters and run the honesty checks
   check <slug>              run the checks only
   upload <slug> [--short]   upload as a PRIVATE draft (you publish in Studio)
@@ -42,7 +42,7 @@ def cmd_new(a):
             "id": f"s{n + 1}", "chapter": ch, "minutes": per,
             "shots": [shot_ids[n % len(shot_ids)], shot_ids[(n + 1) % len(shot_ids)]],
             "sound_bed": "audio/sfx/CHOOSE-A-SOUND.wav",
-            "voice": [{"at": 4, "text": "TODO whisper line"}] if n == 0 else [],
+            "voice": [{"at": 45, "text": "TODO whisper line"}] if n == 0 else [],
         })
     plan = {
         "slug": a.slug, "theme": a.theme,
@@ -186,7 +186,9 @@ def main(argv=None):
     s.add_argument("--seconds", type=float, default=45); s.add_argument("--x", type=float, default=0.5,
                                                                          help="horizontal crop position 0 (left) to 1 (right)")
     s.set_defaults(fn=cmd_trailer)
-    s = sub.add_parser("thumb"); s.add_argument("slug"); s.add_argument("--at", type=float, default=60); s.set_defaults(fn=cmd_thumb)
+    s = sub.add_parser("thumb"); s.add_argument("slug"); s.add_argument("--at", type=float, default=None,
+                   help="seconds; default is the opening shot, so the thumbnail matches the first frame")
+    s.set_defaults(fn=cmd_thumb)
     s = sub.add_parser("metadata"); s.add_argument("slug"); s.add_argument("--short", action="store_true"); s.set_defaults(fn=cmd_metadata)
     s = sub.add_parser("check"); s.add_argument("slug"); s.set_defaults(fn=cmd_check)
     s = sub.add_parser("upload"); s.add_argument("slug"); s.add_argument("--short", action="store_true")

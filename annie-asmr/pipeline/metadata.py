@@ -87,6 +87,27 @@ def check_title(ep: dict, seconds: float | None) -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+def _words(text: str) -> set[str]:
+    return {_stem(w) for w in re.findall(r"[a-z']+", text.lower()) if w not in GENERIC and len(w) > 2}
+
+
+def check_opening(ep: dict) -> list[str]:
+    """The first seconds decide whether viewers stay: open on the promised trigger, no talking yet."""
+    quiet = float((config().get("opening") or {}).get("quiet_seconds", 30))
+    first = ep["segments"][0]
+    warnings = []
+    for line in voice_lines(ep):
+        if line["segment"] == first["id"] and line["at"] < quiet:
+            warnings.append(f"opening: voice line {line['id']} starts at {line['at']:.0f}s; keep the first "
+                            f"{quiet:.0f} seconds to the trigger only (move it to {quiet:.0f}s or later)")
+    if not _words(first["chapter"]) & _words(ep["title"]):
+        warnings.append(f"opening: first chapter '{first['chapter']}' does not name a trigger from the title; "
+                        "open on the trigger the title and thumbnail promise")
+    if not first.get("sound_bed"):
+        warnings.append("opening: first chapter has no sound bed, so the video opens silent")
+    return warnings
+
+
 def build(ep: dict) -> dict:
     cfg = config()
     yt = cfg["youtube"]
@@ -117,6 +138,7 @@ def build(ep: dict) -> dict:
             used += cost
 
     errors, warnings = check_title(ep, seconds)
+    warnings += check_opening(ep)
     v_err, v_warn = variety_check(ep)
     errors += v_err
     warnings += v_warn
