@@ -36,6 +36,11 @@ def _episodes() -> list[dict]:
     return sorted(eps, key=lambda ep: (ep.get("priority") or 99, str(ep.get("made_by") or "")))
 
 
+def _drive_link(key: str, label: str) -> str:
+    url = (_load("todo.yaml").get("drive") or {}).get(key) or (_load("todo.yaml").get("drive") or {}).get("clips")
+    return f'<a href="{e(url)}">{e(label)}</a>' if url else f"<code>{e(label)}</code>"
+
+
 def _chip(text: str, kind: str) -> str:
     return f'<span class="chip {kind}">{e(text)}</span>'
 
@@ -92,7 +97,7 @@ def _episode_card(ep: dict, takes: int) -> str:
       <details><summary>Voice lines ({len(lines)})</summary><ul class="voice">{voice}</ul></details>
       <details class="prompts"><summary>Clip prompts for manual mode ({len(shots)} shots × {takes} takes)</summary>
         <p class="hint">Make each clip in your video app from the reference image, download it, rename it exactly as shown,
-        and upload it to Google Drive: <code>Annie ASMR clips/{e(slug)}/</code>.</p>
+        and upload it to Google Drive: {_drive_link(f"clips/{slug}", f"Annie ASMR › clips › {slug}")}.</p>
         {''.join(shot_rows)}
       </details>
     </article>"""
@@ -189,6 +194,7 @@ summary {{ cursor: pointer; font-weight: 600; color: var(--ink) }}
 summary:focus-visible, button:focus-visible, nav a:focus-visible {{ outline: 2px solid var(--accent); outline-offset: 2px }}
 .chapters, .voice {{ margin: 10px 0 0; padding-left: 20px; display: grid; gap: 4px }}
 .num {{ font-variant-numeric: tabular-nums; color: var(--muted); font-size: .85rem; display: inline-block; min-width: 4.5em }}
+a {{ color: var(--accent) }}
 .hint {{ font-size: .88rem; color: var(--muted); max-width: 62ch }}
 .shot {{ border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-top: 10px; display: grid; gap: 6px; min-width: 0 }}
 .shot.done {{ opacity: .7 }}
@@ -236,6 +242,8 @@ td.n, th.n {{ text-align: right; font-variant-numeric: tabular-nums; white-space
 
   <section>
     <h2>Waiting on you</h2>
+    <p class="note muted">Drive folders (in the jayvin.services account): {_drive_link("source", "source")} ·
+      {_drive_link("sfx", "sfx")} · {_drive_link("clips", "clips")}</p>
     <ul class="todo">{todo_list(todo.get('ann'))}</ul>
   </section>
 
