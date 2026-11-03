@@ -35,9 +35,9 @@ claude:
   done: true
 - text: 'Done: Bestie avatar drafted for duo split-screen videos (waiting on your friend''s side and okay).'
   done: true
-- text: 'Building the sound bank from your videos: gum pops, crackles, knuckle cracks, crunches; talking cut out;
-    slowed versions too.'
-  done: false
+- text: 'Done: sound bank, 28 clips of 30 seconds from your videos (gum, crackling, knuckles, crunch, lollipop,
+    mouth sounds), each with a slowed version. Preview sent; tell Claude any to drop.'
+  done: true
 - text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
     numbers.'
   done: false
