@@ -8,8 +8,11 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-- text: 'Today: Google sign-in for the channel (steps under ''Your sign-ins'' in Channel rebrand). Optional: free
-    Freesound key for lip gloss sounds.'
+- text: 'Google sign-in for the channel: can be done on your phone''s browser (steps under ''Your sign-ins''). Optional:
+    Freesound key.'
+  done: false
+- text: Upload your own photos to Drive › Annie ASMR › source (a few close-ups of your lips and face, your locs
+    or coily hair), so Claude can combine them into one Annie look that matches the duo portrait.
   done: false
 - text: 'In the office: a 1-minute whispered voice memo, quiet room, no gum, to Drive › Annie ASMR › source. Your
     talking lines stay yours.'

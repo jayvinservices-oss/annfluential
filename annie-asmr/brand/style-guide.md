@@ -90,3 +90,13 @@ One sentence for the About page, the banner and every description's first line.
 - Profile picture `assets/profile-800.png`: glossy lips and gloss tube inside a gold ring.
 - Thumbnail templates `assets/thumbnail-template-*.jpg`.
 - Duo videos ("with my bestie"): split screen, Annie left, Bestie right (`prompts/avatar-duo.yaml`).
+
+## Two characters, their own videos (3 Nov 2026)
+- **Annie** (Ann): deep chocolate skin, long black locs or super-coily hair, nude-pink gloss, long latte almond nails.
+  Her solo videos: gum, gloss layering, nail tapping, crafts.
+- **Bestie** (Ann's friend, with her okay): caramel skin, curly hair or braids, berry gloss, pink coffin nails.
+  Her solo videos get their own triggers so the two never look like copies (e.g. lip balm and tinted oils,
+  bubble gum blowing, candy and crunchy sounds).
+- **Duo videos** (the format behind the channel's two best videos): split screen or side by side, e.g.
+  "Doing Each Other's Lip Gloss", gum chewing together, gloss swaps. Friendly, never flirty.
+- One locked reference image per character (from the duo portrait), so every clip keeps the same face.

@@ -7,16 +7,20 @@
 - id: access-youtube
   who: access
   title: Give Claude access to the channel
-  detail: 'About 20 minutes, best on a computer. 1) console.cloud.google.com: new project "Annie ASMR", enable "YouTube
-    Data API v3" and "YouTube Analytics API". 2) OAuth consent screen: External, then "Publish app" so it is In
-    production (in Testing the sign-in expires every 7 days). When Google says the app is not verified, click Advanced,
-    then continue: it is your own app. 3) Credentials: OAuth client ID, type "Web application", authorised redirect
-    URI https://developers.google.com/oauthplayground. 4) developers.google.com/oauthplayground: gear icon, tick
-    "Use your own OAuth credentials", paste the client ID and secret there, choose the scopes youtube.force-ssl,
-    youtube.upload and yt-analytics.readonly, Authorize (sign in as the Annie ASMR channel), then "Exchange authorization
-    code for tokens". 5) In this cloud environment''s settings, add three environment variables: YOUTUBE_CLIENT_ID,
-    YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN. Never paste them in chat. Then start a new session; Claude checks
-    with "python -m pipeline whoami".'
+  detail: 'Works on your phone, so you never sign in on the work computer. About 20 minutes. Use Chrome or Safari
+    on the phone, signed in only as the Google account that owns Annie ASMR; if a page looks squashed, turn on ''Desktop
+    site'' in the browser menu. 1) console.cloud.google.com: new project ''Annie ASMR''; search for and enable ''YouTube
+    Data API v3'' and ''YouTube Analytics API''. 2) OAuth consent screen: External, then ''Publish app'' so it is
+    In production (in Testing the sign-in expires every 7 days). 3) Credentials: Create OAuth client ID, type ''Web
+    application'', authorised redirect URI https://developers.google.com/oauthplayground. Copy the client ID and
+    secret into your phone''s notes for a minute. 4) developers.google.com/oauthplayground: gear icon, tick ''Use
+    your own OAuth credentials'', paste the ID and secret; in the scope box type https://www.googleapis.com/auth/youtube.force-ssl
+    https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly, tap Authorize
+    APIs, sign in as the channel, choose the Annie ASMR channel; if Google says the app is not verified, tap Advanced,
+    then continue (it is your own app). Then ''Exchange authorization code for tokens'' and copy the Refresh token.
+    5) In the Claude app or claude.ai on your phone: this session''s environment settings, add three environment
+    variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN. Never paste them in chat; delete
+    them from your notes after. Start a new session; Claude checks with ''python -m pipeline whoami''.'
   group: signin
 - id: freesound-key
   who: access
