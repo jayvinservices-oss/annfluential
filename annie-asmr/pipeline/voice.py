@@ -2,7 +2,10 @@
 
 Providers (config.yaml -> voice.provider):
   elevenlabs  hosted; needs ELEVENLABS_API_KEY and ELEVENLABS_VOICE_ID in .env
-  local       runs a command on the Mac (e.g. VoiceStudio, if it has a command-line tool)
+  voicestudio VoiceStudio backend (github.com/debpalash/VoiceStudio). It cannot run on an Intel Mac,
+              so it runs on another machine (e.g. the rented cloud GPU); needs VOICESTUDIO_URL,
+              VOICESTUDIO_API_KEY and VOICESTUDIO_PROFILE_ID (your saved cloned-voice profile)
+  local       runs any text-to-speech command on the Mac
   manual      writes a script sheet; you record or export each line with the given file name
 """
 from __future__ import annotations
@@ -42,10 +45,39 @@ def _elevenlabs(text: str, style: str, out: Path, c: dict) -> None:
     out.write_bytes(r.content)
 
 
+def _voicestudio(text: str, style: str, out: Path, c: dict) -> None:
+    import time
+    base = secret("VOICESTUDIO_URL").rstrip("/")
+    form = {
+        "text": text,
+        "profile_id": secret("VOICESTUDIO_PROFILE_ID"),
+        "num_step": str(c.get("num_step", 32)),
+        "speed": str(c.get("speed", 0.95)),
+        "effect_preset": c.get("effect_preset", "broadcast"),
+        "wav_bits": "24",
+    }
+    if style == "whisper":
+        form["instruct"] = "whisper"
+    if c.get("seed") is not None:
+        form["seed"] = str(c["seed"])
+    if c.get("engine"):
+        form["engine"] = c["engine"]
+    headers = {"Authorization": f"Bearer {secret('VOICESTUDIO_API_KEY')}"}
+    for attempt in range(6):
+        r = requests.post(f"{base}/generate", data=form, headers=headers, timeout=600)
+        if r.status_code in (429, 503) and attempt < 5:  # model loading / busy
+            time.sleep(int(r.headers.get("Retry-After", 30)))
+            continue
+        if r.status_code >= 400 or not r.headers.get("content-type", "").startswith("audio"):
+            raise RuntimeError(f"VoiceStudio refused line ({r.status_code}): {r.text[:300]}")
+        out.write_bytes(r.content)
+        return
+
+
 def _local(text: str, out: Path, c: dict) -> None:
     template = c.get("command", "").strip()
     if not template:
-        raise SystemExit("voice.local.command is empty in config.yaml. Use provider 'manual' if VoiceStudio is app-only.")
+        raise SystemExit("voice.local.command is empty in config.yaml. Use provider 'voicestudio' or 'manual'.")
     with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as tf:
         tf.write(text)
     cmd = template.format(text_file=shlex.quote(tf.name), out=shlex.quote(str(out)))
@@ -72,6 +104,8 @@ def make_voice(ep: dict, provider: str | None = None, redo: list[str] | None = N
         print(f"  voice  {line['id']}: {line['text'][:60]}", flush=True)
         if provider == "elevenlabs":
             _elevenlabs(line["text"], line["style"], out, vcfg.get("elevenlabs", {}))
+        elif provider == "voicestudio":
+            _voicestudio(line["text"], line["style"], out, vcfg.get("voicestudio", {}))
         elif provider == "local":
             _local(line["text"], out, vcfg.get("local", {}))
         else:

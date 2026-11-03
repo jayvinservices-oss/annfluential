@@ -56,7 +56,7 @@ generator:
     extra_input: {}                # any other model inputs, e.g. {aspect_ratio: "16:9"}
 
 voice:
-  provider: manual     # elevenlabs | local | manual
+  provider: manual     # elevenlabs | voicestudio | local | manual
   elevenlabs:
     model_id: eleven_v3
     whisper_tag: "[whispers]"     # v3 audio tag; leave "" for other models
@@ -64,6 +64,13 @@ voice:
     stability: 0.5
     similarity_boost: 0.85
     style: 0.0
+  voicestudio:
+    # Backend runs on another machine (not the Intel Mac). URL, key and profile id go in .env.
+    num_step: 32          # 32 = cleaner (audiobook default); 16 = faster
+    speed: 0.95           # a touch slower for whispers
+    effect_preset: broadcast
+    seed: null            # set a number once a take sounds right, to keep the voice consistent
+    engine: null          # null = backend default (OmniVoice)
   local:
     # Command that turns text into a file with your cloned voice (e.g. VoiceStudio's CLI if it has one).
     # {text_file} and {out} are filled in. Leave empty if VoiceStudio is app-only: use manual instead.

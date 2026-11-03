@@ -36,8 +36,13 @@ Check the provider's current docs before the first paid run; model names and fie
 - `manual` (default): `audio/voice/<slug>/_script.md` lists each line and its file name; record or export them.
 - `elevenlabs`: hosted cloned voice. Put `ELEVENLABS_API_KEY` and `ELEVENLABS_VOICE_ID` in `.env`.
   The `eleven_v3` model takes a `[whispers]` tag; cloning from whispered samples gives the best whisper.
-- `local`: a command on the Mac. VoiceStudio: if it only has an app (no command line), use `manual`
-  and export each line from the app with the listed file name.
+- `voicestudio`: VoiceStudio (github.com/debpalash/VoiceStudio). **Its voice engine cannot run on an
+  Intel Mac** (the app opens as a remote-control screen only). Run its backend on another machine, the
+  same rented cloud GPU planned for lip-sync is the natural home (see VoiceStudio's `docs/remote-gpu.md`:
+  start it with an API key and reach it over Tailscale, never the open internet). Clone your voice once in
+  the app, save it as a profile, then put `VOICESTUDIO_URL`, `VOICESTUDIO_API_KEY` and
+  `VOICESTUDIO_PROFILE_ID` in `.env`. Whisper lines are sent with VoiceStudio's `whisper` style.
+- `local`: any text-to-speech command on the Mac.
 
 ### YouTube API setup (once, about 20 minutes)
 1. console.cloud.google.com -> new project "Annie ASMR pipeline".
