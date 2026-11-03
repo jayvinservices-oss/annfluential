@@ -5,6 +5,8 @@ Providers (config.yaml -> voice.provider):
   voicestudio VoiceStudio backend (github.com/debpalash/VoiceStudio). It cannot run on an Intel Mac,
               so it runs on another machine (e.g. the rented cloud GPU); needs VOICESTUDIO_URL,
               VOICESTUDIO_API_KEY and VOICESTUDIO_PROFILE_ID (your saved cloned-voice profile)
+  voxcpm      VoxCPM2 (free, Apache 2.0, commercial use allowed), cloned from audio/voice-ref/<name>.wav.
+              Runs on CPU in the cloud session or any Linux/Apple Silicon machine; set voice.voxcpm.python
   local       runs any text-to-speech command on the Mac
   manual      writes a script sheet; you record or export each line with the given file name
 """
@@ -84,13 +86,50 @@ def _local(text: str, out: Path, c: dict) -> None:
     subprocess.run(cmd, shell=True, check=True)
 
 
+def _check_model_download(model: str) -> None:
+    """Fail fast with a clear message when the model weights cannot be downloaded."""
+    from pathlib import Path as _P
+    cached = list((_P.home() / ".cache/huggingface/hub" / f"models--{model.replace('/', '--')}" / "snapshots").glob("*/*.safetensors"))
+    if cached:
+        return
+    try:
+        r = requests.head(f"https://huggingface.co/{model}/resolve/main/model.safetensors", allow_redirects=True, timeout=20)
+        ok = r.status_code < 400
+    except requests.RequestException:
+        ok = False
+    if not ok:
+        raise SystemExit("The voice model's files cannot be downloaded from here. In the cloud environment settings "
+                         "(Network access) allow '*.hf.co' (the model files come from us.aws.cdn.hf.co), then start "
+                         "a new session.")
+
+
+def _voxcpm_batch(todo: list[tuple[dict, Path]], c: dict) -> None:
+    import json
+    import os
+    from .config import ROOT, project_path
+    py = os.environ.get("VOXCPM_PYTHON") or c.get("python") or "python3"
+    ref = project_path(c.get("reference", "audio/voice-ref/annie-whisper.wav"))
+    if not ref.exists():
+        raise SystemExit(f"No voice sample at {ref}. Make one: python -m pipeline voice-ref <video> --start --end")
+    lines = []
+    for line, out in todo:
+        control = c.get("whisper_control", "") if line["style"] in ("whisper", "brand") else c.get("soft_control", "")
+        lines.append({"text": line["text"], "control": control, "out": str(out)})
+    job = {"model": c.get("model", "openbmb/VoxCPM2"), "reference": str(ref),
+           "cfg_value": c.get("cfg_value", 2.0), "timesteps": c.get("timesteps", 10), "lines": lines}
+    _check_model_download(job["model"])
+    jf = todo[0][1].parent / "_voxcpm_jobs.json"
+    jf.write_text(json.dumps(job, indent=2))
+    subprocess.run([py, str(ROOT / "tools" / "voxcpm_batch.py"), str(jf)], check=True)
+
+
 def make_voice(ep: dict, provider: str | None = None, redo: list[str] | None = None) -> None:
     vcfg = config()["voice"]
     provider = provider or vcfg["provider"]
     d = VOICE / ep["slug"]
     d.mkdir(parents=True, exist_ok=True)
     (d / "_script.md").write_text(script_sheet(ep))
-    missing = []
+    missing, batch = [], []
     for line in voice_lines(ep):
         existing = find_voice_file(ep["slug"], line["id"])
         if existing and not (redo and line["id"] in redo):
@@ -101,6 +140,9 @@ def make_voice(ep: dict, provider: str | None = None, redo: list[str] | None = N
             continue
         ext = ".mp3" if provider == "elevenlabs" else ".wav"
         out = d / f"{line['id']}{ext}"
+        if provider == "voxcpm":
+            batch.append((line, out))
+            continue
         print(f"  voice  {line['id']}: {line['text'][:60]}", flush=True)
         if provider == "elevenlabs":
             _elevenlabs(line["text"], line["style"], out, vcfg.get("elevenlabs", {}))
@@ -110,6 +152,9 @@ def make_voice(ep: dict, provider: str | None = None, redo: list[str] | None = N
             _local(line["text"], out, vcfg.get("local", {}))
         else:
             raise SystemExit(f"Unknown voice provider '{provider}'")
+    if batch:
+        print(f"  voxcpm: making {len(batch)} line(s) (first run downloads the model, about 5 GB) ...", flush=True)
+        _voxcpm_batch(batch, vcfg.get("voxcpm", {}))
     if missing:
         print(f"\n{len(missing)} line(s) to record or export. Script: {d / '_script.md'}")
     print("Listen to every line before assembling; re-make one with --redo <line-id>.")

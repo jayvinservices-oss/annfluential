@@ -7,26 +7,35 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-  - text: "Save the full-size Canva reference image to Drive folder Annie ASMR > source as avatar-reference.png (the pasted image in chat cannot be used as a file). Middle panel is the main look."
-    done: false
-  - text: "Add the model download address to Network access: '*.hf.co' (or 'us.aws.cdn.hf.co'). huggingface.co works already; the model files themselves come from that second address."
-    done: false
-  - text: "Download from YouTube Studio (Content, three dots, Download) into Drive folder Annie ASMR > source: first 'Chewing Gum, Popping, Crackling Sounds' (-RTD9GAQDvE), then the gum video with friend and the latest gum + nail tapping video."
-    done: false
-  - text: "For each downloaded video, note 2 or 3 stretches where only your voice is heard (no gum over it), e.g. '1:02 to 1:25'. These become the voice sample."
-    done: false
-  - text: "Record real sounds on your phone, close and in a quiet room, 1 to 2 minutes each: fast gum popping, slow gum popping, knuckle cracking, finger cracking. Drive folder Annie ASMR > sfx."
-    done: false
-  - text: "Decide: are knuckle cracking and shushing in? The brief says beauty and crafts only (gum is already an exception)."
-    done: false
-  - text: "Manual mode: make clips for the next video from the prompts below in a free video app, name each file exactly as shown, upload to Drive folder Annie ASMR > clips > <video name>."
-    done: false
+- text: 'Done: reference photo in Drive (middle panel cut out and set as the avatar reference).'
+  done: true
+- text: 'Done: HuggingFace access. The free voice model is downloaded.'
+  done: true
+- text: 'Done: 12 videos uploaded to Drive (Annie ASMR > source > Top 10).'
+  done: true
+- text: 'Let Claude fetch the videos (the Drive connection stops at 10 MB): 1) environment settings > Network access,
+    allow ''drive.google.com'' and ''drive.usercontent.google.com''; 2) in Drive, share the ''Annie ASMr Videos
+    - Top 10'' folder as ''Anyone with the link: Viewer'' (switch it back off after). Then start a new session.'
+  done: false
+- text: For 2 or 3 videos, note stretches where only your voice is heard, no gum over it (for example the singing
+    videos), e.g. '1:02 to 1:25'. These become the voice sample.
+  done: false
+- text: 'Record real sounds on your phone, close and in a quiet room, 1 to 2 minutes each: fast gum popping, slow
+    gum popping, knuckle cracking, finger cracking. Drive folder Annie ASMR > sfx.'
+  done: false
+- text: 'Decide: are knuckle cracking and shushing in? The brief says beauty and crafts only (gum is already an
+    exception).'
+  done: false
+- text: 'Manual mode: make clips for the next video from the prompts below in a free video app using the reference
+    photo, name each file exactly as shown, upload to Annie ASMR > clips > gum-pops-knuckles-01.'
+  done: false
 claude:
-  - text: "Installing the free voice engine (VoxCPM2, Apache 2.0, commercial use allowed) in the cloud session."
-    done: false
-  - text: "Analyse the downloaded videos cut by cut and refine the avatar prompt from the frames."
-    done: false
-  - text: "Cut a clean voice sample, clone the voice, make the 'Annie ASMR' brand whisper and test lines."
-    done: false
-  - text: "Assemble the gum popping video as soon as clips and sounds are in Drive."
-    done: false
+- text: 'Done: free voice engine installed and its model downloaded (VoxCPM2, commercial use allowed).'
+  done: true
+- text: Analyse the top videos cut by cut, refine the avatar prompt from the frames (waiting for the video download
+    access).
+  done: false
+- text: Cut a clean voice sample, clone the voice, make the 'Annie ASMR' brand whisper and test lines.
+  done: false
+- text: Assemble the gum popping video as soon as clips and sounds are in Drive.
+  done: false

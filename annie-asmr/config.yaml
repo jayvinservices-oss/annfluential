@@ -57,7 +57,7 @@ generator:
     extra_input: {}                # any other model inputs, e.g. {aspect_ratio: "16:9"}
 
 voice:
-  provider: manual     # elevenlabs | voicestudio | local | manual
+  provider: voxcpm     # voxcpm (free) | elevenlabs | voicestudio | local | manual
   elevenlabs:
     model_id: eleven_v3
     whisper_tag: "[whispers]"     # v3 audio tag; leave "" for other models
@@ -65,6 +65,15 @@ voice:
     stability: 0.5
     similarity_boost: 0.85
     style: 0.0
+  voxcpm:
+    # Free, Apache 2.0 (commercial use allowed). Clones the voice in the reference sample.
+    python: /home/user/voice-env/bin/python   # the environment VoxCPM is installed in (env VOXCPM_PYTHON overrides)
+    model: openbmb/VoxCPM2
+    reference: audio/voice-ref/annie-whisper.wav
+    whisper_control: "whispering softly and slowly, very close to the microphone"
+    soft_control: "soft, calm, quiet voice"
+    cfg_value: 2.0
+    timesteps: 10        # higher = cleaner and slower
   voicestudio:
     # Backend runs on another machine (not the Intel Mac). URL, key and profile id go in .env.
     num_step: 32          # 32 = cleaner (audiobook default); 16 = faster
