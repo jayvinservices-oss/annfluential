@@ -1,0 +1,34 @@
+# The locked look. Every prompt starts from this text so Annie looks the same in every clip.
+# Reference image: Canva MAHZ22R5eUg (1680x944, three panels). Save it as prompts/reference/avatar.png;
+# the middle panel (open gloss tube under the chin) is the main reference, panels 1 and 3 are pose references.
+# v2 (3 Nov 2026): rewritten from the full-size reference. Change wording only on purpose, then make a test clip.
+
+version: 2
+
+face: >-
+  Extreme close-up of the lower face of a Black woman, framed from the tip of her nose and
+  nostrils at the top edge down to her chin and upper neck. Her eyes and upper face are never
+  in frame. Deep brown skin with a warm, dewy natural sheen on the nose and upper lip and visible
+  skin texture. Very full, plump lips, slightly parted, with a two-tone look: a deeper mauve-brown
+  lip line at the edges blending into a soft pink-nude centre, covered in thick high-shine clear
+  gloss with bright wet highlights. A thin delicate gold chain necklace at the base of her neck.
+
+hands: >-
+  Her hands have very long tapered almond nails in a glossy nude latte-beige polish, neat cuticles,
+  deep brown skin. Fingers relaxed and elegant, moving slowly and gently.
+
+camera: >-
+  Static tripod camera, 16:9, shallow depth of field, macro beauty-shot look, soft warm frontal key
+  light, low-key lighting, plain dark warm-brown background that falls off to near black.
+
+style: >-
+  Photorealistic beauty close-up, calm slow movement, ASMR video aesthetic, high detail, warm colour
+  grade, no text on screen.
+
+# What must never appear. Covers the look and the channel rules (no roleplay, no flirting).
+negative: >-
+  eyes, eyebrows, forehead, full face, text, captions, watermark, logo, extra fingers, missing fingers,
+  fused fingers, deformed hands, short nails, square nails, chipped polish, matte lips, dry lips,
+  blurry lips, distorted mouth, teeth close-up, tongue out, winking, blowing kisses, kissing gestures,
+  suggestive pose, lingerie, cleavage, low-cut top, flickering, harsh shadows, bright background,
+  oversaturated, cartoon, 3d render

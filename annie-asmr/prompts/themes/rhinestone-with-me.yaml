@@ -1,0 +1,26 @@
+id: rhinestone-with-me
+name: Christmas - rhinestone with me
+season: christmas
+uses_hands: true
+setting: >-
+  A craft mat in front of her chin with a rhinestone tray, a wax pick, tweezers and a
+  small item being decorated, warm festive lights blurred behind. No snow.
+variation_template: >-
+  Item today: {item}. Stones: {stones}. Nails painted {nail_colour}.
+variation_pools:
+  item: [a phone case, a hair clip set, a glass ornament, a jewellery box lid, a candle jar]
+  stones: [clear AB crystals, gold and clear, red and gold, emerald and silver]
+  nail_colour: [crystal clear with glitter, red chrome, gold, milky white]
+sounds: [rhinestone tray shaking, crystals pouring, tweezer clicks, wax pick taps, glue squeeze]
+shots:
+  shake-tray:
+    action: She gently shakes a tray of sparkling rhinestones so they flip and catch the light.
+  pick-stone:
+    action: Long almond nails use a wax pick to lift one rhinestone and place it on the item.
+  pour-stones:
+    action: She pours rhinestones from a small bag into the tray, close to the camera.
+  show-item:
+    action: She holds the sparkling finished item close to her glossy lips, turning it in the light.
+chapter_ideas: [Crystals pouring & tray shaking, Wax pick taps, Tweezer clicks, Last crystals, Sparkle show and tell]
+title_patterns:
+  - "ASMR Rhinestone With Me | Decorating {item_short} | Crystal Sounds & Whispers"

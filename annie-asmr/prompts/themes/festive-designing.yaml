@@ -1,0 +1,28 @@
+id: festive-designing
+name: Christmas - festive designing (cards, tags, sketching)
+season: christmas
+uses_hands: true
+setting: >-
+  A desk in front of her chin with cardstock, gold pens, stickers, washi tape and a small
+  sketchbook, warm festive lights blurred behind. No snow.
+variation_template: >-
+  Making today: {project}. Colours: {colours}. Nails painted {nail_colour}.
+variation_pools:
+  project: [Christmas cards, gift tags, a holiday planner page, a sticker sheet layout]
+  colours: [red, gold and cream, green and gold, pink and silver]
+  nail_colour: [glossy red, gold tips, sage green, nude chrome]
+sounds: [pen scribbling, paper cutting, sticker peeling, washi tape tearing, card stock tapping]
+shots:
+  sketch:
+    action: Her hand with long almond nails sketches with a gold pen on cardstock, slow strokes.
+  cut-paper:
+    action: She cuts cardstock slowly with small scissors, close to the camera.
+  stickers:
+    action: Long almond nails peel a sticker slowly and press it onto the card.
+  washi:
+    action: She tears washi tape and smooths it down with her fingertip.
+  show-card:
+    action: She holds up the finished card next to her glossy lips, smiling softly.
+chapter_ideas: [Gold pen sketching, Pen scribbling, Scissors cutting, Sticker peeling & washi tape, Card tapping]
+title_patterns:
+  - "ASMR Festive Designing | Making {project_short} | Pen Sounds & Whispers"

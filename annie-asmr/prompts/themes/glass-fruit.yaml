@@ -1,0 +1,20 @@
+id: glass-fruit
+name: Glass fruit (later)
+season: later   # not yet: keep for after the Christmas run
+uses_hands: true
+setting: >-
+  A small cutting board in front of her chin with shiny glass-like candy fruit.
+variation_template: >-
+  Fruit today: {fruit}. Background tones: {palette}.
+variation_pools:
+  fruit: [strawberries and grapes, kiwi and mango, cherries and blueberries]
+  palette: [bright white, soft pink, warm wood]
+sounds: [glass tapping, crunchy bites, candy crackle]
+shots:
+  tap-fruit:
+    action: Long almond nails tap the shiny glass fruit on the board.
+  bite:
+    action: She takes a small slow bite of glass candy fruit with glossy lips, crisp crack.
+chapter_ideas: [Glass fruit tapping, First crunchy bites, Candy crackle]
+title_patterns:
+  - "ASMR Glass Fruit {fruit_short} | Crunchy Tapping"

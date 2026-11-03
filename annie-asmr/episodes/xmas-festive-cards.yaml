@@ -1,0 +1,48 @@
+# Christmas 4 of 4. Make by 24 Nov, publish from 1 Dec.
+slug: xmas-festive-cards
+theme: festive-designing
+title: "ASMR Festive Designing | Making Christmas Cards in Green & Gold | Pen Sounds, Stickers & Whispers"
+description: >-
+  Designing Christmas cards up close: sketching with a gold pen, cutting green cardstock,
+  peeling stickers and tearing washi tape, with long nails doing all the work.
+made_by: 2026-11-24
+publish_after: 2026-12-11
+variation:
+  project: Christmas cards
+  colours: green and gold
+  nail_colour: gold tips
+objects: [green cardstock, gold pen, small scissors, stickers, washi tape, finished cards]
+sounds: [pen scribbling, paper cutting, sticker peeling, washi tape tearing, card stock tapping]
+tags: [stationery asmr, card making asmr, writing sounds asmr, christmas cards asmr]
+segments:
+  - id: plan
+    chapter: Gold pen sketching
+    minutes: 4
+    shots: [sketch, show-card]
+    sound_bed: [audio/sfx/pen-scribble-01.wav, {file: audio/sfx/cardstock-tap-01.wav, gain_db: -6}]
+    voice:
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
+  - id: sketch
+    chapter: Pen scribbling on cardstock
+    minutes: 10
+    shots: [sketch]
+    sound_bed: audio/sfx/pen-scribble-01.wav
+  - id: cut
+    chapter: Scissors cutting paper
+    minutes: 7
+    shots: [cut-paper, sketch]
+    sound_bed: audio/sfx/scissors-01.wav
+  - id: decorate
+    chapter: Sticker peeling & washi tape tearing
+    minutes: 8
+    shots: [stickers, washi]
+    sound_bed: [audio/sfx/sticker-peel-01.wav, {file: audio/sfx/washi-tear-01.wav, gain_db: -2}]
+    voice:
+      - {at: 30, text: "Just a little gold sticker here."}
+  - id: done
+    chapter: Card tapping & goodnight whispers
+    minutes: 3
+    shots: [show-card, stickers]
+    sound_bed: audio/sfx/cardstock-tap-01.wav
+    voice:
+      - {at: 6, text: "Here they are. Thank you for designing with me. Goodnight."}
