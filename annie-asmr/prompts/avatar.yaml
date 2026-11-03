@@ -1,5 +1,6 @@
 # The locked look. Every prompt starts from this text so Annie looks the same in every clip.
 # Reference image: Canva MAHZ22R5eUg (1680x944, three panels). Save it as prompts/reference/avatar.png;
+# Character reference (full face, for identity only; clips stay nose-down): Canva media MAHZ4Gig_UM, right side.
 # the middle panel (open gloss tube under the chin) is the main reference, panels 1 and 3 are pose references.
 # v2 (3 Nov 2026): rewritten from the full-size reference. v3: natural hair (Ann: the avatar is me; locs or
 # super-coily hair, never straight; chocolate complexion). Change wording only on purpose, then make a test clip.
