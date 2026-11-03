@@ -133,7 +133,7 @@ def _rebrand_section() -> str:
                 f'name on the left"><figcaption>Banner v2: lips on the right, clear of the profile picture</figcaption></figure>'
                 f'<p class="note">Cartoon duo option (you in grey with locs, your friend in red and pink): '
                 f'<a href="https://www.canva.com/M/MAHZ4Ndf7ec">open in Canva</a>. Realistic duo (the avatars\' faces): '
-                f'<a href="https://www.canva.com/M/MAHZ4Gig_UM">open in Canva</a></p>'
+                f'<a href="https://www.canva.com/M/MAHZ4Lq0kqs">open in Canva</a></p>'
                 f'<div class="pics2"><figure><img src="{_img_data(assets / "profile-800.png", 300)}" alt="Draft profile picture: '
                 f'glossy lips and gloss tube in a gold ring"><figcaption>Profile picture</figcaption></figure>'
                 f'<figure><img src="{_img_data(assets / "thumbnail-template-gloss.jpg", 640)}" alt="Draft thumbnail: 300 Layers, '
