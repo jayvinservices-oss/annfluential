@@ -1,0 +1,30 @@
+# The locked look. Every prompt starts from this text so Annie looks the same in every clip.
+# Reference image: Canva MAHZ22R5eUg (concept 2), exported to prompts/reference/avatar.png.
+# Change wording here only on purpose, then regenerate a test clip before a full episode.
+
+version: 1
+
+face: >-
+  Extreme close-up of the lower half of a woman's face only, framed from just under the
+  tip of the nose down to the chin. Her eyes and upper face are never in frame. She is a
+  Black woman with deep brown skin and natural skin texture, full lips with a glossy
+  nude-pink lip gloss that catches the light.
+
+hands: >-
+  Her hands have long almond-shaped nails, neat cuticles, deep brown skin. Hands move
+  slowly and gently, fingers relaxed.
+
+camera: >-
+  Static tripod camera, 16:9, shallow depth of field, macro lens look, soft warm key light
+  from the left, gentle fill, dark softly blurred background.
+
+style: >-
+  Photorealistic, calm slow movement, ASMR video aesthetic, high detail, clean and cosy,
+  no text on screen.
+
+# What must never appear. Covers the look and the channel rules (no roleplay, no flirting).
+negative: >-
+  eyes, full face, forehead, nose bridge, text, captions, watermark, logo, extra fingers,
+  missing fingers, fused fingers, deformed hands, claw nails, blurry lips, distorted mouth,
+  teeth close-up, tongue out, winking, blowing kisses, kissing gestures, suggestive pose,
+  lingerie, cleavage, low-cut top, flickering, harsh shadows, oversaturated, cartoon, 3d render

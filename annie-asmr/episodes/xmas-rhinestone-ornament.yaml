@@ -1,0 +1,48 @@
+# Christmas 3 of 4. Make by 24 Nov, publish from 1 Dec.
+slug: xmas-rhinestone-ornament
+theme: rhinestone-with-me
+title: "ASMR Rhinestone With Me | Decorating a Glass Ornament in Red & Gold Crystals | Whispers"
+description: >-
+  Rhinestone with me: shaking the crystal tray, picking up red and gold rhinestones one by
+  one with a wax pick and long nails, until a clear glass ornament sparkles.
+made_by: 2026-11-24
+publish_after: 2026-12-08
+variation:
+  item: a glass ornament
+  stones: red and gold
+  nail_colour: red chrome
+objects: [clear glass ornament, red rhinestones, gold rhinestones, rhinestone tray, wax pick, tweezers]
+sounds: [rhinestone tray shaking, crystals pouring, tweezer clicks, wax pick taps]
+tags: [rhinestone asmr, bedazzling asmr, crafts asmr, christmas craft asmr]
+segments:
+  - id: choose
+    chapter: Choosing stones
+    minutes: 5
+    shots: [pour-stones, shake-tray]
+    sound_bed: audio/sfx/rhinestone-pour-01.wav
+    voice:
+      - {at: 5, text: "Hi. Tonight we're covering a glass ornament in red and gold."}
+  - id: first-row
+    chapter: First row
+    minutes: 8
+    shots: [pick-stone, shake-tray]
+    sound_bed: audio/sfx/rhinestone-tray-01.wav
+  - id: filling
+    chapter: Filling in
+    minutes: 12
+    shots: [pick-stone, pour-stones]
+    sound_bed: [audio/sfx/rhinestone-tray-01.wav, {file: audio/sfx/tweezer-click-01.wav, gain_db: -3}]
+    voice:
+      - {at: 60, text: "Halfway. Look how it catches the light."}
+  - id: last
+    chapter: Last stones
+    minutes: 6
+    shots: [pick-stone, shake-tray]
+    sound_bed: audio/sfx/tweezer-click-01.wav
+  - id: finished
+    chapter: The finished piece
+    minutes: 3
+    shots: [show-item]
+    sound_bed: audio/sfx/rhinestone-tray-01.wav
+    voice:
+      - {at: 6, text: "All done. Thank you for making this with me."}

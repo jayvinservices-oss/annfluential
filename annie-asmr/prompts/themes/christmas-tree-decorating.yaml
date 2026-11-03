@@ -1,0 +1,29 @@
+id: christmas-tree-decorating
+name: Christmas - tree decorating
+season: christmas
+uses_hands: true
+setting: >-
+  Beside a Christmas tree branch close to the camera, a box of ornaments on the table in
+  front of her chin, warm white tree lights blurred behind. No snow.
+variation_template: >-
+  Ornaments today: {ornaments}. Nails painted {nail_colour}.
+variation_pools:
+  ornaments:
+    - glass baubles in gold and champagne
+    - red velvet and wooden ornaments
+    - mercury glass and pearl garland
+    - pink and silver glass baubles
+  nail_colour: [deep red, champagne gold, forest green, pearl white]
+sounds: [glass bauble taps, ornament hooks, tinsel rustle, pine needle brushing, box rummaging]
+shots:
+  tap-baubles:
+    action: Long almond nails tap glass baubles slowly in the ornament box.
+  hang-ornament:
+    action: She hooks an ornament onto a pine branch close to her face, slowly and carefully.
+  tinsel:
+    action: She drapes a garland across the branch, nails brushing the pine needles.
+  admire:
+    action: Her glossy lips smile softly below the decorated branch glowing with warm lights.
+chapter_ideas: [The ornament box, Glass baubles, Garland, Finishing touches]
+title_patterns:
+  - "ASMR Decorating the Christmas Tree | {ornaments_short} Taps & Whispers"

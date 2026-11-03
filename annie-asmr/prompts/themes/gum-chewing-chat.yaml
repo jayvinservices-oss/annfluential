@@ -1,0 +1,28 @@
+id: gum-chewing-chat
+name: Gum chewing with chat
+season: regular
+uses_hands: false
+talking: true   # lips need to match the voice: see README "Talking segments" (lip-sync step)
+setting: >-
+  Seated close to the camera, a soft knit sweater just visible at the bottom of frame,
+  a cosy bedroom with fairy lights blurred in the background.
+variation_template: >-
+  Gum: {gum}. Lip gloss: {gloss}. Background tones: {palette}.
+variation_pools:
+  gum: [pink bubble gum, mint gum, watermelon gum, cinnamon gum]
+  gloss: [nude-pink gloss, clear high-shine gloss, soft peach gloss]
+  palette: [warm amber fairy lights, cool blue evening light, soft pink lamp light]
+sounds: [gum chewing, small bubble pops, soft talking, close whispers]
+shots:
+  chew-closed:
+    action: She chews gum slowly with closed glossy lips, jaw moving gently.
+  chew-talk:
+    action: She chews gum and talks softly to the camera, lips moving naturally as she speaks.
+  bubble:
+    action: She blows a small pink bubble that pops softly against her glossy lips.
+  unwrap-gum:
+    action: Long almond nails unwrap a stick of gum close to her chin, foil crinkling.
+    uses_hands: true
+chapter_ideas: [Unwrapping the gum, Catching up, Story time, Bubbles, Winding down]
+title_patterns:
+  - "ASMR Gum Chewing & Chit Chat | {topic} | Soft Spoken"
