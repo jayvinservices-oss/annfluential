@@ -12,6 +12,7 @@
   upload <slug> [--short]   upload as a PRIVATE draft (you publish in Studio)
   comments-pull             export unanswered comments for reply drafts
   comments-post <file>      post replies you approved
+  whoami                    check which channel the YouTube sign-in reaches
   analyze <video> ...       study your best videos cut by cut (frames, measurements, opening)
   voice-ref <video> --start --end --name   cut a clean voice sample for cloning
   report                    weekly hours / views / retention report
@@ -143,6 +144,14 @@ def cmd_voice_ref(a):
     voice_ref(a.video, a.start, a.end, a.name)
 
 
+def cmd_whoami(a):
+    from .youtube import data_api, my_channel
+    ch = my_channel(data_api())
+    st = ch.get("statistics", {})
+    print(f"Signed in to: {ch['snippet']['title']} ({ch['snippet'].get('customUrl', ch['id'])})")
+    print(f"  subscribers {st.get('subscriberCount', '?')} · videos {st.get('videoCount', '?')} · views {st.get('viewCount', '?')}")
+
+
 def cmd_board(a):
     from .board import write_board
     write_board()
@@ -220,6 +229,7 @@ def main(argv=None):
     s.set_defaults(fn=cmd_comments_post)
     s = sub.add_parser("report"); s.set_defaults(fn=cmd_report)
     s = sub.add_parser("board"); s.set_defaults(fn=cmd_board)
+    s = sub.add_parser("whoami", help="check the YouTube sign-in"); s.set_defaults(fn=cmd_whoami)
     s = sub.add_parser("analyze"); s.add_argument("videos", nargs="+")
     s.add_argument("--scene", type=float, default=0.3, help="cut sensitivity 0-1 (lower finds softer cuts)")
     s.set_defaults(fn=cmd_analyze)

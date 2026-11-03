@@ -1,4 +1,9 @@
-"""YouTube Data + Analytics API sign-in. One browser sign-in, token kept in .secrets/."""
+"""YouTube Data + Analytics API sign-in.
+
+On the Mac: one browser sign-in, token kept in .secrets/.
+In a cloud session: set YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET and YOUTUBE_REFRESH_TOKEN as environment
+variables in the cloud environment's settings (never in chat or git). See README 'Cloud access'.
+"""
 from __future__ import annotations
 
 import os
@@ -20,6 +25,17 @@ def credentials():
         from google_auth_oauthlib.flow import InstalledAppFlow
     except ImportError:
         raise SystemExit("Install the YouTube libraries first: pip install -r requirements.txt")
+    env_refresh = os.environ.get("YOUTUBE_REFRESH_TOKEN", "").strip()
+    if env_refresh:
+        missing = [k for k in ("YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET") if not os.environ.get(k, "").strip()]
+        if missing:
+            raise SystemExit(f"YOUTUBE_REFRESH_TOKEN is set but {', '.join(missing)} is not. Add it in the "
+                             "cloud environment settings.")
+        creds = Credentials(None, refresh_token=env_refresh, token_uri="https://oauth2.googleapis.com/token",
+                            client_id=os.environ["YOUTUBE_CLIENT_ID"].strip(),
+                            client_secret=os.environ["YOUTUBE_CLIENT_SECRET"].strip())
+        creds.refresh(Request())
+        return creds
     secrets = project_path(os.environ.get("YOUTUBE_CLIENT_SECRETS", ".secrets/client_secret.json"))
     token = project_path(os.environ.get("YOUTUBE_TOKEN", ".secrets/youtube-token.json"))
     creds = None

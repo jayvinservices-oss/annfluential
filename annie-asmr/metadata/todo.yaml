@@ -4,19 +4,21 @@ drive:
   source: https://drive.google.com/drive/folders/1WItkj66srK-zCrvZg_YAWmNXHpMeVVGr
   sfx: https://drive.google.com/drive/folders/1ycbZmRHAeK2SZn8iHjYSZam5nA2EZAGT
   clips: https://drive.google.com/drive/folders/1wyEsGcwU05p-6BAzZ5B9XjktSKDDKsrX
+  brand: https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
+- text: 'Answer the rebrand list in ''Channel rebrand'' above: Yes / Not now on each item (start with the style
+    guide and channel access).'
+  done: false
 - text: 'Done: reference photo in Drive (middle panel cut out and set as the avatar reference).'
   done: true
 - text: 'Done: HuggingFace access. The free voice model is downloaded.'
   done: true
 - text: 'Done: 12 videos uploaded to Drive (Annie ASMR > source > Top 10).'
   done: true
-- text: 'Let Claude fetch the videos (the Drive connection stops at 10 MB): 1) environment settings > Network access,
-    allow ''drive.google.com'' and ''drive.usercontent.google.com''; 2) in Drive, share the ''Annie ASMr Videos
-    - Top 10'' folder as ''Anyone with the link: Viewer'' (switch it back off after). Then start a new session.'
-  done: false
+- text: 'Done: videos shared; all 12 downloaded.'
+  done: true
 - text: For 2 or 3 videos, note stretches where only your voice is heard, no gum over it (for example the singing
     videos), e.g. '1:02 to 1:25'. These become the voice sample.
   done: false
@@ -30,12 +32,18 @@ ann:
     photo, name each file exactly as shown, upload to Annie ASMR > clips > gum-pops-knuckles-01.'
   done: false
 claude:
-- text: 'Done: free voice engine installed and its model downloaded (VoxCPM2, commercial use allowed).'
+- text: 'Done: style guide, rebrand plan, channel copy and SEO, monetisation plan (Drive › Annie ASMR › brand).'
   done: true
-- text: Analyse the top videos cut by cut, refine the avatar prompt from the frames (waiting for the video download
-    access).
+- text: 'Done: banner, profile picture and thumbnail drafts; new-style thumbnails and PG-13 titles drafted for every
+    old video.'
+  done: true
+- text: 'Done: voice engine reinstalled in this session.'
+  done: true
+- text: Analysing the top videos cut by cut (the gum video first); then final titles and avatar prompt refinements.
   done: false
 - text: Cut a clean voice sample, clone the voice, make the 'Annie ASMR' brand whisper and test lines.
+  done: false
+- text: Make new videos 45 to 90 minutes long in the plans.
   done: false
 - text: Assemble the gum popping video as soon as clips and sounds are in Drive.
   done: false

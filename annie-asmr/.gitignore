@@ -32,3 +32,4 @@ analysis/*/frames.txt
 analysis/*/motion.txt
 analysis/*/loudness.txt
 audio/voice-ref/**
+brand/assets/retitle/

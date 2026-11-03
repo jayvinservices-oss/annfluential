@@ -56,3 +56,14 @@ Leave `approved: false`. Ann approves.
    (left panel crop=552:944:0:0 -> pose-applying-gloss.png, right crop=556:944:1124:0 -> pose-nails-chin.png).
 3. Videos over 10 MB cannot come through the Drive connector: download them with curl from
    drive.usercontent.google.com once Ann has allowed that host and shared the folder by link.
+
+## Rebrand (started 3 Nov 2026)
+- brand/style-guide.md, rebrand-plan.md, channel-copy.md, monetisation-plan.md, retitles.yaml (draft PG-13 titles),
+  rebrand-actions.yaml (the approval list on the board). Copies as Google Docs in Drive "Annie ASMR/brand".
+- Artwork: `python tools/brand_assets.py` (needs Gloock.ttf/Figtree.ttf in $BRAND_FONTS, from Google Fonts) and
+  `python tools/retitle_thumbs.py` (needs the downloaded videos in /home/user/annie-src).
+- Ann's answers: ArtifactData list, collection "approvals" on the board URL; doc id = action id,
+  {decision: yes|later, note, at}. Act on "yes" only; nothing is changed on YouTube without it.
+- The board publishes with capabilities {db: {}, downloads: true}; keep both on republish (omit `capabilities`).
+- Cloud YouTube access: env vars YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN (set by Ann in
+  the environment settings); check with `python -m pipeline whoami`.

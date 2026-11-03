@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import yaml
 
 from .assemble import find_voice_file, render_path
-from .config import EPISODES, METADATA, RENDERS, config
+from .config import EPISODES, METADATA, RENDERS, ROOT, config
 from .episode import load_episode, used_shot_ids, voice_lines
 from .generate import clips_for_shot
 from .metadata import upload_record
@@ -101,6 +101,78 @@ def _episode_card(ep: dict, takes: int) -> str:
         {''.join(shot_rows)}
       </details>
     </article>"""
+
+
+def _img_data(path, width: int, quality: int = 78) -> str:
+    """Small JPEG data URI for a brand draft, so the private page carries its own pictures."""
+    import base64
+    import io
+    from PIL import Image
+    im = Image.open(path).convert("RGB")
+    im = im.resize((width, round(im.height * width / im.width)))
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=quality, optimize=True)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+WHO = {"claude": ("Claude does it", "ok"), "ann": ("You", "todo"), "access": ("Access for Claude", "todo")}
+
+
+def _rebrand_section() -> str:
+    acts_p = ROOT / "brand" / "rebrand-actions.yaml"
+    if not acts_p.exists():
+        return ""
+    acts = yaml.safe_load(acts_p.read_text()) or []
+    assets = ROOT / "brand" / "assets"
+    pics = ""
+    try:
+        pics = (f'<figure><img src="{_img_data(assets / "banner-preview-safe-area.jpg", 900)}" alt="Draft channel banner: '
+                f'Annie ASMR over glossy lips and long nails on a cocoa background, safe areas outlined"><figcaption>Banner '
+                f'(yellow box: the part every phone and TV shows)</figcaption></figure>'
+                f'<div class="pics2"><figure><img src="{_img_data(assets / "profile-800.png", 300)}" alt="Draft profile picture: '
+                f'glossy lips and gloss tube in a gold ring"><figcaption>Profile picture</figcaption></figure>'
+                f'<figure><img src="{_img_data(assets / "thumbnail-template-gloss.jpg", 640)}" alt="Draft thumbnail: 300 Layers, '
+                f'Gloss Lab"><figcaption>Thumbnail style</figcaption></figure></div>')
+    except FileNotFoundError:
+        pics = '<p class="note muted">Artwork drafts not built yet (python tools/brand_assets.py).</p>'
+    retitle = ""
+    rt_p = ROOT / "brand" / "retitles.yaml"
+    if rt_p.exists():
+        cards = []
+        for v in yaml.safe_load(rt_p.read_text()) or []:
+            img = assets / "retitle" / f"{v.get('file')}.jpg"
+            pic = (f'<img src="{_img_data(img, 360, 72)}" alt="Draft thumbnail: {e(" ".join(v["words"]))}">'
+                   if v.get("file") and img.exists() else '<div class="nopic">thumbnail to come</div>')
+            cards.append(f'<li>{pic}<b>{e(v["new"])}</b><span class="muted">was: {e(v["old"])}</span></li>')
+        retitle = (f'<details class="rt"><summary>New PG-13 titles and thumbnails for the old videos ({len(cards)})</summary>'
+                   f'<p class="note muted">Drafts; final wording after the cut-by-cut analysis.</p><ul class="rtl">{"".join(cards)}</ul></details>')
+    links = ('<div class="dl" hidden><button type="button" class="copy" data-file="brand/banner-2560x1440.jpg">Save full-size banner</button>'
+             '<button type="button" class="copy" data-file="brand/profile-800.png">Save profile picture</button></div>'
+             '<p class="note">All documents: <a href="https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW">Drive › Annie ASMR › brand</a> '
+             '(style guide, rebrand plan and new titles, channel copy and SEO, monetisation plan)</p>')
+    rows = []
+    for a in acts:
+        who, kind = WHO.get(a["who"], (a["who"], "todo"))
+        chips = f'<span class="chip {kind}">{e(who)}</span>'
+        if a.get("needs_access"):
+            chips += '<span class="chip todo">after access</span>'
+        rows.append(f"""<li class="act" data-id="{e(a['id'])}">
+  <div class="act-head"><strong>{e(a['title'])}</strong><div class="chips">{chips}<span class="chip state" data-state>waiting</span></div></div>
+  <details><summary>What this means</summary><p class="note">{e(a['detail'])}</p></details>
+  <div class="act-btns" hidden><button type="button" class="yes" data-v="yes">Yes</button><button type="button" class="no" data-v="later">Not now</button>
+  <input type="text" class="act-note" maxlength="300" placeholder="Note for Claude (optional)" aria-label="Note for Claude about {e(a['title'])}"></div>
+</li>""")
+    return f"""
+  <section id="rebrand">
+    <h2>Channel rebrand</h2>
+    <p class="note">Glossy, slow, up-close ASMR for sleep: gum, gloss, nails, crafts. The full style guide, plan,
+    new titles, channel copy and monetisation plan are in Drive (link below). Tap Yes on what Claude may do; Claude reads your answers.</p>
+    {pics}
+    {links}
+    {retitle}
+    <p class="note muted" id="rb-status">Loading your answers…</p>
+    <ul class="acts">{''.join(rows)}</ul>
+  </section>"""
 
 
 def build_board() -> str:
@@ -210,6 +282,32 @@ td, th {{ padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: le
 th {{ font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }}
 td.n, th.n {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }}
 .scroll {{ overflow-x: auto }}
+figure {{ margin: 0; display: grid; gap: 4px }}
+figure img {{ width: 100%; height: auto; border-radius: 10px; display: block }}
+figcaption {{ font-size: .8rem; color: var(--muted) }}
+.pics2 {{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 12px; margin-top: 12px; align-items: start }}
+#rebrand > figure {{ margin-top: 4px }}
+.dl {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 }}
+.rt {{ margin-top: 12px }}
+.rtl {{ list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px }}
+.rtl li {{ display: grid; gap: 4px; font-size: .82rem; min-width: 0 }}
+.rtl img {{ width: 100%; height: auto; border-radius: 8px; display: block }}
+.rtl .muted {{ font-size: .75rem; overflow-wrap: anywhere }}
+.nopic {{ aspect-ratio: 16 / 9; border: 1px dashed var(--line); border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: .75rem }}
+.acts {{ list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px }}
+.act {{ background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 8px }}
+.act-head {{ display: grid; gap: 6px }}
+.act details {{ border-top: 0; padding-top: 0 }}
+.act summary {{ font-weight: 500; color: var(--muted); font-size: .88rem }}
+.act-btns {{ display: flex; flex-wrap: wrap; gap: 8px; align-items: center }}
+.act-btns button {{ font: 600 .9rem var(--body); border-radius: 8px; padding: 8px 16px; min-height: 40px; cursor: pointer; border: 1px solid var(--accent) }}
+.act-btns .yes {{ background: var(--accent); color: var(--surface) }}
+.act-btns .no {{ background: transparent; color: var(--accent) }}
+.act-btns button[aria-pressed="true"] {{ outline: 2px solid var(--ink); outline-offset: 2px }}
+.act-note {{ flex: 1 1 180px; min-width: 0; font: .88rem var(--body); padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink) }}
+.chip.state.yes {{ background: var(--ok-soft); color: var(--ok) }}
+.chip.state.later {{ background: var(--todo-soft); color: var(--todo) }}
+.chip.state {{ background: var(--accent-soft); color: var(--accent) }}
 @media (min-width: 640px) {{ .figs {{ grid-template-columns: repeat(4, minmax(0, 1fr)) }} }}
 </style>
 
@@ -239,6 +337,8 @@ td.n, th.n {{ text-align: right; font-variant-numeric: tabular-nums; white-space
   </section>
 
   <nav aria-label="Videos">{nav}</nav>
+
+{_rebrand_section()}
 
   <section>
     <h2>Waiting on you</h2>
@@ -276,6 +376,71 @@ document.addEventListener("click", (ev) => {{
     navigator.clipboard.writeText(el.textContent).then(() => done("Copied"), () => {{ select(); done("Selected: copy it"); }});
   }} catch (err) {{ select(); done("Selected: copy it"); }}
 }});
+</script>
+<script>
+(async () => {{
+  const box = document.querySelector(".dl");
+  if (!box) return;
+  let dl = null;
+  try {{ dl = await claude.use("downloads"); }} catch (err) {{ dl = null; }}
+  if (!dl) return;
+  box.hidden = false;
+  box.addEventListener("click", async ev => {{
+    const b = ev.target.closest("button[data-file]");
+    if (!b) return;
+    const label = b.textContent;
+    try {{
+      const blob = await (await fetch(b.dataset.file)).blob();
+      await dl.save({{filename: b.dataset.file.split("/").pop(), data: blob}});
+      b.textContent = "Saved";
+    }} catch (err) {{ b.textContent = err && err.code === "declined" ? label : "Could not save"; }}
+    setTimeout(() => b.textContent = label, 2000);
+  }});
+}})();
+</script>
+<script>
+(async () => {{
+  const status = document.getElementById("rb-status");
+  if (!status) return;
+  const label = {{yes: "yes, go ahead", later: "not now"}};
+  const show = (li, d) => {{
+    const st = li.querySelector("[data-state]");
+    const v = d && d.decision;
+    st.textContent = v ? label[v] || v : "waiting";
+    st.className = "chip state" + (v ? " " + v : "");
+    li.querySelectorAll(".act-btns button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+    const n = li.querySelector(".act-note");
+    if (d && typeof d.note === "string" && document.activeElement !== n) n.value = d.note;
+  }};
+  let db = null;
+  try {{ db = await claude.use("db"); }} catch (err) {{ db = null; }}
+  if (!db) {{ status.textContent = "Open this page signed in to claude.ai to answer here."; return; }}
+  const items = [...document.querySelectorAll("li.act")];
+  const timer = setTimeout(() => {{ status.textContent = "Your answers are slow to load. You can still tap; it saves when the connection is back."; }}, 10000);
+  items.forEach(li => li.querySelector(".act-btns").hidden = false);
+  db.collection("approvals").onSnapshot(snap => {{
+    clearTimeout(timer);
+    const byId = {{}};
+    snap.docs.forEach(d => byId[d.id] = d.data());
+    items.forEach(li => show(li, byId[li.dataset.id]));
+    const yes = snap.docs.filter(d => (d.data() || {{}}).decision === "yes").length;
+    status.textContent = `${{yes}} of ${{items.length}} approved. Tap Yes or Not now; add a note if you want something changed.`;
+  }}, err => {{ clearTimeout(timer); status.textContent = "Could not load answers (" + err.code + ")."; }});
+  const save = async (li, patch) => {{
+    const ref = db.collection("approvals").doc(li.dataset.id);
+    const note = li.querySelector(".act-note").value.trim();
+    try {{
+      await ref.set({{decision: patch.decision ?? (li.querySelector('[aria-pressed="true"]')?.dataset.v || null), note, at: new Date().toISOString()}});
+    }} catch (err) {{ status.textContent = "Not saved (" + (err.code || "error") + "). Try again in a moment."; }}
+  }};
+  document.addEventListener("click", ev => {{
+    const b = ev.target.closest(".act-btns button");
+    if (b) save(b.closest("li.act"), {{decision: b.dataset.v}});
+  }});
+  document.addEventListener("change", ev => {{
+    if (ev.target.classList.contains("act-note")) save(ev.target.closest("li.act"), {{}});
+  }});
+}})();
 </script>
 """
 
