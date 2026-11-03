@@ -4,6 +4,7 @@ drive:
   source: https://drive.google.com/drive/folders/1WItkj66srK-zCrvZg_YAWmNXHpMeVVGr
   sfx: https://drive.google.com/drive/folders/1ycbZmRHAeK2SZn8iHjYSZam5nA2EZAGT
   clips: https://drive.google.com/drive/folders/1wyEsGcwU05p-6BAzZ5B9XjktSKDDKsrX
+  avatars: https://drive.google.com/drive/folders/1uUA218LYI9TjHZ9QNQQJA5Tv8cF3s5eY
   brand: https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.

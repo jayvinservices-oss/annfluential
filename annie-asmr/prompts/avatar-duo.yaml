@@ -22,3 +22,5 @@ reference_image: prompts/reference/avatar-duo.png   # to make: one still from th
 stills:
   gloss: MAHZ43MLJNc     # berry gloss with wand
   duo: MAHZ401mkO4       # split screen with Annie
+  upper_lilac_cardigan: MAHZ5drJi2I
+  upper_sage_hoodie: MAHZ5RoJYIo
