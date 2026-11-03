@@ -14,8 +14,9 @@ ann:
 - text: 'In the office: a 1-minute whispered voice memo, quiet room, no gum, to Drive › Annie ASMR › source. Your
     talking lines stay yours.'
   done: false
-- text: Tell Claude which side of the duo videos is your friend, and check she is happy with an AI character based
-    on her look.
+- text: Check your friend is happy with an AI character based on her look (caramel skin, braids).
+  done: false
+- text: 'Pick a banner: v1 (lips left) or v2 (lips right, clear of the profile picture), or the cartoon duo.'
   done: false
 - text: 'Later: make clips from the prompts below in a free video app and upload them to Annie ASMR › clips › <video>.'
   done: false
@@ -24,6 +25,16 @@ ann:
 - text: 'Done: videos shared; all 12 downloaded.'
   done: true
 claude:
+- text: 'Done: banner v2 with the lips on the right; cartoon duo option from Canva.'
+  done: true
+- text: 'Done: avatar updated: you = chocolate skin, locs or super-coily hair; Bestie = caramel skin, braids. Never
+    straight hair.'
+  done: true
+- text: 'Done: search research (YouTube suggestions): new titles use the searched words, ''AI ASMR'' at the end.'
+  done: true
+- text: 'Done: chew-sync tool: chewing sounds placed on each mouth movement (most exact with video tools that make
+    their own sound).'
+  done: true
 - text: 'Done: banner redrawn with the lips inside the phone-safe area.'
   done: true
 - text: 'Done: old videos'' titles, descriptions and thumbnails, round 2 (catchier, not flirty, no AI wording).'
@@ -41,7 +52,10 @@ claude:
 - text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
     numbers.'
   done: false
-- text: Plan the first 2-hour scheduled live stream.
-  done: false
 - text: Clone your voice from the whispered memo; make the brand whisper and test lines.
+  done: false
+- text: 'Avatar stills: Canva''s generator ignored the lower-face brief (showed eyes, then cartoons). Next: make
+    stills from the prompt in a tool that follows it.'
+  done: false
+- text: Plan the first 2-hour scheduled live stream.
   done: false

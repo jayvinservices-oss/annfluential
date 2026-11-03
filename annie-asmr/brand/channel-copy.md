@@ -55,3 +55,17 @@ the title, the first description line and the thumbnail.
 - One card at the halfway point to the series playlist.
 - Add to its series playlist and to "Long ASMR for Sleep" when 30 minutes or longer.
 - A Short trailer (45 seconds of the best trigger) with the long video set as its related video.
+
+## What people search (YouTube autocomplete, 3 Nov 2026; full lists in reports/search-trends-2026-11-03.md)
+Google Trends refused automated requests, so these come from YouTube's own search suggestions (what people type),
+not volumes.
+- "asmr sleep" is the top suggestion for "asmr"; "asmr mouth sounds" is in the top 6 (US) and top 5 (UK).
+- "asmr ai" is the first suggestion for "asmr a": "AI ASMR" at the end of new titles catches it.
+- Most common add-ons: no talking, for sleep, hour counts (1, 3, 8 hours), no ads, tingles, aggressive / fast.
+- Gum: asmr gum chewing, bubble gum popping, gum popping snapping. Lip gloss: application, mouth sounds,
+  collection. Nails: nails tapping, tapping and scratching, long nails mic scratching.
+- Christmas: christmas asmr sleep / no talking / ambience; asmr christmas wrapping, decorations, makeup;
+  gift wrapping tissue paper; christmas ornaments tapping. Interest peaks mid-December (vidIQ).
+- Name format: "ASMR <trigger the way people type it> ..." and "Christmas ASMR ..."; join two triggers with "&".
+- Next video ideas from the data: 1-hour gum chewing & bubble popping for sleep; long nails tapping & mic
+  scratching; lip gloss application & mouth sounds; Christmas gift wrapping with tissue paper.

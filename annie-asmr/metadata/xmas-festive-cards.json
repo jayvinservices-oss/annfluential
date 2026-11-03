@@ -1,7 +1,7 @@
 {
   "slug": "xmas-festive-cards",
   "file": null,
-  "title": "AI ASMR Festive Designing | Making Christmas Cards in Green & Gold | Pen Sounds, Stickers & Whispers",
+  "title": "Christmas ASMR Making Cards With Long Nails | Pen Sounds, Stickers & Whispers | AI ASMR",
   "description": "Designing Christmas cards up close: sketching with a gold pen, cutting green cardstock, peeling stickers and tearing washi tape, with long nails doing all the work.\n\nIn this video: green cardstock, gold pen, small scissors, stickers, washi tape, finished cards.\n\nSounds: pen scribbling, paper cutting, sticker peeling, washi tape tearing, card stock tapping.\n\nChapters\n(chapters are added after: python -m pipeline assemble xmas-festive-cards)\n\nAI ASMR: AI presenter, my own voice (cloned), real sounds.\n\n#ASMR #ASMRbeauty",
   "tags": [
     "asmr",
@@ -24,7 +24,6 @@
   "checks": {
     "errors": [],
     "warnings": [
-      "title word 'making' does not appear in the plan: check it is really in the video (or add it to title_terms_ok)",
       "not rendered yet, so no chapters or length check"
     ]
   }

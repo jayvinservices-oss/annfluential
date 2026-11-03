@@ -129,6 +129,10 @@ def _rebrand_section() -> str:
         pics = (f'<figure><img src="{_img_data(assets / "banner-preview-safe-area.jpg", 900)}" alt="Draft channel banner: '
                 f'Annie ASMR over glossy lips and long nails on a cocoa background, safe areas outlined"><figcaption>Banner '
                 f'(yellow box: the part every phone and TV shows)</figcaption></figure>'
+                f'<figure><img src="{_img_data(assets / "banner-v2-preview-safe-area.jpg", 900)}" alt="Banner v2: lips on the right, '
+                f'name on the left"><figcaption>Banner v2: lips on the right, clear of the profile picture</figcaption></figure>'
+                f'<p class="note">Cartoon duo option (you in grey with locs, your friend in red and pink): '
+                f'<a href="https://www.canva.com/M/MAHZ4Ndf7ec">open in Canva</a></p>'
                 f'<div class="pics2"><figure><img src="{_img_data(assets / "profile-800.png", 300)}" alt="Draft profile picture: '
                 f'glossy lips and gloss tube in a gold ring"><figcaption>Profile picture</figcaption></figure>'
                 f'<figure><img src="{_img_data(assets / "thumbnail-template-gloss.jpg", 640)}" alt="Draft thumbnail: 300 Layers, '
@@ -149,6 +153,7 @@ def _rebrand_section() -> str:
         retitle = (f'<details class="rt"><summary>Old videos: new titles, descriptions and thumbnails ({len(cards)})</summary>'
                    f'<p class="note muted">Round 2, after your notes: catchier, built on search words, not flirty. Your real videos, so no AI wording.</p><ul class="rtl">{"".join(cards)}</ul></details>')
     links = ('<div class="dl" hidden><button type="button" class="copy" data-file="brand/banner-2560x1440.jpg">Save full-size banner</button>'
+             '<button type="button" class="copy" data-file="brand/banner-v2-2560x1440.jpg">Save banner v2</button>'
              '<button type="button" class="copy" data-file="brand/profile-800.png">Save profile picture</button></div>'
              '<p class="note">All documents: <a href="https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW">Drive › Annie ASMR › brand</a> '
              '(style guide, rebrand plan and new titles, channel copy and SEO, monetisation plan)</p>')

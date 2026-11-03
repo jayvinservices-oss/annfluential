@@ -5,7 +5,7 @@ Fonts: Gloock and Figtree (Google Fonts, OFL). Set BRAND_FONTS to the folder hol
 """
 import os
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "brand" / "assets"
@@ -43,7 +43,7 @@ def spaced(draw, xy, text, f, fill, tracking, anchor_center=True):
         x += w + tracking
 
 
-def banner():
+def banner(lips_side="left"):
     # 2560x1440. Phones show only the centre 1546x423 (x 507-2053, y 508-931), so the lips and the
     # name both sit inside it; the wider picture is extra for desktop and TV.
     b = Image.new("RGB", (2560, 1440), COCOA)
@@ -59,22 +59,27 @@ def banner():
         for i in range(220):
             td.line([(0, i), (im.width, i)], fill=int(255 * i / 220))
         im = Image.composite(im, Image.new("RGB", im.size, COCOA), top)
-        b.paste(im, (x, round(720 - mouth_y)))
+        y = round(720 - mouth_y)
+        box = (max(x, 0), y, min(x + im.width, b.width), min(y + im.height, b.height))
+        part = im.crop((box[0] - x, 0, box[2] - x, box[3] - y))
+        b.paste(ImageChops.lighter(b.crop(box), part), box[:2])   # blend: no seams where photos overlap
+    right = lips_side == "right"                   # v2: lips right, so the profile picture (bottom left) never covers them
     place(panels[2], 1900, dim=0.35)               # nails, desktop/TV only (right)
     place(panels[0], -180, dim=0.35)               # gloss wand, desktop/TV only (left)
-    place(panels[1], 470, fades=(260, 300))        # main lips, inside the safe area
+    place(panels[1], 1250 if right else 470, fades=(300, 260) if right else (260, 300))  # main lips, safe area
     d = ImageDraw.Draw(b)
-    cx = 1640
+    cx = 920 if right else 1640
     d.text((cx, 640), "Annie ASMR", font=font("Gloock", 132), fill=CREAM, anchor="mm")
     spaced(d, (cx, 726), "GUM  ·  GLOSS  ·  NAILS  ·  CRAFTS", font("Figtree", 30), GLOSS, 4)
     d.line([(cx - 80, 792), (cx + 80, 792)], fill=GOLD, width=3)
     d.text((cx, 830), "Long, slow, up-close ASMR for sleep", font=font("Figtree", 31), fill=CREAM, anchor="mm")
-    b.save(OUT / "banner-2560x1440.jpg", quality=92)
+    tag = "-v2" if right else ""
+    b.save(OUT / f"banner{tag}-2560x1440.jpg", quality=92)
     p = b.copy(); pd = ImageDraw.Draw(p)
     pd.rectangle([507, 508, 2053, 931], outline=(255, 255, 0), width=4)       # all devices
     pd.rectangle([0, 508, 2559, 931], outline=(0, 200, 255), width=2)        # desktop max
-    p.resize((1280, 720)).save(OUT / "banner-preview-safe-area.jpg", quality=85)
-    b.crop((507, 508, 2053, 931)).save(OUT / "banner-phone-view.jpg", quality=88)
+    p.resize((1280, 720)).save(OUT / f"banner{tag}-preview-safe-area.jpg", quality=85)
+    b.crop((507, 508, 2053, 931)).save(OUT / f"banner{tag}-phone-view.jpg", quality=88)
 
 
 def profile():
@@ -107,7 +112,7 @@ def thumbnail(shot, words, out, series):
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    banner(); profile()
+    banner(); banner("right"); profile()
     thumbnail(ref, ["300", "Layers"], "thumbnail-template-gloss.jpg", "GLOSS LAB")
     thumbnail(panels[2].resize((1104, 1888)), ["Nail", "Taps"], "thumbnail-template-nails.jpg", "NAIL STUDIO")
     print("wrote", sorted(p.name for p in OUT.iterdir()))
