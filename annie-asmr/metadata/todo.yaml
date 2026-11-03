@@ -8,16 +8,11 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-- text: 'Google sign-in for the channel: can be done on your phone''s browser (steps under ''Your sign-ins''). Optional:
-    Freesound key.'
-  done: false
-- text: Upload your own photos to Drive › Annie ASMR › source (a few close-ups of your lips and face, your locs
-    or coily hair), so Claude can combine them into one Annie look that matches the duo portrait.
+- text: 'At home (needs your verification device): finish the Google sign-in, and confirm the Freesound email, then
+    add FREESOUND_API_KEY.'
   done: false
 - text: 'In the office: a 1-minute whispered voice memo, quiet room, no gum, to Drive › Annie ASMR › source. Your
     talking lines stay yours.'
-  done: false
-- text: Check your friend is happy with an AI character based on her look (caramel skin, braids).
   done: false
 - text: 'Pick a banner: v1 (lips left) or v2 (lips right, clear of the profile picture), or the cartoon duo.'
   done: false
@@ -28,6 +23,9 @@ ann:
 - text: 'Done: videos shared; all 12 downloaded.'
   done: true
 claude:
+- text: 'Done: avatar stills (anonymous, generated): Annie gloss, Annie gum, Bestie gloss, duo split screen. Links
+    in Channel rebrand.'
+  done: true
 - text: 'Done: banner v2 with the lips on the right; cartoon duo option from Canva.'
   done: true
 - text: 'Done: avatar updated: you = chocolate skin, locs or super-coily hair; Bestie = caramel skin, braids. Never
@@ -56,9 +54,6 @@ claude:
     numbers.'
   done: false
 - text: Clone your voice from the whispered memo; make the brand whisper and test lines.
-  done: false
-- text: 'Avatar stills: Canva''s generator ignored the lower-face brief (showed eyes, then cartoons). Next: make
-    stills from the prompt in a tool that follows it.'
   done: false
 - text: Plan the first 2-hour scheduled live stream.
   done: false

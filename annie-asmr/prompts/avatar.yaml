@@ -35,3 +35,9 @@ negative: >-
   blurry lips, distorted mouth, teeth close-up, tongue out, winking, blowing kisses, kissing gestures,
   suggestive pose, lingerie, cleavage, low-cut top, flickering, harsh shadows, bright background,
   oversaturated, cartoon, 3d render
+
+# Approved-style stills (Canva media, 3 Nov 2026) to start image-to-video clips from:
+stills:
+  gloss: MAHZ4_ZnBo4     # gloss wand on the lower lip
+  gum: MAHZ40zAVZc       # pink gum bubble, nails near the chin
+  duo: MAHZ401mkO4       # split screen: Bestie (left) gloss, Annie (right) gum

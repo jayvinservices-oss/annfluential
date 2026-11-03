@@ -6,6 +6,9 @@
 - Ann approves everything before it is published. Nothing goes public without her yes.
 
 ## The look (locked in prompts/avatar.yaml)
+- Both avatars are ANONYMOUS generated characters (Ann, 3 Nov): not Ann's or her friend's likeness, no real photos.
+  Identity reference: the generated duo portrait, Canva media MAHZ4Lq0kqs (Annie right, Bestie left).
+- Claude may write its own Canva image prompts for avatar stills (Ann's yes, 3 Nov).
 - AI avatar, lower face only: Black woman, deep brown skin, full glossy lips, nude-pink gloss, long almond nails.
 - Reference image: Canva media MAHZ22R5eUg (concept 2), exported to prompts/reference/avatar.png.
 - Talking and whispering in Ann's cloned voice. Real or curated sounds for gum, gloss, crafts.
