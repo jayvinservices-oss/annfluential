@@ -12,13 +12,12 @@ studying or switching off.
 
 New long videos every week. Christmas videos from 1 December.
 
-About the videos: newer videos use an AI-generated lower-face presenter and a digital clone of my own
-voice. Sounds are real recordings. These videos are marked as altered or synthetic content.
+New videos are AI ASMR, made with my own voice.
 
 Requests are welcome in the comments; I read them all.
 
 ## Channel keywords (Settings > Channel > Basic info > Keywords)
-asmr, gum chewing asmr, gum popping asmr, asmr for sleep, asmr no talking, mouth sounds asmr,
+asmr, ai asmr, gum chewing asmr, gum popping asmr, asmr for sleep, asmr no talking, mouth sounds asmr,
 lip gloss asmr, nail tapping asmr, long nails asmr, asmr whispers, close up asmr, asmr crafts,
 christmas asmr, asmr tingles, relaxing asmr
 
@@ -31,9 +30,9 @@ christmas asmr, asmr tingles, relaxing asmr
 Gum Club playlist: <link>
 Long ASMR for sleep: <link>
 
-<disclosure line from config.yaml>
+AI ASMR: AI presenter, my own voice (cloned), real sounds.
 
-#asmr #<trigger1>asmr #<trigger2>asmr
+#asmr #aiasmr #<trigger>asmr
 ```
 
 ## Search wording that matches the channel

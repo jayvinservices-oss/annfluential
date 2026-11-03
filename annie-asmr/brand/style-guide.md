@@ -10,8 +10,11 @@ One sentence for the About page, the banner and every description's first line.
   video brings about three quarters of the channel's watch hours.
 - Change the setting. Old videos are bright and busy (ceiling lights, a patterned top, branded gum packs).
   New videos are dark, warm and close: deep brown backdrop, one soft light, nothing behind her.
-- The presenter is an AI lower-face avatar speaking in Ann's cloned voice. Say so in every description
-  (the disclosure line in `config.yaml`) and tick "Altered or synthetic content" in Studio.
+- New videos are **AI ASMR**: an AI lower-face presenter speaking in Ann's cloned voice, with real sounds.
+  Keep it light: titles start "AI ASMR", one short line in the description, and YouTube's "altered or
+  synthetic content" box (ticked automatically on upload). Old videos are Ann's real videos: no AI wording.
+- **Slow.** It is ASMR: slow hands, slow camera, long shots, few cuts, slowed sounds (the sound bank has
+  85%-tempo versions), long gaps between whispers.
 - Beauty and crafts only. No roleplay, no pet names, no flirting, no requests for viewers' details.
 
 ## Look
@@ -41,13 +44,15 @@ One sentence for the About page, the banner and every description's first line.
 ## Thumbnails
 1. A real frame from the video's first 10 seconds, the strongest trigger, lips or hands filling the frame.
 2. Left side shaded to cocoa so the words read on a phone.
-3. Words name the trigger, not a feeling: "Gum Pops", "300 Layers", "Nail Taps". They must be in the video.
+3. Punchy words about the trigger: "Pop Pop POP", "SO Crunchy", "Tingle Rush", "300 Layers". Catchy, never
+   flirty, and true to the video.
 4. Series pill bottom left in mauve: GUM CLUB, GLOSS LAB, NAIL STUDIO, CRAFT CORNER, or the season.
 5. No faces above the nose, no arrows, no red circles, no emoji, no clickbait.
 
 ## Titles
-`ASMR <main trigger> & <second trigger> | <one detail> | <talking level>`
-- e.g. `ASMR Fast Gum Popping & Knuckle Cracking | Up Close | Whispers`
+`AI ASMR <main trigger> & <second trigger> | <hook>` (old videos: `ASMR ...`)
+- e.g. `AI ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers`
+- Hooks people search for, when true: intense, satisfying, extremely crunchy, with my bestie, for sleep.
 - Main trigger in the first 40 characters (it is all a phone shows).
 - Talking level is always one of: No Talking, Whispers, Soft Spoken.
 - The channel name is not in the title (it already shows under every video). No ALL CAPS, no emoji.
@@ -56,7 +61,7 @@ One sentence for the About page, the banner and every description's first line.
 ## Descriptions
 1. Line 1: what you hear, in plain words (shows in search).
 2. Chapters, one per trigger.
-3. The disclosure line from `config.yaml`.
+3. The short AI ASMR line from `config.yaml` (new videos only).
 4. Two playlist links: the series and "Long ASMR for sleep".
 5. No hashtags beyond three (#asmr plus two triggers).
 
@@ -80,7 +85,8 @@ One sentence for the About page, the banner and every description's first line.
 | Long ASMR for Sleep | Every video 30 minutes or longer | all long videos |
 
 ## Channel artwork (drafts)
-- Banner `assets/banner-2560x1440.jpg`: name, the four triggers, "Long, slow, up-close ASMR for sleep",
-  all inside the 1546 x 423 safe area so it reads on phones and TVs.
+- Banner `assets/banner-2560x1440.jpg`: glossy lips, the name, the four triggers and "Long, slow, up-close
+  ASMR for sleep", all inside the 1546 x 423 safe area so phones show the lips too.
 - Profile picture `assets/profile-800.png`: glossy lips and gloss tube inside a gold ring.
 - Thumbnail templates `assets/thumbnail-template-*.jpg`.
+- Duo videos ("with my bestie"): split screen, Annie left, Bestie right (`prompts/avatar-duo.yaml`).

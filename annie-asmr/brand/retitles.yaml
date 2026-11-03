@@ -1,123 +1,245 @@
-# Draft new titles and thumbnails for the existing videos: PG-13, no teasing, words that match the video.
-# Final wording is confirmed after the cut-by-cut analysis (talking level, exact triggers).
-# Thumbnails: tools/retitle_thumbs.py -> brand/assets/retitle/<file>.jpg from a real frame of each video.
+# Old videos: new titles, descriptions and thumbnail words (v2, 3 Nov 2026, after Ann's notes: catchier,
+# better for search, not flirty, not childish). These are Ann's real videos, so no AI wording.
+# Final wording after Ann's yes. Thumbnails: tools/retitle_thumbs.py -> brand/assets/retitle/<file>.jpg.
 # frame = which eighth of the video (1, 3, 5 or 7) the picture comes from; centre/zoom crop it to the lips.
 - file: gum-popping-crackling
   id: -RTD9GAQDvE
-  old: "Chewing Gum, Popping, Crackling Sounds- Annie ASMR"
-  new: "ASMR Gum Chewing, Popping & Crackling | 30 Minutes With a Friend"
-  words: [Gum, Pops]
+  old: Chewing Gum, Popping, Crackling Sounds- Annie ASMR
+  new: ASMR Intense Gum Popping & Crackling | 30 Minutes of Tingles With My Bestie
+  words:
+  - Pop Pop
+  - POP
   series: GUM CLUB
   frame: 3
-  centre: [120, 67]
+  centre:
+  - 120
+  - 67
   zoom: 1.0
-  note: "Earns ~75% of the channel's hours. Change the thumbnail first; change this title last and only if the click rate holds."
+  note: Earns ~75% of the channel's hours. Change the thumbnail first; change this title last and only if the click
+    rate holds.
+  description: '30 minutes of loud, crackly gum popping with my best friend, side by side and up close. Gum chewing,
+    bubble popping and crackling sounds to give you tingles or help you fall asleep.
+
+
+    More like this: Gum Club playlist
+
+
+    #asmr #gumchewingasmr #asmrforsleep'
 - file: gum-with-friend
   id: 8Ucoiaa8txU
-  old: "ASMR Gum Chewing aand Popping sounds with friend- Annie ASMR"
-  new: "ASMR Gum Chewing & Bubble Popping With a Friend | 30 Minutes"
-  words: [Gum, Duo]
+  old: ASMR Gum Chewing aand Popping sounds with friend- Annie ASMR
+  new: ASMR Bubble Gum Chewing With My Bestie | Double the Pops, Double the Tingles
+  words:
+  - Double
+  - Pops
   series: GUM CLUB
   frame: 5
-  centre: [120, 67]
+  centre:
+  - 120
+  - 67
   zoom: 1.0
+  description: 'Two of us, two packs of gum, twice the sound. Bubble gum chewing and popping up close for 30 minutes
+    of relaxing tingles.
+
+
+    More like this: Gum Club playlist
+
+
+    #asmr #gumchewingasmr #asmrforsleep'
 - file: woman-crackling-gum
   id: E8cQEbd75pw
-  old: "WOMAN CRACKLING GUM VIDEO -- Annie ASMR"
-  new: "ASMR Gum Crackling Up Close | 20 Minutes of Snaps & Pops"
-  words: [Gum, Snaps]
+  old: WOMAN CRACKLING GUM VIDEO -- Annie ASMR
+  new: ASMR Satisfying Gum Crackling Up Close | Snaps, Pops & Mouth Sounds
+  words:
+  - So
+  - Snappy
   series: GUM CLUB
   frame: 5
-  centre: [130, 55]
+  centre:
+  - 130
+  - 55
   zoom: 1.6
+  description: '20 minutes of satisfying gum crackling and snapping right next to the mic. Sharp snaps, soft pops
+    and gum chewing sounds for tingles and sleep.
+
+
+    More like this: Gum Club playlist
+
+
+    #asmr #gumchewingasmr #asmrforsleep'
 - file: gum-knuckle
   id: null
-  old: "Chewing Gum and Knuckle Cracking ASMR - Annie ASMR"
-  new: "ASMR Gum Chewing & Knuckle Cracking | Up Close"
-  words: [Gum &, Cracks]
+  old: Chewing Gum and Knuckle Cracking ASMR - Annie ASMR
+  new: ASMR Gum Chewing & Knuckle Cracking | Satisfying Pops & Cracks
+  words:
+  - Crack
+  - '& Pop'
   series: GUM CLUB
   frame: 5
-  centre: [130, 55]
+  centre:
+  - 130
+  - 55
   zoom: 1.8
+  description: 'Gum chewing and popping with knuckle cracking in between. Satisfying cracks and pops up close.
+
+
+    More like this: Gum Club playlist
+
+
+    #asmr #gumchewingasmr #asmrforsleep'
 - file: cucumber
   id: bxBWbZFiIYU
-  old: "Cucumber crunching ASMR sound, no talking || Annie ASMR"
-  new: "ASMR Cucumber Crunching | Crunchy Eating Sounds | No Talking"
-  words: [Crunch]
+  old: Cucumber crunching ASMR sound, no talking || Annie ASMR
+  new: ASMR Extremely Crunchy Cucumber Eating | Crunch Sounds, No Talking
+  words:
+  - SO
+  - Crunchy
   series: CRUNCHY
   frame: 5
-  centre: [100, 70]
+  centre:
+  - 100
+  - 70
   zoom: 1.5
+  description: 'The crunchiest cucumber bites, close to the mic and no talking. Pure crunchy eating sounds.
+
+
+    #asmr #crunchyasmr #eatingsoundsasmr'
 - file: lollipop
   id: F6rNa32CDAs
-  old: "TWISTING LOLLIPOP MOUTH SOUNDS 😛😛 Annie ASMR"
-  new: "ASMR Lollipop Eating Sounds | Close Mic Candy Sounds"
-  words: [Lollipop]
+  old: TWISTING LOLLIPOP MOUTH SOUNDS 😛😛 Annie ASMR
+  new: ASMR Lollipop Eating Sounds | Candy Crunch & Mouth Sounds Close Mic
+  words:
+  - Candy
+  - Tingles
   series: MOUTH SOUNDS
   frame: 5
-  centre: [100, 40]
+  centre:
+  - 100
+  - 40
   zoom: 1.7
+  description: 'Lollipop eating sounds on a close mic: candy clicks, crunch and mouth sounds for tingles.
+
+
+    #asmr #lollipopasmr #mouthsoundsasmr'
 - file: mouth-sounds-fast
   id: null
-  old: "ASMR MOUTH SOUNDS, WET, INTENSE NO TALKING (FAST) - Annie ASMR"
-  new: "ASMR Fast Mouth Sounds | Close Mic | No Talking"
-  words: [Fast, Tingles]
+  old: ASMR MOUTH SOUNDS, WET, INTENSE NO TALKING (FAST) - Annie ASMR
+  new: ASMR Fast & Aggressive Mouth Sounds | Intense Tingles, No Talking
+  words:
+  - Tingle
+  - Rush
   series: MOUTH SOUNDS
   frame: 3
-  centre: [110, 45]
+  centre:
+  - 110
+  - 45
   zoom: 1.5
+  description: 'Fast, intense mouth sounds on a close mic with no talking. For when slow ASMR is not enough.
+
+
+    #asmr #mouthsoundsasmr #asmrforsleep'
 - file: shushing
   id: null
-  old: "CALLING YOU BABY WHILE SHUSSHING YOU TO SLEEP 😙 ANNIE ASMR"
-  new: "ASMR Shushing You to Sleep | Gentle Hand Movements & Whispers"
-  words: [Shh...]
+  old: CALLING YOU BABY WHILE SHUSSHING YOU TO SLEEP 😙 ANNIE ASMR
+  new: ASMR Shushing You to Sleep | Hand Movements & Soft Whispers
+  words:
+  - Shh...
+  - Sleep
   series: SLEEP
   frame: 3
-  centre: [110, 40]
+  centre:
+  - 110
+  - 40
   zoom: 1.5
+  description: 'Gentle shushing, slow hand movements and soft whispers on a close mic to help you switch off and
+    fall asleep.
+
+
+    #asmr #whisperasmr #asmrforsleep'
 - file: singing-tiktok
   id: null
-  old: "ASMR SINGING TIK TOK SONGS  -- Annie ASMR"
-  new: "ASMR Soft Singing | Whisper-Singing Songs to Relax"
-  words: [Soft, Songs]
+  old: ASMR SINGING TIK TOK SONGS  -- Annie ASMR
+  new: ASMR Whisper Singing Viral TikTok Songs | Relaxing Soft Singing
+  words:
+  - TikTok
+  - Songs
   series: SLEEP
   frame: 3
-  centre: [120, 40]
+  centre:
+  - 120
+  - 40
   zoom: 1.6
+  description: 'Soft whisper singing of viral TikTok songs on a close mic. Relaxing and easy to fall asleep to.
+
+
+    #asmr #whispersinging #asmrforsleep'
 - file: singing-wap
   id: null
-  old: "Singing WAP ASMR - Annie ASMR"
-  new: "ASMR Whisper Singing | Soft Pop Song Cover"
-  words: [Whisper, Song]
+  old: Singing WAP ASMR - Annie ASMR
+  new: ASMR Whisper Singing a Viral Rap Song | Soft Singing Close Mic
+  words:
+  - Whisper
+  - Rap
   series: SLEEP
   frame: 3
-  centre: [115, 28]
+  centre:
+  - 115
+  - 28
   zoom: 2.0
-  note: "Song lyrics are explicit; the new title does not name the song. Keep it out of playlists and the home page."
+  note: Song lyrics are explicit; the new title does not name the song. Keep it out of playlists and the home page.
+  description: 'A viral rap song, whisper-sung softly on a close mic.
+
+
+    #asmr #whispersinging #asmrforsleep'
 - file: tongue-1
   id: null
-  old: "Playing With My Tongue ASMR With Mouth Sounds __ Annie ASMR"
-  new: "ASMR Mouth Sounds | Slow Tongue Clicking Up Close"
-  words: [Mouth, Sounds]
+  old: Playing With My Tongue ASMR With Mouth Sounds __ Annie ASMR
+  new: ASMR Tongue Clicking & Mouth Sounds | Close Up Tingles
+  words:
+  - Click
+  - Click
   series: MOUTH SOUNDS
   frame: 1
-  centre: [90, 45]
+  centre:
+  - 90
+  - 45
   zoom: 1.6
-  note: "Thumbnail uses a closed-lips frame. Keep it out of playlists and the home page."
+  note: Thumbnail uses a closed-lips frame. Keep it out of playlists and the home page.
+  description: 'Tongue clicking and mouth sounds right up close for tingles.
+
+
+    #asmr #mouthsoundsasmr #asmrforsleep'
 - file: tongue-2
   id: null
-  old: "PLAYING WITH MY TONGUE ASMR (AGAIN) 😝😝😝 ANNIE ASMR"
-  new: "ASMR Tongue Clicking on a Close Mic | Mouth Sounds Part 2"
-  words: [Clicks]
+  old: PLAYING WITH MY TONGUE ASMR (AGAIN) 😝😝😝 ANNIE ASMR
+  new: ASMR Tongue Clicking Part 2 | Fast Mouth Sounds on a Close Mic
+  words:
+  - Clicks
+  - '2.0'
   series: MOUTH SOUNDS
   frame: 3
-  centre: [130, 32]
+  centre:
+  - 130
+  - 32
   zoom: 1.8
-  note: "Keep it out of playlists and the home page."
+  note: Keep it out of playlists and the home page.
+  description: 'Part 2: more tongue clicking and fast mouth sounds on a close mic.
+
+
+    #asmr #mouthsoundsasmr #asmrforsleep'
 - file: null
   id: Alnk7CONm-I
-  old: "Gum Chewing, Mouth Sounds + Nail tapping - Annie ASMR"
-  new: "ASMR Gum Chewing & Nail Tapping | Mouth Sounds Up Close"
-  words: [Gum &, Nails]
+  old: Gum Chewing, Mouth Sounds + Nail tapping - Annie ASMR
+  new: ASMR Gum Chewing & Nail Tapping | Mouth Sounds + Long Nails
+  words:
+  - Gum +
+  - Nails
   series: GUM CLUB
-  note: "Latest upload, not downloaded yet; thumbnail after Ann adds it to the Drive folder."
+  note: Latest upload, not downloaded yet; thumbnail after Ann adds it to the Drive folder.
+  description: 'Gum chewing and mouth sounds with long-nail tapping up close.
+
+
+    More like this: Gum Club playlist
+
+
+    #asmr #gumchewingasmr #asmrforsleep'

@@ -1,0 +1,19 @@
+# Second avatar for duo videos ("with my bestie": the format behind the channel's two best videos).
+# DRAFT (3 Nov 2026). Based on the friend in the real duo videos, but drawn as her own AI character.
+# Before using it: Ann confirms which side of the duo videos is the friend, and the friend says yes to an
+# AI character based on her look (YouTube treats a realistic likeness of a real person as needing consent).
+# Duo videos are split screen like the originals: each avatar's clips are made separately from her own
+# reference image, then placed side by side (Annie left, the friend right).
+version: 1
+name: Bestie
+face: >-
+  Extreme close-up of the lower face of a young Black woman, framed from the tip of her nose to her chin and
+  upper neck. Her eyes and upper face are never in frame. Warm medium-brown skin with golden undertones and a
+  soft natural sheen. Full, rounded lips with a defined darker berry-brown liner and a glossy berry-mauve
+  centre, high shine. Long caramel-brown box braids fall at the edges of the frame. Small gold hoop earrings,
+  a thin gold chain with a tiny pendant.
+hands: >-
+  Her hands have medium-length coffin nails in a milky pink polish with a glossy top coat, neat cuticles,
+  warm medium-brown skin. Fingers move slowly and gently.
+# camera, style and negative are shared with prompts/avatar.yaml so both halves of the split screen match.
+reference_image: prompts/reference/avatar-duo.png   # to make: one still from this prompt, approved by Ann

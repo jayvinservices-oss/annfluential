@@ -1,7 +1,7 @@
 # Christmas 2 of 4. Make by 24 Nov, publish from 1 Dec.
 slug: xmas-tree-decorating
 theme: christmas-tree-decorating
-title: "ASMR Decorating the Christmas Tree | Gold Glass Bauble Taps, Garland Rustles & Whispers"
+title: "AI ASMR Decorating the Christmas Tree | Gold Glass Bauble Taps, Garland Rustles & Whispers"
 description: >-
   Slow, close-up tree decorating: tapping gold and champagne glass baubles with long nails,
   hooking them onto pine branches and draping garland, with a few soft whispers.
@@ -16,26 +16,26 @@ tags: [christmas tree asmr, ornament tapping asmr, glass tapping asmr, christmas
 segments:
   - id: box
     chapter: Glass bauble tapping
-    minutes: 4
+    minutes: 6
     shots: [tap-baubles, admire]
     sound_bed: [audio/sfx/glass-bauble-tap-01.wav, {file: audio/sfx/box-rummage-01.wav, gain_db: -8}]
     voice:
       - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: glass
     chapter: Bauble taps & ornament hooks
-    minutes: 12
+    minutes: 17
     shots: [tap-baubles, hang-ornament]
     sound_bed: audio/sfx/glass-bauble-tap-01.wav
     voice:
       - {at: 20, text: "Gold ones first."}
   - id: garland
     chapter: Garland rustles & pine needle brushing
-    minutes: 9
+    minutes: 14
     shots: [tinsel, hang-ornament]
     sound_bed: [audio/sfx/garland-rustle-01.wav, {file: audio/sfx/pine-brush-01.wav, gain_db: -4}]
   - id: finish
     chapter: Last bauble taps & goodnight whispers
-    minutes: 5
+    minutes: 8
     shots: [admire, hang-ornament]
     sound_bed: audio/sfx/glass-bauble-tap-01.wav
     voice:

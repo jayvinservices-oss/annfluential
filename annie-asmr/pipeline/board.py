@@ -143,15 +143,26 @@ def _rebrand_section() -> str:
             img = assets / "retitle" / f"{v.get('file')}.jpg"
             pic = (f'<img src="{_img_data(img, 360, 72)}" alt="Draft thumbnail: {e(" ".join(v["words"]))}">'
                    if v.get("file") and img.exists() else '<div class="nopic">thumbnail to come</div>')
-            cards.append(f'<li>{pic}<b>{e(v["new"])}</b><span class="muted">was: {e(v["old"])}</span></li>')
-        retitle = (f'<details class="rt"><summary>New PG-13 titles and thumbnails for the old videos ({len(cards)})</summary>'
-                   f'<p class="note muted">Drafts; final wording after the cut-by-cut analysis.</p><ul class="rtl">{"".join(cards)}</ul></details>')
+            desc = e(v.get("description", "")).replace("\n", "<br>")
+            cards.append(f'<li>{pic}<b>{e(v["new"])}</b><span class="muted">was: {e(v["old"])}</span>'
+                         f'<details><summary>Description</summary><p class="note">{desc}</p></details></li>')
+        retitle = (f'<details class="rt"><summary>Old videos: new titles, descriptions and thumbnails ({len(cards)})</summary>'
+                   f'<p class="note muted">Round 2, after your notes: catchier, built on search words, not flirty. Your real videos, so no AI wording.</p><ul class="rtl">{"".join(cards)}</ul></details>')
     links = ('<div class="dl" hidden><button type="button" class="copy" data-file="brand/banner-2560x1440.jpg">Save full-size banner</button>'
              '<button type="button" class="copy" data-file="brand/profile-800.png">Save profile picture</button></div>'
              '<p class="note">All documents: <a href="https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW">Drive › Annie ASMR › brand</a> '
              '(style guide, rebrand plan and new titles, channel copy and SEO, monetisation plan)</p>')
+    GROUPS = [("signin", "Your sign-ins (the only thing needed from you today)"),
+              ("approved", "Approved: Claude does these as soon as the sign-in works"),
+              ("studio", "Only you, in YouTube Studio (about 2 minutes each)"),
+              ("review", "Needs your eye again"),
+              ("done", "Approved: Claude is on it")]
     rows = []
-    for a in acts:
+    last_group = None
+    for a in sorted(acts, key=lambda a: [g for g, _ in GROUPS].index(a.get("group", "review"))):
+        if a.get("group") != last_group:
+            last_group = a.get("group")
+            rows.append(f'<li class="grp">{e(dict(GROUPS).get(last_group, ""))}</li>')
         who, kind = WHO.get(a["who"], (a["who"], "todo"))
         chips = f'<span class="chip {kind}">{e(who)}</span>'
         if a.get("needs_access"):
@@ -294,6 +305,7 @@ figcaption {{ font-size: .8rem; color: var(--muted) }}
 .rtl img {{ width: 100%; height: auto; border-radius: 8px; display: block }}
 .rtl .muted {{ font-size: .75rem; overflow-wrap: anywhere }}
 .nopic {{ aspect-ratio: 16 / 9; border: 1px dashed var(--line); border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: .75rem }}
+.grp {{ font-family: var(--display); font-size: 1.15rem; margin-top: 10px }}
 .acts {{ list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px }}
 .act {{ background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 8px }}
 .act-head {{ display: grid; gap: 6px }}

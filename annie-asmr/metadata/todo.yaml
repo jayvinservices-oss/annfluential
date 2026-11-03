@@ -8,42 +8,40 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-- text: 'Answer the rebrand list in ''Channel rebrand'' above: Yes / Not now on each item (start with the style
-    guide and channel access).'
+- text: 'Today: Google sign-in for the channel (steps under ''Your sign-ins'' in Channel rebrand). Optional: free
+    Freesound key for lip gloss sounds.'
   done: false
-- text: 'Done: reference photo in Drive (middle panel cut out and set as the avatar reference).'
-  done: true
-- text: 'Done: HuggingFace access. The free voice model is downloaded.'
-  done: true
-- text: 'Done: 12 videos uploaded to Drive (Annie ASMR > source > Top 10).'
+- text: 'In the office: a 1-minute whispered voice memo, quiet room, no gum, to Drive › Annie ASMR › source. Your
+    talking lines stay yours.'
+  done: false
+- text: Tell Claude which side of the duo videos is your friend, and check she is happy with an AI character based
+    on her look.
+  done: false
+- text: 'Later: make clips from the prompts below in a free video app and upload them to Annie ASMR › clips › <video>.'
+  done: false
+- text: 'Done: rebrand answers on the board; knuckle cracking is in (from your own videos).'
   done: true
 - text: 'Done: videos shared; all 12 downloaded.'
   done: true
-- text: For 2 or 3 videos, note stretches where only your voice is heard, no gum over it (for example the singing
-    videos), e.g. '1:02 to 1:25'. These become the voice sample.
-  done: false
-- text: 'Record real sounds on your phone, close and in a quiet room, 1 to 2 minutes each: fast gum popping, slow
-    gum popping, knuckle cracking, finger cracking. Drive folder Annie ASMR > sfx.'
-  done: false
-- text: 'Decide: are knuckle cracking and shushing in? The brief says beauty and crafts only (gum is already an
-    exception).'
-  done: false
-- text: 'Manual mode: make clips for the next video from the prompts below in a free video app using the reference
-    photo, name each file exactly as shown, upload to Annie ASMR > clips > gum-pops-knuckles-01.'
-  done: false
 claude:
-- text: 'Done: style guide, rebrand plan, channel copy and SEO, monetisation plan (Drive › Annie ASMR › brand).'
+- text: 'Done: banner redrawn with the lips inside the phone-safe area.'
   done: true
-- text: 'Done: banner, profile picture and thumbnail drafts; new-style thumbnails and PG-13 titles drafted for every
-    old video.'
+- text: 'Done: old videos'' titles, descriptions and thumbnails, round 2 (catchier, not flirty, no AI wording).'
   done: true
-- text: 'Done: voice engine reinstalled in this session.'
+- text: 'Done: short ''AI ASMR'' wording instead of the long disclosure; new titles start ''AI ASMR''; YouTube''s
+    synthetic box still ticked on upload.'
   done: true
-- text: Analysing the top videos cut by cut (the gum video first); then final titles and avatar prompt refinements.
+- text: 'Done: video plans lengthened to 45-60 minutes.'
+  done: true
+- text: 'Done: Bestie avatar drafted for duo split-screen videos (waiting on your friend''s side and okay).'
+  done: true
+- text: 'Building the sound bank from your videos: gum pops, crackles, knuckle cracks, crunches; talking cut out;
+    slowed versions too.'
   done: false
-- text: Cut a clean voice sample, clone the voice, make the 'Annie ASMR' brand whisper and test lines.
+- text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
+    numbers.'
   done: false
-- text: Make new videos 45 to 90 minutes long in the plans.
+- text: Plan the first 2-hour scheduled live stream.
   done: false
-- text: Assemble the gum popping video as soon as clips and sounds are in Drive.
+- text: Clone your voice from the whispered memo; make the brand whisper and test lines.
   done: false

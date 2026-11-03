@@ -2,11 +2,8 @@
 # the board's database (collection "approvals", one doc per id) and Claude reads them back (ArtifactData list).
 # who: claude = Claude does it after Ann's yes; ann = only Ann can (Studio, or her own time); access = a setting Ann gives.
 # needs_access: true = only after "access-youtube" is done.
-- id: approve-style
-  who: ann
-  title: Approve the style guide and artwork
-  detail: Look at the banner, profile picture and thumbnail drafts above. Yes = use them. Not now = tell Claude
-    what to change in the note.
+# group: signin = Ann gives a sign-in or key | approved = Claude does it once signed in | studio = only Ann, in
+# YouTube Studio | review = needs Ann's eye again | done = approved, Claude is on it
 - id: access-youtube
   who: access
   title: Give Claude access to the channel
@@ -20,85 +17,114 @@
     code for tokens". 5) In this cloud environment''s settings, add three environment variables: YOUTUBE_CLIENT_ID,
     YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN. Never paste them in chat. Then start a new session; Claude checks
     with "python -m pipeline whoami".'
+  group: signin
+- id: freesound-key
+  who: access
+  title: Free Freesound key, for lip gloss and other sounds
+  detail: 'Lip gloss sounds are not in your videos. 1) freesound.org: sign up free. 2) freesound.org/apiv2/apply:
+    create an API key (any name, e.g. Annie ASMR). 3) Add it to this cloud environment as the environment variable
+    FREESOUND_API_KEY, like the YouTube ones. Claude then downloads only CC0 sounds (free for any use, no credit
+    needed): gloss tube clicks, wand pulls, application. Never paste it in chat.'
+  group: signin
 - id: banner
   who: claude
   needs_access: true
   title: Upload the new banner
-  detail: 'Replaces the current banner with the draft above. Reversible: the old one can be put back from Studio.'
+  detail: 'Redrawn after your note: the lips now sit inside the yellow box, so phones show them next to the name.
+    Goes up as soon as the sign-in works.'
+  group: approved
 - id: about
   who: claude
   needs_access: true
   title: Rewrite the About text and channel keywords
   detail: One-line promise, the four triggers, the AI and voice-clone disclosure, upload rhythm. Claude shows you
     the text first.
+  group: approved
 - id: playlists
   who: claude
   needs_access: true
   title: Create the six series playlists and sort old videos into them
   detail: Gum Club, Gloss Lab, Nail Studio, Craft Corner, Christmas 2026, Long ASMR for Sleep. Persona or flirty
     videos go in none.
-- id: old-thumbnails
-  who: claude
-  needs_access: true
-  title: New-style thumbnails for all old videos
-  detail: Drafts are in the brand section above and in Drive > Annie ASMR > brand. One video at a time, the top
-    gum video first, click rate checked a week later. Needs your account phone-verified (Studio > Settings > Channel
-    > Feature eligibility).
-- id: old-titles
-  who: claude
-  needs_access: true
-  title: PG-13 titles and new descriptions for all old videos
-  detail: The draft list is in the rebrand plan (Drive > Annie ASMR > brand). Final wording after the analysis.
-    Small videos first; the top gum video's title last, only if its click rate holds.
-- id: watermark
-  who: claude
-  needs_access: true
-  title: Add a subscribe watermark
-  detail: The gold-ring profile picture in the corner of every video; viewers tap it to subscribe.
-- id: weekly-report
-  who: claude
-  needs_access: true
-  title: Read the channel numbers every week
-  detail: 'Read-only: watch hours, click rate, average view, subscribers, straight onto this board. No more pasting
-    Studio summaries.'
+  group: approved
 - id: seo-every-video
   who: claude
   needs_access: true
   title: Search wording, end screens and cards on every video
   detail: Titles, first description lines, tags and playlists from the channel copy (Drive > brand). End screens
     and cards are set in Studio; Claude gives you the list.
+  group: approved
+- id: watermark
+  who: claude
+  needs_access: true
+  title: Add a subscribe watermark
+  detail: The gold-ring profile picture in the corner of every video; viewers tap it to subscribe.
+  group: approved
+- id: weekly-report
+  who: claude
+  needs_access: true
+  title: Read the channel numbers every week
+  detail: 'Read-only: watch hours, click rate, average view, subscribers, straight onto this board. No more pasting
+    Studio summaries.'
+  group: approved
 - id: profile-picture
   who: ann
   title: Upload the new profile picture
-  detail: 'YouTube Studio > Customization > Branding > Picture. Claude puts the file in Drive: Annie ASMR > brand.
-    Apps cannot change it.'
+  detail: YouTube Studio app or studio.youtube.com > Customization > Branding > Picture. Use "Save profile picture"
+    above. No app or API can change it; Cowork on your computer could click it for you.
+  group: studio
 - id: handle
   who: ann
   title: Choose a cleaner handle than @annieasmr9051
   detail: 'Studio > Customization > Basic info > Handle. Try, in order: @annie.asmr, @annieasmrsleep, @glossyannieasmr.
     Your old links keep working for 14 days.'
+  group: studio
 - id: layout
   who: ann
   title: Set the channel trailer and home-page sections
   detail: 'Studio > Customization > Layout. Trailer: the gum popping video. Sections: Gum Club, Long ASMR for Sleep,
     Christmas 2026. Claude gives you the exact order.'
+  group: studio
+- id: old-titles
+  who: claude
+  needs_access: true
+  title: 'Old videos: new titles and descriptions (round 2)'
+  detail: 'Redone after your note "not so PG-13, less flirty": catchier, built on search words (intense, satisfying,
+    crunchy, bestie), no AI wording since these are your real videos. Tap the list above to read them.'
+  group: review
+- id: old-thumbnails
+  who: claude
+  needs_access: true
+  title: 'Old videos: new thumbnails (round 2)'
+  detail: 'Redone after your note "text not catchy enough": Pop Pop POP, Double Pops, So Snappy, SO Crunchy, Tingle
+    Rush and more. Shown above.'
+  group: review
+- id: duo-avatar
+  who: ann
+  title: Bestie avatar for duo videos
+  detail: 'A second AI avatar based on your friend from the duo videos, for weekly split-screen videos together
+    (gum, lip gloss). Two things first: which side is your friend in the duo videos (left in the green T-shirt?),
+    and has she said yes to an AI character based on her look? Yes = both sorted; note = tell Claude which side.'
+  group: review
 - id: persona-videos
   who: ann
   title: 'Decide: the pet-name and flirty videos'
   detail: 'Recommended: keep them public with the new PG-13 titles (private videos stop counting toward the 4,000
     hours), but out of playlists and off the home page. Yes = do that. Not now = note what you want instead.'
-- id: live-streams
+  group: review
+- id: approve-style
   who: ann
-  title: Weekly scheduled live stream (2 hours)
-  detail: Archived live streams count toward the 4,000 hours; this is one of the fastest levers. Gum and nails,
-    study-with-me style, announced a week ahead. Yes = Claude plans the first one.
-- id: friend-gum
-  who: ann
-  title: A new real gum video with your friend
-  detail: The 'with a friend' gum videos are the channel's number one and two. One new 45-minute+ video together
-    is the single best bet for hours.
+  title: Approve the style guide and artwork
+  detail: Look at the banner, profile picture and thumbnail drafts above. Yes = use them. Not now = tell Claude
+    what to change in the note.
+  group: done
 - id: long-videos
   who: claude
   title: Make every new video 45 to 90 minutes
-  detail: The 30-minute videos earn almost all the hours; short ones earn almost none. Claude lengthens the plans
-    (sleep-friendly, slow endings).
+  detail: Approved. Claude is lengthening the video plans to 45 to 90 minutes.
+  group: done
+- id: live-streams
+  who: ann
+  title: Weekly scheduled live stream (2 hours)
+  detail: Approved. Claude drafts the first 2-hour scheduled stream plan.
+  group: done

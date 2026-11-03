@@ -1,0 +1,31 @@
+{
+  "slug": "gum-pops-knuckles-01",
+  "file": null,
+  "title": "AI ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers",
+  "description": "Fast gum popping and slow knuckle cracking up close, the triggers you keep asking for, with soft close whispers in between. Use the chapters to jump to your favourite sound.\n\nIn this video: pink bubble gum, glossy lips, long almond nails.\n\nSounds: fast gum popping, gum snapping, knuckle cracking, finger cracking, close whispers.\n\nChapters\n(chapters are added after: python -m pipeline assemble gum-pops-knuckles-01)\n\nAI ASMR: AI presenter, my own voice (cloned), real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "gum popping asmr",
+    "knuckle cracking asmr",
+    "gum chewing asmr",
+    "fast asmr",
+    "mouth sounds asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

@@ -90,7 +90,7 @@ youtube:
   category_id: "26"    # Howto & Style
   default_language: en
   base_tags: [asmr, asmr beauty, asmr no talking, tingles, relaxing asmr, asmr for sleep]
+  # Short on purpose (Ann, 3 Nov): YouTube's "altered or synthetic content" box is ticked on every upload
+  # (upload.py), which shows YouTube's own label. "AI ASMR" is also a search term people use.
   disclosure: >-
-    About this video: the hands and lower-face presenter are AI-generated, and the voice
-    is a digital clone of my own voice. Sounds are real recordings or curated sound effects.
-    Marked as altered or synthetic content on YouTube.
+    AI ASMR: AI presenter, my own voice (cloned), real sounds.

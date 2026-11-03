@@ -4,7 +4,7 @@
 slug: gum-pops-knuckles-01
 priority: 1   # next video: a follow-up to the channel's best performer
 theme: gum-pops-knuckles
-title: "ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers"
+title: "AI ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers"
 description: >-
   Fast gum popping and slow knuckle cracking up close, the triggers you keep asking for,
   with soft close whispers in between. Use the chapters to jump to your favourite sound.
@@ -21,29 +21,29 @@ tags: [gum popping asmr, knuckle cracking asmr, gum chewing asmr, fast asmr, mou
 segments:
   - id: pops
     chapter: Fast gum popping
-    minutes: 5
+    minutes: 10
     shots: [gum-pop, gum-and-hands]
     sound_bed: audio/sfx/gum-pop-fast-01.wav
     voice:
       - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: knuckles
     chapter: Knuckle cracking
-    minutes: 6
+    minutes: 12
     shots: [knuckle-crack, finger-stretch]
     sound_bed: audio/sfx/knuckle-crack-01.wav
   - id: both
     chapter: Gum pops & knuckle cracks
-    minutes: 8
+    minutes: 16
     shots: [gum-and-hands, gum-pop, knuckle-crack]
     sound_bed: [audio/sfx/gum-pop-fast-01.wav, {file: audio/sfx/knuckle-crack-01.wav, gain_db: -2}]
   - id: fingers
     chapter: Finger cracking & stretches
-    minutes: 5
+    minutes: 10
     shots: [finger-stretch, knuckle-crack]
     sound_bed: audio/sfx/finger-crack-01.wav
   - id: whispers
     chapter: Slow gum pops & close whispers
-    minutes: 6
+    minutes: 12
     shots: [whisper-close, gum-pop]
     sound_bed: {file: audio/sfx/gum-pop-slow-01.wav, gain_db: -3}
     voice:
