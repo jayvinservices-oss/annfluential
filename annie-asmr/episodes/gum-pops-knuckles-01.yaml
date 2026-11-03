@@ -2,6 +2,7 @@
 # Opens straight on the trigger from the title (no talking for the first 45s); thumbnail = opening shot.
 # Gum pops and knuckle cracks must be real recordings in audio/sfx/.
 slug: gum-pops-knuckles-01
+priority: 1   # next video: a follow-up to the channel's best performer
 theme: gum-pops-knuckles
 title: "ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers"
 description: >-

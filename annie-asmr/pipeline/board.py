@@ -1,0 +1,280 @@
+"""Phone-friendly production board: numbers, to-dos, every video's status and, for manual mode,
+every prompt with a copy button and the exact file name to save it as.
+
+  python -m pipeline board   -> renders/board.html (Claude publishes it as a private page)
+"""
+from __future__ import annotations
+
+import html
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
+
+import yaml
+
+from .assemble import find_voice_file, render_path
+from .config import EPISODES, METADATA, RENDERS, config
+from .episode import load_episode, used_shot_ids, voice_lines
+from .generate import clips_for_shot
+from .metadata import upload_record
+from .prompts import build_prompt
+
+e = html.escape
+
+
+def _load(name: str) -> dict:
+    p = METADATA / name
+    return yaml.safe_load(p.read_text()) if p.exists() else {}
+
+
+def _episodes() -> list[dict]:
+    eps = []
+    for p in sorted(EPISODES.glob("*.yaml")):
+        try:
+            eps.append(load_episode(str(p)))
+        except SystemExit:
+            continue
+    return sorted(eps, key=lambda ep: (ep.get("priority") or 99, str(ep.get("made_by") or "")))
+
+
+def _chip(text: str, kind: str) -> str:
+    return f'<span class="chip {kind}">{e(text)}</span>'
+
+
+def _episode_card(ep: dict, takes: int) -> str:
+    slug = ep["slug"]
+    shots = used_shot_ids(ep)
+    have = sum(1 for s in shots if clips_for_shot(slug, s))
+    lines = voice_lines(ep)
+    have_v = sum(1 for l in lines if find_voice_file(slug, l["id"]))
+    rendered = render_path(slug).exists()
+    uploaded = upload_record(slug).exists()
+    minutes = sum(float(s["minutes"]) for s in ep["segments"])
+    chips = [
+        _chip(f"clips {have}/{len(shots)}", "ok" if have == len(shots) else "todo"),
+        _chip(f"voice {have_v}/{len(lines)}", "ok" if have_v == len(lines) else "todo"),
+        _chip("rendered" if rendered else "not rendered", "ok" if rendered else "todo"),
+        _chip("private draft" if uploaded else "not uploaded", "ok" if uploaded else "todo"),
+    ]
+    dates = []
+    if ep.get("made_by"):
+        late = not rendered and date.fromisoformat(str(ep["made_by"])) < date.today()
+        dates.append(f"make by {date.fromisoformat(str(ep['made_by'])):%a %d %b}" + (" (late)" if late else ""))
+    if ep.get("publish_after"):
+        dates.append(f"publish from {date.fromisoformat(str(ep['publish_after'])):%a %d %b}")
+    chapters = "".join(f"<li><span class=\"num\">{float(s['minutes']):g} min</span> {e(s['chapter'])}</li>"
+                       for s in ep["segments"])
+    shot_rows = []
+    for sid in shots:
+        prompt, negative = build_prompt(ep, sid)
+        names = " ".join(f"<code>{e(sid)}__t{k}.mp4</code>" for k in range(1, takes + 1))
+        done = bool(clips_for_shot(slug, sid))
+        shot_rows.append(f"""
+        <div class="shot{' done' if done else ''}">
+          <div class="shot-head"><strong>{e(sid)}</strong>{_chip('have it', 'ok') if done else ''}</div>
+          <div class="label">Save as</div><div class="names">{names}</div>
+          <div class="copyrow"><div class="label">Prompt</div><button type="button" class="copy" data-target="p-{e(slug)}-{e(sid)}">Copy prompt</button></div>
+          <pre id="p-{e(slug)}-{e(sid)}">{e(prompt)}</pre>
+          <details><summary>Negative prompt (things to avoid)</summary>
+            <div class="copyrow"><span></span><button type="button" class="copy" data-target="n-{e(slug)}-{e(sid)}">Copy</button></div>
+            <pre id="n-{e(slug)}-{e(sid)}">{e(negative)}</pre></details>
+        </div>""")
+    voice = "".join(f"<li><code>{e(l['id'])}</code> <span class=\"muted\">{e(l['style'])}, {l['at']:.0f}s</span> {e(l['text'])}</li>"
+                    for l in lines)
+    return f"""
+    <article class="ep" id="{e(slug)}">
+      <header>
+        <div class="eyebrow">{e(ep['_theme']['name'])} · {minutes:g} min</div>
+        <h3>{e(ep['title'])}</h3>
+        <div class="dates">{' · '.join(dates) if dates else 'date not set'}</div>
+        <div class="chips">{''.join(chips)}</div>
+      </header>
+      <details><summary>Chapters</summary><ol class="chapters">{chapters}</ol></details>
+      <details><summary>Voice lines ({len(lines)})</summary><ul class="voice">{voice}</ul></details>
+      <details class="prompts"><summary>Clip prompts for manual mode ({len(shots)} shots × {takes} takes)</summary>
+        <p class="hint">Make each clip in your video app from the reference image, download it, rename it exactly as shown,
+        and upload it to Google Drive: <code>Annie ASMR clips/{e(slug)}/</code>.</p>
+        {''.join(shot_rows)}
+      </details>
+    </article>"""
+
+
+def build_board() -> str:
+    cfg = config()
+    ch = cfg["channel"]
+    stats = _load("channel-stats.yaml")
+    todo = _load("todo.yaml")
+    takes = int(cfg["generator"].get("takes_per_shot", 2))
+    goal = float(ch["goal_watch_hours"])
+    hours = float(stats.get("watch_hours_365", ch["baseline"]["watch_hours"]))
+    subs = int(stats.get("subscribers", ch["baseline"]["subscribers"]))
+    target = date.fromisoformat(str(ch["target_date"]))
+    days = max(1, (target - date.today()).days)
+    need = (goal - hours) / days
+    l28 = stats.get("last_28_days") or {}
+    p28 = stats.get("previous_28_days") or {}
+    pace = float(l28.get("watch_hours", 0)) / 28
+    pct = min(100, hours / goal * 100)
+    now = datetime.now(ZoneInfo(ch.get("timezone", "America/Toronto")))
+
+    def todo_list(items):
+        return "".join(f'<li class="{"done" if t.get("done") else ""}"><span class="box" aria-hidden="true"></span>'
+                       f'<span>{e(t["text"])}</span></li>' for t in items or [])
+
+    top = "".join(f"<tr><td>{e(v['title'])}</td><td class=\"n\">{v['views']}</td><td class=\"n\">{v['hours']:g}</td></tr>"
+                  for v in stats.get("top_videos", []))
+    lv = stats.get("latest_video") or {}
+    eps = _episodes()
+    def short(ep):
+        n = ep["_theme"]["name"].split(" (")[0].split(" - ")[-1]
+        return n.split(",")[0] if len(n) > 24 else n
+    nav = "".join(f'<a href="#{e(ep["slug"])}">{e(short(ep))}</a>' for ep in eps)
+    cards = "".join(_episode_card(ep, takes) for ep in eps)
+    mode = cfg["generator"]["provider"]
+
+    return f"""<title>Annie ASMR Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow column built for a phone; numbers first, then to-dos, then each video as a card. */
+:root {{
+  --bg: #f7eeea; --surface: #fffaf8; --ink: #2b1813; --muted: #7b5e55; --line: #e8d5ce;
+  --accent: #a8475f; --accent-soft: #f3dde2; --ok: #2f7553; --ok-soft: #dcefe4; --todo: #8a5a1c; --todo-soft: #f6e7cf;
+  --display: "Gloock", Georgia, "Times New Roman", serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}}
+@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{
+  --bg: #170d0a; --surface: #22140f; --ink: #f4e7e1; --muted: #b89c92; --line: #3b2720;
+  --accent: #e98fa5; --accent-soft: #3d1f27; --ok: #7fd0a4; --ok-soft: #173326; --todo: #e9b56c; --todo-soft: #3a2a14; color-scheme: dark }} }}
+:root[data-theme="dark"] {{
+  --bg: #170d0a; --surface: #22140f; --ink: #f4e7e1; --muted: #b89c92; --line: #3b2720;
+  --accent: #e98fa5; --accent-soft: #3d1f27; --ok: #7fd0a4; --ok-soft: #173326; --todo: #e9b56c; --todo-soft: #3a2a14; color-scheme: dark }}
+* {{ box-sizing: border-box }}
+body {{ background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px }}
+.wrap {{ max-width: 680px; margin: 0 auto; display: grid; gap: 28px }}
+h1, h2, h3 {{ font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: .005em }}
+h1 {{ font-size: 2.1rem; line-height: 1.1 }}
+h2 {{ font-size: 1.45rem; margin-bottom: 12px }}
+h3 {{ font-size: 1.15rem; line-height: 1.25 }}
+.eyebrow, .label {{ font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); font-weight: 600 }}
+.muted {{ color: var(--muted) }}
+.top {{ display: grid; gap: 6px }}
+.updated {{ color: var(--muted); font-size: .85rem }}
+.goal {{ background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 14px }}
+.meter {{ height: 10px; background: var(--accent-soft); border-radius: 99px; overflow: hidden }}
+.meter span {{ display: block; height: 100%; background: var(--accent); border-radius: 99px }}
+.figs {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px }}
+.fig b {{ display: block; font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; font-variant-numeric: tabular-nums }}
+.fig span {{ font-size: .82rem; color: var(--muted) }}
+.note {{ font-size: .9rem; margin: 0; max-width: 62ch }}
+nav {{ display: flex; flex-wrap: wrap; gap: 8px }}
+nav a {{ color: var(--accent); text-decoration: none; border: 1px solid var(--line); border-radius: 99px; padding: 4px 12px; font-size: .85rem; background: var(--surface) }}
+.todo {{ list-style: none; margin: 0; padding: 0; display: grid; gap: 10px }}
+.todo li {{ display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start }}
+.box {{ width: 16px; height: 16px; border: 2px solid var(--accent); border-radius: 4px; margin-top: 3px }}
+.todo li.done {{ color: var(--muted); text-decoration: line-through }}
+.todo li.done .box {{ background: var(--accent) }}
+.two {{ display: grid; gap: 22px }}
+.ep {{ background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: grid; gap: 12px; scroll-margin-top: 16px }}
+.ep header {{ display: grid; gap: 6px }}
+.dates {{ font-size: .88rem; color: var(--muted) }}
+.chips {{ display: flex; flex-wrap: wrap; gap: 6px }}
+.chip {{ font-size: .75rem; font-weight: 600; padding: 2px 9px; border-radius: 99px }}
+.chip.ok {{ background: var(--ok-soft); color: var(--ok) }}
+.chip.todo {{ background: var(--todo-soft); color: var(--todo) }}
+details {{ border-top: 1px solid var(--line); padding-top: 10px }}
+summary {{ cursor: pointer; font-weight: 600; color: var(--ink) }}
+summary:focus-visible, button:focus-visible, nav a:focus-visible {{ outline: 2px solid var(--accent); outline-offset: 2px }}
+.chapters, .voice {{ margin: 10px 0 0; padding-left: 20px; display: grid; gap: 4px }}
+.num {{ font-variant-numeric: tabular-nums; color: var(--muted); font-size: .85rem; display: inline-block; min-width: 4.5em }}
+.hint {{ font-size: .88rem; color: var(--muted); max-width: 62ch }}
+.shot {{ border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-top: 10px; display: grid; gap: 6px; min-width: 0 }}
+.shot.done {{ opacity: .7 }}
+.shot-head {{ display: flex; gap: 8px; align-items: center; flex-wrap: wrap }}
+.names {{ display: flex; flex-wrap: wrap; gap: 6px }}
+code, pre {{ font-family: var(--mono); font-size: .8rem }}
+code {{ background: var(--accent-soft); padding: 1px 6px; border-radius: 5px; overflow-wrap: anywhere }}
+pre {{ white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; line-height: 1.45 }}
+.copyrow {{ display: flex; justify-content: space-between; align-items: center; gap: 8px }}
+button.copy {{ font: 600 .82rem var(--body); color: var(--surface); background: var(--accent); border: 0; border-radius: 8px; padding: 7px 12px; cursor: pointer; min-height: 34px }}
+table {{ width: 100%; border-collapse: collapse; font-size: .88rem }}
+td, th {{ padding: 6px 4px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top }}
+th {{ font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }}
+td.n, th.n {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }}
+.scroll {{ overflow-x: auto }}
+@media (min-width: 640px) {{ .figs {{ grid-template-columns: repeat(4, minmax(0, 1fr)) }} }}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="eyebrow">Annie ASMR · {e(ch['handle'])}</div>
+    <h1>Production board</h1>
+    <div class="updated">Updated {now:%a %d %b, %-I:%M %p} Toronto · clips mode: {e(mode)}</div>
+  </div>
+
+  <section class="goal" aria-label="Partner Program goal">
+    <div>
+      <div class="label">Public watch hours, last 365 days</div>
+      <div class="fig"><b>{hours:,.0f} of {goal:,.0f}</b></div>
+    </div>
+    <div class="meter" role="img" aria-label="{pct:.0f}% of 4,000 hours"><span style="width:{pct:.1f}%"></span></div>
+    <div class="figs">
+      <div class="fig"><b>{subs:,}</b><span>subscribers ({int(ch['goal_subscribers']):,} needed{', met' if subs >= int(ch['goal_subscribers']) else ''})</span></div>
+      <div class="fig"><b>{float(l28.get('watch_hours', 0)):g} h</b><span>last 28 days ({pace:.1f} a day; before: {float(p28.get('watch_hours', 0)):g} h)</span></div>
+      <div class="fig"><b>{need:,.0f} h</b><span>a day needed to reach 4,000 by {target:%d %b}</span></div>
+      <div class="fig"><b>{e(str(l28.get('avd', '')))}</b><span>average view, last 28 days (before {e(str(p28.get('avd', '')))})</span></div>
+    </div>
+    <p class="note">At the current pace the 17 January date is out of reach; the gap is about {need / pace if pace else 0:,.0f} times the current daily hours.
+    The 365-day window keeps rolling, so every hour from new long videos still counts toward the goal.
+    One video, the gum popping and crackling one, brought {sum(v['hours'] for v in stats.get('top_videos', [])[:1]):g} of the
+    {float(l28.get('watch_hours', 0)):g} hours this month: make more like it, and longer.</p>
+  </section>
+
+  <nav aria-label="Videos">{nav}</nav>
+
+  <section>
+    <h2>Waiting on you</h2>
+    <ul class="todo">{todo_list(todo.get('ann'))}</ul>
+  </section>
+
+  <section>
+    <h2>Claude is working on</h2>
+    <ul class="todo">{todo_list(todo.get('claude'))}</ul>
+  </section>
+
+  <section>
+    <h2>Videos</h2>
+    <div class="two">{cards}</div>
+  </section>
+
+  <section>
+    <h2>What viewers watch</h2>
+    <p class="note muted">Last 28 days, from YouTube Studio ({e(str(stats.get('updated', '')))}).
+    Latest upload: {e(lv.get('title', ''))}: {lv.get('views', '')} views, {lv.get('ctr', '')}% click rate, {e(str(lv.get('avd', '')))} average view. {e(lv.get('note', ''))}</p>
+    <div class="scroll"><table><thead><tr><th>Video</th><th class="n">Views</th><th class="n">Hours</th></tr></thead><tbody>{top}</tbody></table></div>
+  </section>
+</div>
+
+<script>
+document.addEventListener("click", (ev) => {{
+  const b = ev.target.closest("button.copy");
+  if (!b) return;
+  const el = document.getElementById(b.dataset.target);
+  const done = (msg) => {{ const t = b.textContent; b.textContent = msg; setTimeout(() => b.textContent = t, 1600); }};
+  const select = () => {{ const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }};
+  try {{
+    navigator.clipboard.writeText(el.textContent).then(() => done("Copied"), () => {{ select(); done("Selected: copy it"); }});
+  }} catch (err) {{ select(); done("Selected: copy it"); }}
+}});
+</script>
+"""
+
+
+def write_board() -> str:
+    out = RENDERS / "board.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(build_board())
+    print(f"Board: {out}")
+    return str(out)

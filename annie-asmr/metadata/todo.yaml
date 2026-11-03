@@ -1,0 +1,25 @@
+# What is waiting on whom. The production board shows this. Mark done: true when finished.
+ann:
+  - text: "Save the full-size Canva reference image to Google Drive, folder 'Annie ASMR source', as avatar-reference.png (the pasted image in chat cannot be used as a file). Middle panel is the main look."
+    done: false
+  - text: "Add the model download address to Network access: '*.hf.co' (or 'us.aws.cdn.hf.co'). huggingface.co works already; the model files themselves come from that second address."
+    done: false
+  - text: "Download from YouTube Studio (Content, three dots, Download) into Drive 'Annie ASMR source': first 'Chewing Gum, Popping, Crackling Sounds' (-RTD9GAQDvE), then the gum video with friend and the latest gum + nail tapping video."
+    done: false
+  - text: "For each downloaded video, note 2 or 3 stretches where only your voice is heard (no gum over it), e.g. '1:02 to 1:25'. These become the voice sample."
+    done: false
+  - text: "Record real sounds on your phone, close and in a quiet room, 1 to 2 minutes each: fast gum popping, slow gum popping, knuckle cracking, finger cracking. Drive folder 'Annie ASMR sfx'."
+    done: false
+  - text: "Decide: are knuckle cracking and shushing in? The brief says beauty and crafts only (gum is already an exception)."
+    done: false
+  - text: "Manual mode: make clips for the next video from the prompts below in a free video app, name each file exactly as shown, upload to Drive 'Annie ASMR clips/<video name>'."
+    done: false
+claude:
+  - text: "Installing the free voice engine (VoxCPM2, Apache 2.0, commercial use allowed) in the cloud session."
+    done: false
+  - text: "Analyse the downloaded videos cut by cut and refine the avatar prompt from the frames."
+    done: false
+  - text: "Cut a clean voice sample, clone the voice, make the 'Annie ASMR' brand whisper and test lines."
+    done: false
+  - text: "Assemble the gum popping video as soon as clips and sounds are in Drive."
+    done: false

@@ -16,6 +16,7 @@
   voice-ref <video> --start --end --name   cut a clean voice sample for cloning
   report                    weekly hours / views / retention report
   status                    what is done for every episode
+  board                     phone-friendly production board -> renders/board.html
 """
 from __future__ import annotations
 
@@ -142,6 +143,11 @@ def cmd_voice_ref(a):
     voice_ref(a.video, a.start, a.end, a.name)
 
 
+def cmd_board(a):
+    from .board import write_board
+    write_board()
+
+
 def cmd_report(a):
     from .report import weekly_report
     weekly_report()
@@ -213,6 +219,7 @@ def main(argv=None):
     s = sub.add_parser("comments-post"); s.add_argument("file"); s.add_argument("--yes", action="store_true")
     s.set_defaults(fn=cmd_comments_post)
     s = sub.add_parser("report"); s.set_defaults(fn=cmd_report)
+    s = sub.add_parser("board"); s.set_defaults(fn=cmd_board)
     s = sub.add_parser("analyze"); s.add_argument("videos", nargs="+")
     s.add_argument("--scene", type=float, default=0.3, help="cut sensitivity 0-1 (lower finds softer cuts)")
     s.set_defaults(fn=cmd_analyze)

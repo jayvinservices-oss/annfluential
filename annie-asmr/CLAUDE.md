@@ -36,3 +36,12 @@
 Read the newest metadata/comments/*.yaml. Write a short, warm, honest `reply` for real comments only.
 Decline requests politely without promising content; skip anything flagged roleplay/persona or link/spam.
 Leave `approved: false`. Ann approves.
+
+## Production board (Ann checks this on her phone)
+- Private page: https://claude.ai/artifact/4z2SrmNjKK1g7khP7XFKut
+- Rebuild with `python -m pipeline board`, then republish renders/board.html to that same URL (Artifact tool with `url`).
+- Numbers come from metadata/channel-stats.yaml (update when Ann pastes Studio summaries); to-dos from metadata/todo.yaml.
+- Clips mode is manual (free): Ann makes clips from the board's prompts and uploads them to
+  Google Drive "Annie ASMR clips/<slug>/"; source videos and the reference image go to "Annie ASMR source".
+- Voice: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
+  its weights are CC-BY-NC (non-commercial) and the channel is being monetised.

@@ -1,0 +1,20 @@
+# Latest channel numbers, from YouTube Studio summaries Ann pastes in. The production board reads this.
+updated: 2026-11-03
+source: YouTube Studio, pasted by Ann
+subscribers: 1034
+watch_hours_365: 543        # Earn tab, public long-form, last 365 days
+last_28_days: {views: 928, watch_hours: 51.9, avd: "4:31", impressions: 9921, ctr: 4.81, net_subs: -2}
+previous_28_days: {views: 924, watch_hours: 60.5, avd: "5:15", impressions: 8683, ctr: 5.36, net_subs: 3}
+top_videos:
+  - {id: -RTD9GAQDvE, title: "Chewing Gum, Popping, Crackling Sounds- Annie ASMR", views: 472, hours: 38.0}
+  - {id: 8Ucoiaa8txU, title: "ASMR Gum Chewing aand Popping sounds with friend- Annie ASMR", views: 90, hours: 6.2}
+  - {id: bxBWbZFiIYU, title: "Cucumber crunching ASMR sound, no talking || Annie ASMR", views: 52, hours: 0.63}
+  - {id: F6rNa32CDAs, title: "TWISTING LOLLIPOP MOUTH SOUNDS Annie ASMR", views: 47, hours: 0.42}
+  - {id: E8cQEbd75pw, title: "WOMAN CRACKLING GUM VIDEO -- Annie ASMR", views: 36, hours: 1.5}
+latest_video:
+  id: Alnk7CONm-I
+  title: "Gum Chewing, Mouth Sounds + Nail tapping - Annie ASMR"
+  views: 1564
+  ctr: 5.10
+  avd: "0:58"
+  note: "Half of viewers gone by 0:05, 75% by 0:30. Fixed in every plan: trigger first, no hello intro."
