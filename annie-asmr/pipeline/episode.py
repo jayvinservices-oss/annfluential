@@ -85,7 +85,7 @@ def voice_lines(ep: dict) -> list[dict]:
                 "segment": seg["id"],
                 "at": float(line.get("at", 0)),
                 "text": line["text"].strip(),
-                "style": line.get("style", "whisper"),  # whisper | soft
+                "style": line.get("style", "whisper"),  # whisper | soft | brand (the "Annie ASMR" opener)
             })
     return lines
 

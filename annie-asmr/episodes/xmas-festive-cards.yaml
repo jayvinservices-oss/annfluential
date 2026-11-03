@@ -21,7 +21,7 @@ segments:
     shots: [sketch, show-card]
     sound_bed: [audio/sfx/pen-scribble-01.wav, {file: audio/sfx/cardstock-tap-01.wav, gain_db: -6}]
     voice:
-      - {at: 45, text: "Hi. Let's make some Christmas cards, green and gold."}
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: sketch
     chapter: Pen scribbling on cardstock
     minutes: 10

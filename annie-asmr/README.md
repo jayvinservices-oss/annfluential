@@ -91,7 +91,8 @@ Rough timing on an Intel MacBook Pro: a 30 minute 1080p render is roughly 30 to 
 The latest gum video had a 5.1% click-through rate but lost half its viewers by 0:05. So every plan now:
 - **opens on the trigger the title promises.** The first shot of the first chapter opens the video, so list
   the strongest trigger first;
-- **keeps the first 30 seconds free of talking** (hellos go at about 45s);
+- **has no hello intro**: the only voice in the first 30 seconds is a whispered "Annie ASMR... Annie ASMR..."
+  over the trigger (`style: brand`, text set in config.yaml -> opening.brand_whisper);
 - **names chapters after the trigger** ("Knuckle cracking", not "Part 2"), so viewers can jump to their sound;
 - **takes the thumbnail from the opening shot** (`thumb <slug>` with no `--at`), so the click matches the first frame.
 
@@ -108,6 +109,25 @@ The latest gum video had a 5.1% click-through rate but lost half its viewers by 
 Generated clips do not move their lips in time with your voice. For chat videos, either keep talking
 over closed-lip chewing shots, or run a lip-sync model (PersonaLive or similar) on a rented cloud GPU
 over the assembled talking segments. That step is not built yet; add it before the first chat video.
+
+## Learning from your best videos
+
+Download your best videos from YouTube Studio (Content -> video -> three dots -> Download), then:
+
+```bash
+python -m pipeline analyze best-video-1.mp4 best-video-2.mp4
+```
+
+For each video: every cut, shot lengths, brightness, colour and motion measured on every frame, loudness
+every 100 ms, the first 15 seconds second by second (where viewers leave), and a full-size frame from
+every shot in `prompts/reference/<name>/` to use as avatar and prompt references. `analysis/summary.md`
+compares all of them side by side.
+
+To clone your voice from a video, find 10 to 30 seconds where only your voice is heard and run:
+
+```bash
+python -m pipeline voice-ref best-video-1.mp4 --start 1:02 --end 1:25 --name annie-whisper
+```
 
 ## Weekly
 

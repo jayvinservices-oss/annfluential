@@ -20,7 +20,7 @@ segments:
     shots: [tap-baubles, admire]
     sound_bed: [audio/sfx/glass-bauble-tap-01.wav, {file: audio/sfx/box-rummage-01.wav, gain_db: -8}]
     voice:
-      - {at: 45, text: "Hi. Let's decorate the tree tonight, slowly."}
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: glass
     chapter: Bauble taps & ornament hooks
     minutes: 12

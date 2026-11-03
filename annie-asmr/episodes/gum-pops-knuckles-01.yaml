@@ -24,7 +24,7 @@ segments:
     shots: [gum-pop, gum-and-hands]
     sound_bed: audio/sfx/gum-pop-fast-01.wav
     voice:
-      - {at: 45, text: "Hi. You asked for gum popping and knuckle cracking, so that's all we're doing tonight."}
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: knuckles
     chapter: Knuckle cracking
     minutes: 6

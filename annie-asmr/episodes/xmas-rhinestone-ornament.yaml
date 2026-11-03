@@ -21,7 +21,7 @@ segments:
     shots: [pour-stones, shake-tray]
     sound_bed: audio/sfx/rhinestone-pour-01.wav
     voice:
-      - {at: 45, text: "Hi. Tonight we're covering a glass ornament in red and gold."}
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: first-row
     chapter: Wax pick taps on glass
     minutes: 8

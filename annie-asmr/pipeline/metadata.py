@@ -97,9 +97,9 @@ def check_opening(ep: dict) -> list[str]:
     first = ep["segments"][0]
     warnings = []
     for line in voice_lines(ep):
-        if line["segment"] == first["id"] and line["at"] < quiet:
-            warnings.append(f"opening: voice line {line['id']} starts at {line['at']:.0f}s; keep the first "
-                            f"{quiet:.0f} seconds to the trigger only (move it to {quiet:.0f}s or later)")
+        if line["segment"] == first["id"] and line["at"] < quiet and line["style"] != "brand":
+            warnings.append(f"opening: voice line {line['id']} starts at {line['at']:.0f}s; only the whispered "
+                            f"'Annie ASMR' brand line (style: brand) belongs in the first {quiet:.0f} seconds")
     if not _words(first["chapter"]) & _words(ep["title"]):
         warnings.append(f"opening: first chapter '{first['chapter']}' does not name a trigger from the title; "
                         "open on the trigger the title and thumbnail promise")

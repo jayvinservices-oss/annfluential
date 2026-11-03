@@ -12,6 +12,8 @@
   upload <slug> [--short]   upload as a PRIVATE draft (you publish in Studio)
   comments-pull             export unanswered comments for reply drafts
   comments-post <file>      post replies you approved
+  analyze <video> ...       study your best videos cut by cut (frames, measurements, opening)
+  voice-ref <video> --start --end --name   cut a clean voice sample for cloning
   report                    weekly hours / views / retention report
   status                    what is done for every episode
 """
@@ -33,6 +35,8 @@ def cmd_new(a):
     path = EPISODES / f"{a.slug}.yaml"
     if path.exists():
         raise SystemExit(f"{path} already exists")
+    from .config import config
+    brand = (config().get("opening") or {}).get("brand_whisper", "Annie ASMR... Annie ASMR... Annie ASMR.")
     shot_ids = list(theme["shots"])
     chapters = theme.get("chapter_ideas") or ["Part 1", "Part 2", "Part 3"]
     per = round(a.minutes / len(chapters), 1)
@@ -42,7 +46,7 @@ def cmd_new(a):
             "id": f"s{n + 1}", "chapter": ch, "minutes": per,
             "shots": [shot_ids[n % len(shot_ids)], shot_ids[(n + 1) % len(shot_ids)]],
             "sound_bed": "audio/sfx/CHOOSE-A-SOUND.wav",
-            "voice": [{"at": 45, "text": "TODO whisper line"}] if n == 0 else [],
+            "voice": [{"at": 3, "text": brand, "style": "brand"}] if n == 0 else [],
         })
     plan = {
         "slug": a.slug, "theme": a.theme,
@@ -126,6 +130,18 @@ def cmd_comments_post(a):
     post(a.file, yes=a.yes)
 
 
+def cmd_analyze(a):
+    from .analyze import analyze_video, summary
+    for v in a.videos:
+        analyze_video(v, scene=a.scene)
+    print("\n" + summary())
+
+
+def cmd_voice_ref(a):
+    from .analyze import voice_ref
+    voice_ref(a.video, a.start, a.end, a.name)
+
+
 def cmd_report(a):
     from .report import weekly_report
     weekly_report()
@@ -197,6 +213,11 @@ def main(argv=None):
     s = sub.add_parser("comments-post"); s.add_argument("file"); s.add_argument("--yes", action="store_true")
     s.set_defaults(fn=cmd_comments_post)
     s = sub.add_parser("report"); s.set_defaults(fn=cmd_report)
+    s = sub.add_parser("analyze"); s.add_argument("videos", nargs="+")
+    s.add_argument("--scene", type=float, default=0.3, help="cut sensitivity 0-1 (lower finds softer cuts)")
+    s.set_defaults(fn=cmd_analyze)
+    s = sub.add_parser("voice-ref"); s.add_argument("video"); s.add_argument("--start", required=True)
+    s.add_argument("--end", required=True); s.add_argument("--name", default="annie-whisper"); s.set_defaults(fn=cmd_voice_ref)
     s = sub.add_parser("status"); s.set_defaults(fn=cmd_status)
 
     a = p.parse_args(argv)

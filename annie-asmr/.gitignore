@@ -26,3 +26,9 @@ __pycache__/
 *.pyc
 .venv/
 .DS_Store
+
+# Analysis of your own videos: keep the reports, not the raw per-frame dumps
+analysis/*/frames.txt
+analysis/*/motion.txt
+analysis/*/loudness.txt
+audio/voice-ref/**

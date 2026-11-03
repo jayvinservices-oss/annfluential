@@ -21,8 +21,7 @@ segments:
     shots: [pick-gift, reveal]
     sound_bed: audio/sfx/box-tapping-01.wav
     voice:
-      - {at: 45, text: "Hi, welcome back. Tonight we're unwrapping Christmas gifts together."}
-      - {at: 70, text: "Just kraft paper, red ribbon, and a lot of crinkles. Get cosy."}
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: ribbons
     chapter: Satin ribbon pulling
     minutes: 7

@@ -30,7 +30,7 @@ def script_sheet(ep: dict) -> str:
 
 
 def _elevenlabs(text: str, style: str, out: Path, c: dict) -> None:
-    tag = c.get("whisper_tag", "") if style == "whisper" else ""
+    tag = c.get("whisper_tag", "") if style in ("whisper", "brand") else ""
     body = {
         "text": f"{tag} {text}".strip(),
         "model_id": c.get("model_id", "eleven_v3"),
@@ -56,7 +56,7 @@ def _voicestudio(text: str, style: str, out: Path, c: dict) -> None:
         "effect_preset": c.get("effect_preset", "broadcast"),
         "wav_bits": "24",
     }
-    if style == "whisper":
+    if style in ("whisper", "brand"):
         form["instruct"] = "whisper"
     if c.get("seed") is not None:
         form["seed"] = str(c["seed"])
