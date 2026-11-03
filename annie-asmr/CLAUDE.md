@@ -47,3 +47,12 @@ Leave `approved: false`. Ann approves.
   one); folder IDs are in metadata/todo.yaml under `drive`.
 - Voice: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
   its weights are CC-BY-NC (non-commercial) and the channel is being monetised.
+
+## Starting a new cloud session (the container is wiped between sessions)
+1. `bash tools/cloud_setup.sh` (reinstalls VoxCPM2 and downloads its model; run in the background).
+2. Re-fetch the reference photo from Drive ("Annie ASMR/source/Annie ASMr Videos - Top 10/Annie asmr lips.jpg",
+   under 10 MB so the Drive connector works) and crop the middle panel:
+   `ffmpeg -i annie-lips-triptych.jpg -vf "crop=552:944:559:0" prompts/reference/avatar.png`
+   (left panel crop=552:944:0:0 -> pose-applying-gloss.png, right crop=556:944:1124:0 -> pose-nails-chin.png).
+3. Videos over 10 MB cannot come through the Drive connector: download them with curl from
+   drive.usercontent.google.com once Ann has allowed that host and shared the folder by link.
