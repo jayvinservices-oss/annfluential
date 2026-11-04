@@ -19,7 +19,7 @@ ann:
     tool's own sound.
   done: false
 - text: Change the handle to @annie.asmr and upload the profile picture (Studio, 2 minutes each).
-  done: false
+  done: true
 - text: Whispered voice memo when you are somewhere quiet (not needed for the first, no-talking video).
   done: false
 - text: 'Done: private gum video stays private; only new AI content is published.'
@@ -64,4 +64,6 @@ claude:
 - text: Clone your voice from the whispered memo; make the brand whisper and test lines.
   done: false
 - text: Plan the first 2-hour scheduled live stream.
-  done: false
+  done: true
+- text: 'Weekly channel numbers: a scheduled task reads YouTube every Monday morning and updates this board.'
+  done: true

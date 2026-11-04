@@ -7,16 +7,13 @@
 - id: handle
   who: ann
   title: Choose a cleaner handle than @annieasmr9051
-  detail: 'Keep the name Annie ASMR (1,030 people know it); change only the handle. @annieasmr and @annie_asmr belong
-    to other channels. Suggested: @annie.asmr (free when checked 4 Nov; also free: @annieasmrsleep, @theannieasmr).
-    Studio > Customization > Basic info > Handle. Studio only.'
-  group: studio
+  detail: 'Done by Ann 4 Nov: @annieasmrai (@annie.asmr was taken). Name stays Annie ASMR.'
+  group: done
 - id: profile-picture
   who: ann
   title: Upload the new profile picture
-  detail: YouTube Studio app or studio.youtube.com > Customization > Branding > Picture. Use "Save profile picture"
-    above. No app or API can change it; Cowork on your computer could click it for you.
-  group: studio
+  detail: 'Done by Ann 4 Nov: gold-ring lips picture is live.'
+  group: done
 - id: freesound-key
   who: access
   title: 'Lip gloss sounds: download a few from Freesound yourself'

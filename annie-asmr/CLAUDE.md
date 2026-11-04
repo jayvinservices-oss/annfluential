@@ -1,7 +1,7 @@
 # Annie ASMR: working notes for Claude
 
 ## The channel
-- Annie ASMR (@annieasmr9051). 1,030 subscribers, 539 of 4,000 public watch hours (4 Nov 2026, API).
+- Annie ASMR (@annieasmrai; was @annieasmr9051). 1,030 subscribers, 539 of 4,000 public watch hours (4 Nov 2026, API).
 - Goal: YouTube Partner Program by 17 January 2027. Hard cutoff 31 January 2027, 18:59 Toronto.
 - Ann approves everything before it is published. Nothing goes public without her yes.
 
@@ -79,3 +79,4 @@ Leave `approved: false`. Ann approves.
 - Freesound blocks this cloud server's IP (empty 403 even on its home page); Ann downloads CC0 sounds herself.
 - httplib2 crashes on YouTube's empty 204 replies (watermarks.set); use requests with Accept-Encoding: identity.
 - New playlists answer 404 to playlistItems.list for a while; insert items directly.
+- Weekly numbers: scheduled task trig_01Ssw3NuhVQMHAkwmHdSURBG (Mondays 7:23 Toronto) runs the report and republishes the board.

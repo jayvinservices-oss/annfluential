@@ -411,7 +411,6 @@ figcaption {{ font-size: .8rem; color: var(--muted) }}
 
   <nav aria-label="Videos">{nav}</nav>
 
-{_rebrand_section()}
 {_storyboard_section()}
 
   <section>
