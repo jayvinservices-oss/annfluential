@@ -122,7 +122,7 @@ def _rebrand_section() -> str:
     acts_p = ROOT / "brand" / "rebrand-actions.yaml"
     if not acts_p.exists():
         return ""
-    acts = yaml.safe_load(acts_p.read_text()) or []
+    acts = [a for a in (yaml.safe_load(acts_p.read_text()) or []) if a.get("group") != "done"]
     assets = ROOT / "brand" / "assets"
     pics = ""
     try:
@@ -165,8 +165,7 @@ def _rebrand_section() -> str:
     GROUPS = [("signin", "Your sign-ins"),
               ("approved", "Approved: Claude does these as soon as the sign-in works"),
               ("studio", "Only you, in YouTube Studio (about 2 minutes each)"),
-              ("review", "Needs your eye again"),
-              ("done", "Approved: Claude is on it")]
+              ("review", "Needs your eye again")]
     rows = []
     last_group = None
     for a in sorted(acts, key=lambda a: [g for g, _ in GROUPS].index(a.get("group", "review"))):
@@ -190,7 +189,7 @@ def _rebrand_section() -> str:
     new titles, channel copy and monetisation plan are in Drive (link below). Tap Yes on what Claude may do; Claude reads your answers.</p>
     {pics}
     {links}
-    {retitle}
+
     <p class="note muted" id="rb-status">Loading your answers…</p>
     <ul class="acts">{''.join(rows)}</ul>
   </section>"""
@@ -205,8 +204,9 @@ NEEDS = [
      "Free: make the 10-second clips yourself in Kling (free daily credits) or Google Flow / Veo, starting from the still "
      "named in the storyboard and pasting the shot's prompt from the Videos section; keep the tool's own sound on (Claude "
      "uses it to time the real chews). Upload to Drive > Annie ASMR > clips > <video>. Hands-off: add a Replicate API "
-     "token (REPLICATE_API_TOKEN) in the environment settings and Claude makes every clip; it costs per clip, so Claude "
-     "shows the price before the first run."),
+     "token (REPLICATE_API_TOKEN) in the environment settings and Claude makes every clip, with a hard $20 cap built in. "
+     "A 60-minute video needs only about 5 short clips (looped and slowed), roughly $3 to $6 a video at Kling-type "
+     "prices, so $20 covers about 4 to 6 videos."),
     ("Sounds for Christmas and lip gloss",
      "Gum, crackling and knuckle sounds are ready (cut from your videos). Still missing: paper crinkle, tape peel, ribbon "
      "pull, tissue rustle, box tapping, glass bauble taps, pine and garland rustle, pen scribble, scissors, sticker peel, "
@@ -264,8 +264,8 @@ def build_board() -> str:
     now = datetime.now(ZoneInfo(ch.get("timezone", "America/Toronto")))
 
     def todo_list(items):
-        return "".join(f'<li class="{"done" if t.get("done") else ""}"><span class="box" aria-hidden="true"></span>'
-                       f'<span>{e(t["text"])}</span></li>' for t in items or [])
+        return "".join(f'<li><span class="box" aria-hidden="true"></span><span>{e(t["text"])}</span></li>'
+                       for t in items or [] if not t.get("done"))
 
     top = "".join(f"<tr><td>{e(v['title'])}</td><td class=\"n\">{v['views']}</td><td class=\"n\">{v['hours']:g}</td></tr>"
                   for v in stats.get("top_videos", []))

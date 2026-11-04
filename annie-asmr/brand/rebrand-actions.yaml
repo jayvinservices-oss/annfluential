@@ -24,7 +24,7 @@
     cannot download from it. Instead, on your phone or computer: freesound.org, search ''lip gloss'' / ''lip balm''
     / ''cap click'', filter Licence = Creative Commons 0, download 5 to 10 sounds and upload them to Drive > Annie
     ASMR > sfx. Or record a tube click and wand pull on your phone.'
-  group: studio
+  group: done
 - id: private-gum
   who: ann
   group: done
@@ -33,11 +33,10 @@
     with the two avatars.'
 - id: seo-descriptions
   who: claude
-  group: review
+  group: done
   title: Search fixes on old video descriptions and tags
-  detail: 'Every description starts with ''Welcome to Annie ASMR'' instead of the words people search. Proposal:
-    add one first line with the trigger words and a link to the video''s playlist, keep everything else; and remove
-    tags that read as flirty (e.g. ''sexy lips chewing gum''). Yes = Claude does it for all public videos.'
+  detail: 'Done 4 Nov: all 68 public videos start with a search line (+ playlist link); flirty tags removed. Originals
+    saved.'
 - id: old-titles
   who: claude
   needs_access: true
@@ -57,13 +56,13 @@
   detail: 'A second AI avatar based on your friend from the duo videos, for weekly split-screen videos together
     (gum, lip gloss). Two things first: which side is your friend in the duo videos (left in the green T-shirt?),
     and has she said yes to an AI character based on her look? Yes = both sorted; note = tell Claude which side.'
-  group: review
+  group: done
 - id: persona-videos
   who: ann
   title: 'Decide: the pet-name and flirty videos'
   detail: 'Recommended: keep them public with the new PG-13 titles (private videos stop counting toward the 4,000
     hours), but out of playlists and off the home page. Yes = do that. Not now = note what you want instead.'
-  group: review
+  group: done
 - id: access-youtube
   who: access
   title: Give Claude access to the channel
