@@ -44,7 +44,29 @@ generator:
   takes_per_shot: 1    # one take per shot; re-make a bad one with --only <shot>
   router:
     budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
-    routes: []         # filled in from the research (reports/ai-video-options-2026-11-04.md)
+    # From reports/ai-video-options-2026-11-04.md (4 Nov 2026). Prices are estimates kept on the high side so the
+    # $20 cap is never passed; check the model page (input field names and price) before the first paid run.
+    routes:
+      - label: wan-2.2-fast (Replicate)      # cheapest: about $0.05 or less per 480p clip
+        provider: replicate
+        key_env: REPLICATE_API_TOKEN
+        model: wan-video/wan-2.2-i2v-fast
+        price_per_second: 0.02
+        prompt_field: prompt
+        image_field: image
+        negative_field: null
+        duration_field: null
+        extra_input: {resolution: "480p"}
+      - label: wan-2.2 (fal.ai)              # backup: $0.04/s at 480p
+        provider: fal
+        key_env: FAL_KEY
+        model: fal-ai/wan/v2.2-a14b/image-to-video
+        price_per_second: 0.08
+        prompt_field: prompt
+        image_field: image_url
+        negative_field: negative_prompt
+        duration_field: null
+        extra_input: {resolution: "480p"}
   reference_image: prompts/reference/avatar.png   # export of Canva MAHZ22R5eUg (concept 2)
   runway:
     endpoint: https://api.dev.runwayml.com/v1

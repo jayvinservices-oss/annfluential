@@ -196,26 +196,20 @@ def _rebrand_section() -> str:
 
 
 NEEDS = [
-    ("Full-size stills (the Drive copies are 199-pixel previews, too small to animate)",
-     "In Canva, open each of these, then Share > Download > PNG, and put them in Drive > Annie ASMR > avatars "
-     "(each is under 10 MB, so Claude can fetch them): presenter gum MAHZ6bGoPjI, hands MAHZ6W0Igdc, gloss MAHZ43MLJNc, "
-     "duo split screen MAHZ401mkO4. Links are in the Canva folder 'Annie ASMR - Avatar stills'."),
-    ("Video clips: pick one way",
-     "Free: make the 10-second clips yourself in Kling (free daily credits) or Google Flow / Veo, starting from the still "
-     "named in the storyboard and pasting the shot's prompt from the Videos section; keep the tool's own sound on (Claude "
-     "uses it to time the real chews). Upload to Drive > Annie ASMR > clips > <video>. Hands-off: add a Replicate API "
-     "token (REPLICATE_API_TOKEN) in the environment settings and Claude makes every clip, with a hard $20 cap built in. "
-     "A 60-minute video needs only about 5 short clips (looped and slowed), roughly $3 to $6 a video at Kling-type "
-     "prices, so $20 covers about 4 to 6 videos."),
-    ("Sounds for Christmas and lip gloss",
-     "Gum, crackling and knuckle sounds are ready (cut from your videos). Still missing: paper crinkle, tape peel, ribbon "
-     "pull, tissue rustle, box tapping, glass bauble taps, pine and garland rustle, pen scribble, scissors, sticker peel, "
-     "washi tear, rhinestone pour and tray, tweezer clicks, lip gloss tube and wand. Easiest: record 1 minute of each on "
-     "your phone in a quiet room, close to the mic, and drop them in Drive > Annie ASMR > sfx. Or keep the video tool's own "
-     "sound for these."),
-    ("Voice (optional for the first video)",
-     "'No talking' is the most searched add-on, so the first gum video can go out with no talking. For the whisper "
-     "videos: a 1-minute whispered voice memo in a quiet room, to Drive > Annie ASMR > source."),
+    ("1. A Replicate account with $5 to $10 prepaid (no auto top-up)",
+     "replicate.com: sign up, Billing, add $5 to $10 of credit and leave auto-reload off. Account, API tokens: create "
+     "one and add it in this cloud environment's settings as REPLICATE_API_TOKEN (never in chat). Claude then makes "
+     "every clip with Wan 2.2 fast: about $1 to $2 per 60-minute video, with a hard $20 stop in the code."),
+    ("2. Full-size presenter stills",
+     "Canva only gives apps a 200-pixel preview. In Canva, open each of these, Share > Download > PNG, and put them in "
+     "Drive > Annie ASMR > avatars: gum MAHZ6bGoPjI, hands MAHZ6W0Igdc, gloss MAHZ43MLJNc (folder 'Annie ASMR - "
+     "Avatar stills'). Each is under 10 MB, so Claude can fetch them."),
+    ("Later: sounds for Christmas and lip gloss",
+     "Gum, crackling and knuckle sounds are ready. Missing: paper, tape, ribbon, tissue, box taps, glass baubles, pine, "
+     "pen, scissors, stickers, washi, rhinestones, tweezers, lip gloss tube and wand. Record 1 minute each on your phone "
+     "in a quiet room, into Drive > Annie ASMR > sfx."),
+    ("Later: whispered voice memo",
+     "Not needed for the first video. A 1-minute whispered memo in a quiet room, to Drive > Annie ASMR > source."),
 ]
 
 
