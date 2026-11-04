@@ -1,8 +1,8 @@
 # Latest channel numbers, from YouTube Studio summaries Ann pastes in. The production board reads this.
-updated: 2026-11-03
-source: YouTube Studio, pasted by Ann
-subscribers: 1034
-watch_hours_365: 543        # Earn tab, public long-form, last 365 days
+updated: 2026-11-04
+source: YouTube Analytics API (python -m pipeline report); Earn tab may differ slightly
+subscribers: 1030
+watch_hours_365: 539        # API estimate of the Earn tab, public long-form, last 365 days
 last_28_days: {views: 928, watch_hours: 51.9, avd: "4:31", impressions: 9921, ctr: 4.81, net_subs: -2}
 previous_28_days: {views: 924, watch_hours: 60.5, avd: "5:15", impressions: 8683, ctr: 5.36, net_subs: 3}
 top_videos:
@@ -18,3 +18,4 @@ latest_video:
   ctr: 5.10
   avd: "0:58"
   note: "Half of viewers gone by 0:05, 75% by 0:30. Fixed in every plan: trigger first, no hello intro."
+last_7_days: {watch_hours: 3.3, per_day: 0.5}   # 2026-11-04 report

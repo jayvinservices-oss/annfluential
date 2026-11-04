@@ -4,91 +4,34 @@
 # needs_access: true = only after "access-youtube" is done.
 # group: signin = Ann gives a sign-in or key | approved = Claude does it once signed in | studio = only Ann, in
 # YouTube Studio | review = needs Ann's eye again | done = approved, Claude is on it
-- id: access-youtube
-  who: access
-  title: Give Claude access to the channel
-  detail: 'Works on your phone, so you never sign in on the work computer. About 20 minutes. Use Chrome or Safari
-    on the phone, signed in only as the Google account that owns Annie ASMR; if a page looks squashed, turn on ''Desktop
-    site'' in the browser menu. 1) console.cloud.google.com: new project ''Annie ASMR''; search for and enable ''YouTube
-    Data API v3'' and ''YouTube Analytics API''. 2) OAuth consent screen: External, then ''Publish app'' so it is
-    In production (in Testing the sign-in expires every 7 days). 3) Credentials: Create OAuth client ID, type ''Web
-    application'', authorised redirect URI https://developers.google.com/oauthplayground. Copy the client ID and
-    secret into your phone''s notes for a minute. 4) developers.google.com/oauthplayground: gear icon, tick ''Use
-    your own OAuth credentials'', paste the ID and secret; in the scope box type https://www.googleapis.com/auth/youtube.force-ssl
-    https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/yt-analytics.readonly, tap Authorize
-    APIs, sign in as the channel, choose the Annie ASMR channel; if Google says the app is not verified, tap Advanced,
-    then continue (it is your own app). Then ''Exchange authorization code for tokens'' and copy the Refresh token.
-    5) In the Claude app or claude.ai on your phone: this session''s environment settings, add three environment
-    variables: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN. Never paste them in chat; delete
-    them from your notes after. Start a new session; Claude checks with ''python -m pipeline whoami''.'
-  group: signin
-- id: freesound-key
-  who: access
-  title: Free Freesound key, for lip gloss and other sounds
-  detail: 'Lip gloss sounds are not in your videos. 1) freesound.org: sign up free. 2) freesound.org/apiv2/apply:
-    create an API key (any name, e.g. Annie ASMR). 3) Add it to this cloud environment as the environment variable
-    FREESOUND_API_KEY, like the YouTube ones. Claude then downloads only CC0 sounds (free for any use, no credit
-    needed): gloss tube clicks, wand pulls, application. Never paste it in chat.'
-  group: signin
-- id: banner
-  who: claude
-  needs_access: true
-  title: Upload the new banner
-  detail: 'Redrawn after your note: the lips now sit inside the yellow box, so phones show them next to the name.
-    Goes up as soon as the sign-in works.'
-  group: approved
-- id: about
-  who: claude
-  needs_access: true
-  title: Rewrite the About text and channel keywords
-  detail: One-line promise, the four triggers, the AI and voice-clone disclosure, upload rhythm. Claude shows you
-    the text first.
-  group: approved
-- id: playlists
-  who: claude
-  needs_access: true
-  title: Create the six series playlists and sort old videos into them
-  detail: Gum Club, Gloss Lab, Nail Studio, Craft Corner, Christmas 2026, Long ASMR for Sleep. Persona or flirty
-    videos go in none.
-  group: approved
-- id: seo-every-video
-  who: claude
-  needs_access: true
-  title: Search wording, end screens and cards on every video
-  detail: Titles, first description lines, tags and playlists from the channel copy (Drive > brand). End screens
-    and cards are set in Studio; Claude gives you the list.
-  group: approved
-- id: watermark
-  who: claude
-  needs_access: true
-  title: Add a subscribe watermark
-  detail: The gold-ring profile picture in the corner of every video; viewers tap it to subscribe.
-  group: approved
-- id: weekly-report
-  who: claude
-  needs_access: true
-  title: Read the channel numbers every week
-  detail: 'Read-only: watch hours, click rate, average view, subscribers, straight onto this board. No more pasting
-    Studio summaries.'
-  group: approved
+- id: handle
+  who: ann
+  title: Choose a cleaner handle than @annieasmr9051
+  detail: 'Keep the name Annie ASMR (1,030 people know it); change only the handle. @annieasmr and @annie_asmr belong
+    to other channels. Suggested: @annie.asmr (free when checked 4 Nov; also free: @annieasmrsleep, @theannieasmr).
+    Studio > Customization > Basic info > Handle. Studio only.'
+  group: studio
 - id: profile-picture
   who: ann
   title: Upload the new profile picture
   detail: YouTube Studio app or studio.youtube.com > Customization > Branding > Picture. Use "Save profile picture"
     above. No app or API can change it; Cowork on your computer could click it for you.
   group: studio
-- id: handle
-  who: ann
-  title: Choose a cleaner handle than @annieasmr9051
-  detail: 'Studio > Customization > Basic info > Handle. Try, in order: @annie.asmr, @annieasmrsleep, @glossyannieasmr.
-    Your old links keep working for 14 days.'
+- id: freesound-key
+  who: access
+  title: 'Lip gloss sounds: download a few from Freesound yourself'
+  detail: 'Key received, thank you. But Freesound blocks this cloud server completely (even its home page), so Claude
+    cannot download from it. Instead, on your phone or computer: freesound.org, search ''lip gloss'' / ''lip balm''
+    / ''cap click'', filter Licence = Creative Commons 0, download 5 to 10 sounds and upload them to Drive > Annie
+    ASMR > sfx. Or record a tube click and wand pull on your phone.'
   group: studio
-- id: layout
+- id: private-gum
   who: ann
-  title: Set the channel trailer and home-page sections
-  detail: 'Studio > Customization > Layout. Trailer: the gum popping video. Sections: Gum Club, Long ASMR for Sleep,
-    Christmas 2026. Claude gives you the exact order.'
-  group: studio
+  group: review
+  title: Publish your private 43-minute gum video?
+  detail: '''Chewing and crackling gum with Two friends'' (43 min) is private and has 14 views. It is your best
+    format at your best length; public, it would count toward the 4,000 hours. Yes = Claude gives it a title, description,
+    thumbnail and playlists, and you press Publish in Studio.'
 - id: old-titles
   who: claude
   needs_access: true
@@ -116,6 +59,58 @@
   detail: 'Recommended: keep them public with the new PG-13 titles (private videos stop counting toward the 4,000
     hours), but out of playlists and off the home page. Yes = do that. Not now = note what you want instead.'
   group: review
+- id: access-youtube
+  who: access
+  title: Give Claude access to the channel
+  detail: 'Done 4 Nov: signed in to Annie ASMR (@annieasmr9051) from the cloud session.'
+  group: done
+- id: banner
+  who: claude
+  needs_access: true
+  title: Upload the new banner
+  detail: 'Done 4 Nov: banner v2 (lips on the right) is live. To switch to v1, tell Claude.'
+  group: done
+- id: about
+  who: claude
+  needs_access: true
+  title: Rewrite the About text and channel keywords
+  detail: 'Done 4 Nov: new About text (glossy, slow, up-close ASMR for sleep; AI ASMR line; Instagram and business
+    email kept) and 16 channel keywords.'
+  group: done
+- id: playlists
+  who: claude
+  needs_access: true
+  title: Create the six series playlists and sort old videos into them
+  detail: 'Done 4 Nov: Gum Club (6), Long ASMR for Sleep (8), Mouth Sounds & Crunchy (9), Nail Studio (9), Gloss
+    Lab (2), Craft Corner (3). Flirty and roleplay videos are in none. Your old playlists are untouched.'
+  group: done
+- id: watermark
+  who: claude
+  needs_access: true
+  title: Add a subscribe watermark
+  detail: 'Done 4 Nov: gold-ring subscribe watermark, bottom right, whole video.'
+  group: done
+- id: weekly-report
+  who: claude
+  needs_access: true
+  title: Read the channel numbers every week
+  detail: 'Done 4 Nov: first report from YouTube Analytics: 539 of 4,000 hours; last 7 days 3.3 hours (0.5 a day).
+    Numbers on this board now come straight from YouTube.'
+  group: done
+- id: layout
+  who: ann
+  title: Set the channel trailer and home-page sections
+  detail: 'Done 4 Nov: trailer for new visitors = the gum popping video; Gum Club and Long ASMR for Sleep added
+    as the top two home-page sections. Your older sections are still below; remove any in Studio > Customization
+    > Layout if you like.'
+  group: done
+- id: seo-every-video
+  who: claude
+  needs_access: true
+  title: Search wording, end screens and cards on every video
+  detail: 'Playlists, About and keywords are done. Titles and descriptions of old videos wait for your yes on ''Old
+    videos: new titles'' below.'
+  group: done
 - id: approve-style
   who: ann
   title: Approve the style guide and artwork

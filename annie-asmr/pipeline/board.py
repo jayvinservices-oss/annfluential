@@ -162,7 +162,7 @@ def _rebrand_section() -> str:
              '<button type="button" class="copy" data-file="brand/profile-800.png">Save profile picture</button></div>'
              '<p class="note">All documents: <a href="https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW">Drive › Annie ASMR › brand</a> '
              '(style guide, rebrand plan and new titles, channel copy and SEO, monetisation plan)</p>')
-    GROUPS = [("signin", "Your sign-ins (the only thing needed from you today)"),
+    GROUPS = [("signin", "Your sign-ins"),
               ("approved", "Approved: Claude does these as soon as the sign-in works"),
               ("studio", "Only you, in YouTube Studio (about 2 minutes each)"),
               ("review", "Needs your eye again"),
