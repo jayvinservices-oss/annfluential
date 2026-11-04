@@ -117,6 +117,16 @@ def cmd_check(a):
     sys.exit(0 if cmd_metadata(a, write=False) else 1)
 
 
+def cmd_shorts(a):
+    from .shorts import make
+    make(a.slug, a.n, a.seconds)
+
+
+def cmd_publish_short(a):
+    from .shorts import publish
+    publish(a.name)
+
+
 def cmd_compile(a):
     from .compilation import compile_video
     compile_video(a.slug)
@@ -226,6 +236,9 @@ def main(argv=None):
                    help="seconds; default is the opening shot, so the thumbnail matches the first frame")
     s.set_defaults(fn=cmd_thumb)
     s = sub.add_parser("metadata"); s.add_argument("slug"); s.add_argument("--short", action="store_true"); s.set_defaults(fn=cmd_metadata)
+    s = sub.add_parser("shorts", help="cut trailer Shorts from the best moments"); s.add_argument("slug")
+    s.add_argument("--n", type=int, default=3); s.add_argument("--seconds", type=float, default=35); s.set_defaults(fn=cmd_shorts)
+    s = sub.add_parser("publish-short", help="publish a Short Ann approved"); s.add_argument("name"); s.set_defaults(fn=cmd_publish_short)
     s = sub.add_parser("compile", help="join finished videos into a 2-3 hour sleep compilation"); s.add_argument("slug"); s.set_defaults(fn=cmd_compile)
     s = sub.add_parser("check"); s.add_argument("slug"); s.set_defaults(fn=cmd_check)
     s = sub.add_parser("upload"); s.add_argument("slug"); s.add_argument("--short", action="store_true")

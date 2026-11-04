@@ -26,7 +26,10 @@
 - Titles match what is in the video. `python -m pipeline check <slug>` must show no ERROR lines.
 - Never post comments. Draft owner replies in metadata/comments/*.yaml for Ann to approve; she runs comments-post.
 - Vary every video (theme, objects, sound). Do not copy an episode plan and change only the title.
-- Uploads are private drafts only. Never add code that sets privacy to public or unlisted, or schedules publishing.
+- Uploads are private drafts only. Long videos: Ann publishes them herself in Studio; no code may make them public.
+- Shorts exception (Ann, 4 Nov): Claude may publish or schedule a Short with `python -m pipeline publish-short`, only
+  when metadata/publish-approvals.yaml records Ann's yes for that Short and its full video is already public.
+  Plan: brand/shorts-traffic-plan.md.
 - Live streams: only scheduled ones, archived as public videos afterwards. No 24/7 loops.
 - API keys live in .env on Ann's Mac. Never ask for them in chat and never write them to a file in git.
 - Hardware: Intel MacBook Pro, no NVIDIA GPU. Anything needing CUDA (PersonaLive lip-sync) runs on a rented cloud GPU.

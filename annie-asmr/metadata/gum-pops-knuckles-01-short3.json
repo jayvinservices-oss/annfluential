@@ -1,0 +1,37 @@
+{
+  "slug": "gum-pops-knuckles-01-short3",
+  "file": "/home/user/annfluential/annie-asmr/renders/gum-pops-knuckles-01-short3.mp4",
+  "title": "Gum pops & knuckle cracks ASMR (No Talking) #shorts",
+  "description": "The full 1:00:11 video: LINK_TO_FULL_VIDEO\n\nASMR Fast Gum Popping & Knuckle Cracking for Sleep | No Talking | AI ASMR\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #Shorts #ASMRforSleep",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "gum popping asmr",
+    "asmr no talking",
+    "knuckle cracking asmr",
+    "gum chewing asmr",
+    "fast asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "parent": "gum-pops-knuckles-01",
+  "moment": {
+    "chapter": "Gum pops & knuckle cracks",
+    "at": 1340.8,
+    "seconds": 35
+  },
+  "checks": {
+    "errors": [
+      "upload the long video first so the Short can link to it"
+    ],
+    "warnings": [
+      "after upload, set 'Related video' to the full video in the YouTube app (the API cannot set it)"
+    ]
+  }
+}

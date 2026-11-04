@@ -17,6 +17,11 @@ ann:
 - text: 'Later: sounds for the cracking, nail tapping, lip gloss and Christmas videos (list on the board); whispered
     voice memo only for the talking videos.'
   done: false
+- text: 'Once per Short, in the YouTube app: Edit > Related video > pick the full video (YouTube doesn''t let me
+    set this).'
+  done: false
+- text: 'Once in Studio: set an end screen on the first new video, then ''Import from video'' on the rest.'
+  done: false
 claude:
 - text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
     numbers.'
@@ -29,4 +34,7 @@ claude:
     then a private draft for you.'
   done: false
 - text: 'December: 3-hour No Talking sleep compilation from the first three videos (compilations/sleep-compilation-2026-12.yaml).'
+  done: false
+- text: 'With each long video: 3 Shorts cut from its best moments, uploaded as private drafts. You say yes on the
+    board; I post them on days 1, 3 and 5 after the full video is public.'
   done: false

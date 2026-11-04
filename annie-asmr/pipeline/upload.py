@@ -1,4 +1,5 @@
-"""Step 7: upload as a PRIVATE draft. This code cannot publish; you review and publish in YouTube Studio."""
+"""Step 7: upload as a PRIVATE draft. This code cannot publish; you review and publish in YouTube Studio.
+(Shorts only: pipeline/shorts.py publish() can publish one after Ann's recorded yes.)"""
 from __future__ import annotations
 
 import json
