@@ -14,52 +14,19 @@ ann:
   done: false
 - text: Download the full-size presenter stills from Canva into Drive › Annie ASMR › avatars.
   done: false
-- text: 'Later: Christmas and lip gloss sounds; whispered voice memo.'
+- text: 'Later: sounds for the cracking, nail tapping, lip gloss and Christmas videos (list on the board); whispered
+    voice memo only for the talking videos.'
   done: false
 claude:
-- text: 'Done 4 Nov: 12 old titles changed (thumbnails left as they are); SEO check; stills renamed and filed; main
-    presenter switched to the caramel character; storyboards for all 5 videos.'
-  done: true
-- text: 'Done 4 Nov: banner v2, About text and keywords, trailer, 6 playlists, 2 home-page sections, watermark,
-    first analytics report.'
-  done: true
-- text: 'Done: avatar stills (anonymous, generated): Annie gloss, Annie gum, Bestie gloss, duo split screen. Links
-    in Channel rebrand.'
-  done: true
-- text: 'Done: banner v2 with the lips on the right; cartoon duo option from Canva.'
-  done: true
-- text: 'Done: avatar updated: you = chocolate skin, locs or super-coily hair; Bestie = caramel skin, braids. Never
-    straight hair.'
-  done: true
-- text: 'Done: search research (YouTube suggestions): new titles use the searched words, ''AI ASMR'' at the end.'
-  done: true
-- text: 'Done: chew-sync tool: chewing sounds placed on each mouth movement (most exact with video tools that make
-    their own sound).'
-  done: true
-- text: 'Done: banner redrawn with the lips inside the phone-safe area.'
-  done: true
-- text: 'Done: old videos'' titles, descriptions and thumbnails, round 2 (catchier, not flirty, no AI wording).'
-  done: true
-- text: 'Done: short ''AI ASMR'' wording instead of the long disclosure; new titles start ''AI ASMR''; YouTube''s
-    synthetic box still ticked on upload.'
-  done: true
-- text: 'Done: video plans lengthened to 45-60 minutes.'
-  done: true
-- text: 'Done: Bestie avatar drafted for duo split-screen videos (waiting on your friend''s side and okay).'
-  done: true
-- text: 'Done: sound bank, 28 clips of 30 seconds from your videos (gum, crackling, knuckles, crunch, lollipop,
-    mouth sounds), each with a slowed version. Preview sent; tell Claude any to drop.'
-  done: true
 - text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
     numbers.'
   done: false
 - text: Clone your voice from the whispered memo; make the brand whisper and test lines.
   done: false
-- text: Plan the first 2-hour scheduled live stream.
-  done: true
-- text: 'Weekly channel numbers: a scheduled task reads YouTube every Monday morning and updates this board.'
-  done: true
-- text: 'Done: free-first video router with a $20 cap (Wan 2.2 fast on Replicate first, fal.ai as backup).'
-  done: true
 - text: 'Done: the gum video''s full soundtrack from your recordings; 60-minute rough preview.'
+  done: false
+- text: 'Next: make the gum video''s clips through the router as soon as the Replicate token and stills are in,
+    then a private draft for you.'
+  done: false
+- text: 'December: 3-hour No Talking sleep compilation from the first three videos (compilations/sleep-compilation-2026-12.yaml).'
   done: false

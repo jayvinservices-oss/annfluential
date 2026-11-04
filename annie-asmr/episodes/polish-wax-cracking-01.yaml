@@ -1,0 +1,43 @@
+# From the 4 Nov competitor scan: cracking (wax, clay, polish) is the fastest-growing trigger.
+slug: polish-wax-cracking-01
+theme: polish-wax-cracking
+title: "ASMR Nail Polish & Wax Cracking With Long Nails | Crunchy Sounds for Sleep | No Talking | AI ASMR"
+title_terms_ok: [crunchy]
+description: >-
+  Slow, crunchy nail polish and wax cracking with long nails, up close and with no talking.
+  Tapping on the set wax, pressing it until it cracks, crunching the shards and peeling dried layers.
+made_by: null
+publish_after: null
+variation:
+  colours: pastel pink and lilac
+  nail_colour: glazed chrome
+  palette: warm cream
+objects: [dried nail polish layers, coloured wax sheets, ceramic tray, long nails]
+sounds: [polish cracking, wax cracking, wax crunching, nail tapping on wax, peeling dried polish]
+tags: [wax cracking asmr, nail polish cracking asmr, asmr no talking, crunchy asmr, long nails asmr]
+segments:
+  - id: tap
+    chapter: Nail tapping on set wax
+    minutes: 8
+    shots: [tap-wax, press-crack]
+    sound_bed: audio/sfx/wax-tap-01.wav
+  - id: crack
+    chapter: Slow polish & wax cracking
+    minutes: 18
+    shots: [press-crack, tap-wax]
+    sound_bed: audio/sfx/wax-crack-01.wav
+  - id: crunch
+    chapter: Crunching the shards
+    minutes: 14
+    shots: [crunch-shards, press-crack]
+    sound_bed: audio/sfx/wax-crunch-01.wav
+  - id: peel
+    chapter: Peeling dried polish layers
+    minutes: 12
+    shots: [peel-layer, crunch-shards]
+    sound_bed: audio/sfx/polish-peel-01.wav
+  - id: show
+    chapter: Cracked tray, slow and quiet
+    minutes: 8
+    shots: [show-tray, crunch-shards]
+    sound_bed: {file: audio/sfx/wax-crunch-01.wav, gain_db: -4}

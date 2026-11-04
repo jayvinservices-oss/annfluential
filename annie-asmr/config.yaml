@@ -119,3 +119,4 @@ youtube:
   # (upload.py), which shows YouTube's own label. "AI ASMR" is also a search term people use.
   disclosure: >-
     AI ASMR: AI presenter, my own voice (cloned), real sounds.
+  disclosure_no_voice: "AI ASMR: AI presenter, real sounds."

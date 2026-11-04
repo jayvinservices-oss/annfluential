@@ -1,10 +1,11 @@
 # Christmas 1 of 4. Make by 24 Nov, publish from 1 Dec.
 slug: xmas-unwrapping-gifts
 theme: christmas-unwrapping
-title: "Christmas ASMR Unwrapping Gifts With Long Nails | Tissue Paper & Ribbon Sounds | AI ASMR"
+title: "Christmas Mystery Gift Unboxing ASMR | No Talking | AI ASMR"
+title_terms_ok: [mystery, unboxing]
 description: >-
-  Cosy Christmas unwrapping: long almond nails tapping, peeling tape and pulling satin
-  ribbons off kraft paper gifts, then rustling tissue paper to see what is inside.
+  Cosy Christmas mystery gift unboxing with no talking: long nails tapping, peeling tape and
+  pulling satin ribbons off kraft paper gifts, then rustling tissue paper to see what is inside.
 made_by: 2026-11-24
 publish_after: 2026-12-01
 variation:
@@ -13,22 +14,18 @@ variation:
   nail_colour: cranberry red chrome
 objects: [kraft paper gifts, red satin ribbon, gift boxes, white tissue paper, small gifts]
 sounds: [paper crinkle, tape peeling, ribbon pulling, box tapping, tissue rustle]
-tags: [asmr unwrapping, christmas asmr, asmr gift unwrapping, paper crinkle asmr, long nails asmr]
+tags: [asmr unboxing, asmr no talking, mystery gift asmr, asmr unwrapping, christmas asmr, asmr gift unwrapping, paper crinkle asmr, long nails asmr]
 segments:
   - id: intro
     chapter: Kraft paper gift tapping
     minutes: 5
     shots: [pick-gift, reveal]
     sound_bed: audio/sfx/box-tapping-01.wav
-    voice:
-      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: ribbons
     chapter: Satin ribbon pulling
     minutes: 11
     shots: [pull-ribbon, pick-gift]
     sound_bed: audio/sfx/ribbon-pull-01.wav
-    voice:
-      - {at: 10, text: "Let's start with the bows. Nice and slow."}
   - id: tape
     chapter: Tape peeling & kraft paper crinkles
     minutes: 15
@@ -39,13 +36,8 @@ segments:
     minutes: 11
     shots: [open-box, unwrap]
     sound_bed: audio/sfx/tissue-rustle-01.wav
-    voice:
-      - {at: 15, text: "Listen to this tissue paper."}
   - id: inside
-    chapter: Gift box opening & goodnight whispers
+    chapter: Gift box opening & reveal
     minutes: 6
     shots: [reveal, open-box]
     sound_bed: audio/sfx/box-tapping-01.wav
-    voice:
-      - {at: 8, text: "That's all of them. Thank you for unwrapping with me."}
-      - {at: 30, text: "Sleep well. Goodnight."}

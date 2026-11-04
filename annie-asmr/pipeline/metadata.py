@@ -125,7 +125,8 @@ def build(ep: dict) -> dict:
     if sounds:
         blocks.append(f"Sounds: {sounds}.")
     blocks.append("Chapters\n" + "\n".join(chapter_lines))
-    blocks.append(" ".join(yt["disclosure"].split()))
+    disc = yt["disclosure"] if voice_lines(ep) else yt.get("disclosure_no_voice", yt["disclosure"])
+    blocks.append(" ".join(disc.split()))
     hashtags = ep.get("hashtags") or ["#ASMR", "#ASMRbeauty"]
     blocks.append(" ".join(hashtags[:3]))
     description = "\n\n".join(b for b in blocks if b)

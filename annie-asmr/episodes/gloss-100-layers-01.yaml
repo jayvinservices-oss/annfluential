@@ -1,0 +1,44 @@
+# From the 4 Nov scan: "1 HOUR, 100 LAYERS ~ Lipgloss" (4.1M) and "wet and sticky lipgloss mouth sounds (No Talking)".
+# The 100 count must be real: the layer chapters below add up to 100 and the video shows each layer.
+slug: gloss-100-layers-01
+theme: lip-gloss-layers
+title: "ASMR 100 Layers of Lip Gloss | Sticky Mouth Sounds & Wand Clicks | No Talking | AI ASMR"
+title_terms_ok: [sticky]
+description: >-
+  One hundred slow layers of lip gloss, up close with no talking: wand clicks, tube taps
+  and sticky mouth sounds as the gloss builds until it shines.
+made_by: null
+publish_after: null
+variation:
+  gloss_shades: clear, nude-pink and a champagne shimmer
+  nail_colour: milky nude
+  palette: blush and rose
+objects: [glass lip gloss tubes, gloss wands, glossy lips, long nails]
+sounds: [gloss wand clicks, tube tapping, sticky mouth sounds, lip smacks]
+tags: [lip gloss asmr, lipgloss layers asmr, 100 layers asmr, mouth sounds asmr, asmr no talking]
+segments:
+  - id: open
+    chapter: Gloss wand clicks & tube taps
+    minutes: 6
+    shots: [open-tubes, tap-tube]
+    sound_bed: audio/sfx/gloss-wand-click-01.wav
+  - id: l1
+    chapter: Layers 1 to 25
+    minutes: 14
+    shots: [apply-wand, layer-count]
+    sound_bed: audio/sfx/gloss-apply-01.wav
+  - id: l2
+    chapter: Layers 26 to 60, sticky sounds
+    minutes: 16
+    shots: [layer-count, press-lips]
+    sound_bed: audio/sfx/gloss-sticky-01.wav
+  - id: l3
+    chapter: Layers 61 to 100
+    minutes: 16
+    shots: [apply-wand, press-lips, layer-count]
+    sound_bed: [audio/sfx/gloss-apply-01.wav, {file: audio/sfx/gloss-sticky-01.wav, gain_db: -3}]
+  - id: shine
+    chapter: Final shine, slow lip sounds
+    minutes: 8
+    shots: [final-shine, press-lips]
+    sound_bed: {file: audio/sfx/gloss-sticky-01.wav, gain_db: -4}

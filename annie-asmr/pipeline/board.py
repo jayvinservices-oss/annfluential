@@ -204,12 +204,14 @@ NEEDS = [
      "Canva only gives apps a 200-pixel preview. In Canva, open each of these, Share > Download > PNG, and put them in "
      "Drive > Annie ASMR > avatars: gum MAHZ6bGoPjI, hands MAHZ6W0Igdc, gloss MAHZ43MLJNc (folder 'Annie ASMR - "
      "Avatar stills'). Each is under 10 MB, so Claude can fetch them."),
-    ("Later: sounds for Christmas and lip gloss",
-     "Gum, crackling and knuckle sounds are ready. Missing: paper, tape, ribbon, tissue, box taps, glass baubles, pine, "
-     "pen, scissors, stickers, washi, rhinestones, tweezers, lip gloss tube and wand. Record 1 minute each on your phone "
-     "in a quiet room, into Drive > Annie ASMR > sfx."),
+    ("Later: sounds for the next videos",
+     "Ready from your videos: gum pops, knuckle and finger cracks. Still needed, 1 to 2 minutes each, phone in a quiet "
+     "room, into Drive > Annie ASMR > sfx. Cracking video: tapping on set wax, wax cracking, crunching wax shards, "
+     "peeling dried nail polish. Nail tapping video: fast tapping on glass, tapping on wood, scratching velvet, polish "
+     "bottle clicks. Lip gloss video: wand clicks, applying gloss, sticky lip sounds. Christmas: paper, tape, ribbon, "
+     "tissue, box taps, glass baubles, pine, pen, scissors, stickers, washi, rhinestones, tweezers."),
     ("Later: whispered voice memo",
-     "Not needed for the first video. A 1-minute whispered memo in a quiet room, to Drive > Annie ASMR > source."),
+     "Not needed for the No Talking videos (gum, cracking, nail tapping, lip gloss, gift unboxing). A 1-minute whispered memo in a quiet room, to Drive > Annie ASMR > source."),
 ]
 
 

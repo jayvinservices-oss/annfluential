@@ -1,5 +1,55 @@
+- slug: gloss-100-layers-01
+  title: ASMR 100 Layers of Lip Gloss | Sticky Mouth Sounds & Wand Clicks | No Talking | AI ASMR
+  rows:
+  - chapter: Gloss wand clicks & tube taps
+    start: 0:00
+    minutes: 6
+    shots:
+    - open-tubes
+    - tap-tube
+    sounds:
+    - gloss-wand-click-01 (to record or source)
+    voice: []
+  - chapter: Layers 1 to 25
+    start: '6:00'
+    minutes: 14
+    shots:
+    - apply-wand
+    - layer-count
+    sounds:
+    - gloss-apply-01 (to record or source)
+    voice: []
+  - chapter: Layers 26 to 60, sticky sounds
+    start: '20:00'
+    minutes: 16
+    shots:
+    - layer-count
+    - press-lips
+    sounds:
+    - gloss-sticky-01 (to record or source)
+    voice: []
+  - chapter: Layers 61 to 100
+    start: '36:00'
+    minutes: 16
+    shots:
+    - apply-wand
+    - press-lips
+    - layer-count
+    sounds:
+    - gloss-apply-01 (to record or source)
+    - gloss-sticky-01 (to record or source)
+    voice: []
+  - chapter: Final shine, slow lip sounds
+    start: '52:00'
+    minutes: 8
+    shots:
+    - final-shine
+    - press-lips
+    sounds:
+    - gloss-sticky-01 (to record or source)
+    voice: []
 - slug: gum-pops-knuckles-01
-  title: ASMR Fast Gum Popping & Knuckle Cracking for Sleep | Up Close Whispers | AI ASMR
+  title: ASMR Fast Gum Popping & Knuckle Cracking for Sleep | No Talking | AI ASMR
   rows:
   - chapter: Fast gum popping
     start: 0:00
@@ -9,8 +59,7 @@
     - gum-and-hands
     sounds:
     - 'gum-pop-fast-01 (bank: gum (Ann''s gum videos))'
-    voice:
-    - Annie ASMR... Annie ASMR... Annie ASMR.
+    voice: []
   - chapter: Knuckle cracking
     start: '10:00'
     minutes: 12
@@ -40,7 +89,7 @@
     sounds:
     - 'finger-crack-01 (bank: gum-knuckle, slowed versions)'
     voice: []
-  - chapter: Slow gum pops & close whispers
+  - chapter: Slow gum pops for sleep
     start: '48:00'
     minutes: 12
     shots:
@@ -48,10 +97,103 @@
     - gum-pop
     sounds:
     - 'gum-pop-slow-01 (bank: gum, slowed versions)'
-    voice:
-    - Slower now.
-    - Thank you for asking for this one. Tell me what to crack next.
-    - Goodnight.
+    voice: []
+- slug: nail-tapping-fast-01
+  title: ASMR Fast Long Nail Tapping for Sleep | Glass, Wood & Velvet | No Talking | AI ASMR
+  rows:
+  - chapter: Fast nail tapping on glass
+    start: 0:00
+    minutes: 12
+    shots:
+    - tap-objects
+    - show-hands
+    sounds:
+    - nail-tap-glass-01 (to record or source)
+    voice: []
+  - chapter: Tapping & scratching on wood
+    start: '12:00'
+    minutes: 14
+    shots:
+    - tap-objects
+    - buff
+    sounds:
+    - nail-tap-wood-01 (to record or source)
+    voice: []
+  - chapter: Velvet box scratching
+    start: '26:00'
+    minutes: 12
+    shots:
+    - tap-objects
+    - show-hands
+    sounds:
+    - nail-scratch-velvet-01 (to record or source)
+    voice: []
+  - chapter: Polish bottle clicks & brush strokes
+    start: '38:00'
+    minutes: 12
+    shots:
+    - paint-nail
+    - tap-objects
+    sounds:
+    - polish-bottle-click-01 (to record or source)
+    voice: []
+  - chapter: Slow tapping for sleep
+    start: '50:00'
+    minutes: 10
+    shots:
+    - show-hands
+    - tap-objects
+    sounds:
+    - nail-tap-glass-01 (to record or source)
+    voice: []
+- slug: polish-wax-cracking-01
+  title: ASMR Nail Polish & Wax Cracking With Long Nails | Crunchy Sounds for Sleep | No Talking | AI ASMR
+  rows:
+  - chapter: Nail tapping on set wax
+    start: 0:00
+    minutes: 8
+    shots:
+    - tap-wax
+    - press-crack
+    sounds:
+    - wax-tap-01 (to record or source)
+    voice: []
+  - chapter: Slow polish & wax cracking
+    start: '8:00'
+    minutes: 18
+    shots:
+    - press-crack
+    - tap-wax
+    sounds:
+    - wax-crack-01 (to record or source)
+    voice: []
+  - chapter: Crunching the shards
+    start: '26:00'
+    minutes: 14
+    shots:
+    - crunch-shards
+    - press-crack
+    sounds:
+    - wax-crunch-01 (to record or source)
+    voice: []
+  - chapter: Peeling dried polish layers
+    start: '40:00'
+    minutes: 12
+    shots:
+    - peel-layer
+    - crunch-shards
+    sounds:
+    - polish-peel-01 (to record or source)
+    voice: []
+  - chapter: Cracked tray, slow and quiet
+    start: '52:00'
+    minutes: 8
+    shots:
+    - show-tray
+    - crunch-shards
+    sounds:
+    - wax-crunch-01 (to record or source)
+    voice: []
 - slug: xmas-festive-cards
   title: Christmas ASMR Making Cards With Long Nails | Pen Sounds, Stickers & Whispers | AI ASMR
   rows:
@@ -200,7 +342,7 @@
     voice:
     - There. It's beautiful. Goodnight.
 - slug: xmas-unwrapping-gifts
-  title: Christmas ASMR Unwrapping Gifts With Long Nails | Tissue Paper & Ribbon Sounds | AI ASMR
+  title: Christmas Mystery Gift Unboxing ASMR | No Talking | AI ASMR
   rows:
   - chapter: Kraft paper gift tapping
     start: 0:00
@@ -210,8 +352,7 @@
     - reveal
     sounds:
     - box-tapping-01 (to record or source)
-    voice:
-    - Annie ASMR... Annie ASMR... Annie ASMR.
+    voice: []
   - chapter: Satin ribbon pulling
     start: '5:00'
     minutes: 11
@@ -220,8 +361,7 @@
     - pick-gift
     sounds:
     - ribbon-pull-01 (to record or source)
-    voice:
-    - Let's start with the bows. Nice and slow.
+    voice: []
   - chapter: Tape peeling & kraft paper crinkles
     start: '16:00'
     minutes: 15
@@ -240,9 +380,8 @@
     - unwrap
     sounds:
     - tissue-rustle-01 (to record or source)
-    voice:
-    - Listen to this tissue paper.
-  - chapter: Gift box opening & goodnight whispers
+    voice: []
+  - chapter: Gift box opening & reveal
     start: '42:00'
     minutes: 6
     shots:
@@ -250,6 +389,4 @@
     - open-box
     sounds:
     - box-tapping-01 (to record or source)
-    voice:
-    - That's all of them. Thank you for unwrapping with me.
-    - Sleep well. Goodnight.
+    voice: []

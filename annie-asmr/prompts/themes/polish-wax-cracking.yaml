@@ -1,0 +1,29 @@
+id: polish-wax-cracking
+name: Nail polish and wax cracking (long nails)
+season: regular
+uses_hands: true
+# Fastest-growing trigger in the 4 Nov scan: wax, clay and nail polish cracking (53,000 to 81,600 views a day).
+setting: >-
+  A small white ceramic tray on a soft cream towel, close to the camera, with dried layers of
+  glossy nail polish and thin coloured wax sheets set in it, lit by a warm lamp.
+variation_template: >-
+  Polish and wax colours today: {colours}. Nails painted {nail_colour}. Background tones: {palette}.
+variation_pools:
+  colours: [pastel pink and lilac, milky white and gold shimmer, cherry red and clear, peach and mint]
+  nail_colour: [glazed chrome, milky nude, berry, espresso brown]
+  palette: [warm cream, blush and beige, soft peach]
+sounds: [polish cracking, wax cracking, wax crunching, nail tapping on wax, peeling dried polish]
+shots:
+  press-crack:
+    action: A long nail presses slowly into the dried glossy layer in the tray until it cracks into shards, very close up.
+  tap-wax:
+    action: Long nails tap slowly on the smooth set wax surface before pressing in, close to the camera.
+  crunch-shards:
+    action: Fingertips press and crumble the cracked shards slowly, the pieces catching the light.
+  peel-layer:
+    action: A long nail lifts the edge of a dried polish layer and peels it back slowly in one sheet.
+  show-tray:
+    action: Both hands rest beside the tray of glossy cracked shards, turning it slowly under the lamp.
+chapter_ideas: [Nail tapping on set wax, Slow polish cracking, Wax crunching, Peeling dried layers, Cracked tray show]
+title_patterns:
+  - "ASMR Nail Polish & Wax Cracking With Long Nails | No Talking"

@@ -117,6 +117,11 @@ def cmd_check(a):
     sys.exit(0 if cmd_metadata(a, write=False) else 1)
 
 
+def cmd_compile(a):
+    from .compilation import compile_video
+    compile_video(a.slug)
+
+
 def cmd_upload(a):
     from .upload import upload
     upload(a.slug, short=a.short, yes=a.yes)
@@ -221,6 +226,7 @@ def main(argv=None):
                    help="seconds; default is the opening shot, so the thumbnail matches the first frame")
     s.set_defaults(fn=cmd_thumb)
     s = sub.add_parser("metadata"); s.add_argument("slug"); s.add_argument("--short", action="store_true"); s.set_defaults(fn=cmd_metadata)
+    s = sub.add_parser("compile", help="join finished videos into a 2-3 hour sleep compilation"); s.add_argument("slug"); s.set_defaults(fn=cmd_compile)
     s = sub.add_parser("check"); s.add_argument("slug"); s.set_defaults(fn=cmd_check)
     s = sub.add_parser("upload"); s.add_argument("slug"); s.add_argument("--short", action="store_true")
     s.add_argument("--yes", action="store_true"); s.set_defaults(fn=cmd_upload)

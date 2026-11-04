@@ -1,13 +1,13 @@
 # Next video. From YouTube's concept list: viewers repeatedly ask for fast gum popping + knuckle cracking.
-# Opens straight on the trigger from the title (no talking for the first 45s); thumbnail = opening shot.
+# Opens straight on the trigger from the title (no talking anywhere: 'No Talking' is the top search phrase, scan 4 Nov); thumbnail = opening shot.
 # Gum pops and knuckle cracks must be real recordings in audio/sfx/.
 slug: gum-pops-knuckles-01
 priority: 1   # next video: a follow-up to the channel's best performer
 theme: gum-pops-knuckles
-title: "ASMR Fast Gum Popping & Knuckle Cracking for Sleep | Up Close Whispers | AI ASMR"
+title: "ASMR Fast Gum Popping & Knuckle Cracking for Sleep | No Talking | AI ASMR"
 description: >-
-  Fast gum popping and slow knuckle cracking up close, the triggers you keep asking for,
-  with soft close whispers in between. Use the chapters to jump to your favourite sound.
+  Fast gum popping and slow knuckle cracking up close, the triggers you keep asking for.
+  No talking, just the sounds. Use the chapters to jump to your favourite sound.
 made_by: null
 publish_after: null
 variation:
@@ -16,16 +16,14 @@ variation:
   nail_colour: glazed chrome
   palette: warm amber fairy lights
 objects: [pink bubble gum, glossy lips, long almond nails]
-sounds: [fast gum popping, gum snapping, knuckle cracking, finger cracking, close whispers]
-tags: [gum popping asmr, knuckle cracking asmr, gum chewing asmr, fast asmr, mouth sounds asmr]
+sounds: [fast gum popping, gum snapping, knuckle cracking, finger cracking]
+tags: [gum popping asmr, asmr no talking, knuckle cracking asmr, gum chewing asmr, fast asmr, mouth sounds asmr]
 segments:
   - id: pops
     chapter: Fast gum popping
     minutes: 10
     shots: [gum-pop, gum-and-hands]
     sound_bed: audio/sfx/gum-pop-fast-01.wav
-    voice:
-      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
   - id: knuckles
     chapter: Knuckle cracking
     minutes: 12
@@ -42,11 +40,7 @@ segments:
     shots: [finger-stretch, knuckle-crack]
     sound_bed: audio/sfx/finger-crack-01.wav
   - id: whispers
-    chapter: Slow gum pops & close whispers
+    chapter: Slow gum pops for sleep
     minutes: 12
     shots: [whisper-close, gum-pop]
     sound_bed: {file: audio/sfx/gum-pop-slow-01.wav, gain_db: -3}
-    voice:
-      - {at: 20, text: "Slower now."}
-      - {at: 90, text: "Thank you for asking for this one. Tell me what to crack next."}
-      - {at: 240, text: "Goodnight."}
