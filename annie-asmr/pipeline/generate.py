@@ -25,6 +25,19 @@ def clips_for_shot(slug: str, shot_id: str) -> list[Path]:
     return sorted(found)
 
 
+def still_for_shot(ep: dict, shot_id: str, default: Path) -> Path:
+    """The presenter still a shot starts from: prompts/reference/stills/<gum|hands|gloss>.png when present."""
+    from .episode import shots
+    text = (shots(ep).get(shot_id, {}).get("action", "") + " " + shot_id).lower()
+    key = ("gum" if any(w in text for w in ("gum", "pop", "bubble")) else
+           "hands" if any(w in text for w in ("knuckle", "finger", "stretch", "nail", "tap", "hands")) else "gloss")
+    for ext in (".png", ".jpg"):
+        p = project_path(f"prompts/reference/stills/{key}{ext}")
+        if p.exists():
+            return p
+    return default
+
+
 def generate(ep: dict, *, provider_name: str | None = None, takes: int | None = None,
              only: list[str] | None = None, dry_run: bool = False) -> None:
     gcfg = config()["generator"]
@@ -42,6 +55,7 @@ def generate(ep: dict, *, provider_name: str | None = None, takes: int | None = 
         if only and shot_id not in only:
             continue
         prompt, negative = build_prompt(ep, shot_id)
+        shot_image = still_for_shot(ep, shot_id, image)
         for k in range(1, takes + 1):
             out = d / f"{shot_id}__t{k}.mp4"
             if out.exists():
@@ -51,12 +65,17 @@ def generate(ep: dict, *, provider_name: str | None = None, takes: int | None = 
                 missing.append(out.name)
                 continue
             print(f"  make   {out.name} via {provider.name} ...", flush=True)
-            meta = provider.generate(prompt=prompt, negative=negative, image=image, seconds=seconds, out=out)
+            meta = provider.generate(prompt=prompt, negative=negative, image=shot_image, seconds=seconds, out=out)
             meta.update({"shot": shot_id, "take": k, "prompt": prompt, "negative": negative,
                          "created": datetime.now().isoformat(timespec="seconds")})
             out.with_suffix(".json").write_text(json.dumps(meta, indent=2))
             print(f"  saved  {out.name}")
 
+    if dry_run and provider_name == "router" and missing:
+        try:
+            print("  plan   " + get_provider("router", gcfg).plan(len(missing), seconds))
+        except SystemExit as e:
+            print(f"  plan   {e}")
     if missing:
         print(f"\n{len(missing)} clip(s) still needed. Prompts are in {d / '_prompts.md'}.")
         print("Make them in your generator's web app and save them with these names:")

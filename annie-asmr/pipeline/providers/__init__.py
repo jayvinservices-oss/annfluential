@@ -11,7 +11,13 @@ def get_provider(name: str, cfg: dict) -> Provider:
     if name == "replicate":
         from .replicate import ReplicateProvider
         return ReplicateProvider(cfg.get("replicate", {}))
+    if name == "router":
+        from .router import RouterProvider
+        return RouterProvider(cfg.get("router", {}))
+    if name == "fal":
+        from .fal import FalProvider
+        return FalProvider(cfg.get("fal", {}))
     if name == "manual":
         from .manual import ManualProvider
         return ManualProvider(cfg)
-    raise SystemExit(f"Unknown generator provider '{name}'. Use runway, replicate or manual.")
+    raise SystemExit(f"Unknown generator provider '{name}'. Use router, fal, runway, replicate or manual.")

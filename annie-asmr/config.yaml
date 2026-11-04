@@ -39,9 +39,12 @@ opening:
   thumbnail_at: 3      # seconds into the opening shot for the default thumbnail frame
 
 generator:
-  provider: manual     # runway | replicate | manual   (you choose; manual = web UI, drop files in)
-  clip_seconds: 10
-  takes_per_shot: 2    # generate 2 takes, keep the best, delete the rest
+  provider: router     # router (free credits first, then cheapest, $20 cap) | fal | replicate | runway | manual
+  clip_seconds: 5      # 5-second clips, slowed and alternated in assembly; keeps cost down
+  takes_per_shot: 1    # one take per shot; re-make a bad one with --only <shot>
+  router:
+    budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
+    routes: []         # filled in from the research (reports/ai-video-options-2026-11-04.md)
   reference_image: prompts/reference/avatar.png   # export of Canva MAHZ22R5eUg (concept 2)
   runway:
     endpoint: https://api.dev.runwayml.com/v1
