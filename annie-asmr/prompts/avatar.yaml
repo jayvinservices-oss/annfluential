@@ -3,22 +3,22 @@
 # Character reference (full face, for identity only; clips stay nose-down): Canva media MAHZ4Lq0kqs (white background; hands fixed), right side.
 # the middle panel (open gloss tube under the chin) is the main reference, panels 1 and 3 are pose references.
 # v2 (3 Nov 2026): rewritten from the full-size reference. v3: natural hair (Ann: the avatar is me; locs or
+# v4 (4 Nov 2026): Ann chose the lighter, caramel-skinned character as the main presenter of the videos.
+# The deep-chocolate character with locs moved to avatar-duo.yaml (the duo partner).
 # super-coily hair, never straight; chocolate complexion). Change wording only on purpose, then make a test clip.
 
-version: 3
+version: 4
 
 face: >-
-  Extreme close-up of the lower face of a Black woman, framed from the tip of her nose and
-  nostrils at the top edge down to her chin and upper neck. Her eyes and upper face are never
-  in frame. Deep brown skin with a warm, dewy natural sheen on the nose and upper lip and visible
-  skin texture. Very full, plump lips, slightly parted, with a two-tone look: a deeper mauve-brown
-  lip line at the edges blending into a soft pink-nude centre, covered in thick high-shine clear
-  gloss with bright wet highlights. Black natural hair, locs or super-coily, falling at the edges of the
-  frame (never straight). A thin delicate gold chain necklace at the base of her neck.
+  Extreme close-up of the lower face of a young Black woman, framed from the tip of her nose to her chin and
+  upper neck. Her eyes and upper face are never in frame. Warm caramel skin, lighter than Annie's chocolate, with golden undertones and a
+  soft natural sheen. Full, rounded lips with a defined darker berry-brown liner and a glossy berry-mauve
+  centre, high shine. Long caramel-brown box braids fall at the edges of the frame. Small gold hoop earrings,
+  a thin gold chain with a tiny pendant.
 
 hands: >-
-  Her hands have very long tapered almond nails in a glossy nude latte-beige polish, neat cuticles,
-  deep brown skin. Fingers relaxed and elegant, moving slowly and gently.
+  Her hands have medium-length coffin nails in a milky pink polish with a glossy top coat, neat cuticles,
+  warm caramel skin. Fingers move slowly and gently.
 
 camera: >-
   Static tripod camera, 16:9, shallow depth of field, macro beauty-shot look, soft warm frontal key
@@ -37,11 +37,12 @@ negative: >-
   oversaturated, cartoon, 3d render
 
 # Approved-style stills (Canva media, 3 Nov 2026) to start image-to-video clips from:
-stills:
-  gloss: MAHZ4_ZnBo4     # gloss wand on the lower lip
-  gum: MAHZ40zAVZc       # pink gum bubble, nails near the chin
-  duo: MAHZ401mkO4       # split screen: Bestie (left) gloss, Annie (right) gum
-  upper_cream_knit: MAHZ5cxOlbw   # waist up, cream knit (thumbnails, banner, posts)
-  upper_rose_satin: MAHZ5aKMFqM   # waist up, dusty-rose satin, bubble gum pack
-  duo_upper_desk: MAHZ5TUq_qY     # both at a beauty desk
+stills:                  # the caramel presenter (left side of the duo portrait)
+  gloss: MAHZ43MLJNc     # berry gloss with wand
+  gum: MAHZ6bGoPjI       # holding pink bubble gum near her chin
+  hands: MAHZ6W0Igdc     # hands at her chin, knuckle cracking
+  upper_lilac_cardigan: MAHZ5drJi2I
+  upper_sage_hoodie: MAHZ5RoJYIo
+  duo: MAHZ401mkO4       # split screen with the partner
+  duo_upper_desk: MAHZ5TUq_qY
 # All stills: Canva folder "Annie ASMR – Avatar stills" FAHZ5ZSZi5g; names in Drive "Annie ASMR/avatars".

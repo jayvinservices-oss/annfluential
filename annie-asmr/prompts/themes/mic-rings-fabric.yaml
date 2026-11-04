@@ -14,7 +14,7 @@ variation_pools:
 sounds: [mic brushing, fluffy mic scratching, ring tapping, ring clinking, fabric scratching]
 shots:
   mic-brush:
-    action: Her long almond nails brush slowly across a fluffy microphone cover just below her chin.
+    action: Her long nails brush slowly across a fluffy microphone cover just below her chin.
   ring-tap:
     action: She taps her rings rhythmically against each other and on a glass surface close to the camera.
   fabric-scratch:

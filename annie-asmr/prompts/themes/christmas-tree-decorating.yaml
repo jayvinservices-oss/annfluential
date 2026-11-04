@@ -17,7 +17,7 @@ variation_pools:
 sounds: [glass bauble taps, ornament hooks, tinsel rustle, pine needle brushing, box rummaging]
 shots:
   tap-baubles:
-    action: Long almond nails tap glass baubles slowly in the ornament box.
+    action: Long nails tap glass baubles slowly in the ornament box.
   hang-ornament:
     action: She hooks an ornament onto a pine branch close to her face, slowly and carefully.
   tinsel:

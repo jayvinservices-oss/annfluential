@@ -9,27 +9,25 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
+- text: Download the full-size presenter stills from Canva into Drive › Annie ASMR › avatars (see 'What Claude needs'
+    under Storyboards).
+  done: false
+- text: 'Choose how clips get made: you in Kling/Flow (free), or a Replicate token so Claude makes them (paid per
+    clip).'
+  done: false
+- text: Record the missing Christmas and lip gloss sounds on your phone (list under Storyboards), or keep the video
+    tool's own sound.
+  done: false
 - text: Change the handle to @annie.asmr and upload the profile picture (Studio, 2 minutes each).
   done: false
-- text: 'Decide: publish the private 43-minute gum video with your friend? (board: Needs your eye again)'
+- text: Whispered voice memo when you are somewhere quiet (not needed for the first, no-talking video).
   done: false
-- text: Download 5-10 CC0 lip gloss sounds from Freesound on your phone (it blocks this server) into Drive › Annie
-    ASMR › sfx.
-  done: false
-- text: 'Done: Google sign-in and Freesound key.'
-  done: true
-- text: 'In the office: a 1-minute whispered voice memo, quiet room, no gum, to Drive › Annie ASMR › source. Your
-    talking lines stay yours.'
-  done: false
-- text: 'Pick a banner: v1 (lips left) or v2 (lips right, clear of the profile picture), or the cartoon duo.'
-  done: false
-- text: 'Later: make clips from the prompts below in a free video app and upload them to Annie ASMR › clips › <video>.'
-  done: false
-- text: 'Done: rebrand answers on the board; knuckle cracking is in (from your own videos).'
-  done: true
-- text: 'Done: videos shared; all 12 downloaded.'
+- text: 'Done: private gum video stays private; only new AI content is published.'
   done: true
 claude:
+- text: 'Done 4 Nov: 12 old titles changed (thumbnails left as they are); SEO check; stills renamed and filed; main
+    presenter switched to the caramel character; storyboards for all 5 videos.'
+  done: true
 - text: 'Done 4 Nov: banner v2, About text and keywords, trailer, 6 playlists, 2 home-page sections, watermark,
     first analytics report.'
   done: true

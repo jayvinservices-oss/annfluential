@@ -12,7 +12,7 @@ variation_pools:
 sounds: [glass tapping, crunchy bites, candy crackle]
 shots:
   tap-fruit:
-    action: Long almond nails tap the shiny glass fruit on the board.
+    action: Long nails tap the shiny glass fruit on the board.
   bite:
     action: She takes a small slow bite of glass candy fruit with glossy lips, crisp crack.
 chapter_ideas: [Glass fruit tapping, First crunchy bites, Candy crackle]

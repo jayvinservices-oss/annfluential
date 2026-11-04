@@ -14,11 +14,11 @@ variation_pools:
 sounds: [paper crinkle, tape peeling, ribbon pulling, box tapping, tissue rustle, lid opening]
 shots:
   pick-gift:
-    action: Long almond nails pick up a wrapped gift and tap slowly on the paper.
+    action: Long nails pick up a wrapped gift and tap slowly on the paper.
   pull-ribbon:
     action: She slowly pulls a satin ribbon loose from a wrapped gift, the bow coming undone.
   peel-tape:
-    action: Long almond nails slowly peel the tape off the wrapping paper.
+    action: Long nails slowly peel the tape off the wrapping paper.
   unwrap:
     action: She slowly unwraps the paper from a gift box, paper crinkling in her hands.
   open-box:

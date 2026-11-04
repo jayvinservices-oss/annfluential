@@ -27,25 +27,30 @@
   group: studio
 - id: private-gum
   who: ann
-  group: review
+  group: done
   title: Publish your private 43-minute gum video?
-  detail: '''Chewing and crackling gum with Two friends'' (43 min) is private and has 14 views. It is your best
-    format at your best length; public, it would count toward the 4,000 hours. Yes = Claude gives it a title, description,
-    thumbnail and playlists, and you press Publish in Studio.'
+  detail: 'Your call 4 Nov: stays private. Only new AI content gets published; the gum-with-a-friend idea is recreated
+    with the two avatars.'
+- id: seo-descriptions
+  who: claude
+  group: review
+  title: Search fixes on old video descriptions and tags
+  detail: 'Every description starts with ''Welcome to Annie ASMR'' instead of the words people search. Proposal:
+    add one first line with the trigger words and a link to the video''s playlist, keep everything else; and remove
+    tags that read as flirty (e.g. ''sexy lips chewing gum''). Yes = Claude does it for all public videos.'
 - id: old-titles
   who: claude
   needs_access: true
   title: 'Old videos: new titles and descriptions (round 2)'
-  detail: 'Redone after your note "not so PG-13, less flirty": catchier, built on search words (intense, satisfying,
-    crunchy, bestie), no AI wording since these are your real videos. Tap the list above to read them.'
-  group: review
+  detail: 'Done 4 Nov: 12 old videos renamed (catchier, search-led, not flirty). Old titles saved, so any can be
+    put back.'
+  group: done
 - id: old-thumbnails
   who: claude
   needs_access: true
-  title: 'Old videos: new thumbnails (round 2)'
-  detail: 'Redone after your note "text not catchy enough": Pop Pop POP, Double Pops, So Snappy, SO Crunchy, Tingle
-    Rush and more. Shown above.'
-  group: review
+  title: 'Old videos: thumbnails stay as they are'
+  detail: 'Your call 4 Nov: keep the old thumbnails; only titles changed.'
+  group: done
 - id: duo-avatar
   who: ann
   title: Bestie avatar for duo videos

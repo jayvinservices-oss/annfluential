@@ -14,11 +14,11 @@ variation_pools:
 sounds: [pen scribbling, paper cutting, sticker peeling, washi tape tearing, card stock tapping]
 shots:
   sketch:
-    action: Her hand with long almond nails sketches with a gold pen on cardstock, slow strokes.
+    action: Her hand with long nails sketches with a gold pen on cardstock, slow strokes.
   cut-paper:
     action: She cuts cardstock slowly with small scissors, close to the camera.
   stickers:
-    action: Long almond nails peel a sticker slowly and press it onto the card.
+    action: Long nails peel a sticker slowly and press it onto the card.
   washi:
     action: She tears washi tape and smooths it down with her fingertip.
   show-card:

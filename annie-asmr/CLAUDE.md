@@ -6,6 +6,8 @@
 - Ann approves everything before it is published. Nothing goes public without her yes.
 
 ## The look (locked in prompts/avatar.yaml)
+- MAIN PRESENTER since 4 Nov: the caramel-skinned character (prompts/avatar.yaml); the deep-chocolate one with locs is
+  the duo partner (prompts/avatar-duo.yaml). Old real videos stay as they are; only new AI content is published.
 - Both avatars are ANONYMOUS generated characters (Ann, 3 Nov): not Ann's or her friend's likeness, no real photos.
   Identity reference: the generated duo portrait, Canva media MAHZ4Lq0kqs (Annie right, Bestie left).
 - Claude may write its own Canva image prompts for avatar stills (Ann's yes, 3 Nov).

@@ -196,6 +196,55 @@ def _rebrand_section() -> str:
   </section>"""
 
 
+NEEDS = [
+    ("Full-size stills (the Drive copies are 199-pixel previews, too small to animate)",
+     "In Canva, open each of these, then Share > Download > PNG, and put them in Drive > Annie ASMR > avatars "
+     "(each is under 10 MB, so Claude can fetch them): presenter gum MAHZ6bGoPjI, hands MAHZ6W0Igdc, gloss MAHZ43MLJNc, "
+     "duo split screen MAHZ401mkO4. Links are in the Canva folder 'Annie ASMR - Avatar stills'."),
+    ("Video clips: pick one way",
+     "Free: make the 10-second clips yourself in Kling (free daily credits) or Google Flow / Veo, starting from the still "
+     "named in the storyboard and pasting the shot's prompt from the Videos section; keep the tool's own sound on (Claude "
+     "uses it to time the real chews). Upload to Drive > Annie ASMR > clips > <video>. Hands-off: add a Replicate API "
+     "token (REPLICATE_API_TOKEN) in the environment settings and Claude makes every clip; it costs per clip, so Claude "
+     "shows the price before the first run."),
+    ("Sounds for Christmas and lip gloss",
+     "Gum, crackling and knuckle sounds are ready (cut from your videos). Still missing: paper crinkle, tape peel, ribbon "
+     "pull, tissue rustle, box tapping, glass bauble taps, pine and garland rustle, pen scribble, scissors, sticker peel, "
+     "washi tear, rhinestone pour and tray, tweezer clicks, lip gloss tube and wand. Easiest: record 1 minute of each on "
+     "your phone in a quiet room, close to the mic, and drop them in Drive > Annie ASMR > sfx. Or keep the video tool's own "
+     "sound for these."),
+    ("Voice (optional for the first video)",
+     "'No talking' is the most searched add-on, so the first gum video can go out with no talking. For the whisper "
+     "videos: a 1-minute whispered voice memo in a quiet room, to Drive > Annie ASMR > source."),
+]
+
+
+def _storyboard_section() -> str:
+    p = METADATA / "storyboards.yaml"
+    if not p.exists():
+        return ""
+    vids = yaml.safe_load(p.read_text()) or []
+    blocks = []
+    for v in vids:
+        rows = "".join(
+            f"<tr><td class=\"n\">{e(r['start'])}</td><td><b>{e(r['chapter'])}</b> ({r['minutes']} min)<br>"
+            f"<span class=\"muted\">shots: {e(', '.join(r['shots']))}<br>sound: {e('; '.join(r['sounds']) or 'none')}"
+            + (f"<br>voice: {e(' / '.join(r['voice']))}" if r['voice'] else "") + "</span></td></tr>"
+            for r in v["rows"])
+        blocks.append(f"<details><summary>{e(v['title'])}</summary><div class=\"scroll\"><table><tbody>{rows}"
+                      f"</tbody></table></div></details>")
+    needs = "".join(f"<li><b>{e(t)}</b><br><span class=\"muted\">{e(d)}</span></li>" for t, d in NEEDS)
+    return f"""
+  <section id="storyboards">
+    <h2>Storyboards</h2>
+    <p class="note">Presenter: the caramel-skinned character. Each chapter: when it starts, which shots, which sound, any
+    whispers. Full version: brand/storyboards.md (and Drive > Annie ASMR > brand).</p>
+    {''.join(blocks)}
+    <h3 style="margin-top:16px">What Claude needs to make the videos</h3>
+    <ol class="needs">{needs}</ol>
+  </section>"""
+
+
 def build_board() -> str:
     cfg = config()
     ch = cfg["channel"]
@@ -310,6 +359,8 @@ figcaption {{ font-size: .8rem; color: var(--muted) }}
 #rebrand > figure {{ margin-top: 4px }}
 .dl {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 }}
 .rt {{ margin-top: 12px }}
+.needs {{ display: grid; gap: 10px; padding-left: 20px; font-size: .9rem }}
+#storyboards details {{ margin-top: 8px }}
 .rtl {{ list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px }}
 .rtl li {{ display: grid; gap: 4px; font-size: .82rem; min-width: 0 }}
 .rtl img {{ width: 100%; height: auto; border-radius: 8px; display: block }}
@@ -361,6 +412,7 @@ figcaption {{ font-size: .8rem; color: var(--muted) }}
   <nav aria-label="Videos">{nav}</nav>
 
 {_rebrand_section()}
+{_storyboard_section()}
 
   <section>
     <h2>Waiting on you</h2>

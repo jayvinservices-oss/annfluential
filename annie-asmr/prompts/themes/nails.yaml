@@ -17,11 +17,11 @@ variation_pools:
 sounds: [nail tapping, nail scratching, polish bottle clicks, brush strokes, buffing]
 shots:
   tap-objects:
-    action: Long almond nails tap and scratch slowly across the objects on the table, close to the camera.
+    action: Long nails tap and scratch slowly across the objects on the table, close to the camera.
   paint-nail:
-    action: She paints one long almond nail with slow even brush strokes.
+    action: She paints one long nail with slow even brush strokes.
   buff:
-    action: She buffs the surface of a long almond nail slowly in small circles.
+    action: She buffs the surface of a long nail slowly in small circles.
   show-hands:
     action: She turns both hands slowly to show the finished glossy nails under the light, lips softly smiling below.
 chapter_ideas: [Long nail tapping, Nail scratching, Polish brush strokes, Nail buffing, Tapping show and tell]
