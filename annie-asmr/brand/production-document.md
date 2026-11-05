@@ -71,6 +71,8 @@ Christmas videos (xmas-*) and nail tapping / wax cracking / gloss layers are par
 - Free sounds for the parked videos (list in the last chat; pixabay.com).
 - Drive trash holds "Ace - conversation in bed, NOT FOR VIDEO" (not trashed by Claude); a copy is in _Holding.
 
+- Ace series plan (draft, 10 videos): brand/ace-series-plan.md
+
 ## Where things are
 - Drive "Annie ASMR" (jayvin.services account): numbered 01 Voice ... 07 Brand & Plans, _Holding. Index doc
   "00 Index - Annie ASMR Drive"; repo copy brand/drive-index.md.
