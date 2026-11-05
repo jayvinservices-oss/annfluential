@@ -1,0 +1,108 @@
+# Ace, Ann's real cat. His real face and look must be kept in every image/video prompt.
+# Written 5 Nov 2026 from 14 of Ann's photos (Drive: Annie ASMR > Ace, folder 1rdHJ0WTq9pB3619Hn4tjOxJLWa1Ei2zw).
+# Start clips from his real photos (prompts/reference/ace/, git-ignored) or his real videos; use this text
+# alongside, never instead of, a reference image.
+# Note: one photo (IMG_0096) also shows a second cat, a solid grey short-haired cat. That is NOT Ace.
+
+version: 1
+
+description: >-
+  Ace, an adult black-and-white tuxedo cat with a short, dense, glossy coat. Solid jet-black head, ears, back,
+  sides, legs and tail. Bright white muzzle and chin area with a thin white blaze that runs up the bridge of his
+  nose to between the eyes. Small pink nose. A small black spot/line along the lower lip and chin under the
+  white muzzle. A broad white bib that runs from the throat down the chest. White front paws (short white
+  socks/mittens) and white back feet, pink toe beans. Large round pale green eyes (light celadon green with a
+  hint of gold around the pupil). Long white whiskers, black-tipped near the face, and white eyebrow whiskers.
+  Medium-sized, solid, well-fed domestic shorthair build with a round face and fairly large upright black ears;
+  long thick black tail. Calm, relaxed, curious expression.
+
+short: >-
+  black-and-white tuxedo cat, short glossy black coat, white muzzle with thin white nose blaze, pink nose,
+  white bib, white paws, pale green eyes, long white whiskers
+
+keep: [white nose blaze between the eyes, white muzzle with pink nose, white bib, white paws with pink toe beans,
+  pale green eyes, solid black head and back, short hair]
+
+negative: >-
+  long hair, fluffy fur, tabby stripes, grey cat, orange cat, white face, white blaze covering forehead,
+  blue eyes, yellow-orange eyes, black paws, collar text, cartoon, 3d render, extra legs, extra tails,
+  distorted face, sunglasses
+
+accessories_seen: [yellow collar (IMG_9277, Mar 2025), heart-shaped pink sunglasses (IMG_0044, a photo prop)]
+
+# Ratings 0-3 (0 = unusable, 3 = ideal) for: face reference, curled-up sleeping, being petted, in bed.
+photos:
+  - file: IMG_9772.heic
+    date: 2026-04-03
+    shows: Close-up portrait, loafing on a grey sofa, looking just off camera; sharp face, eyes, nose blaze, bib, one white paw.
+    ratings: {face: 3, sleeping: 1, petted: 1, bed: 0}
+    reference: prompts/reference/ace/ace-face-closeup-2026-04-03.jpg
+  - file: IMG_3281.heic
+    date: 2026-08-18
+    shows: Lying on a cream blanket on a sofa arm at night, warm red lamp light, face and white paws clear, TV in background.
+    ratings: {face: 2, sleeping: 1, petted: 2, bed: 2}
+    reference: prompts/reference/ace/ace-lying-on-blanket-2026-08-18.jpg
+  - file: IMG_1274.heic
+    date: 2026-06-13
+    shows: Dozing in a loaf on a grey sofa arm, eyes closed, chin down, white muzzle visible; litter box behind.
+    ratings: {face: 2, sleeping: 3, petted: 1, bed: 0}
+    reference: prompts/reference/ace/ace-sleeping-loaf-2026-06-13.jpg
+  - file: IMG_0044.JPG
+    shows: Lounging on a white duvet in bed wearing heart-shaped pink sunglasses, white bib and paws, pink toe beans very clear.
+    ratings: {face: 1, sleeping: 0, petted: 1, bed: 3}
+    note: Eyes hidden by sunglasses; good for body, paws and bed setting only.
+  - file: IMG_0096.JPG
+    date: 2025-05-07
+    shows: Lying on a cream leather sofa by a window, looking at camera; a grey cat (not Ace) on the right.
+    ratings: {face: 2, sleeping: 0, petted: 0, bed: 0}
+  - file: IMG_0294.JPG
+    date: 2026-07-12
+    shows: Loafing on a grey ottoman in the living room at night, side profile, watching TV.
+    ratings: {face: 1, sleeping: 1, petted: 1, bed: 0}
+  - file: IMG_9242.JPG
+    date: 2025-03-05
+    shows: Standing on a wood floor, head turned, looking at camera; full body with white paws.
+    ratings: {face: 2, sleeping: 0, petted: 0, bed: 0}
+  - file: IMG_9277.JPG
+    date: 2025-03-11
+    shows: Grooming on a wood floor, curled over, one pink-padded paw up, yellow collar; face hidden.
+    ratings: {face: 0, sleeping: 0, petted: 0, bed: 0}
+  - file: IMG_9598.JPG
+    shows: Sitting on a grey cat tree by a city window, looking at camera.
+    ratings: {face: 2, sleeping: 0, petted: 0, bed: 0}
+  - file: IMG_1139.JPG
+    shows: Seen from above, sniffing a towel; all-black back, only nose tip visible.
+    ratings: {face: 0, sleeping: 0, petted: 0, bed: 0}
+  - file: CCBABD9A854F_20251204095828843_cam0.JPEG
+    date: 2025-12-04
+    shows: Pet-camera still, standing by the litter box and a cat stool with a red plaid blanket, full body.
+    ratings: {face: 1, sleeping: 0, petted: 0, bed: 0}
+  - file: CCBABD9A854F_20251209105726238_cam0.JPEG
+    date: 2025-12-09
+    shows: Pet-camera still, sitting on a counter facing the camera; clear frontal face, bib and four white paws.
+    ratings: {face: 2, sleeping: 0, petted: 0, bed: 0}
+  - file: CCBABD9A854F_20260130214059361_cam0.JPEG
+    date: 2026-01-30
+    shows: Pet-camera still, nose right up to the lens at night (wide-angle distorted).
+    ratings: {face: 1, sleeping: 0, petted: 0, bed: 0}
+  - file: CCBABD9A854F_20260204084649831_cam0.JPEG
+    date: 2026-02-04
+    shows: Pet-camera still in the kitchen by his food bowl, head and shoulders at the frame edge.
+    ratings: {face: 1, sleeping: 0, petted: 0, bed: 0}
+
+best_references:
+  - prompts/reference/ace/ace-face-closeup-2026-04-03.jpg   # IMG_9772: identity / face
+  - prompts/reference/ace/ace-lying-on-blanket-2026-08-18.jpg  # IMG_3281: relaxed on a blanket, petting/bed scenes
+  - prompts/reference/ace/ace-sleeping-loaf-2026-06-13.jpg  # IMG_1274: sleeping
+
+gaps: >-
+  No photo yet of Ace curled into a ball asleep, of him being petted by a hand, or of him in Ann's bed with a
+  clear face. Worth asking Ann for 2-3 such photos. Videos (Drive) were too large to download through the
+  connector (see videos below), so their content is not described yet.
+
+videos:
+  not_downloaded: >-
+    None of the 9 Ace videos came through the connector (not renamed in Drive, content unknown):IMG_9074.MOV 68.2 MB, IMG_3116.MOV 39.1 MB,
+    b2eb3c438a174d738ad514a79baa6cff.MOV 37.4 MB, IMG_3503.MOV 29.8 MB, IMG_2385.MOV 22.8 MB,
+    IMG_8596.MOV 22.4 MB, IMG_7743.MOV 18.7 MB, EF0FD86D-773F-4F77-963B-C145B452A97B.MP4 9.3 MB,
+    D12BE4BB-CA9E-4A8C-AA06-AB88FC0F7F13.MP4 9.4 MB (the two MP4s also failed: the connector dropped).
