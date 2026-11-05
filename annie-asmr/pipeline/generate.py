@@ -30,9 +30,16 @@ def still_for_shot(ep: dict, shot_id: str, default: Path) -> Path:
     from .episode import shots
     text = (shots(ep).get(shot_id, {}).get("action", "") + " " + shot_id).lower()
     key = ("gum" if any(w in text for w in ("gum", "pop", "bubble")) else
+           "gloss" if any(w in text for w in ("lips", "gloss", "wand")) else
            "hands" if any(w in text for w in ("knuckle", "finger", "stretch", "nail", "tap", "hands")) else "gloss")
-    for ext in (".png", ".jpg"):
-        p = project_path(f"prompts/reference/stills/{key}{ext}")
+    look = ep.get("look")                 # bedroom (default) | night-mic | pink-glow  (Ann, 5 Nov: rotate all three)
+    cands = []
+    if look and look != "bedroom":
+        base = "gloss" if key == "gloss" else "gum"      # each look has anonymous gum (hands at chin) and gloss stills
+        cands.append(f"prompts/reference/stills/{look}/{base}-anon.png")
+    cands += [f"prompts/reference/stills/{key}{ext}" for ext in (".png", ".jpg")]
+    for c in cands:
+        p = project_path(c)
         if p.exists():
             return p
     return default
