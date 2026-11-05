@@ -89,3 +89,31 @@
   seconds: 0
   free: false
   cost_usd: 0.04
+- date: '2026-11-05'
+  time: 01:55
+  route: chatterbox (Replicate)
+  clip: clone/1-whisper.wav
+  seconds: 0
+  free: false
+  cost_usd: 0.03
+- date: '2026-11-05'
+  time: 01:55
+  route: chatterbox (Replicate)
+  clip: clone/2-whisper.wav
+  seconds: 0
+  free: false
+  cost_usd: 0.03
+- date: '2026-11-05'
+  time: 01:56
+  route: chatterbox (Replicate)
+  clip: clone/3-soft.wav
+  seconds: 0
+  free: false
+  cost_usd: 0.03
+- date: '2026-11-05'
+  time: 01:56
+  route: chatterbox (Replicate)
+  clip: clone/4-soft.wav
+  seconds: 0
+  free: false
+  cost_usd: 0.03
