@@ -1,0 +1,3 @@
+gum.png, hands.png = Canva MAHZ6bGoPjI (lips, hands at chin)
+gloss.png = Canva MAHZ6W0Igdc (gloss wand)
+../gloss-triptych-MAHZ43MLJNc.png = 3-panel strip, not used for video

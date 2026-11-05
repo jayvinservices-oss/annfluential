@@ -44,6 +44,7 @@ generator:
   takes_per_shot: 1    # one take per shot; re-make a bad one with --only <shot>
   router:
     budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
+    daily_usd: 5       # Ann, 5 Nov: never more than $5 in one day
     # From reports/ai-video-options-2026-11-04.md (4 Nov 2026). Prices are estimates kept on the high side so the
     # $20 cap is never passed; check the model page (input field names and price) before the first paid run.
     routes:

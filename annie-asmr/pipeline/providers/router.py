@@ -3,6 +3,7 @@ the budget. Spending is logged in metadata/spend.yaml; `python -m pipeline gener
 
 config.yaml -> generator.router:
   budget_usd: 20                 # hard stop for all paid generation together
+  daily_usd: 5                   # hard stop per calendar day
   routes:                        # in order of preference; a route without its key set is skipped
     - {label: ..., provider: fal|replicate|runway, key_env: FAL_KEY, model: ..., price_per_second: 0.0,
        free_seconds: 0, free_period: day|once, ...provider fields}
@@ -29,6 +30,11 @@ def spent_usd() -> float:
     return round(sum(e.get("cost_usd", 0) for e in _ledger()), 2)
 
 
+def spent_today() -> float:
+    today = date.today().isoformat()
+    return round(sum(e.get("cost_usd", 0) for e in _ledger() if e.get("date") == today), 2)
+
+
 def free_used(label: str, period: str) -> float:
     today = date.today().isoformat()
     return sum(e["seconds"] for e in _ledger() if e["route"] == label and e.get("free")
@@ -41,6 +47,7 @@ class RouterProvider(Provider):
     def __init__(self, cfg: dict):
         self.cfg = cfg
         self.budget = float(cfg.get("budget_usd", 20))
+        self.daily = float(cfg.get("daily_usd", 5))
         self.routes = [r for r in cfg.get("routes", []) if os.environ.get(r.get("key_env", ""), "").strip()]
         if not self.routes:
             names = ", ".join(r.get("key_env", "?") for r in cfg.get("routes", []))
@@ -54,15 +61,20 @@ class RouterProvider(Provider):
         paid = sorted(self.routes, key=lambda r: float(r.get("price_per_second", 1e9)))
         for r in paid:                              # 2) cheapest paid within budget
             cost = round(float(r["price_per_second"]) * seconds, 3)
-            if spent_usd() + cost <= self.budget:
-                return r, False, cost
+            if spent_usd() + cost > self.budget:
+                continue
+            if spent_today() + cost > self.daily:
+                raise SystemExit(f"Daily limit reached: ${spent_today():.2f} of ${self.daily:.2f} today. "
+                                 "The rest is made tomorrow (re-run the same command; finished clips are kept).")
+            return r, False, cost
         raise SystemExit(f"Budget reached: ${spent_usd():.2f} of ${self.budget:.2f} spent. Nothing more is generated.")
 
     def plan(self, clips: int, seconds: int) -> str:
         r, free, cost = self.choose(seconds)
         total = cost * clips if not free else 0
         return (f"{clips} clips x {seconds}s: first via {r['label']} ({'free credits' if free else f'${cost:.2f} each'}); "
-                f"if all paid, about ${total:.2f}. Spent so far ${spent_usd():.2f} of ${self.budget:.2f}.")
+                f"if all paid, about ${total:.2f}. Spent so far ${spent_usd():.2f} of ${self.budget:.2f} "
+                f"(today ${spent_today():.2f} of ${self.daily:.2f}).")
 
     def generate(self, *, prompt, negative, image: Path | None, seconds, out):
         from . import get_provider
