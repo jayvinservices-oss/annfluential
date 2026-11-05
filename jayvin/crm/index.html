@@ -1,0 +1,217 @@
+<title>Jayvin Leads</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a ledger. Summary strip of stage counts on top, filter bar, then one row per lead; tapping a row opens its card below the bar. */
+:root{
+  --bg:#f6f7f4; --panel:#ffffff; --ink:#18231f; --muted:#5d6b65; --line:#d9dfda;
+  --accent:#1f5c4a; --accent-soft:#e2eee9; --warn:#a2561a; --warn-soft:#f7ead9; --bad:#a3302a; --good:#2f7a3c;
+  --display:"Newsreader",Georgia,serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111815; --panel:#18211d; --ink:#e4ebe7; --muted:#9aa8a1; --line:#2b3732;
+  --accent:#7cc4a9; --accent-soft:#1f3029; --warn:#e3a066; --warn-soft:#33261a; --bad:#ef8a83; --good:#86cf93; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111815; --panel:#18211d; --ink:#e4ebe7; --muted:#9aa8a1; --line:#2b3732;
+  --accent:#7cc4a9; --accent-soft:#1f3029; --warn:#e3a066; --warn-soft:#33261a; --bad:#ef8a83; --good:#86cf93; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
+h1{font:600 30px/1.1 var(--display);margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px}
+.strip{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:6px 10px;font-size:13px;display:flex;gap:6px;align-items:baseline;cursor:pointer;color:var(--ink)}
+.chip b{font:500 15px var(--mono)}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.kpi span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kpi b{font:500 22px var(--mono);font-variant-numeric:tabular-nums}
+.kpi.due b{color:var(--warn)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input,select,textarea,button{font:inherit;color:var(--ink)}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:7px 9px;min-width:0}
+textarea{width:100%;min-height:80px;resize:vertical}
+#q{flex:1 1 200px}
+button{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:7px 12px;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.row:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.3fr);gap:10px;padding:10px 12px;border-top:1px solid var(--line);cursor:pointer;align-items:center}
+.row:first-child{border-top:0}
+.row:hover{background:var(--accent-soft)}
+.row .nm{font-weight:600;overflow-wrap:anywhere}
+.row .meta{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.pill.Won{background:var(--good);color:var(--bg)} .pill.Lost,.pill.Excluded{background:var(--line);color:var(--muted)}
+.pill.Later{background:var(--line);color:var(--ink)}
+.next{font-size:13px;overflow-wrap:anywhere}
+.next.over{color:var(--bad);font-weight:600} .next.today{color:var(--warn);font-weight:600}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.empty{padding:28px 16px;color:var(--muted);text-align:center}
+.card{background:var(--panel);border:1px solid var(--accent);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.card h2{font:600 22px var(--display);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);letter-spacing:.02em}
+label input,label select{width:100%}
+.signal{background:var(--accent-soft);border-radius:6px;padding:8px 10px;font-size:14px}
+.warnbox{background:var(--warn-soft);color:var(--warn);border-radius:6px;padding:8px 10px;font-size:13px}
+.log{display:flex;flex-direction:column;gap:6px;font-size:13px}
+.log div{border-left:2px solid var(--line);padding-left:8px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.status{font-size:13px;color:var(--muted);min-height:1.2em}
+a{color:var(--accent)}
+@media (max-width:640px){.row{grid-template-columns:minmax(0,1fr) auto}.row .c3,.row .c2{display:none}}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .18s ease-out}@keyframes in{from{transform:translateY(-4px)}to{transform:none}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Jayvin Leads</h1>
+    <div class="sub" id="sync">Connecting to your lead list...</div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><span>Open leads</span><b id="kOpen">0</b></div>
+    <div class="kpi due"><span>Follow-ups due</span><b id="kDue">0</b></div>
+    <div class="kpi"><span>Proposals out (monthly)</span><b id="kProp">$0</b></div>
+    <div class="kpi"><span>Won (monthly)</span><b id="kWon">$0</b></div>
+  </div>
+
+  <div class="strip" id="stages" aria-label="Filter by stage"></div>
+
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search name, city, sector, notes" aria-label="Search leads">
+    <select id="fType" aria-label="Filter by type"><option value="">All types</option></select>
+    <select id="fSort" aria-label="Sort"><option value="next">Next follow-up first</option><option value="new">Newest first</option><option value="name">Name A to Z</option></select>
+    <button id="dueBtn" type="button" aria-pressed="false">Due only</button>
+    <button id="addBtn" class="primary" type="button">Add lead</button>
+  </div>
+
+  <div id="editor" hidden></div>
+
+  <div class="list" id="list"><div class="empty">Your leads will appear here. Claude adds scanned leads; use Add lead for anyone you meet.</div></div>
+  <div class="sub">Screen every lead against the exclusions before contact. Business emails only, with sender name, mailing address and an opt-out (CASL).</div>
+</div>
+
+<script>
+const STAGES=["New","Researched","Contacted","Replied","Call booked","Health check","Proposal sent","Won","Lost","Later","Excluded"];
+const OPEN=["New","Researched","Contacted","Replied","Call booked","Health check","Proposal sent"];
+const TYPES=["Small business","Nonprofit","Charity","Referral partner"];
+const PLANS={"":0,"Essentials":750,"Books to Board":1500,"Fractional CFO":3000};
+const EXCLUDE=[/roots of empathy/i,/\bROE\b/,/\bDNC\b/,/queer toronto/i,/\bQT\b/,/rainbow railroad/i];
+let db=null,leads=[],stageFilter="",dueOnly=false,openId=null,isNew=false;
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toLocaleDateString("en-CA",{timeZone:"America/Toronto"});
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const money=n=>"$"+Math.round(n||0).toLocaleString("en-CA");
+const excluded=l=>EXCLUDE.some(r=>r.test((l.name||"")+" "+(l.notes||"")));
+
+TYPES.forEach(t=>$("fType").insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+
+function renderStages(){
+  const c={};leads.forEach(l=>c[l.stage||"New"]=(c[l.stage||"New"]||0)+1);
+  $("stages").innerHTML=`<button class="chip" aria-pressed="${!stageFilter}" data-s="">All <b>${leads.length}</b></button>`+
+    STAGES.filter(s=>c[s]).map(s=>`<button class="chip" aria-pressed="${stageFilter===s}" data-s="${s}">${s} <b>${c[s]}</b></button>`).join("");
+}
+$("stages").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;stageFilter=b.dataset.s;render();});
+
+function isDue(l){return l.next_date&&l.next_date<=today()&&OPEN.includes(l.stage||"New");}
+function render(){
+  renderStages();
+  const open=leads.filter(l=>OPEN.includes(l.stage||"New"));
+  $("kOpen").textContent=open.length;
+  $("kDue").textContent=leads.filter(isDue).length;
+  $("kProp").textContent=money(leads.filter(l=>l.stage==="Proposal sent").reduce((a,l)=>a+(+l.monthly||0),0));
+  $("kWon").textContent=money(leads.filter(l=>l.stage==="Won").reduce((a,l)=>a+(+l.monthly||0),0));
+  const q=$("q").value.trim().toLowerCase(),t=$("fType").value,s=$("fSort").value;
+  let rows=leads.filter(l=>(!stageFilter||(l.stage||"New")===stageFilter)&&(!t||l.type===t)&&(!dueOnly||isDue(l))&&
+    (!q||[l.name,l.city,l.sector,l.notes,l.program,l.contact_role].join(" ").toLowerCase().includes(q)));
+  rows.sort((a,b)=>s==="name"?(a.name||"").localeCompare(b.name||""):s==="new"?(b.created||"").localeCompare(a.created||""):
+    ((a.next_date||"9999")+(a.name||"")).localeCompare((b.next_date||"9999")+(b.name||"")));
+  if(!leads.length){$("list").innerHTML=`<div class="empty">No leads yet. Claude adds scanned leads here; use Add lead for anyone you meet.</div>`;return;}
+  if(!rows.length){$("list").innerHTML=`<div class="empty">No leads match these filters.</div>`;return;}
+  const td=today();
+  $("list").innerHTML=rows.map(l=>{
+    const cls=l.next_date?(l.next_date<td?"over":l.next_date===td?"today":""):"";
+    return `<div class="row" tabindex="0" role="button" data-id="${esc(l.id)}">
+      <div><div class="nm">${esc(l.name)}</div><div class="meta">${esc([l.type,l.city,l.sector].filter(Boolean).join(" · "))}</div></div>
+      <div><span class="pill ${esc((l.stage||"New").replace(/\s/g,""))}">${esc(l.stage||"New")}</span></div>
+      <div class="c2 meta">${esc(l.program||l.source||"")}</div>
+      <div class="c3 next ${cls}">${l.next_date?`<span class="mono">${esc(l.next_date)}</span> `:""}${esc(l.next_action||"")}</div>
+    </div>`;}).join("");
+}
+$("list").addEventListener("click",e=>{const r=e.target.closest(".row");if(r)openLead(r.dataset.id);});
+$("list").addEventListener("keydown",e=>{if(e.key==="Enter"){const r=e.target.closest(".row");if(r)openLead(r.dataset.id);}});
+["q","fType","fSort"].forEach(id=>$(id).addEventListener("input",render));
+$("dueBtn").addEventListener("click",()=>{dueOnly=!dueOnly;$("dueBtn").setAttribute("aria-pressed",dueOnly);render();});
+$("addBtn").addEventListener("click",()=>{isNew=true;openId=null;showEditor({stage:"New",type:"Small business",created:today()});});
+
+function openLead(id){isNew=false;openId=id;showEditor(leads.find(l=>l.id===id)||{});}
+function field(k,label,v,type="text"){return `<label>${label}<input id="e_${k}" type="${type}" value="${esc(v)}"></label>`;}
+function sel(k,label,opts,v){return `<label>${label}<select id="e_${k}">${opts.map(o=>`<option ${o===v?"selected":""}>${esc(o)}</option>`).join("")}</select></label>`;}
+function showEditor(l){
+  const ed=$("editor");ed.hidden=false;
+  const log=(l.log||[]).slice().reverse();
+  ed.innerHTML=`<div class="card">
+    <h2>${isNew?"New lead":esc(l.name)}</h2>
+    ${l.fit_signal?`<div class="signal">${esc(l.fit_signal)}</div>`:""}
+    ${excluded(l)?`<div class="warnbox">This name matches the exclusion list. Do not contact.</div>`:""}
+    <div class="grid">
+      ${field("name","Organisation",l.name)}${sel("type","Type",TYPES,l.type)}${sel("stage","Stage",STAGES,l.stage||"New")}
+      ${field("city","City",l.city)}${field("sector","Sector",l.sector)}${field("program","Grant or program",l.program)}
+      ${field("website","Website",l.website,"url")}${field("contact_role","Contact (role, business email only)",l.contact_role)}
+      ${sel("consent","CASL basis",["Not yet","Implied: published business contact","Implied: existing relationship","Express consent"],l.consent||"Not yet")}
+      ${sel("plan","Likely plan",Object.keys(PLANS).map(p=>p||"Not sure"),l.plan||"Not sure")}
+      ${field("monthly","Monthly fee (CA$)",l.monthly??"","number")}${field("setup","Setup fee (CA$)",l.setup??"","number")}
+      ${field("next_action","Next action",l.next_action)}${field("next_date","Next action date",l.next_date,"date")}${field("source","Source",l.source)}
+    </div>
+    <label>Notes<textarea id="e_notes">${esc(l.notes)}</textarea></label>
+    ${l.source_url?`<div class="sub">Record: <a href="${esc(l.source_url)}" target="_blank" rel="noopener">check the public source</a></div>`:""}
+    ${!isNew?`<div class="grid"><label>Log a contact<input id="e_lognote" type="text" placeholder="e.g. Sent intro email; asked for a 20-minute call"></label></div>`:""}
+    <div class="actions"><button class="primary" id="saveBtn" type="button">${isNew?"Add lead":"Save changes"}</button>
+      ${!isNew?`<button id="logBtn" type="button">Log contact and save</button>`:""}<button id="closeBtn" type="button">Close</button></div>
+    <div class="status" id="estatus" role="status"></div>
+    ${log.length?`<div class="log">${log.map(x=>`<div><span class="mono">${esc(x.date)}</span> ${esc(x.note)}</div>`).join("")}</div>`:""}
+  </div>`;
+  $("e_plan").addEventListener("change",()=>{const p=$("e_plan").value;if(PLANS[p]&&!$("e_monthly").value)$("e_monthly").value=PLANS[p];});
+  $("saveBtn").onclick=()=>save(l,false);
+  if($("logBtn"))$("logBtn").onclick=()=>save(l,true);
+  $("closeBtn").onclick=()=>{ed.hidden=true;openId=null;};
+  ed.scrollIntoView({block:"nearest"});
+}
+async function save(l,withLog){
+  const st=$("estatus");
+  if(!db){st.textContent="Saving needs the lead list connection. Open this page signed in to claude.ai.";return;}
+  const keys=["name","type","stage","city","sector","program","website","contact_role","consent","plan","next_action","next_date","source","notes"];
+  const d={};keys.forEach(k=>d[k]=$("e_"+k).value.trim());
+  if(d.plan==="Not sure")d.plan="";
+  d.monthly=$("e_monthly").value?+$("e_monthly").value:null;d.setup=$("e_setup").value?+$("e_setup").value:null;
+  if(!d.name){st.textContent="Add the organisation name first.";return;}
+  if(excluded(d)&&!["Excluded","Later"].includes(d.stage)){d.stage="Excluded";st.textContent="Matched the exclusion list, so the stage is set to Excluded.";}
+  d.updated=today();
+  if(withLog){const n=$("e_lognote").value.trim();if(!n){st.textContent="Write what happened in Log a contact first.";return;}
+    d.log=[...(l.log||[]),{date:today(),note:n}];d.last_contact=today();
+    if(d.stage==="New"||d.stage==="Researched")d.stage="Contacted";}
+  try{
+    if(isNew){d.created=today();d.log=[];const ref=await db.collection("leads").add(d);isNew=false;openId=ref.id;}
+    else await db.collection("leads").doc(openId).update(d);
+    st.textContent="Saved.";
+  }catch(e){st.textContent="Not saved: "+(e&&e.message||"the lead list refused the change")+". Try again in a moment.";}
+}
+
+(async()=>{
+  const timer=setTimeout(()=>{$("sync").textContent="The lead list did not answer. Reopen the page to try again.";},10000);
+  db=await window.claude?.use?.("db");
+  if(!db){clearTimeout(timer);$("sync").textContent="Lead list unavailable here. Open this page signed in to claude.ai.";return;}
+  db.collection("leads").onSnapshot(snap=>{
+    clearTimeout(timer);
+    leads=snap.docs.map(d=>({id:d.id,...d.data()}));
+    $("sync").textContent=`${leads.length} leads · updated ${new Date().toLocaleTimeString("en-CA",{hour:"numeric",minute:"2-digit"})}`;
+    render();
+    if(openId&&!isNew&&document.activeElement?.closest?.("#editor")==null)openLead(openId);
+  },e=>{clearTimeout(timer);$("sync").textContent="Could not load leads: "+(e.message||e.code);});
+})();
+</script>
