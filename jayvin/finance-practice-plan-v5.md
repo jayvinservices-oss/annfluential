@@ -25,8 +25,8 @@ Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), co
   Toronto, grant compliance (IRAP, CanExport, WAGE, FedDev Ontario, Ontario Trillium Foundation), nonprofit bookkeeping,
   AI bookkeeping.
 - Title (Ann, 5 Nov): **"Internationally qualified Chartered Accountant"** (ICAN, 2018), MBA.
-- Name on the site (Ann, 5 Nov): **"Ann James, MBA"** only, never the full surname. Ann may ask her employer for an
-  exception; until then keep personal details minimal. The site stays hidden until Ann decides to go live.
+- Name on the site (Ann, 5 Nov, final): **no name on the website.** "Led by an internationally qualified Chartered
+  Accountant." Ann's name appears only in outreach emails, calls and engagement letters.
 
 ## 1a. Qualifications for the website (from Ann's CV, 28 Oct 2026; employers not named)
 - Internationally qualified Chartered Accountant (ICAN, 2018); MBA, Ted Rogers School of Management (2025); ACCA (UK)
