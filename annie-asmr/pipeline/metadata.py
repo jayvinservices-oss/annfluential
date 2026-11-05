@@ -117,18 +117,29 @@ def affiliate_block(ep: dict) -> str:
         return ""
     a = _y.safe_load(f.read_text()) or {}
     am, items = a.get("amazon") or {}, a.get("ace_favourites") or []
-    if not items or not am.get("ca_tag"):
-        return ""
     lines = ["Ace's favourites:"]
+    for pt in a.get("partners") or []:
+        if pt.get("url"):
+            lines.append(f"{pt['line']}: {pt['url']}" + (f" (code {pt['code']})" if pt.get("code") else ""))
+    partner_count = len(lines) - 1
     for it in items:
         links = []
+        if not am.get("ca_tag"):
+            break
         if it.get("asin_ca"):
             links.append(f"Canada: https://www.amazon.ca/dp/{it['asin_ca']}?tag={am['ca_tag']}")
         if it.get("asin_com") and am.get("com_tag"):
             links.append(f"US: https://www.amazon.com/dp/{it['asin_com']}?tag={am['com_tag']}")
         if links:
             lines.append(f"{it['name']}: " + "  ".join(links))
-    return "\n".join(lines + [am.get("disclosure", "")]) if len(lines) > 1 else ""
+    if len(lines) == 1:
+        return ""
+    notes = []
+    if partner_count:
+        notes.append("Some links are affiliate links: I may earn a commission at no extra cost to you.")
+    if len(lines) - 1 > partner_count and am.get("disclosure"):
+        notes.append(am["disclosure"])
+    return "\n".join(lines + notes)
 
 
 def build(ep: dict) -> dict:
