@@ -59,7 +59,9 @@ Leave `approved: false`. Ann approves.
   "Annie ASMR/clips/<slug>/"; source videos and the reference image go to "Annie ASMR/source", real
   sounds to "Annie ASMR/sfx". These folders are in the jayvin.services@gmail.com Drive (the connected
   one); folder IDs are in metadata/todo.yaml under `drive`.
-- Voice: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
+- Voice (Ann, 5 Nov): use Ann's REAL whispered recordings (memo in Drive sfx: 'Annie voice memo - whisper'), cleaned
+  and cut into lines in audio/voice/real/. The VoxCPM2 clone was rejected (hiss, harsh soft voice, a male-sounding
+  artefact mid-line); new lines = Ann records them. Old note: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
   its weights are CC-BY-NC (non-commercial) and the channel is being monetised.
 
 ## Starting a new cloud session (the container is wiped between sessions)
