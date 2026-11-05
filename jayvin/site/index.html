@@ -1,0 +1,224 @@
+<title>Northbook Finance</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column like a finance memo, with one wide band for the sample board pack. */
+:root {
+  --paper: #f7f8f5;
+  --ink: #18231f;
+  --muted: #55625c;
+  --ledger: #1d3b36;
+  --band: #e7ece7;
+  --rule-soft: #d3dbd5;
+  --ok: #2f6b4f;
+  --warn: #9a5b1c;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121816; --ink: #e6ebe7; --muted: #a3b0a9; --ledger: #8fc2b2; --band: #1b2421;
+    --rule-soft: #2c3833; --ok: #7fc3a0; --warn: #e0a868; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121816; --ink: #e6ebe7; --muted: #a3b0a9; --ledger: #8fc2b2; --band: #1b2421;
+  --rule-soft: #2c3833; --ok: #7fc3a0; --warn: #e0a868; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.col { max-width: 680px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+a { color: var(--ledger); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ledger); outline-offset: 3px; }
+.eyebrow { font: 500 0.78rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+header.top { padding-block: 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.brand small { display: block; font: 400 0.75rem/1.2 var(--body); color: var(--muted); }
+nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; }
+nav a { color: var(--ink); text-decoration: none; }
+section { padding-block: 56px; }
+.hero { padding-block: 40px 64px; display: grid; gap: 22px; }
+.hero p.lede { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+.btn { display: inline-block; background: var(--ledger); color: var(--paper); text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 4px; }
+.stack { display: grid; gap: 18px; }
+.close-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; margin-top: 28px; }
+.day b { display: block; font: 500 0.85rem/1 var(--mono); color: var(--ledger); margin-bottom: 8px; }
+.day p { color: var(--muted); font-size: 0.97rem; }
+.band { background: var(--band); }
+.sample { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 40px; align-items: start; }
+.sheet { background: var(--paper); border-radius: 6px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,.06); min-width: 0; }
+.sheet .eyebrow { margin-bottom: 14px; display: block; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 7px 8px; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { font: 500 0.75rem/1.2 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+tbody tr:nth-child(odd) td { background: var(--band); }
+.pos { color: var(--ok); } .neg { color: var(--warn); }
+.note { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 30px; }
+.plan { display: grid; gap: 12px; align-content: start; padding: 24px; background: var(--band); border-radius: 6px; }
+.plan .price { font: 600 1.9rem/1 var(--display); }
+.plan .price span { font: 400 0.9rem/1.4 var(--body); color: var(--muted); }
+.plan ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.96rem; display: grid; gap: 6px; }
+.plan.feature { background: var(--ledger); color: var(--paper); }
+.plan.feature ul, .plan.feature .price span, .plan.feature .eyebrow { color: color-mix(in srgb, var(--paper) 78%, transparent); }
+.oneoff { margin-top: 26px; color: var(--muted); font-size: 0.97rem; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 26px; }
+dl { margin: 0; display: grid; gap: 22px; }
+dt { font-weight: 600; }
+dd { margin: 6px 0 0; color: var(--muted); }
+.contact { display: grid; gap: 14px; }
+.addr { font: 500 1rem/1.4 var(--mono); }
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 0.9rem; display: grid; gap: 10px; }
+footer nav a { color: var(--muted); }
+@media (max-width: 760px) { .sample { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .btn { transition: background .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Northbook Finance<small>a service of Jayvin Consulting Inc.</small></a>
+    <nav aria-label="Main"><a href="#month">Your month</a><a href="#pricing">Pricing</a><a href="#questions">Questions</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div class="hero">
+    <span class="eyebrow">Bookkeeping and board reporting for small nonprofits</span>
+    <h1>Your books closed by the 10th, and a board pack your treasurer can read.</h1>
+    <p class="lede">For charities, nonprofits and small businesses without a finance person on staff. Each month we reconcile your accounts, close the books and write the report your board or owner actually needs.</p>
+    <p><a class="btn" href="#contact">Book a 30-minute call</a></p>
+  </div>
+</div>
+
+<section id="month">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">What a month looks like</span>
+      <h2>A close you can set your calendar by</h2>
+      <p>Working days after month end, on QuickBooks Online.</p>
+    </div>
+    <div class="close-days">
+      <div class="day"><b>Day 1 to 3</b><p>Bank and card transactions categorised and matched. Missing receipts requested in one email, not ten.</p></div>
+      <div class="day"><b>Day 4 to 5</b><p>Every bank, card and loan account reconciled to its statement. Payables and receivables checked.</p></div>
+      <div class="day"><b>Day 6 to 8</b><p>Month closed. Budget against actual, with a plain-language note on anything that moved more than you expected.</p></div>
+      <div class="day"><b>Day 9 to 10</b><p>Board or owner pack sent: results, cash on hand, a three-month cash forecast and restricted funds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap sample">
+    <div class="stack">
+      <span class="eyebrow">Sample page from a board pack</span>
+      <h2>Short enough to read before the meeting</h2>
+      <p>Most boards get a 40-page export and no explanation. You get one page of numbers and three sentences on what they mean.</p>
+      <p class="note">The figures on this page are an invented example, not a client's.</p>
+    </div>
+    <div class="sheet">
+      <span class="eyebrow">Statement of operations · year to date, September · example</span>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Line</th><th>Budget</th><th>Actual</th><th>Variance</th></tr></thead>
+          <tbody>
+            <tr><td>Grants and contributions</td><td>412,000</td><td>398,500</td><td class="neg">(13,500)</td></tr>
+            <tr><td>Program fees</td><td>58,000</td><td>63,200</td><td class="pos">5,200</td></tr>
+            <tr><td>Salaries and benefits</td><td>301,000</td><td>296,400</td><td class="pos">4,600</td></tr>
+            <tr><td>Program delivery</td><td>96,000</td><td>104,900</td><td class="neg">(8,900)</td></tr>
+            <tr><td>Operations</td><td>49,000</td><td>47,100</td><td class="pos">1,900</td></tr>
+            <tr><td><b>Surplus (deficit)</b></td><td><b>24,000</b></td><td><b>13,300</b></td><td class="neg"><b>(10,700)</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">What to know: a funder instalment of 15,000 arrives in October, so the grants gap is timing. Program delivery is over because the fall session ran two extra weeks; it stays within the annual budget if winter runs as planned.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Pricing in Canadian dollars, plus HST</span>
+      <h2>Three monthly plans</h2>
+      <p>Billed monthly in advance. Three months to start, then month to month with 30 days' notice.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <span class="eyebrow">Monthly Books</span>
+        <div class="price">$650 <span>/ month</span></div>
+        <ul><li>Up to about 150 transactions a month</li><li>Categorising and reconciliations</li><li>Monthly close, profit and loss, balance sheet</li><li>Year-end package for your accountant</li></ul>
+      </div>
+      <div class="plan feature">
+        <span class="eyebrow">Board Ready</span>
+        <div class="price">$1,450 <span>/ month</span></div>
+        <ul><li>Everything in Monthly Books</li><li>Board pack with budget against actual and notes</li><li>Cash position and three-month forecast</li><li>Restricted funds and funder report schedule</li></ul>
+      </div>
+      <div class="plan">
+        <span class="eyebrow">Fractional Finance Director</span>
+        <div class="price">$2,950 <span>/ month</span></div>
+        <ul><li>Everything in Board Ready</li><li>Annual budget and one finance committee meeting a month</li><li>Audit preparation and auditor questions</li><li>Policies and internal controls advice</li></ul>
+      </div>
+    </div>
+    <p class="oneoff">Also by quote: catch-up bookkeeping ($150 an hour, or a fixed price per month behind), an annual budget build, year-end audit preparation, a finance policy manual, and support preparing a charity information return.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">How the work gets done</span>
+      <h2>Software does the sorting. A finance director signs it off.</h2>
+    </div>
+    <div class="stack">
+      <p>Routine steps like categorising transactions and drafting reconciliations are prepared with AI tools inside QuickBooks Online. Nothing is posted or sent until it has been reviewed by a finance director with nonprofit and small business experience.</p>
+      <p>Your data stays in your QuickBooks file. It is not used to train AI models, and every report you receive has been read by a person before it reaches you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you book a call</h2>
+    </div>
+    <div class="two">
+      <dl>
+        <div><dt>Do you work outside Canada?</dt><dd>Yes, for bookkeeping and reporting. Tax returns outside Canada stay with a local preparer.</dd></div>
+        <div><dt>Which software do you use?</dt><dd>QuickBooks Online. If you are on something else, we can talk about moving, or quote for working in your system.</dd></div>
+        <div><dt>Do you do audits?</dt><dd>No. We prepare your books and schedules for your auditor and answer their questions. Audits, reviews and Notice to Reader reports come from a licensed public accountant.</dd></div>
+      </dl>
+      <dl>
+        <div><dt>We are behind by several months. Can you help?</dt><dd>Yes. After a free 30-minute look we give you a fixed price to catch up, then move you onto a monthly plan.</dd></div>
+        <div><dt>Who signs things and who files?</dt><dd>Your organisation approves payments and files its own returns. We prepare, reconcile and report.</dd></div>
+        <div><dt>How do we start?</dt><dd>A 30-minute call, read-only access to your books for a quick review, then a one-page engagement letter.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band">
+  <div class="wrap contact col">
+    <span class="eyebrow">Contact</span>
+    <h2>Book a 30-minute call</h2>
+    <p>Tell us the size of your organisation, your software, and how far behind the books are, if they are.</p>
+    <p class="addr">Email address goes live with the domain.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <p>Northbook Finance is a service of Jayvin Consulting Inc., Ontario, Canada.</p>
+    <nav aria-label="Legal"><a href="terms.html">Terms and Conditions</a><a href="privacy.html">Privacy Policy</a></nav>
+  </footer>
+</div>
