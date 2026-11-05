@@ -61,3 +61,31 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-05'
+  time: 01:35
+  route: flux-kontext-pro (Replicate)
+  clip: stills/night-mic/gum.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 01:35
+  route: flux-kontext-pro (Replicate)
+  clip: stills/night-mic/gloss.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 01:36
+  route: flux-kontext-pro (Replicate)
+  clip: stills/pink-glow/gum.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 01:36
+  route: flux-kontext-pro (Replicate)
+  clip: stills/pink-glow/gloss.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
