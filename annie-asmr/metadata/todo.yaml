@@ -9,32 +9,34 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-- text: Replicate account with $5-10 prepaid, token in the environment settings as REPLICATE_API_TOKEN (see 'What
-    Claude needs').
+- text: 'Tonight: approve the clip job in the helper session (''run it''), about $1. Then watch the private draft
+    of video 1 and say yes or changes.'
   done: false
-- text: Download the full-size presenter stills from Canva into Drive › Annie ASMR › avatars.
+- text: 'Each paid job: approve it in the helper session (or tell the helper it may run jobs I send, up to $5 a
+    day).'
   done: false
-- text: 'Later: sounds for the cracking, nail tapping, lip gloss and Christmas videos (list on the board); whispered
-    voice memo only for the talking videos.'
+- text: 'Each video: approve the private draft; publish it yourself in Studio at 9 pm Toronto on its date (or tell
+    me to schedule it).'
   done: false
-- text: 'Once per Short, in the YouTube app: Edit > Related video > pick the full video (YouTube doesn''t let me
-    set this).'
+- text: 'Shorts: once each, in the YouTube app, set ''Related video'' to the full video.'
   done: false
-- text: 'Once in Studio: set an end screen on the first new video, then ''Import from video'' on the rest.'
+- text: 'Studio, once: end screen on the first new video, then ''Import from video'' on the rest.'
+  done: false
+- text: 'Ace: a few photos of him curled up asleep and on the bed with his face visible (for the sleeping video,
+    by 20 Nov).'
+  done: false
+- text: 'Decide: sounds for nail tapping, wax cracking, lip gloss layers and Christmas (you won''t record). Option:
+    download free CC0 packs on your phone into Drive > sfx (I''ll list exactly which).'
   done: false
 claude:
-- text: 'As soon as the sign-in works: banner, About text and keywords, playlists, search wording, watermark, weekly
-    numbers.'
+- text: 'Tonight: assemble video 1 (slow gum, 60 min, night + mic look), thumbnail, 3 Shorts, upload all as private
+    drafts for review.'
   done: false
-- text: Clone your voice from the whispered memo; make the brand whisper and test lines.
+- text: 'Schedule (Tue + Fri 9 pm Toronto): Fri 7 Nov slow gum; Tue 11 extra sleepy mouth sounds; Fri 14 Ace petting;
+    Tue 18 slow mouth sounds; Fri 21 extra sleepy gum; Tue 25 Ace 3-hour sleeping; Fri 5 Dec 3-hour sleep compilation;
+    mid-Dec face reveal.'
   done: false
-- text: 'Done: the gum video''s full soundtrack from your recordings; 60-minute rough preview.'
+- text: 'Each video ready 3 days before its date: clips (about $1), assembly, thumbnail, Shorts, private drafts.'
   done: false
-- text: 'Next: make the gum video''s clips through the router as soon as the Replicate token and stills are in,
-    then a private draft for you.'
-  done: false
-- text: 'December: 3-hour No Talking sleep compilation from the first three videos (compilations/sleep-compilation-2026-12.yaml).'
-  done: false
-- text: 'With each long video: 3 Shorts cut from its best moments, uploaded as private drafts. You say yes on the
-    board; I post them on days 1, 3 and 5 after the full video is public.'
+- text: Weekly report every Monday; slow vs extra slow compared after the first two of each.
   done: false

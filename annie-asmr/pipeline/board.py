@@ -196,22 +196,15 @@ def _rebrand_section() -> str:
 
 
 NEEDS = [
-    ("1. A Replicate account with $5 to $10 prepaid (no auto top-up)",
-     "replicate.com: sign up, Billing, add $5 to $10 of credit and leave auto-reload off. Account, API tokens: create "
-     "one and add it in this cloud environment's settings as REPLICATE_API_TOKEN (never in chat). Claude then makes "
-     "every clip with Wan 2.2 fast: about $1 to $2 per 60-minute video, with a hard $20 stop in the code."),
-    ("2. Full-size presenter stills",
-     "Canva only gives apps a 200-pixel preview. In Canva, open each of these, Share > Download > PNG, and put them in "
-     "Drive > Annie ASMR > avatars: gum MAHZ6bGoPjI, hands MAHZ6W0Igdc, gloss MAHZ43MLJNc (folder 'Annie ASMR - "
-     "Avatar stills'). Each is under 10 MB, so Claude can fetch them."),
-    ("Later: sounds for the next videos",
-     "Ready from your videos: gum pops, knuckle and finger cracks. Still needed, 1 to 2 minutes each, phone in a quiet "
-     "room, into Drive > Annie ASMR > sfx. Cracking video: tapping on set wax, wax cracking, crunching wax shards, "
-     "peeling dried nail polish. Nail tapping video: fast tapping on glass, tapping on wood, scratching velvet, polish "
-     "bottle clicks. Lip gloss video: wand clicks, applying gloss, sticky lip sounds. Christmas: paper, tape, ribbon, "
-     "tissue, box taps, glass baubles, pine, pen, scissors, stickers, washi, rhinestones, tweezers."),
-    ("Later: whispered voice memo",
-     "Not needed for the No Talking videos (gum, cracking, nail tapping, lip gloss, gift unboxing). A 1-minute whispered memo in a quiet room, to Drive > Annie ASMR > source."),
+    ("Tonight: approve the clip job in the helper session",
+     "The helper session holds your Replicate token and asks before each paid job. Say 'run it' there. "
+     "Video 1 needs 10 clips, about $1. Then I assemble the video and upload it as a private draft for you."),
+    ("Sounds you won't record",
+     "Ready now: slow and extra slow gum, mouth sounds, knuckles, Ace's purring, your real whisper. Missing for "
+     "nail tapping, wax cracking, lip gloss layers and the 4 Christmas videos. Option: free CC0 sound packs "
+     "you download on your phone into Drive > sfx; I'll list exactly which."),
+    ("Ace photos",
+     "Ace curled up asleep, and on the bed with his face visible, for the 3-hour sleeping video (by 20 Nov)."),
 ]
 
 
