@@ -72,7 +72,14 @@ def generate(ep: dict, *, provider_name: str | None = None, takes: int | None = 
                 missing.append(out.name)
                 continue
             print(f"  make   {out.name} via {provider.name} ...", flush=True)
-            meta = provider.generate(prompt=prompt, negative=negative, image=shot_image, seconds=seconds, out=out)
+            try:
+                meta = provider.generate(prompt=prompt, negative=negative, image=shot_image, seconds=seconds, out=out)
+            except SystemExit:
+                raise                       # budget or daily cap reached: stop everything
+            except Exception as e:          # one failed clip must not stop the rest (helper report, 5 Nov)
+                print(f"  FAILED {out.name}: {str(e)[:200]}")
+                missing.append(out.name)
+                continue
             meta.update({"shot": shot_id, "take": k, "prompt": prompt, "negative": negative,
                          "created": datetime.now().isoformat(timespec="seconds")})
             out.with_suffix(".json").write_text(json.dumps(meta, indent=2))
