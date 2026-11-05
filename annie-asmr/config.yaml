@@ -43,7 +43,7 @@ opening:
 generator:
   provider: router     # router (free credits first, then cheapest, $20 cap) | fal | replicate | runway | manual
   clip_seconds: 5      # 5-second clips, slowed and alternated in assembly; keeps cost down
-  takes_per_shot: 1    # one take per shot; re-make a bad one with --only <shot>
+  takes_per_shot: 3   # Ann, 5 Nov: more takes = more variety (YouTube repetitive-content rules, watch hours)
   router:
     budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
     daily_usd: 5       # Ann, 5 Nov: never more than $5 in one day
