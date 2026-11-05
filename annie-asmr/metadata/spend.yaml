@@ -243,3 +243,24 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:21
+  route: flux-kontext-pro (Replicate)
+  clip: ace/bedroom/ace-lying-on-blanket.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 02:21
+  route: flux-kontext-pro (Replicate)
+  clip: ace/bedroom/ace-face-closeup.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 02:21
+  route: flux-kontext-pro (Replicate)
+  clip: ace/bedroom/ace-sleeping-loaf.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
