@@ -33,7 +33,10 @@ Keep it updated after each work session; a Google Doc copy is in Drive > 07 Bran
 
 ## Rules Claude must keep
 - Titles match what is in the video. `python -m pipeline check <slug>` must show no ERROR lines.
-- Never post comments. Draft owner replies in metadata/comments/*.yaml for Ann to approve; she runs comments-post.
+- Replies on OUR channel: draft in metadata/comments/*.yaml; post them only after Ann approves (Ann, 5 Nov: 'post replies').
+- Comments on OTHER channels: Claude only drafts (metadata/community/), Ann posts them herself (spam risk). Schedule: Wed + Sat 13:17 Toronto (trigger trig_0136iYt4h9JYJ1iimSwSzPpE).
+- NO GUM videos (Ann, 5 Nov): lips don't match gum sounds. Focus: Ace (real purring, many settings). Mouth sounds only if lip sync is convincing.
+- Disk: delete renders/<slug>/work and the final mp4 after a video and its Shorts are uploaded (the disk filled up on 5 Nov).
 - Vary every video (theme, objects, sound). Do not copy an episode plan and change only the title.
 - Uploads are private drafts only. Long videos: Ann publishes them herself in Studio; no code may make them public.
 - Shorts exception (Ann, 4 Nov): Claude may publish or schedule a Short with `python -m pipeline publish-short`, only

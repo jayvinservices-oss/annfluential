@@ -1,0 +1,30 @@
+{
+  "slug": "ace-fireplace-01",
+  "file": null,
+  "title": "Real Cat Purring by the Fire for Sleep | Ace Curled Up & Purring | No Talking | AI ASMR",
+  "description": "Ace, my real cat, purring by the fire on a cosy winter night. His real purr, slow petting with long nails, and a sleepy cat curled up in the firelight. No talking.\n\nIn this video: Ace the cat, cream knitted blanket, long nails.\n\nSounds: real cat purring, soft petting strokes.\n\nChapters\n(chapters are added after: python -m pipeline assemble ace-fireplace-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "cat purring for sleep",
+    "cat purring asmr",
+    "cozy fireplace cat",
+    "real cat purring"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "2026-11-14",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

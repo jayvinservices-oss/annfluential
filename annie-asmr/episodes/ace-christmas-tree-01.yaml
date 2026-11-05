@@ -1,0 +1,25 @@
+# Ace series (Ann, 5 Nov: focus on Ace in different settings; real purring, nothing to lip-sync).
+slug: ace-christmas-tree-01
+priority: 8
+clip_speed: 0.6
+ace_location: christmas-tree
+theme: ace-cat
+setting: >-
+  Under a decorated Christmas tree at night, a red velvet tree skirt, warm glowing tree lights and wrapped gifts.
+title: "Christmas Cat Purring Under the Tree | Real Cat Purring for Sleep | No Talking | AI ASMR"
+title_terms_ok: [christmas, cat, tree, real]
+description: >-
+  Ace, my real cat, purring under the Christmas tree. Twinkling lights, wrapped gifts, slow petting and his real, sleepy purr. No talking. Merry Christmas from Ace.
+made_by: 2026-11-28
+publish_after: 2026-12-02
+variation:
+  blanket: red velvet tree skirt
+  weather: soft snowfall
+  nail_colour: berry
+objects: [Ace the cat, Christmas tree, wrapped gifts, long nails]
+sounds: [real cat purring, soft petting strokes]
+tags: [christmas asmr, cat purring christmas, christmas cat asmr, cat purring for sleep, asmr no talking]
+segments:
+  - {id: s1, chapter: Purring under the tree, minutes: 20, shots: [ace-curled, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: s2, chapter: Petting Ace by the gifts, minutes: 20, shots: [pet-ace, chin-scratch], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: s3, chapter: Sleepy Christmas purrs, minutes: 20, shots: [ace-curled, chin-scratch], sound_bed: {file: audio/sfx/cat-purr-01.wav, gain_db: -3}}

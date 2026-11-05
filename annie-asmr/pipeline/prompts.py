@@ -33,7 +33,7 @@ def build_prompt(ep: dict, shot_id: str) -> tuple[str, str]:
                 "in milky pink polish, a thin gold ring; the hand and nails are clearly visible. ") if uses_hands else ""
         parts = [hand, ace["description"], a["hands"] if uses_hands else "",
                  "A woman's lower body under the covers, face not shown." if person else "",
-                 theme.get("setting", ""), variation_text(ep), shot["action"], shot.get("camera", a["camera"]),
+                 ep.get("setting") or theme.get("setting", ""), variation_text(ep), shot["action"], shot.get("camera", a["camera"]),
                  "Photorealistic, calm slow movement, cosy ASMR video aesthetic, warm colour grade, no text on screen."]
         prompt = " ".join(" ".join(x.split()) for x in parts if x)
         negative = " ".join((ace["negative"] + " text, captions, watermark, logo, extra fingers, deformed hands, "

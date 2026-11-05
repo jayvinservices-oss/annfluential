@@ -1,0 +1,30 @@
+{
+  "slug": "ace-christmas-tree-01",
+  "file": null,
+  "title": "Christmas Cat Purring Under the Tree | Real Cat Purring for Sleep | No Talking | AI ASMR",
+  "description": "Ace, my real cat, purring under the Christmas tree. Twinkling lights, wrapped gifts, slow petting and his real, sleepy purr. No talking. Merry Christmas from Ace.\n\nIn this video: Ace the cat, Christmas tree, wrapped gifts, long nails.\n\nSounds: real cat purring, soft petting strokes.\n\nChapters\n(chapters are added after: python -m pipeline assemble ace-christmas-tree-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "christmas asmr",
+    "cat purring christmas",
+    "christmas cat asmr",
+    "cat purring for sleep"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "2026-12-02",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

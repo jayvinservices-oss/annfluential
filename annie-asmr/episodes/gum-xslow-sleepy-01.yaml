@@ -1,8 +1,9 @@
+# ON HOLD (Ann, 5 Nov): no more gum; lips do not match the gum sounds. Draft stays private.
 # EXTRA SLOW twin of gum-pops-knuckles-01 (about 60% fewer sounds per minute; Ann 5 Nov: "I loved the 60% version").
 # For viewers tingles don't work for / insomnia. Different shots, colours and order from the slow video.
 slug: gum-xslow-sleepy-01
 look: bedroom
-priority: 5
+priority: 99
 clip_speed: 0.5   # smooth slow motion (Ann: slow ASMR)
 theme: gum-pops-knuckles
 title: "Extra Sleepy ASMR for Insomnia | Very Slow Gum Chewing When Tingles Don't Work | No Talking"
@@ -12,7 +13,7 @@ description: >-
   chewing, a few soft pops and the gloss tube opening, with long quiet pauses in between. No talking.
   Put it on, close your eyes, and let it carry you to sleep.
 made_by: 2026-11-18
-publish_after: 2026-11-21
+publish_after: null
 variation:
   gum: mint green gum
   gloss: clear high-shine gloss

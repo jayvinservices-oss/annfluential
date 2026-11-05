@@ -19,6 +19,11 @@ Strategy: long, slow, no-talking sleep ASMR (60 min to 3 h), two uploads a week,
 - Titles must match what is in the video (`python -m pipeline check <slug>` shows no ERROR).
 
 ## Ann's decisions (5 Nov)
+- NO GUM: video 1 (slow gum, private draft 30yBUNIU-zE) is on hold, not to be published; gum-xslow cancelled.
+  Main series = Ace in different settings (tools/ace_stills.py <location>; episode ace_location).
+  Mouth sounds (videos 2, 4) only if lip sync looks right (tools/sync_chews.py); otherwise replace with Ace.
+- Replies on our channel: posted after Ann's approval (7 posted 5 Nov). Other channels: Claude drafts
+  twice a week (Wed + Sat), Ann posts herself.
 - Pace: SLOW for no-talking videos. Two versions tested as separate videos: slow (about 40% fewer sounds/min)
   and extra slow (about 60% fewer; titles "Extra Sleepy ... for Insomnia ... When Tingles Don't Work").
   Talking stays normal pace. Tool: tools/slow_space.py. Clips play in smooth slow motion (episode `clip_speed`).
@@ -37,12 +42,12 @@ Strategy: long, slow, no-talking sleep ASMR (60 min to 3 h), two uploads a week,
 ## Schedule (Tue + Fri, 9 pm Toronto)
 | Date | Video (slug) | Status 5 Nov night |
 |---|---|---|
-| Fri 7 Nov | Slow Gum Chewing & Knuckle Cracking (gum-pops-knuckles-01) | clips done (7 kept), assembling |
+| Fri 7 Nov | Petting My Cat Until He Purrs (ace-petting-purr-01) | 15 clips (presenter hand), assembling |
 | Tue 11 Nov | Extra Sleepy Mouth Sounds for Insomnia (mouth-sounds-xslow-01) | 7 clips kept, to assemble |
-| Fri 14 Nov | Petting My Cat Until He Purrs (ace-petting-purr-01) | 15 clips done, to assemble |
+| Fri 14 Nov | Real Cat Purring by the Fire (ace-fireplace-01) | plan ready; Ace fireplace stills + clips by 12 Nov |
 | Tue 18 Nov | Slow Mouth Sounds (mouth-sounds-slow-01) | plan ready, clips to make by 15 Nov |
-| Fri 21 Nov | Extra Sleepy Gum (gum-xslow-sleepy-01) | plan ready, clips by 18 Nov |
-| Tue 25 Nov | 3 Hours Sleeping With My Cat (ace-sleeping-3h-01) | needs Ace sleeping photos |
+| Fri 21 Nov | 3 Hours Sleeping With My Cat (ace-sleeping-3h-01) | needs Ace sleeping photos |
+| Tue 2 Dec | Christmas Cat Purring Under the Tree (ace-christmas-tree-01) | plan ready |
 | Fri 5 Dec | 3-hour sleep compilation (compilations/sleep-compilation-2026-12.yaml) | after the sources are public |
 | Mid-Dec | Face reveal (brand/face-reveal-plan.md) | plan only |
 Christmas videos (xmas-*) and nail tapping / wax cracking / gloss layers are parked until sounds exist.
@@ -72,10 +77,11 @@ Christmas videos (xmas-*) and nail tapping / wax cracking / gloss layers are par
 - YouTube: @annieasmrai. Playlists in metadata/channel/playlists.yaml (Ace playlist private until his video).
   The top 5 old videos now open with a link line to the sleep playlist (backup in metadata/channel/).
 - Research: reports/competitors-2026-11-04.md, reports/cat-purring-2026-11-05.md; plans in brand/.
-- Spend ledger: metadata/spend.yaml ($4.69 of $20 on 5 Nov).
+- Spend ledger: metadata/spend.yaml (about $6.70 of $20 by end of 5 Nov).
 - Weekly report: scheduled task every Monday 7:23 Toronto.
 
 ## Known issues
+- Disk is limited: delete renders/<slug>/work and the final mp4 after upload.
 - Wan clips are energetic; use clip_speed slow motion and reject bad takes.
 - Replicate sometimes fails a prediction ("Model not found ..."): generate skips it; retry once with --only.
 - The image-editing model zooms out to the full face: always crop nose-down before use.

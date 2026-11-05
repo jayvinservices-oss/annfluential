@@ -31,7 +31,7 @@ def still_for_shot(ep: dict, shot_id: str, default: Path) -> Path:
     ace_map = (ep["_theme"].get("ace_stills") or {})
     if ace_map:                                       # Ace videos: start every clip from his real (bedroom-edited) photo
         name = ace_map.get(shot_id) or ace_map.get("default")
-        for c in (f"prompts/reference/ace/bedroom/{name}", f"prompts/reference/ace/{name}"):
+        for c in (f"prompts/reference/ace/{ep.get('ace_location', 'bedroom')}/{name}", f"prompts/reference/ace/{name}"):
             p = project_path(c)
             if name and p.exists():
                 return p

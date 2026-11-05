@@ -1,17 +1,18 @@
+# ON HOLD (Ann, 5 Nov): no more gum; lips do not match the gum sounds. Draft stays private.
 # Next video. Pace: SLOW (about 40% fewer sounds per minute; Ann 5 Nov). From YouTube's concept list: viewers repeatedly ask for fast gum popping + knuckle cracking.
 # Opens straight on the trigger from the title (no talking anywhere: 'No Talking' is the top search phrase, scan 4 Nov); thumbnail = opening shot.
 # Gum pops and knuckle cracks must be real recordings in audio/sfx/.
 slug: gum-pops-knuckles-01
 look: night-mic
 short_x: 0.36   # presenter sits left of centre in the night-mic look
-priority: 1
+priority: 99
 theme: gum-pops-knuckles
 title: "ASMR Slow Gum Chewing & Knuckle Cracking for Sleep | No Talking | AI ASMR"
 description: >-
   Slow gum chewing, soft pops and slow knuckle cracking up close, the triggers you keep asking for.
   No talking, just slow, sleepy sounds. Use the chapters to jump to your favourite sound.
 made_by: 2026-11-05
-publish_after: 2026-11-07
+publish_after: null
 variation:
   gum: pink bubble gum
   gloss: nude-pink gloss
