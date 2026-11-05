@@ -39,6 +39,8 @@ for name in names:
     p = requests.post(f"https://api.replicate.com/v1/models/{MODEL}/predictions", headers=h, timeout=180,
                       json={"input": {"prompt": PROMPT, "input_image": img, "aspect_ratio": "match_input_image",
                                       "output_format": "png", "safety_tolerance": 2}}).json()
+    if "urls" not in p:
+        print("Replicate did not start it (probably a rate limit):", str(p)[:300]); time.sleep(15); continue
     while p.get("status") not in ("succeeded", "failed", "canceled"):
         time.sleep(3)
         p = requests.get(p["urls"]["get"], headers=h, timeout=60).json()
@@ -51,4 +53,5 @@ for name in names:
     LEDGER.write_text(yaml.safe_dump(_ledger() + [{"date": date.today().isoformat(), "time": datetime.now().strftime("%H:%M"),
                       "route": "flux-kontext-pro (Replicate)", "clip": f"stills/bedroom/{name}.png", "seconds": 0,
                       "free": False, "cost_usd": PRICE}], sort_keys=False))
+    time.sleep(10)
     print(f"{name}: saved {out.relative_to(ROOT)} (${PRICE:.2f}); today ${spent_today():.2f}")

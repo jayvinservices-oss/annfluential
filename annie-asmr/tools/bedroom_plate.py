@@ -31,6 +31,8 @@ for i, prompt in enumerate(PROMPTS, 1):
         p = requests.post("https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions", headers=h,
                           timeout=180, json={"input": {"prompt": prompt, "aspect_ratio": "16:9", "output_format": "png",
                                                        "megapixels": "1", "seed": 100 + k}}).json()
+        if "urls" not in p:
+            print("Replicate did not start it (probably a rate limit):", str(p)[:300]); time.sleep(15); continue
         while p.get("status") not in ("succeeded", "failed", "canceled"):
             time.sleep(2); p = requests.get(p["urls"]["get"], headers=h, timeout=60).json()
         if p["status"] != "succeeded":
@@ -39,4 +41,4 @@ for i, prompt in enumerate(PROMPTS, 1):
         f = out / f"bedroom-pink-{i}{'ab'[k]}.png"; f.write_bytes(requests.get(url, timeout=120).content)
         LEDGER.write_text(yaml.safe_dump(_ledger() + [{"date": date.today().isoformat(), "time": datetime.now().strftime("%H:%M"),
             "route": "flux-schnell (Replicate)", "clip": f"backgrounds/{f.name}", "seconds": 0, "free": False, "cost_usd": PRICE}], sort_keys=False))
-        print("saved", f.name)
+        print("saved", f.name); time.sleep(10)
