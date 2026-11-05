@@ -9,34 +9,27 @@ drive:
   clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
 # What is waiting on whom. The production board shows this. Mark done: true when finished.
 ann:
-- text: 'Tonight: approve the clip job in the helper session (''run it''), about $1. Then watch the private draft
-    of video 1 and say yes or changes.'
+- text: 'Watch Ace''s draft (Fri 7 Nov slot): https://studio.youtube.com/video/1hxO9o7l58c/edit and its 3 Shorts.
+    Say yes or changes.'
   done: false
-- text: 'Each paid job: approve it in the helper session (or tell the helper it may run jobs I send, up to $5 a
-    day).'
+- text: 'Watch the 20-second mouth-sounds lip-sync test (in chat): yes = mouth-sound videos go ahead, no = Ace videos
+    instead.'
   done: false
-- text: 'Each video: approve the private draft; publish it yourself in Studio at 9 pm Toronto on its date (or tell
-    me to schedule it).'
+- text: Gum video (30yBUNIU-zE) is on hold as you asked; it stays private.
   done: false
-- text: 'Shorts: once each, in the YouTube app, set ''Related video'' to the full video.'
+- text: 'Wed + Sat: I send 6 comment drafts for other ASMR channels; you post them yourself from Annie ASMR.'
   done: false
-- text: 'Studio, once: end screen on the first new video, then ''Import from video'' on the rest.'
+- text: 'Per Short: set ''Related video'' in the YouTube app. Once: end screen in Studio.'
   done: false
-- text: 'Ace: a few photos of him curled up asleep and on the bed with his face visible (for the sleeping video,
-    by 20 Nov).'
-  done: false
-- text: 'Decide: sounds for nail tapping, wax cracking, lip gloss layers and Christmas (you won''t record). Option:
-    download free CC0 packs on your phone into Drive > sfx (I''ll list exactly which).'
+- text: 'By 20 Nov: Ace photos curled up asleep and on the bed (face visible).'
   done: false
 claude:
-- text: 'Tonight: assemble video 1 (slow gum, 60 min, night + mic look), thumbnail, 3 Shorts, upload all as private
-    drafts for review.'
+- text: 'Schedule: Fri 7 Nov Ace petting; Tue 11 extra sleepy mouth sounds (if lip-sync ok); Fri 14 Ace by the fire;
+    Tue 18 slow mouth sounds (if ok); Fri 21 Ace 3-hour sleeping; Tue 2 Dec Ace under the Christmas tree; Fri 5
+    Dec Ace compilation; mid-Dec face reveal.'
   done: false
-- text: 'Schedule (Tue + Fri 9 pm Toronto): Fri 7 Nov slow gum; Tue 11 extra sleepy mouth sounds; Fri 14 Ace petting;
-    Tue 18 slow mouth sounds; Fri 21 extra sleepy gum; Tue 25 Ace 3-hour sleeping; Fri 5 Dec 3-hour sleep compilation;
-    mid-Dec face reveal.'
+- text: 'Tomorrow: Ace fireplace stills + clips (about $1.60), within the $5 cap.'
   done: false
-- text: 'Each video ready 3 days before its date: clips (about $1), assembly, thumbnail, Shorts, private drafts.'
-  done: false
-- text: Weekly report every Monday; slow vs extra slow compared after the first two of each.
-  done: false
+- text: 'Done 5 Nov: video 1 + Ace drafts and 6 Shorts; 7 replies posted; Drive organised; production document;
+    Ace series planned.'
+  done: true
