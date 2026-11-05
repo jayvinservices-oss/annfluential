@@ -1,5 +1,8 @@
 # Annie ASMR: working notes for Claude
 
+START HERE: brand/production-document.md (current status, schedule, how a video is made, what waits on Ann).
+Keep it updated after each work session; a Google Doc copy is in Drive > 07 Brand & Plans.
+
 ## The channel
 - Annie ASMR (@annieasmrai; was @annieasmr9051). 1,030 subscribers, 539 of 4,000 public watch hours (4 Nov 2026, API).
 - Goal: YouTube Partner Program by 17 January 2027. Hard cutoff 31 January 2027, 18:59 Toronto.
@@ -55,13 +58,13 @@ Leave `approved: false`. Ann approves.
 - Private page: https://claude.ai/artifact/4z2SrmNjKK1g7khP7XFKut
 - Rebuild with `python -m pipeline board`, then republish renders/board.html to that same URL (Artifact tool with `url`).
 - Numbers come from metadata/channel-stats.yaml (update when Ann pastes Studio summaries); to-dos from metadata/todo.yaml.
-- Clips mode is manual (free): Ann makes clips from the board's prompts and uploads them to Google Drive
+- Clips are made automatically through the router by the helper session (see production document). Old manual mode: Ann made clips from the board's prompts and uploads them to Google Drive
   "Annie ASMR/clips/<slug>/"; source videos and the reference image go to "Annie ASMR/source", real
   sounds to "Annie ASMR/sfx". These folders are in the jayvin.services@gmail.com Drive (the connected
   one); folder IDs are in metadata/todo.yaml under `drive`.
 - Voice (Ann, 5 Nov): use Ann's REAL whispered recordings (memo in Drive sfx: 'Annie voice memo - whisper'), cleaned
   and cut into lines in audio/voice/real/. The VoxCPM2 clone was rejected (hiss, harsh soft voice, a male-sounding
-  artefact mid-line); new lines = Ann records them. Old note: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
+  artefact mid-line); new lines: Ann later said she likes both clones too (VoxCPM2 and chatterbox) -> rotate real whisper / clone 1 / clone 2 across talking videos. Old note: VoxCPM2 (Apache 2.0, commercial use allowed). Do NOT use VoiceStudio's default OmniVoice model:
   its weights are CC-BY-NC (non-commercial) and the channel is being monetised.
 
 ## Starting a new cloud session (the container is wiped between sessions)
