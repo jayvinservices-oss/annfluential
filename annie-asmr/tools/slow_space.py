@@ -18,10 +18,11 @@ ap.add_argument("--tempo", type=float, default=0.92)
 ap.add_argument("--min-gap", type=float, default=0.06, help="seconds; shorter dips count as one event")
 a = ap.parse_args()
 
-x, sr = sf.read(a.src, always_2d=True)
-mono = x.mean(axis=1)
+x, sr = sf.read(a.src, always_2d=True, dtype="float32")
 hop = int(sr * 0.01)
-n = len(mono) // hop
+n = len(x) // hop
+x = x[: n * hop]
+mono = x.mean(axis=1)
 env = np.sqrt(np.mean(mono[: n * hop].reshape(n, hop) ** 2, axis=1) + 1e-12)
 db = 20 * np.log10(env)
 floor = np.percentile(db, 20)
@@ -39,8 +40,8 @@ while i < n:
         i = j
     else:
         i += 1
-quiet = x[np.repeat(~active, hop)[: len(x)]] if (~active).any() else np.zeros((sr, x.shape[1]))
-tone = quiet if len(quiet) > sr // 2 else np.zeros((sr, x.shape[1]))
+qidx = np.flatnonzero(~active)[: 30 * 100]          # up to 30 s of quiet frames is plenty of room tone
+tone = np.concatenate([x[k * hop:(k + 1) * hop] for k in qidx]) if len(qidx) > 50 else np.zeros((sr, x.shape[1]), np.float32)
 out, pos, t_off = [], 0, 0
 i = 0
 while i < n:
@@ -52,7 +53,7 @@ while i < n:
         out.append(seg)
     else:
         extra = int(len(seg) * (a.space - 1))
-        fill = np.resize(tone[t_off % max(len(tone) - 1, 1):], (extra, x.shape[1])) if extra > 0 else seg[:0]
+        fill = np.resize(np.roll(tone, -(t_off % len(tone)), axis=0), (extra, x.shape[1])).astype(np.float32) if extra > 0 else seg[:0]
         t_off += extra
         out.append(seg)
         if extra > 0:
