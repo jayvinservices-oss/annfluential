@@ -71,7 +71,7 @@ def make(slug: str, n: int = 3, seconds: float = 35) -> list[str]:
             continue
         track = loudness_track(render_path(slug), lo, hi - lo)
         at = lo + best_window(track, int(seconds * 10)) / 10
-        cut = trailer(ep, at, seconds)
+        cut = trailer(ep, at, seconds, float(ep.get("short_x", 0.5)))  # 0 = left edge, 1 = right edge
         name = f"{slug}-short{k}"
         final = RENDERS / f"{name}.mp4"
         cut.replace(final)
