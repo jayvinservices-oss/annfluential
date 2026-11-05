@@ -46,7 +46,7 @@ generator:
   takes_per_shot: 3   # Ann, 5 Nov: more takes = more variety (YouTube repetitive-content rules, watch hours)
   router:
     budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
-    daily_usd: 7       # Ann, 5 Nov: $7 for 5 Nov only; set back to 5 from 6 Nov (normal limit $5/day)
+    daily_usd: 5       # Ann, 5 Nov: never more than $5 in one day
     # From reports/ai-video-options-2026-11-04.md (4 Nov 2026). Prices are estimates kept on the high side so the
     # $20 cap is never passed; check the model page (input field names and price) before the first paid run.
     routes:
@@ -54,7 +54,7 @@ generator:
         provider: replicate
         key_env: REPLICATE_API_TOKEN
         model: wan-video/wan-2.2-i2v-fast
-        price_per_second: 0.02
+        price_per_second: 0.01         # Ann, 5 Nov: $0.05 per 5 s clip (Replicate billed about $0.04 a clip)
         prompt_field: prompt
         image_field: image
         negative_field: null
