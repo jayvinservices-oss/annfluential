@@ -264,3 +264,108 @@
   seconds: 0
   free: false
   cost_usd: 0.04
+- date: '2026-11-05'
+  time: 02:22
+  route: wan-2.2-fast (Replicate)
+  clip: pet-ace__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:23
+  route: wan-2.2-fast (Replicate)
+  clip: pet-ace__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:24
+  route: wan-2.2-fast (Replicate)
+  clip: pet-ace__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:24
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:24
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:25
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:25
+  route: wan-2.2-fast (Replicate)
+  clip: ace-kneading__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:26
+  route: wan-2.2-fast (Replicate)
+  clip: ace-kneading__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:26
+  route: wan-2.2-fast (Replicate)
+  clip: ace-kneading__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:27
+  route: wan-2.2-fast (Replicate)
+  clip: ace-curled__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:27
+  route: wan-2.2-fast (Replicate)
+  clip: ace-curled__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:28
+  route: wan-2.2-fast (Replicate)
+  clip: ace-curled__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:28
+  route: wan-2.2-fast (Replicate)
+  clip: rain-window__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:29
+  route: wan-2.2-fast (Replicate)
+  clip: rain-window__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:29
+  route: wan-2.2-fast (Replicate)
+  clip: rain-window__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
