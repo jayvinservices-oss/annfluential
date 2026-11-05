@@ -80,7 +80,7 @@ Goal (Ann): about $10k/month from the Ace brand within 12-24 months, run by AI; 
 - Amazon affiliate: waiting on Ann's Associates store ID (.ca or .com) + the names of Ace's products.
   Then an "Ace's favourites" block (with the Amazon disclosure) goes in every Ace description.
 - Ace purr book (KDP): idea; photo picture book with a short story + scannable purr audio. Declare AI use.
-- Full income research (2026 sources, ranked, 24-month plan): reports/Cat brand income streams 2026.md (in progress).
+- Full income research (2026 sources, ranked, 24-month plan): /reports/Cat brand income streams 2026.md (repo root). Base case: a few hundred/month by month 12, about CA$1-2.5k by month 24; $10k needs a breakout. Top 5: YouTube sleep-with-Ace (real footage), Etsy digital bundles, POD Ace merch, high-ticket affiliates (Litter-Robot CA 8%), paid UGC for pet brands.
 - Security: Etsy 2FA backup codes are stored as plain text in Drive (two copies); Ann to move them to a
   password manager. Claude does not use them.
 
