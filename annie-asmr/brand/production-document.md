@@ -73,6 +73,17 @@ Christmas videos (xmas-*) and nail tapping / wax cracking / gloss layers are par
 
 - Ace series plan (draft, 10 videos): brand/ace-series-plan.md
 
+## Business (beyond YouTube), started 5 Nov
+Goal (Ann): about $10k/month from the Ace brand within 12-24 months, run by AI; Ann gives the word.
+- Etsy product 1 READY: "Real Cat Purring for Sleep, 1 Hour" (annie-asmr/shop/ace-purring/: 3 MP3s, 3 images,
+  listing.md). Needs listing in Ann's Etsy shop (Ann or Cowork with her browser).
+- Amazon affiliate: waiting on Ann's Associates store ID (.ca or .com) + the names of Ace's products.
+  Then an "Ace's favourites" block (with the Amazon disclosure) goes in every Ace description.
+- Ace purr book (KDP): idea; photo picture book with a short story + scannable purr audio. Declare AI use.
+- Full income research (2026 sources, ranked, 24-month plan): reports/Cat brand income streams 2026.md (in progress).
+- Security: Etsy 2FA backup codes are stored as plain text in Drive (two copies); Ann to move them to a
+  password manager. Claude does not use them.
+
 ## Where things are
 - Drive "Annie ASMR" (jayvin.services account): numbered 01 Voice ... 07 Brand & Plans, _Holding. Index doc
   "00 Index - Annie ASMR Drive"; repo copy brand/drive-index.md.
