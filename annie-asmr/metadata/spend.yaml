@@ -117,3 +117,66 @@
   seconds: 0
   free: false
   cost_usd: 0.03
+- date: '2026-11-05'
+  time: 02:01
+  route: wan-2.2-fast (Replicate)
+  clip: gum-pop__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:01
+  route: wan-2.2-fast (Replicate)
+  clip: gum-pop__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:02
+  route: wan-2.2-fast (Replicate)
+  clip: gum-and-hands__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:02
+  route: wan-2.2-fast (Replicate)
+  clip: gum-and-hands__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:04
+  route: wan-2.2-fast (Replicate)
+  clip: knuckle-crack__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:05
+  route: wan-2.2-fast (Replicate)
+  clip: finger-stretch__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:05
+  route: wan-2.2-fast (Replicate)
+  clip: finger-stretch__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:06
+  route: wan-2.2-fast (Replicate)
+  clip: whisper-close__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:06
+  route: wan-2.2-fast (Replicate)
+  clip: whisper-close__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
