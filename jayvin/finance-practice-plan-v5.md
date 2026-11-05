@@ -1,14 +1,15 @@
-# Jayvin: AI finance operations offer, pricing and launch plan (v3, 5 Nov 2026)
+# Jayvin: AI finance operations offer, pricing and launch plan (v5, 5 Nov 2026)
 
-Supersedes v2 ("Books to Board") and v1 ("Northbook Finance"). Changes in v3 (Ann, 5 Nov): brand moved to Jayvin for a
+Supersedes v1 to v4 (Drive copies of each are marked SUPERSEDED). Changes since v2 (Ann, 5 Nov): brand moved to Jayvin for a
 long-term business (Books to Board read as boards-only); on-time fee guarantee removed; qualifications and case study added;
-grant compliance brought back from the old jayvinconsulting.ca site. Built from: Ann's existing "AI Finance
+grant compliance brought back from the old jayvinconsulting.ca site; name shown as "Ann James, MBA"; QT named with
+permission; deadline: live and earning before March 2027. Built from: Ann's existing "AI Finance
 Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), competitor benchmarks
 (`research/competitors.md`), name and domain checks (`research/names-and-domains.md`), and prospects and channels
 (`research/prospects-and-marketing.md`, `research/prospects.csv`).
 
 ## 0. Decisions in this version (Ann to confirm or change)
-| Topic | Earlier drafts (2 Nov) | v3 |
+| Topic | Earlier drafts (2 Nov) | Now (v5) |
 |---|---|---|
 | Brand | No brand, Ann's own name | **Jayvin** (Jayvin Consulting Inc., Ann's company; no trade-name registration needed). Domain: jayvin.ai (likely available) with jayvinconsulting.ca (owned) redirecting. SEO comes from page content and articles, not the domain |
 | Who first | For-profit small businesses, 5 to 50 staff | **Small businesses first**, nonprofits second. Selling to charities while working as a charity finance director carries the most conflict-of-interest risk, so nonprofit outreach waits until Ann is comfortable |
@@ -24,6 +25,8 @@ Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), co
   Toronto, grant compliance (IRAP, CanExport, WAGE, FedDev Ontario, Ontario Trillium Foundation), nonprofit bookkeeping,
   AI bookkeeping.
 - Title (Ann, 5 Nov): **"Internationally qualified Chartered Accountant"** (ICAN, 2018), MBA.
+- Name on the site (Ann, 5 Nov): **"Ann James, MBA"** only, never the full surname. Ann may ask her employer for an
+  exception; until then keep personal details minimal. The site stays hidden until Ann decides to go live.
 
 ## 1a. Qualifications for the website (from Ann's CV, 28 Oct 2026; employers not named)
 - Internationally qualified Chartered Accountant (ICAN, 2018); MBA, Ted Rogers School of Management (2025); ACCA (UK)
@@ -37,8 +40,9 @@ Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), co
 - Tools: QuickBooks, Microsoft Dynamics GP, Salesforce, Plooto, Float, Expensify, Syft Analytics, advanced Excel, AI tools.
 - Not published: current employer, the board seat (DNC), the CPA Ontario candidacy.
 
-## 1b. Case study (from the old site; anonymised until the client consents to being named)
-"A Toronto arts nonprofit" (QT; name only with written consent): no formal accounting system and several years of
+## 1b. Case study (from the old site)
+Queer Toronto Literary Magazine (QT), Toronto arts and culture nonprofit. Ann confirmed on 5 Nov that QT has already
+given permission to be named: no formal accounting system and several years of
 unreconciled records, plus grant reporting obligations. Delivered: accounting system design and set-up, historical
 reconciliation, a grant tracking tool, multi-year grant management and close-out, grant expenditure checks, work with
 the external accountants, management financial statements. Outcomes: working accounting system, multi-year backlog
@@ -108,6 +112,11 @@ Built from assets Ann already has; the AI Use Policy lite stays the free lead ma
 | Small business budget planner | existing Etsy listing | live |
 | **AI Finance Starter Bundle** (all of the above) | $249 | after the parts are live |
 
+## 5a. Deadline
+**Live online and earning before March 2027** (Ann, 5 Nov). Working timeline: domain, contract review and setup by
+30 Nov; site live and outreach from early December; first 1 to 2 clients signed in January; first monthly invoices
+and setup fees by February 2027.
+
 ## 6. Revenue and capacity
 - **While employed (2 to 3 clients):** for example 1 Fractional CFO + 1 Books to Board + 1 Essentials = **$5,250/month**
   (28 included hours, about 7 h/week), plus implementation fees ($6,500 to $9,500 one-time) and digital products.
@@ -133,7 +142,7 @@ Built from assets Ann already has; the AI Use Policy lite stays the free lead ma
 ## 8. Before the first client (Ann's steps; Claude drafts everything)
 1. Buy jayvin.ai; point jayvinconsulting.ca to it. (No trade-name registration needed when operating as Jayvin Consulting Inc.)
 2. Read the employment contract clauses (outside work, conflicts, confidentiality, non-solicitation).
-3. Title decided: "Internationally qualified Chartered Accountant". Get QT's written consent before naming them in the case study.
+3. Title decided: "Internationally qualified Chartered Accountant". QT permission confirmed. Name shown as "Ann James, MBA".
 4. E&O insurance quote.
 5. QuickBooks Online Accountant + ProAdvisor certification; authorise the QuickBooks connector for Claude.
 6. Practice email on the domain; website live (draft ready); engagement letter with the AI-use clause.
