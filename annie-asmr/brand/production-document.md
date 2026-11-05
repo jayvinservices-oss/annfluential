@@ -8,6 +8,10 @@ YouTube Partner Program: 4,000 public watch hours by 17 Jan 2027 (hard cutoff 31
 Strategy: long, slow, no-talking sleep ASMR (60 min to 3 h), two uploads a week, Shorts as trailers, a monthly
 3-hour compilation, Ace (Ann's real cat) purring videos, a face reveal mid-December.
 
+## Status flag
+- **PAID GENERATION ON HOLD** (Ann, 5 Nov, via the helper session): no clips, images or other paid jobs until Ann reviews
+  the drafts (Ace petting 1hxO9o7l58c and Shorts) and says to resume. The helper's standing approval is suspended.
+
 ## Rules that must not be broken
 - Ann approves everything. Uploads are PRIVATE drafts; Ann publishes long videos herself. Shorts may be published
   by Claude only with Ann's recorded yes (metadata/publish-approvals.yaml) and only once the full video is public.
