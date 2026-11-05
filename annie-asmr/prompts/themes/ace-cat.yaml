@@ -2,6 +2,15 @@ id: ace-cat
 name: Ace the cat (real cat, real purring)
 season: regular
 uses_hands: true
+subject: ace
+ace_stills:              # shot -> Ace photo (bedroom version made by tools/ace_stills.py)
+  pet-ace: ace-lying-on-blanket.png
+  chin-scratch: ace-face-closeup.png
+  ace-kneading: ace-lying-on-blanket.png
+  ace-curled: ace-sleeping-loaf.png
+  sleeping-together: ace-sleeping-loaf.png
+  rain-window: ace-sleeping-loaf.png
+  default: ace-face-closeup.png
 # Ace is Ann's real cat. His look must stay his own: start every clip from one of his real photos
 # (prompts/reference/ace/), or use his real phone videos directly. Description: prompts/ace.yaml.
 setting: >-
@@ -25,6 +34,7 @@ shots:
     action: Ace sleeps curled into a ball on the blanket, his side rising and falling slowly with each breath.
   sleeping-together:
     action: A woman sleeps under burgundy covers, seen from the shoulders down, and Ace is curled against her legs, both breathing slowly.
+    person: true
   rain-window:
-    action: Slow drift across the frosted window with snow or rain falling outside, the lamp glow reflected in the glass.
+    action: Ace sleeps on the bed in the foreground while snow falls slowly outside the frosted window behind him, lamp glow reflected in the glass.
 chapter_ideas: [Petting Ace until he purrs, Chin scratches, Kneading the blanket, Curled up and purring, Sleeping together]

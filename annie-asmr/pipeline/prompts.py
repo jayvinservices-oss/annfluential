@@ -26,6 +26,17 @@ def build_prompt(ep: dict, shot_id: str) -> tuple[str, str]:
     theme = ep["_theme"]
     shot = shots(ep)[shot_id]
     uses_hands = shot.get("uses_hands", theme.get("uses_hands", False))
+    if theme.get("subject") == "ace":                  # Ace, Ann's real cat: his own description, not the presenter's
+        ace = yaml.safe_load((PROMPTS / "ace.yaml").read_text())
+        person = shot.get("person", False)
+        parts = [ace["description"], a["hands"] if uses_hands else "",
+                 "A woman's lower body under the covers, face not shown." if person else "",
+                 theme.get("setting", ""), variation_text(ep), shot["action"], shot.get("camera", a["camera"]),
+                 "Photorealistic, calm slow movement, cosy ASMR video aesthetic, warm colour grade, no text on screen."]
+        prompt = " ".join(" ".join(x.split()) for x in parts if x)
+        negative = " ".join((ace["negative"] + " text, captions, watermark, logo, extra fingers, deformed hands, "
+                             "flickering, harsh shadows, woman's face, eyes of a person").split())
+        return prompt, negative
     parts = [
         a["face"],
         a["hands"] if uses_hands else "",

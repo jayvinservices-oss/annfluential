@@ -28,6 +28,13 @@ def clips_for_shot(slug: str, shot_id: str) -> list[Path]:
 def still_for_shot(ep: dict, shot_id: str, default: Path) -> Path:
     """The presenter still a shot starts from: prompts/reference/stills/<gum|hands|gloss>.png when present."""
     from .episode import shots
+    ace_map = (ep["_theme"].get("ace_stills") or {})
+    if ace_map:                                       # Ace videos: start every clip from his real (bedroom-edited) photo
+        name = ace_map.get(shot_id) or ace_map.get("default")
+        for c in (f"prompts/reference/ace/bedroom/{name}", f"prompts/reference/ace/{name}"):
+            p = project_path(c)
+            if name and p.exists():
+                return p
     text = (shots(ep).get(shot_id, {}).get("action", "") + " " + shot_id).lower()
     key = ("gum" if any(w in text for w in ("gum", "pop", "bubble")) else
            "gloss" if any(w in text for w in ("lips", "gloss", "wand")) else
