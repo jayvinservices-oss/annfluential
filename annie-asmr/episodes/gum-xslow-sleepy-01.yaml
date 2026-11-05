@@ -1,0 +1,25 @@
+# EXTRA SLOW twin of gum-pops-knuckles-01 (about 60% fewer sounds per minute; Ann 5 Nov: "I loved the 60% version").
+# For viewers tingles don't work for / insomnia. Different shots, colours and order from the slow video.
+slug: gum-xslow-sleepy-01
+theme: gum-pops-knuckles
+title: "Extra Sleepy ASMR for Insomnia | Very Slow Gum Chewing When Tingles Don't Work | No Talking"
+title_terms_ok: [extra, sleepy, insomnia, very, tingles, work, when]
+description: >-
+  If you struggle with insomnia, or tingles just don't work for you anymore, stay here. Very slow gum
+  chewing, a few soft pops and the gloss tube opening, with long quiet pauses in between. No talking.
+  Put it on, close your eyes, and let it carry you to sleep.
+made_by: null
+publish_after: null
+variation:
+  gum: mint green gum
+  gloss: clear high-shine gloss
+  nail_colour: milky nude
+  palette: dark night room, fairy-light bokeh
+objects: [mint green gum, glossy lips, long nails, lip gloss tube]
+sounds: [very slow gum chewing, soft gum pops, lip gloss tube opening, slow knuckle cracks]
+tags: [extra sleepy asmr, asmr for insomnia, slow asmr, gum chewing asmr, asmr no talking, asmr when tingles dont work]
+segments:
+  - {id: chew, chapter: Very slow gum chewing, minutes: 15, shots: [gum-pop, whisper-close], sound_bed: audio/sfx/gum-chew-xslow-01.wav}
+  - {id: gloss, chapter: Gloss tube & slow chewing, minutes: 12, shots: [gum-and-hands, gum-pop], sound_bed: [audio/sfx/gum-chew-xslow-01.wav, {file: audio/sfx/gloss-and-gum-xslow-01.wav, gain_db: -3}]}
+  - {id: cracks, chapter: Slow knuckle cracks, minutes: 10, shots: [knuckle-crack, finger-stretch], sound_bed: audio/sfx/knuckle-crack-xslow-01.wav}
+  - {id: sleep, chapter: Drifting off, slowest chewing, minutes: 23, shots: [whisper-close, gum-pop], sound_bed: {file: audio/sfx/gum-chew-xslow-01.wav, gain_db: -4}}

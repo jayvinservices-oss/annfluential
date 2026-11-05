@@ -121,5 +121,5 @@ youtube:
   # Short on purpose (Ann, 3 Nov): YouTube's "altered or synthetic content" box is ticked on every upload
   # (upload.py), which shows YouTube's own label. "AI ASMR" is also a search term people use.
   disclosure: >-
-    AI ASMR: AI presenter, my own voice (cloned), real sounds.
+    AI ASMR: AI presenter, my real voice, real sounds.
   disclosure_no_voice: "AI ASMR: AI presenter, real sounds."

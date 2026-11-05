@@ -1,0 +1,21 @@
+# Mouth sounds, EXTRA SLOW (about 60% fewer sounds per minute). For insomnia / when tingles don't work.
+slug: mouth-sounds-xslow-01
+theme: lip-gloss-layers
+title: "Extra Sleepy Mouth Sounds for Insomnia | If You Can't Sleep, Stay Here | No Talking | AI ASMR"
+title_terms_ok: [extra, sleepy, mouth, insomnia, stay, here]
+description: >-
+  Can't sleep? Stay here. Very slow, gentle mouth sounds and soft lip smacks with long, quiet pauses,
+  made for nights when nothing else works. No talking. Close your eyes and drift off.
+made_by: null
+publish_after: null
+variation:
+  gloss_shades: cocoa, peach and clear high-shine
+  nail_colour: deep cocoa
+  palette: mocha and beige
+objects: [glossy lips, gloss wand, long nails]
+sounds: [very slow mouth sounds, soft lip smacks, gentle clicks]
+tags: [extra sleepy asmr, asmr for insomnia, slow mouth sounds, asmr no talking, asmr when tingles dont work]
+segments:
+  - {id: start, chapter: Very slow mouth sounds, minutes: 20, shots: [press-lips, final-shine], sound_bed: audio/sfx/mouth-sounds-xslow-01.wav}
+  - {id: smacks, chapter: Soft lip smacks, long pauses, minutes: 20, shots: [press-lips, apply-wand], sound_bed: audio/sfx/mouth-sounds-xslow-01.wav}
+  - {id: sleep, chapter: Fading out for sleep, minutes: 20, shots: [final-shine, press-lips], sound_bed: {file: audio/sfx/mouth-sounds-xslow-01.wav, gain_db: -4}}

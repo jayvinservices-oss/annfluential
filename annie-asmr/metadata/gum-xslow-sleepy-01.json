@@ -1,0 +1,31 @@
+{
+  "slug": "gum-xslow-sleepy-01",
+  "file": null,
+  "title": "Extra Sleepy ASMR for Insomnia | Very Slow Gum Chewing When Tingles Don't Work | No Talking",
+  "description": "If you struggle with insomnia, or tingles just don't work for you anymore, stay here. Very slow gum chewing, a few soft pops and the gloss tube opening, with long quiet pauses in between. No talking. Put it on, close your eyes, and let it carry you to sleep.\n\nIn this video: mint green gum, glossy lips, long nails, lip gloss tube.\n\nSounds: very slow gum chewing, soft gum pops, lip gloss tube opening, slow knuckle cracks.\n\nChapters\n(chapters are added after: python -m pipeline assemble gum-xslow-sleepy-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "extra sleepy asmr",
+    "asmr for insomnia",
+    "slow asmr",
+    "gum chewing asmr",
+    "asmr when tingles dont work"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}
