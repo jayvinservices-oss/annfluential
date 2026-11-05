@@ -22,7 +22,7 @@ objects: [mint green gum, glossy lips, long nails, lip gloss tube]
 sounds: [very slow gum chewing, soft gum pops, lip gloss tube opening, slow knuckle cracks]
 tags: [extra sleepy asmr, asmr for insomnia, slow asmr, gum chewing asmr, asmr no talking, asmr when tingles dont work]
 segments:
-  - {id: chew, chapter: Very slow gum chewing, minutes: 15, shots: [gum-pop, whisper-close], sound_bed: audio/sfx/gum-chew-xslow-01.wav}
+  - {id: chew, chapter: Very slow gum chewing, minutes: 15, shots: [gum-pop, gum-and-hands], sound_bed: audio/sfx/gum-chew-xslow-01.wav}
   - {id: gloss, chapter: Gloss tube & slow chewing, minutes: 12, shots: [gum-and-hands, gum-pop], sound_bed: [audio/sfx/gum-chew-xslow-01.wav, {file: audio/sfx/gloss-and-gum-xslow-01.wav, gain_db: -3}]}
   - {id: cracks, chapter: Slow knuckle cracks, minutes: 10, shots: [knuckle-crack, finger-stretch], sound_bed: audio/sfx/knuckle-crack-xslow-01.wav}
-  - {id: sleep, chapter: Drifting off, slowest chewing, minutes: 23, shots: [whisper-close, gum-pop], sound_bed: {file: audio/sfx/gum-chew-xslow-01.wav, gain_db: -4}}
+  - {id: sleep, chapter: Drifting off, slowest chewing, minutes: 23, shots: [gum-and-hands, gum-pop], sound_bed: {file: audio/sfx/gum-chew-xslow-01.wav, gain_db: -4}}
