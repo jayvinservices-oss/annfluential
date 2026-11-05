@@ -96,13 +96,56 @@ best_references:
   - prompts/reference/ace/ace-sleeping-loaf-2026-06-13.jpg  # IMG_1274: sleeping
 
 gaps: >-
-  No photo yet of Ace curled into a ball asleep, of him being petted by a hand, or of him in Ann's bed with a
-  clear face. Worth asking Ann for 2-3 such photos. Videos (Drive) were too large to download through the
-  connector (see videos below), so their content is not described yet.
+  No photo yet of Ace curled into a ball asleep, of him being petted by a hand at home, or of him in Ann's bed
+  with a clear face. Worth asking Ann for 2-3 such photos. None of the videos has audible purring.
 
+# Videos: local copies in /home/user/annie-src/ace/videos/ (downloaded by link, 5 Nov). Audio checked with
+# loudness, silero VAD, Whisper and spectrograms. No purring detected in any of them.
 videos:
-  not_downloaded: >-
-    None of the 9 Ace videos came through the connector (not renamed in Drive, content unknown):IMG_9074.MOV 68.2 MB, IMG_3116.MOV 39.1 MB,
-    b2eb3c438a174d738ad514a79baa6cff.MOV 37.4 MB, IMG_3503.MOV 29.8 MB, IMG_2385.MOV 22.8 MB,
-    IMG_8596.MOV 22.4 MB, IMG_7743.MOV 18.7 MB, EF0FD86D-773F-4F77-963B-C145B452A97B.MP4 9.3 MB,
-    D12BE4BB-CA9E-4A8C-AA06-AB88FC0F7F13.MP4 9.4 MB (the two MP4s also failed: the connector dropped).
+  - file: IMG_9074.MOV
+    date: 2025-02-18
+    seconds: 23.3
+    shows: At night on a grey cat tree by a window with city lights; close face shot, then climbs and jumps down.
+    audio: room tone only, no purr or meow.
+    use: good face close-up at the start; night-window mood.
+  - file: IMG_2385.MOV
+    date: 2025-07-18
+    seconds: 7.8
+    shows: Sitting on a wood living-room floor, licks a paw, looks around; filmed from across the room.
+    audio: quiet room tone, no purr or meow.
+  - file: IMG_3116.MOV
+    date: 2025-07-27
+    seconds: 13.3
+    shows: Night, in bed with Ann on lilac pillows; Ace close to camera, then Ann's face is in frame.
+    audio: no speech, no purr detected.
+    note: Ann's real face is visible. Do not use publicly (the channel avatars are anonymous).
+  - file: IMG_3503.MOV
+    date: 2025-08-02
+    seconds: 10.4
+    shows: In a pet carrier on a plane, face very close, Ann's hand strokes his cheek and neck.
+    audio: loud aircraft cabin noise; Ann briefly says "Are you okay?"; perhaps one small mew near 0:05.
+    use: best real 'being petted' footage and the clearest face/whisker detail.
+  - file: D12BE4BB.MP4
+    date: 2025-11-17
+    seconds: 12.2
+    shows: On a white quilted mattress (no bedding), batting and biting a black cord Ann dangles.
+    audio: very quiet, no speech, no purr or meow.
+  - file: IMG_7743.MOV
+    date: 2025-12-23
+    seconds: 5.8
+    shows: Loafing on a grey sofa beside a swirl-pattern cushion, looking at camera, calm.
+    audio: Ann talking (about being '30,000 feet in the air'); no cat sounds.
+    use: loaf/settled pose without the audio.
+  - file: IMG_8596.MOV
+    date: 2026-01-27
+    seconds: 7.1
+    shows: Sitting on a mustard-yellow velvet chair in front of a white vanity, looking at camera.
+    audio: near silent.
+  - file: EF0FD86D.MP4
+    seconds: 7.1
+    shows: Head stuck through a grey bin lid like a cone, walking on a wood floor (funny).
+    audio: Ann telling him off ("You put your head in my trash..."); no cat sounds.
+  - file: b2eb3c43.MOV
+    seconds: 12.9
+    shows: Perched high on a ledge by a mustard curtain; Ann's hand with gold bracelets reaches up to him.
+    audio: several short high chirps/meows, probably Ace (Whisper hears no words); no purr.
