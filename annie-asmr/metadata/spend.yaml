@@ -26,3 +26,31 @@
   seconds: 0
   free: false
   cost_usd: 0.04
+- date: '2026-11-05'
+  time: 01:10
+  route: flux-schnell (Replicate)
+  clip: backgrounds/bedroom-pink-1a.png
+  seconds: 0
+  free: false
+  cost_usd: 0.003
+- date: '2026-11-05'
+  time: 01:10
+  route: flux-schnell (Replicate)
+  clip: backgrounds/bedroom-pink-1b.png
+  seconds: 0
+  free: false
+  cost_usd: 0.003
+- date: '2026-11-05'
+  time: 01:10
+  route: flux-schnell (Replicate)
+  clip: backgrounds/bedroom-pink-2a.png
+  seconds: 0
+  free: false
+  cost_usd: 0.003
+- date: '2026-11-05'
+  time: 01:11
+  route: flux-schnell (Replicate)
+  clip: backgrounds/bedroom-pink-2b.png
+  seconds: 0
+  free: false
+  cost_usd: 0.003
