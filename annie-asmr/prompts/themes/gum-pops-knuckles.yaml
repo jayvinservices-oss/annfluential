@@ -16,7 +16,7 @@ variation_pools:
 sounds: [fast gum popping, gum snapping, knuckle cracking, finger cracking, close whispers]
 shots:
   gum-pop:
-    action: She chews gum quickly and snaps it between her glossy lips, small fast pops, jaw moving.
+    action: She chews pink bubble gum with her mouth relaxed, the jaw moving up and down steadily, lips parting slightly on each chew to show a little pink gum, then a small gum pop. Her lips never pucker or pout.
     uses_hands: false
   knuckle-crack:
     action: Both hands come close to the camera, long nails, she slowly presses and cracks her knuckles one finger at a time.
