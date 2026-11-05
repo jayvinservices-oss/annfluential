@@ -180,3 +180,66 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:16
+  route: wan-2.2-fast (Replicate)
+  clip: press-lips__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:17
+  route: wan-2.2-fast (Replicate)
+  clip: press-lips__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:17
+  route: wan-2.2-fast (Replicate)
+  clip: press-lips__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:18
+  route: wan-2.2-fast (Replicate)
+  clip: final-shine__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:18
+  route: wan-2.2-fast (Replicate)
+  clip: final-shine__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:19
+  route: wan-2.2-fast (Replicate)
+  clip: apply-wand__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:19
+  route: wan-2.2-fast (Replicate)
+  clip: apply-wand__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:20
+  route: wan-2.2-fast (Replicate)
+  clip: final-shine__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:20
+  route: wan-2.2-fast (Replicate)
+  clip: apply-wand__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
