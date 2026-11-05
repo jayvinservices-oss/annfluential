@@ -1,15 +1,16 @@
-# Jayvin: AI finance operations offer, pricing and launch plan (v5, 5 Nov 2026)
+# Jayvin: AI finance operations offer, pricing and launch plan (v6, 5 Nov 2026)
 
-Supersedes v1 to v4 (Drive copies of each are marked SUPERSEDED). Changes since v2 (Ann, 5 Nov): brand moved to Jayvin for a
+Supersedes v1 to v5. v6: website results now focus on small-business growth (budgets, reports, financing).
+Drive copies of earlier versions are marked SUPERSEDED. Changes since v2 (Ann, 5 Nov): brand moved to Jayvin for a
 long-term business (Books to Board read as boards-only); on-time fee guarantee removed; qualifications and case study added;
-grant compliance brought back from the old jayvinconsulting.ca site; name shown as "Ann James, MBA"; QT named with
+grant compliance brought back from the old jayvinconsulting.ca site; no name on the website; QT named with
 permission; deadline: live and earning before March 2027. Built from: Ann's existing "AI Finance
 Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), competitor benchmarks
 (`research/competitors.md`), name and domain checks (`research/names-and-domains.md`), and prospects and channels
 (`research/prospects-and-marketing.md`, `research/prospects.csv`).
 
 ## 0. Decisions in this version (Ann to confirm or change)
-| Topic | Earlier drafts (2 Nov) | Now (v5) |
+| Topic | Earlier drafts (2 Nov) | Now (v6) |
 |---|---|---|
 | Brand | No brand, Ann's own name | **Jayvin** (Jayvin Consulting Inc., Ann's company; no trade-name registration needed). Domain: jayvin.ai (likely available) with jayvinconsulting.ca (owned) redirecting. SEO comes from page content and articles, not the domain |
 | Who first | For-profit small businesses, 5 to 50 staff | **Small businesses first**, nonprofits second. Selling to charities while working as a charity finance director carries the most conflict-of-interest risk, so nonprofit outreach waits until Ann is comfortable |
@@ -144,7 +145,9 @@ and setup fees by February 2027.
 ## 8. Before the first client (Ann's steps; Claude drafts everything)
 1. Buy jayvin.ai; point jayvinconsulting.ca to it. (No trade-name registration needed when operating as Jayvin Consulting Inc.)
 2. Read the employment contract clauses (outside work, conflicts, confidentiality, non-solicitation).
-3. Title decided: "Internationally qualified Chartered Accountant". QT permission confirmed. Name shown as "Ann James, MBA".
+3. Title decided: "Internationally qualified Chartered Accountant". QT permission confirmed. No name on the website.
 4. E&O insurance quote.
-5. QuickBooks Online Accountant + ProAdvisor certification; authorise the QuickBooks connector for Claude.
-6. Practice email on the domain; website live (draft ready); engagement letter with the AI-use clause.
+5. QuickBooks Online Accountant (free) + ProAdvisor QBO certification Level 1 (free: ProAdvisor tab > Training > Take
+   exam; Ann sits the exam herself, Claude runs study sessions and practice quizzes); authorise the QuickBooks connector.
+6. Practice email on the domain; website live (draft ready); engagement letter with the AI-use clause (Ann sending
+   to a lawyer, 5 Nov). Claude skills uploaded (5 Nov).

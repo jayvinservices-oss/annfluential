@@ -1,7 +1,7 @@
 # Jayvin AI finance operations: start here
 
 Ann's bookkeeping, grant compliance and fractional CFO practice under Jayvin Consulting Inc. (Ontario).
-Current plan: `finance-practice-plan-v5.md` (Drive Drop: "2026-11-05 · JAYVIN · Jayvin AI finance offer pricing and plan · v5").
+Current plan: `finance-practice-plan-v6.md` (Drive Drop: "2026-11-05 · JAYVIN · Jayvin AI finance offer pricing and plan · v6").
 
 Rules for any chat working here:
 - No name on the website ("Led by an internationally qualified Chartered Accountant"); Ann's name only in outreach,
@@ -14,7 +14,7 @@ Rules for any chat working here:
 
 | Folder / file | What it is | Drive Drop copy (5 Nov 2026) |
 |---|---|---|
-| finance-practice-plan-v5.md | Offer, pricing, deadline, launch steps | "... offer pricing and plan · v5" |
+| finance-practice-plan-v6.md | Offer, pricing, deadline, launch steps | "... offer pricing and plan · v6" |
 | ops/client-setup-kit.md | Questionnaire, verification documents and checks, access, setup by plan, monthly rhythm | "Client setup kit and verification · v1" |
 | ops/engagement-letter-template.md | Engagement letter (lawyer review before first use) | "Engagement letter template DRAFT ... · v1" |
 | templates/*.csv | QuickBooks Online charts of accounts (small business, nonprofit); test-import before use | "QuickBooks chart of accounts ... · v1.csv" |
