@@ -369,3 +369,38 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:33
+  route: wan-2.2-fast (Replicate)
+  clip: pet-ace__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:34
+  route: wan-2.2-fast (Replicate)
+  clip: pet-ace__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:34
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t1.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:35
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t2.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
+- date: '2026-11-05'
+  time: 02:36
+  route: wan-2.2-fast (Replicate)
+  clip: chin-scratch__t3.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.1
