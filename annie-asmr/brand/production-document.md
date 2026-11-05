@@ -94,6 +94,8 @@ Goal (Ann): about $10k/month from the Ace brand within 12-24 months, run by AI; 
 - Weekly report: scheduled task every Monday 7:23 Toronto.
 
 ## Known issues
+- Costs (5 Nov): Replicate's real bill was $3.03 vs $6.19 estimated, so clips cost about $0.04-0.05; router price set
+  to $0.01/s. The ledger counts days in UTC (a new day starts 7 pm Toronto).
 - Disk is limited: delete renders/<slug>/work and the final mp4 after upload.
 - Wan clips are energetic; use clip_speed slow motion and reject bad takes.
 - Replicate sometimes fails a prediction ("Model not found ..."): generate skips it; retry once with --only.
