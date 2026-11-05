@@ -32,10 +32,12 @@ Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), co
 - Internationally qualified Chartered Accountant (ICAN, 2018); MBA, Ted Rogers School of Management (2025); ACCA (UK)
   Diploma in Accounting and Business (2020); Certified Scrum Master; SAFe Product Owner / Product Manager; Lean Yellow Belt.
 - 8+ years across international nonprofits and a $60M+ oil and gas operation; Canada and US multi-entity reporting.
-- Results: led an international charity to its first-ever clean audit opinion (FY2025, no material findings or
-  adjustments); recovered US$42K in revenue discrepancies; secured US$33K in PPP loan liability relief; built a payroll
-  grant reporting framework that made reporting 43% more efficient; secured a US$4.5M credit facility without collateral;
-  financial models (DCF, IRR, NPV) that supported venture capital investment.
+- Results shown on the website (small-business growth focus, Ann 5 Nov): budgets and cash flow forecasts; monthly
+  management and board reports with variance notes; funder, government and grant reporting (restricted funding award
+  to close-out); financial models (DCF, IRR, NPV) that supported venture capital investment; a US$4.5M credit facility
+  without collateral; a vendor process that absorbed 200% supplier growth without new staff; backlog clean-ups and
+  audit-ready books (first clean audit opinion). Kept for proposals and calls, not the site: US$42K revenue recovered,
+  US$33K PPP loan relief, 43% faster grant reporting.
 - Compliance experience: CRA (HST, EHT, T3010), US (Form 990, CHAR500), IFRS.
 - Tools: QuickBooks, Microsoft Dynamics GP, Salesforce, Plooto, Float, Expensify, Syft Analytics, advanced Excel, AI tools.
 - Not published: current employer, the board seat (DNC), the CPA Ontario candidacy.
