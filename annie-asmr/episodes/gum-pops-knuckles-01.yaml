@@ -43,5 +43,5 @@ segments:
   - id: whispers
     chapter: Slowest gum chewing for sleep
     minutes: 12
-    shots: [whisper-close, gum-pop]
+    shots: [gum-pop, gum-and-hands]
     sound_bed: {file: audio/sfx/gum-chew-slow-01.wav, gain_db: -3}
