@@ -29,13 +29,16 @@ def build_prompt(ep: dict, shot_id: str) -> tuple[str, str]:
     if theme.get("subject") == "ace":                  # Ace, Ann's real cat: his own description, not the presenter's
         ace = yaml.safe_load((PROMPTS / "ace.yaml").read_text())
         person = shot.get("person", False)
-        parts = [ace["description"], a["hands"] if uses_hands else "",
+        hand = ("The hand belongs to a Black woman with warm caramel-brown skin and long glossy coffin-shaped nails "
+                "in milky pink polish, a thin gold ring; the hand and nails are clearly visible. ") if uses_hands else ""
+        parts = [hand, ace["description"], a["hands"] if uses_hands else "",
                  "A woman's lower body under the covers, face not shown." if person else "",
                  theme.get("setting", ""), variation_text(ep), shot["action"], shot.get("camera", a["camera"]),
                  "Photorealistic, calm slow movement, cosy ASMR video aesthetic, warm colour grade, no text on screen."]
         prompt = " ".join(" ".join(x.split()) for x in parts if x)
         negative = " ".join((ace["negative"] + " text, captions, watermark, logo, extra fingers, deformed hands, "
-                             "flickering, harsh shadows, woman's face, eyes of a person").split())
+                             "flickering, harsh shadows, woman's face, eyes of a person"
+                             + (", pale skin, white skin, fair hand, short nails, bare nails, natural nails" if uses_hands else "")).split())
         return prompt, negative
     parts = [
         a["face"],
