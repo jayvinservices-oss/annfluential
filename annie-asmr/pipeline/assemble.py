@@ -40,14 +40,17 @@ def _key(*parts) -> str:
 
 # ---------- video ----------
 
-def normalize_clip(src: Path, work: Path, vcfg: dict) -> tuple[Path, float]:
-    """Scale/crop to the channel frame, fixed fps, no audio, frame-exact length."""
+def normalize_clip(src: Path, work: Path, vcfg: dict, speed: float = 1.0) -> tuple[Path, float]:
+    """Scale/crop to the channel frame, fixed fps, no audio, frame-exact length.
+    speed < 1 = smooth slow motion with motion-interpolated in-between frames (episode `clip_speed`, e.g. 0.5)."""
     W, H, fps = vcfg["width"], vcfg["height"], int(vcfg["fps"])
-    out = work / "norm" / f"{src.stem}-{_key(src.resolve(), src.stat().st_mtime, W, H, fps)}.mp4"
+    out = work / "norm" / f"{src.stem}-{_key(src.resolve(), src.stat().st_mtime, W, H, fps, speed)}.mp4"
     if not out.exists():
         out.parent.mkdir(parents=True, exist_ok=True)
-        length = _frames(duration(src), fps) - 1 / fps
-        vf = (f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+        length = _frames(duration(src) / speed, fps) - 1 / fps
+        slow = (f"setpts={1 / speed:.4f}*PTS,minterpolate=fps={fps}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,"
+                if speed < 1 else "")
+        vf = (f"{slow}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
               f"fps={fps},format=yuv420p,setsar=1")
         run(["ffmpeg", "-y", "-i", src, "-t", f"{length:.4f}", "-vf", vf, "-an", *x264(vcfg), out])
     return out, duration(out)
@@ -91,7 +94,7 @@ def build_segment(ep: dict, seg: dict, work: Path, vcfg: dict, rng: random.Rando
                          f"(expected in clips/{ep['slug']}/). Run: python -m pipeline generate {ep['slug']}")
     fps = int(vcfg["fps"])
     fade = _frames(float(vcfg.get("crossfade_seconds", 1.5)), fps)
-    norm = [normalize_clip(p, work, vcfg) for p in pool]
+    norm = [normalize_clip(p, work, vcfg, float(ep.get("clip_speed", 1.0))) for p in pool]
     anchor, rest = norm[0], norm[1:]
 
     n_variants = 1 if len(rest) < 2 else int(vcfg.get("loop_variants", 3))
