@@ -17,6 +17,12 @@
 - Beauty and crafts only. No roleplay, no requests, no persona flirting.
 
 ## Content
+- Background (Ann, 5 Nov): cosy bedroom at night (lamp, fairy lights, snowy window). Stills in prompts/reference/stills
+  are cropped nose-down. Full-face versions are held for the face reveal (brand/face-reveal-plan.md).
+- Ace = Ann's real cat (keep his real look; use his real photos/videos as starting frames). Real purring:
+  audio/sfx/cat-purr-01.wav. Playlist 'Ace the Cat: Real Cat Purring for Sleep' (private until his first video).
+- Video spend: $5 a day and $20 in total (router caps). The cloud token only reaches sessions started after it
+  was added; a helper session in the same environment can run paid steps.
 - Regular: lip gloss layering ("300 layers"), gum chewing with chat, nails. Glass fruit later. No snow.
 - Christmas: made by 24 Nov, publish from 1 Dec. Unwrapping gifts, tree decorating, rhinestone with me,
   festive designing. Hands and long nails do the work.

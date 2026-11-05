@@ -1,0 +1,31 @@
+{
+  "slug": "ace-sleeping-3h-01",
+  "file": null,
+  "title": "3 Hours Sleeping With My Cat | Real Cat Purring & Snowfall | Cozy Bedroom for Sleep | AI ASMR",
+  "description": "Fall asleep with Ace, my real cat, curled up by my legs and purring all night in a cosy bedroom, snow falling outside. No talking. Chapters every 30 minutes if you want to skip ahead.\n\nIn this video: Ace the cat, dusty pink knit blanket, cosy bedroom, snowy window.\n\nSounds: cat purring, soft breathing, snowfall ambience.\n\nChapters\n(chapters are added after: python -m pipeline assemble ace-sleeping-3h-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "cat purring for sleep",
+    "sleeping with cat",
+    "3 hours cat purring",
+    "cozy bedroom asmr",
+    "real cat purring"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "ace-petting-purr-01",
+  "file": null,
+  "title": "ASMR Petting My Cat Until He Purrs | Real Cat Purring for Sleep | No Talking | AI ASMR",
+  "description": "Meet Ace, my real cat, with his real purring. Slow petting with long nails, chin scratches and kneading, until he purrs himself to sleep. No talking, just Ace.\n\nIn this video: Ace the cat, burgundy velvet throw, long nails.\n\nSounds: cat purring, soft petting strokes, blanket rustle.\n\nChapters\n(chapters are added after: python -m pipeline assemble ace-petting-purr-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "cat purring asmr",
+    "asmr petting cat",
+    "cat purring for sleep",
+    "real cat purring"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}
