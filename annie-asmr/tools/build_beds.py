@@ -12,7 +12,9 @@ BEDS = {  # bed name -> bank clips (glob, inside audio/sfx/bank)
     "gum-pop-fast-01": "gum/*[0-9].wav",
     "gum-pop-slow-01": "gum/*-slow.wav",
 }
-# knuckle-crack-01 / finger-crack-01: the whole knuckle video's audio (no talking in it), finger = 85% tempo:
+# knuckle-crack-01 / finger-crack-01: the knuckle video's audio WITHOUT the whispered intro (0-112 s) and goodbye (495 s on),
+#   checked with faster-whisper on 5 Nov; finger = 85% tempo. gum-with-friend-13-52 has talking: moved to bank/excluded.
+#   ffmpeg -i knuckle-raw.wav -af "atrim=112:495,asetpts=PTS-STARTPTS" ...
 #   ffmpeg -i annie-src/gum-knuckle.mp4 -vn -af "highpass=f=60,loudnorm=I=-24:TP=-3:LRA=11" audio/sfx/knuckle-crack-01.wav
 #   ffmpeg -i audio/sfx/knuckle-crack-01.wav -af atempo=0.85 audio/sfx/finger-crack-01.wav
 for name, pattern in BEDS.items():
