@@ -108,6 +108,29 @@ def check_opening(ep: dict) -> list[str]:
     return warnings
 
 
+def affiliate_block(ep: dict) -> str:
+    """'Ace's favourites' with tagged Amazon links, for Ace videos only (brand/affiliate.yaml)."""
+    import yaml as _y
+    from .config import ROOT
+    f = ROOT / "brand/affiliate.yaml"
+    if ep["_theme"].get("subject") != "ace" or not f.exists():
+        return ""
+    a = _y.safe_load(f.read_text()) or {}
+    am, items = a.get("amazon") or {}, a.get("ace_favourites") or []
+    if not items or not am.get("ca_tag"):
+        return ""
+    lines = ["Ace's favourites:"]
+    for it in items:
+        links = []
+        if it.get("asin_ca"):
+            links.append(f"Canada: https://www.amazon.ca/dp/{it['asin_ca']}?tag={am['ca_tag']}")
+        if it.get("asin_com") and am.get("com_tag"):
+            links.append(f"US: https://www.amazon.com/dp/{it['asin_com']}?tag={am['com_tag']}")
+        if links:
+            lines.append(f"{it['name']}: " + "  ".join(links))
+    return "\n".join(lines + [am.get("disclosure", "")]) if len(lines) > 1 else ""
+
+
 def build(ep: dict) -> dict:
     cfg = config()
     yt = cfg["youtube"]
@@ -125,6 +148,7 @@ def build(ep: dict) -> dict:
     if sounds:
         blocks.append(f"Sounds: {sounds}.")
     blocks.append("Chapters\n" + "\n".join(chapter_lines))
+    blocks.append(affiliate_block(ep))
     disc = yt["disclosure"] if voice_lines(ep) else yt.get("disclosure_no_voice", yt["disclosure"])
     blocks.append(" ".join(disc.split()))
     hashtags = ep.get("hashtags") or ["#ASMR", "#ASMRbeauty"]

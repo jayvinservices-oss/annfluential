@@ -1,0 +1,9 @@
+# Amazon affiliate setup (Ann, 5 Nov 2026). Tracking IDs are public (they appear in every link); never store logins.
+amazon:
+  ca_tag: annjames07-20          # Amazon.ca Associates (approved pending 3 qualifying sales within 180 days of 5 Nov 2026)
+  com_tag: null                  # Amazon.com Associates: Ann to sign up; then join OneLink so .ca links redirect US viewers
+  disclosure: "As an Amazon Associate I earn from qualifying purchases."
+  deadline_3_sales: 2027-05-04   # 180 days from 5 Nov 2026
+# Ace's real products (Ann to confirm names/ASINs). Only list things Ace actually uses.
+ace_favourites: []
+#  - {name: "Ace's water fountain", asin_ca: B0XXXXXXX, asin_com: B0XXXXXXX, note: "the fountain he drinks from"}
