@@ -27,32 +27,33 @@ Google Drive folder "Annie ASMR" (id 1VlvsYUXKa6-Zb4MYBDPAM8A7gPryRgKe). Organis
 - (empty, ready for the Christmas sounds)
 
 ## 03 Avatars & Stills (was "avatars")
-- Annie ASMR avatar stills: names and links (Google Doc): character sheet and Canva links
-### Annie presenter
-- Annie upper body - cream knit at beauty desk (2026-11-04).png: was "Untitled design.png"
-- Annie upper body - rose satin shirt, bubble gum pack (2026-11-04).png: was "Untitled design (1).png"
-- Annie close-up - pink gum bubble (2026-11-04).png: was "Untitled design (5).png"
-- Annie close-up - nude gloss with wand (2026-11-04).png: was "Untitled design (8).png"
-- Annie close-up - nude-pink gloss, 3-panel (2026-11-05).png: was "MAHZ43MLJNc.png" (the stills doc links this Canva id as bestie-01, but the image shows Annie)
-- Annie triptych - lips, finger to lip, lipstick on black (thumbnail 199px).png: was a loose "image.png" in the root
-- annie-01-closeup-gloss-wand (preview).png: small preview
-- annie-02-closeup-gum-bubble (preview).png: small preview
-- annie-03-upper-body-cream-knit (preview).png: small preview
-- annie-04-upper-body-rose-satin-gum (preview).png: small preview
-### Bestie (duo partner) (also holds the duo images)
-- Bestie upper body - lilac cardigan, gloss tube (2026-11-04).png: was "Untitled design (2).png"
-- Bestie upper body - sage hoodie, candy jar (2026-11-04).png: was "Untitled design (3).png"
-- Bestie close-up - berry gloss with wand (2026-11-04).png: was "Untitled design (4).png" (original of 2 duplicates)
-- Bestie close-up - berry lips, finger heart, red top (2026-11-05).png: was "MAHZ6bGoPjI.png"
-- Bestie Christmas bedroom - red top and gloss, 2 panels (2026-11-05).jpg: was "image-1793840304938.jpg"; for the Christmas video
-- Duo identity portrait - Bestie left, Annie right, white background (2026-11-04).png: was "Untitled design (7).png"
-- Duo portrait - Bestie and Annie, white background (thumbnail 199px).png: was a root "image.png"
-- Duo portrait - Bestie and Annie, dark brown background (thumbnail 199px).png: was a root "image.png"
-- Duo split screen - Bestie and Annie faces, white background (thumbnail 199px).png: was a root "image.png"
+Roles follow CLAUDE.md and prompts/avatar.yaml v4 (4 Nov). The main presenter is the caramel-skinned character with curly hair. The deep-chocolate character with locs is the duo partner. The 3 Nov stills doc and the Canva preview file names still use the old labels ("annie-0x" = locs character, "bestie-0x" = caramel character). So the files renamed on 5 Nov are named by look, not by "Annie"/"Bestie".
+- Annie ASMR avatar stills: names and links (Google Doc): 3 Nov character sheet and Canva links (old labels)
+### Annie presenter (caramel skin, curly hair: main presenter since 4 Nov)
+- Presenter (caramel, curls) upper body - lilac cardigan, gloss tube (2026-11-04).png: was "Untitled design (2).png"
+- Presenter (caramel, curls) upper body - sage hoodie, candy jar (2026-11-04).png: was "Untitled design (3).png"
+- Presenter (caramel, curls) close-up - berry gloss with wand (2026-11-04).png: was "Untitled design (4).png" (the original; its 2 copies are in _Holding)
+- Presenter (caramel, curls) close-up - berry lips, finger heart, red top (2026-11-05).png: was "MAHZ6bGoPjI.png"
+- Presenter (caramel, curls) Christmas bedroom - red top and gloss, 2 panels (2026-11-05).jpg: was "image-1793840304938.jpg"; for the Christmas video
+- bestie-01-closeup-berry-gloss (preview).png: small preview (old label)
+- bestie-02-upper-body-lilac-cardigan (preview).png: small preview (old label)
+- bestie-03-upper-body-sage-hoodie-candy (preview).png: small preview (old label)
+### Bestie (duo partner) (deep-chocolate skin, locs; also holds the duo images)
+- Duo partner (locs) upper body - cream knit at beauty desk (2026-11-04).png: was "Untitled design.png"
+- Duo partner (locs) upper body - rose satin shirt, bubble gum pack (2026-11-04).png: was "Untitled design (1).png"
+- Duo partner (locs) close-up - pink gum bubble (2026-11-04).png: was "Untitled design (5).png"
+- Duo partner (locs) close-up - nude gloss with wand (2026-11-04).png: was "Untitled design (8).png"
+- Duo partner (locs) close-up - nude-pink gloss, 3-panel (2026-11-05).png: was "MAHZ43MLJNc.png" (the stills doc links this Canva id as bestie-01, but the image shows the locs character)
+- Duo partner (locs) triptych - lips, finger to lip, lipstick on black (thumbnail 199px).png: was a loose "image.png" in the root
+- Duo identity portrait - presenter (caramel) left, partner (locs) right, white background (2026-11-04).png: was "Untitled design (7).png"
+- Duo portrait - presenter (caramel) and partner (locs), white background (thumbnail 199px).png: was a root "image.png"
+- Duo portrait - presenter (caramel) and partner (locs), dark brown background (thumbnail 199px).png: was a root "image.png"
+- Duo split screen - presenter (caramel) and partner (locs) faces, white background (thumbnail 199px).png: was a root "image.png"
 - Duo style test - cartoon vs realistic side by side (thumbnail 199px).png: was a root "image.png"
-- bestie-01-closeup-berry-gloss (preview).png: small preview
-- bestie-02-upper-body-lilac-cardigan (preview).png: small preview
-- bestie-03-upper-body-sage-hoodie-candy (preview).png: small preview
+- annie-01-closeup-gloss-wand (preview).png: small preview (old label)
+- annie-02-closeup-gum-bubble (preview).png: small preview (old label)
+- annie-03-upper-body-cream-knit (preview).png: small preview (old label)
+- annie-04-upper-body-rose-satin-gum (preview).png: small preview (old label)
 - duo-01-closeup-split-screen (preview).png: small preview
 - duo-02-upper-body-beauty-desk (preview).png: small preview
 ### Backgrounds
@@ -124,9 +125,9 @@ Google Drive folder "Annie ASMR" (id 1VlvsYUXKa6-Zb4MYBDPAM8A7gPryRgKe). Organis
 - DUPLICATE - New Recording 9.m4a: copy of Ace purring 7
 - DUPLICATE - New Recording 10.m4a: copy of Ace purring 6
 - DUPLICATE - New Recording 22.m4a: copy of Ace purring 5
-- DUPLICATE - Bestie close-up - berry gloss with wand (2026-11-04).png: was "Untitled design (6).png"; pixel-identical copy
-- DUPLICATE - Bestie close-up - berry gloss with wand (MAHZ6W0Igdc, 2026-11-05).png: was "MAHZ6W0Igdc.png"; pixel-identical copy
-- DUPLICATE - Annie triptych - lips, finger to lip, lipstick on black (thumbnail 199px).png: byte-identical root "image.png"
+- DUPLICATE - Presenter (caramel, curls) close-up - berry gloss with wand (2026-11-04).png: was "Untitled design (6).png"; pixel-identical copy
+- DUPLICATE - Presenter (caramel, curls) close-up - berry gloss with wand (MAHZ6W0Igdc, 2026-11-05).png: was "MAHZ6W0Igdc.png"; pixel-identical copy
+- DUPLICATE - Duo partner (locs) triptych - lips, finger to lip, lipstick on black (thumbnail 199px).png: byte-identical root "image.png"
 - DUPLICATE - Duo style test - cartoon vs realistic side by side (thumbnail 199px).png: byte-identical root "image.png"
 
 ## Note
