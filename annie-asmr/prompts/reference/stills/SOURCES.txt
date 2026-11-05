@@ -1,3 +1,4 @@
-gum.png, hands.png = Canva MAHZ6bGoPjI (lips, hands at chin)
-gloss.png = Canva MAHZ6W0Igdc (gloss wand)
-../gloss-triptych-MAHZ43MLJNc.png = 3-panel strip, not used for video
+gum.png, hands.png = bedroom version (FLUX Kontext edit of Canva MAHZ6bGoPjI, cropped nose-down 5 Nov)
+gloss.png = bedroom version of Canva MAHZ6W0Igdc, cropped nose-down
+bedroom/ = full Kontext output (shows eyes: NOT for videos until the face reveal)
+dark/ = original dark-background stills
