@@ -25,6 +25,8 @@ audio:
   sample_rate: 48000
   # YouTube turns loud videos down to about -14 LUFS but never turns quiet ones up.
   # Whisper ASMR usually sits quieter; -18 keeps it gentle without being too faint on phones.
+  # Ann's real whisper, cleaned 'crisp B' (Ann, 5 Nov): apply to every new voice memo line
+  real_voice_filter: "highpass=f=110,afftdn=nr=16:nf=-46:tn=1,equalizer=f=250:t=q:w=1:g=-3,equalizer=f=4500:t=q:w=1.2:g=6,treble=g=4:f=8000,lowpass=f=15000,acompressor=threshold=-28dB:ratio=2:attack=5:release=80,loudnorm=I=-22:TP=-2:LRA=6"
   target_lufs: -21   # Ann, 5 Nov: "a tad lower" (was -18)
   true_peak: -1.5
   lra: 11
