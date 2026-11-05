@@ -21,5 +21,5 @@ tags: [cat purring asmr, asmr petting cat, cat purring for sleep, asmr no talkin
 segments:
   - {id: pet, chapter: Petting Ace until he purrs, minutes: 15, shots: [pet-ace, chin-scratch], sound_bed: audio/sfx/cat-purr-01.wav}
   - {id: chin, chapter: Chin scratches & purring, minutes: 12, shots: [chin-scratch, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
-  - {id: knead, chapter: Kneading the blanket, minutes: 12, shots: [ace-kneading, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
-  - {id: sleep, chapter: Curled up and purring for sleep, minutes: 21, shots: [ace-curled, rain-window], sound_bed: {file: audio/sfx/cat-purr-01.wav, gain_db: -3}}
+  - {id: knead, chapter: Blanket cuddles & purring, minutes: 12, shots: [ace-kneading, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: sleep, chapter: Resting by the snowy window, purring for sleep, minutes: 21, shots: [ace-curled, rain-window], sound_bed: {file: audio/sfx/cat-purr-01.wav, gain_db: -3}}
