@@ -1,6 +1,6 @@
 ---
 name: jayvin-month-end
-description: Runs the Jayvin monthly close for one client through the QuickBooks connector, from bank-feed categorisation to the finished management pack. Proposes categories and posts only after Ann's explicit yes, reconciles every account, closes the month, analyses budget against actual, drafts variance notes and the pack in Jayvin house style, and logs hours used against the plan. Use when Ann says "month-end for <client>", "close <month> for <client>", "run the close", "do the books for <client>", "build the management pack" or "draft the variance notes".
+description: Runs the Jayvin monthly close for one client through the QuickBooks connector, from bank-feed categorisation to the finished management pack. Proposes categories and posts only after Ann's explicit yes, reconciles every account, closes the month, analyses budget against actual, drafts variance notes and the pack in Jayvin house style, and logs hours used against the plan. Use when Ann says "month-end for [client]", "close [month] for [client]", "run the close", "do the books for [client]", "build the management pack" or "draft the variance notes".
 ---
 
 # Jayvin month-end close
@@ -56,7 +56,7 @@ Work through the client's month-end checklist in the Project. The usual items:
 - Accruals and prepaids (rent, insurance, software, professional fees), payroll and source deductions tie-out (CPP, EI, income tax withheld, EHT where it applies, WSIB), HST control account against the HST working paper, amortization, deferred revenue or deferred contributions, loan interest and principal split, shareholder or due-to accounts.
 - Draft each journal entry with date, accounts, amounts, memo and the support it relies on. Show them all together. Post only after Ann's yes.
 - Run the trial balance and the balance sheet. Flag: negative balances where they should not be, Undeposited Funds or uncategorised income or expense not zero, Opening Balance Equity not zero, suspense accounts with a balance.
-- When Ann confirms, set the closing date in QuickBooks (Account and Settings > Advanced > Close the books) or tell Ann to do it if the connector cannot.
+- When Ann confirms, set the closing date in QuickBooks (Account and Settings, Advanced, Close the books) or tell Ann to do it if the connector cannot.
 
 ## Step 4. Essentials plan stops here
 
@@ -111,7 +111,7 @@ Contents, in order:
 6. **Decisions or questions for the owner or board.**
 7. Appendix: P&L and balance sheet.
 
-Before handing over, check the file for any line other than the table rules (search the source for `border-top`, `border-bottom` and `<hr`), check every figure in the narrative matches the tables, and render the PDF and look at it. Then give Ann the draft and the list of anything still open. Ann reviews and sends it; you never send it.
+Before handing over, check the file for any line other than the table rules (search the source for `border-top`, `border-bottom` and horizontal-rule tags), check every figure in the narrative matches the tables, and render the PDF and look at it. Then give Ann the draft and the list of anything still open. Ann reviews and sends it; you never send it.
 
 ## Step 9. Log hours
 

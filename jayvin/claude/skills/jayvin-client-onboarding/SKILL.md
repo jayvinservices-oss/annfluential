@@ -1,6 +1,6 @@
 ---
 name: jayvin-client-onboarding
-description: Onboards a new Jayvin Consulting client. Runs the systems questionnaire, then produces the access checklist and the setup plan for the chosen package (Essentials, Books to Board or Fractional CFO setup), with dates, owners and what the client must do. Use when Ann says "onboard <client>", "new client", "start setup for <client>", "send the systems questionnaire", "access checklist" or "setup plan", or after an engagement letter is signed.
+description: Onboards a new Jayvin Consulting client. Runs the systems questionnaire, then produces the access checklist and the setup plan for the chosen package (Essentials, Books to Board or Fractional CFO setup), with dates, owners and what the client must do. Use when Ann says "onboard [client]", "new client", "start setup for [client]", "send the systems questionnaire", "access checklist" or "setup plan", or after an engagement letter is signed.
 ---
 
 # Jayvin client onboarding
@@ -93,6 +93,25 @@ Include, as they apply:
 4. **Documents**: the shared client portal folder (receipts, statements, contracts, grant agreements) and a receipts email address forwarded to the document inbox.
 5. **Claude**: nothing for Jayvin-run clients. For a client-owned workspace: the client buys Claude Team seats for its finance staff; Ann is added during setup, builds the Project, skills and connectors, hands over with the handover pack, and is removed at the end unless the client is on a monthly plan.
 6. **Contacts**: the monthly access contact, and who approves payments.
+7. **Verification documents**: one row per document from the list below, due before setup starts.
+
+**Verification documents (required before setup starts):**
+- Bank, credit card and loan statements for every account: the last 3 months, plus every month being caught up for a clean-up job, plus the statement at the last fiscal year end.
+- The most recent year-end financial statements: audited, review engagement or compiled (Notice to Reader), with the auditor's management letter if there is one. For organisations with none: the year-end trial balance and the last corporate tax return (T2) or charity return (T3010).
+- The last filed HST return and notice of assessment, and payroll remittance statements (PD7A) if there is payroll.
+- Loan and lease agreements, grant and contribution agreements, and the approved budget for the year.
+- Supporting schedules where they exist: fixed assets, deferred revenue or restricted funds, accounts receivable and payable listings.
+
+Once the documents arrive, run the checks below and draft the verification note for Ann (what was checked, differences, proposed adjustments). Nothing is adjusted in QuickBooks without Ann's explicit yes, and monthly work starts only after the client signs off the note.
+
+**How we verify (before we rely on any balance):**
+1. Opening balances: agree the QuickBooks balances at the last year end to the year-end financial statements; list and resolve every difference before the first close.
+2. Cash: agree every bank, card and loan balance to its statement at year end and at each month end since; every reconciliation is tied to a statement, never to a balance someone typed in.
+3. Liabilities and assets: agree HST, payroll remittances, loans and leases to the statements and agreements; fixed assets and deferred or restricted amounts to their schedules.
+4. Income: match grants and contracts to their agreements (amount, period, conditions); check that restricted money is tracked as restricted.
+5. Spending: sample bills and expenses back to invoices and receipts; anything without support goes on the open-items list.
+6. Report: a short verification note to the client listing what was checked, differences found and what was adjusted, with the client's sign-off before monthly work begins.
+This is verification for bookkeeping and reporting, not an audit or review.
 
 Draft a short, friendly email to the client contact with the checklist attached and a requested date (normally within 5 working days).
 

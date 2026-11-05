@@ -24,6 +24,23 @@ Jayvin's own stack (Ann): Claude Team plan for Jayvin (separate Project per clie
 
 **Access contact:** who will grant access and answer questions each month, and how they prefer to be contacted.
 
+## 1a. Documents the client provides, and how we verify them
+**Verification documents (required before setup starts):**
+- Bank, credit card and loan statements for every account: the last 3 months, plus every month being caught up for a clean-up job, plus the statement at the last fiscal year end.
+- The most recent year-end financial statements: audited, review engagement or compiled (Notice to Reader), with the auditor's management letter if there is one. For organisations with none: the year-end trial balance and the last corporate tax return (T2) or charity return (T3010).
+- The last filed HST return and notice of assessment, and payroll remittance statements (PD7A) if there is payroll.
+- Loan and lease agreements, grant and contribution agreements, and the approved budget for the year.
+- Supporting schedules where they exist: fixed assets, deferred revenue or restricted funds, accounts receivable and payable listings.
+
+**How we verify (before we rely on any balance):**
+1. Opening balances: agree the QuickBooks balances at the last year end to the year-end financial statements; list and resolve every difference before the first close.
+2. Cash: agree every bank, card and loan balance to its statement at year end and at each month end since; every reconciliation is tied to a statement, never to a balance someone typed in.
+3. Liabilities and assets: agree HST, payroll remittances, loans and leases to the statements and agreements; fixed assets and deferred or restricted amounts to their schedules.
+4. Income: match grants and contracts to their agreements (amount, period, conditions); check that restricted money is tracked as restricted.
+5. Spending: sample bills and expenses back to invoices and receipts; anything without support goes on the open-items list.
+6. Report: a short verification note to the client listing what was checked, differences found and what was adjusted, with the client's sign-off before monthly work begins.
+This is verification for bookkeeping and reporting, not an audit or review.
+
 ## 2. Access the client grants (never share passwords; invite or connect only)
 1. **QuickBooks Online:** invite Jayvin's QuickBooks Online Accountant as "accountant user" (or a standard admin user if needed). If on another system: read-only export access, and a quote to move to QuickBooks.
 2. **Bank and card feeds:** the client connects their banks inside QuickBooks themselves (Ann never holds bank logins). Statements: monthly PDF statements to the client portal folder, or read-only online banking access where the bank offers an accountant/delegate role.
@@ -59,4 +76,4 @@ Jayvin's own stack (Ann): Claude Team plan for Jayvin (separate Project per clie
 Every posting is approved by Ann before it goes into QuickBooks. Hours beyond the plan are quoted before work starts ($150/hour).
 
 ## 5. What the client is responsible for (goes in the engagement letter)
-Giving access and documents on time; answering open questions within 5 working days; approving payments; filing and paying their own returns and remittances; telling Jayvin about new accounts, grants or major transactions; keeping their QuickBooks subscription active.
+Providing the verification documents (bank statements, last year-end financial statements and the other items in 1a) before setup; giving access and documents on time; answering open questions within 5 working days; approving payments; filing and paying their own returns and remittances; telling Jayvin about new accounts, grants or major transactions; keeping their QuickBooks subscription active.

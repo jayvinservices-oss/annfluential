@@ -101,7 +101,7 @@ When the engagement ends, you pay for services provided up to the end date, and 
 
 To make this work, you agree to:
 
-- give us access and documents on time;
+- give us the verification documents listed in section 7a before setup starts, and access and documents on time after that;
 - answer open questions within 5 working days;
 - approve payments;
 - file and pay your own returns and remittances;
@@ -109,6 +109,26 @@ To make this work, you agree to:
 - keep your QuickBooks subscription active.
 
 You are responsible for the accuracy and completeness of the information you give us, for your organisation's internal controls, and for the decisions you make using our work. Management of your organisation remains responsible for its financial records and statements.
+
+## 7a. Documents we verify against
+
+**Verification documents (you provide these before setup starts):**
+- Bank, credit card and loan statements for every account: the last 3 months, plus every month being caught up for a clean-up job, plus the statement at the last fiscal year end.
+- The most recent year-end financial statements: audited, review engagement or compiled (Notice to Reader), with the auditor's management letter if there is one. For organisations with none: the year-end trial balance and the last corporate tax return (T2) or charity return (T3010).
+- The last filed HST return and notice of assessment, and payroll remittance statements (PD7A) if there is payroll.
+- Loan and lease agreements, grant and contribution agreements, and the approved budget for the year.
+- Supporting schedules where they exist: fixed assets, deferred revenue or restricted funds, accounts receivable and payable listings.
+
+**How we use them:**
+1. Opening balances: agree the QuickBooks balances at the last year end to the year-end financial statements; list and resolve every difference before the first close.
+2. Cash: agree every bank, card and loan balance to its statement at year end and at each month end since; every reconciliation is tied to a statement, never to a balance someone typed in.
+3. Liabilities and assets: agree HST, payroll remittances, loans and leases to the statements and agreements; fixed assets and deferred or restricted amounts to their schedules.
+4. Income: match grants and contracts to their agreements (amount, period, conditions); check that restricted money is tracked as restricted.
+5. Spending: sample bills and expenses back to invoices and receipts; anything without support goes on the open-items list.
+6. Report: a short verification note to the client listing what was checked, differences found and what was adjusted, with the client's sign-off before monthly work begins.
+This is verification for bookkeeping and reporting, not an audit or review.
+
+We rely on the documents and explanations you give us. If something cannot be verified, we tell you in writing and it stays on the open-items list until it is resolved; we do not guess.
 
 ## 8. Ownership of books and data
 
