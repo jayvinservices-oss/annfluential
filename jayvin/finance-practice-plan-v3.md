@@ -8,7 +8,7 @@ Operations" drafts (summary in `jayvin/research/existing-drafts-summary.md`), co
 (`research/prospects-and-marketing.md`, `research/prospects.csv`).
 
 ## 0. Decisions in this version (Ann to confirm or change)
-| Topic | Earlier drafts (2 Nov) | v2 |
+| Topic | Earlier drafts (2 Nov) | v3 |
 |---|---|---|
 | Brand | No brand, Ann's own name | **Jayvin** (Jayvin Consulting Inc., Ann's company; no trade-name registration needed). Domain: jayvin.ai (likely available) with jayvinconsulting.ca (owned) redirecting. SEO comes from page content and articles, not the domain |
 | Who first | For-profit small businesses, 5 to 50 staff | **Small businesses first**, nonprofits second. Selling to charities while working as a charity finance director carries the most conflict-of-interest risk, so nonprofit outreach waits until Ann is comfortable |
@@ -54,7 +54,7 @@ starts. Unused hours do not roll over. Rush turnaround under 2 business days: pl
 |---|---|---|---|---|
 | **Essentials** | Owner-run businesses, up to about 150 transactions a month | Categorising and matching, all reconciliations, monthly close by day 10, P&L and balance sheet, receipts chased, HST working papers, year-end package for the accountant | **$750/month** | 4 h |
 | **Books to Board** | Businesses with partners, investors or a board; nonprofits | Essentials plus a monthly management pack (budget vs actual with notes, cash position, 13-week cash forecast), class or fund tracking, quarterly review call | **$1,500/month** | 8 h |
-| **Fractional CFO** | Organisations without a finance lead | Board Ready plus annual budget and reforecast, one board or finance committee meeting a month, audit or review preparation, controls and policies, pricing and hiring decisions support | **$3,000/month** | 16 h |
+| **Fractional CFO** | Organisations without a finance lead | Books to Board plus annual budget and reforecast, one board or finance committee meeting a month, audit or review preparation, controls and policies, pricing and hiring decisions support | **$3,000/month** | 16 h |
 
 Terms: monthly in advance; 3-month minimum, then 30 days' notice. The client owns its QuickBooks file and data at all
 times; on exit we hand over the file, a closing reconciliation and the handover pack.
@@ -67,7 +67,7 @@ Paid 50% at signing, 50% at go-live. First two clients get 50% off in exchange f
 |---|---|---|---|
 | **Essentials setup** | **$1,500** | QuickBooks Online review and clean-up of the chart of accounts, bank and card feeds, bank rules, AI categorisation rules, document inbox, opening balances checked, month-end checklist | 2 to 3 weeks |
 | **Books to Board setup** | **$3,000** | Essentials setup plus the management pack built on the client's numbers, budget loaded, class or fund tracking, 13-week cash forecast model, AI Use Policy adopted | 3 to 4 weeks |
-| **Finance Office setup** | **$5,000** | Board Ready setup plus 3 AI workflows built and documented (for example bills and approvals, receipts, reporting), controls review, finance policies, 7-template handover pack | 4 to 6 weeks |
+| **Fractional CFO setup** ("Finance Office") | **$5,000** | Books to Board setup plus 3 AI workflows built and documented (for example bills and approvals, receipts, reporting), controls review, finance policies, 7-template handover pack | 4 to 6 weeks |
 
 **Finance health check, $1,000**, credited in full against any setup if the client signs within 30 days: read-only
 review of the books, controls and reporting, a 2-page findings note and a fixed quote.
@@ -109,9 +109,9 @@ Built from assets Ann already has; the AI Use Policy lite stays the free lead ma
 | **AI Finance Starter Bundle** (all of the above) | $249 | after the parts are live |
 
 ## 6. Revenue and capacity
-- **While employed (2 to 3 clients):** for example 1 Fractional CFO + 1 Board Ready + 1 Essentials = **$5,250/month**
+- **While employed (2 to 3 clients):** for example 1 Fractional CFO + 1 Books to Board + 1 Essentials = **$5,250/month**
   (28 included hours, about 7 h/week), plus implementation fees ($6,500 to $9,500 one-time) and digital products.
-- **About $10,000/month:** 2 Fractional CFO + 2 Board Ready + 2 Essentials = $10,500/month (56 included hours, about
+- **About $10,000/month:** 2 Fractional CFO + 2 Books to Board + 2 Essentials = $10,500/month (56 included hours, about
   14 h/week). Realistic once Ann has more time, or with a part-time bookkeeper on Essentials work.
 - Market check (competitor notes): human-reviewed AI bookkeeping US$300 to 850/month; Enkel (closest Canadian rival)
   nonprofit tiers CA$800 to 1,250; Toronto fractional CFOs CA$1,500 to 12,000/month; catch-up US$150 to 500 per month
