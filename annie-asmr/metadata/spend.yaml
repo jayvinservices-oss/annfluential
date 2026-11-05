@@ -12,3 +12,17 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-05'
+  time: 00:55
+  route: flux-kontext-pro (Replicate)
+  clip: stills/bedroom/gum.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
+- date: '2026-11-05'
+  time: 00:56
+  route: flux-kontext-pro (Replicate)
+  clip: stills/bedroom/gloss.png
+  seconds: 0
+  free: false
+  cost_usd: 0.04
