@@ -1,4 +1,4 @@
-<title>Northbook Finance</title>
+<title>Books to Board</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -75,6 +75,9 @@ tbody tr:nth-child(odd) td { background: var(--band); }
 .plan.feature { background: var(--ledger); color: var(--paper); }
 .plan.feature ul, .plan.feature .price span, .plan.feature .eyebrow { color: color-mix(in srgb, var(--paper) 78%, transparent); }
 .oneoff { margin-top: 26px; color: var(--muted); font-size: 0.97rem; }
+.deliver { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--muted); }
+.plan.prod p { color: var(--muted); font-size: 0.96rem; }
+h3 { margin: 0; }
 .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 26px; }
 dl { margin: 0; display: grid; gap: 22px; }
 dt { font-weight: 600; }
@@ -89,14 +92,14 @@ footer nav a { color: var(--muted); }
 
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="#">Northbook Finance<small>a service of Jayvin Consulting Inc.</small></a>
-    <nav aria-label="Main"><a href="#month">Your month</a><a href="#pricing">Pricing</a><a href="#questions">Questions</a><a href="#contact">Contact</a></nav>
+    <a class="brand" href="#">Books to Board<small>a service of Jayvin Consulting Inc.</small></a>
+    <nav aria-label="Main"><a href="#month">Your month</a><a href="#pricing">Pricing</a><a href="#cleanup">Catch-up</a><a href="#templates">Templates</a><a href="#contact">Contact</a></nav>
   </header>
 
   <div class="hero">
-    <span class="eyebrow">Bookkeeping and board reporting for small nonprofits</span>
-    <h1>Your books closed by the 10th, and a board pack your treasurer can read.</h1>
-    <p class="lede">For charities, nonprofits and small businesses without a finance person on staff. Each month we reconcile your accounts, close the books and write the report your board or owner actually needs.</p>
+    <span class="eyebrow">Outsourced bookkeeping and fractional CFO support</span>
+    <h1>Full finance support for small organisations. AI does the work, a finance director makes the calls.</h1>
+    <p class="lede">For owner-run businesses and small nonprofits without a finance person on staff. Your books closed by the 10th, every account reconciled, and a monthly report you can take to your partners, investors or board.</p>
     <p><a class="btn" href="#contact">Book a 30-minute call</a></p>
   </div>
 </div>
@@ -150,26 +153,50 @@ footer nav a { color: var(--muted); }
     <div class="col stack">
       <span class="eyebrow">Pricing in Canadian dollars, plus HST</span>
       <h2>Three monthly plans</h2>
-      <p>Billed monthly in advance. Three months to start, then month to month with 30 days' notice.</p>
+      <p>Each plan includes a set number of finance director hours a month for review, calls and analysis. Routine processing by the AI system does not use them. Work beyond your hours is $150 an hour, agreed with you before it starts.</p>
     </div>
     <div class="plans">
       <div class="plan">
-        <span class="eyebrow">Monthly Books</span>
-        <div class="price">$650 <span>/ month</span></div>
-        <ul><li>Up to about 150 transactions a month</li><li>Categorising and reconciliations</li><li>Monthly close, profit and loss, balance sheet</li><li>Year-end package for your accountant</li></ul>
+        <span class="eyebrow">Essentials</span>
+        <div class="price">$750 <span>/ month · 4 hours included</span></div>
+        <ul><li>Up to about 150 transactions a month</li><li>Categorising and every reconciliation</li><li>Books closed by the 10th working day</li><li>HST working papers and a year-end package for your accountant</li></ul>
       </div>
       <div class="plan feature">
         <span class="eyebrow">Board Ready</span>
-        <div class="price">$1,450 <span>/ month</span></div>
-        <ul><li>Everything in Monthly Books</li><li>Board pack with budget against actual and notes</li><li>Cash position and three-month forecast</li><li>Restricted funds and funder report schedule</li></ul>
+        <div class="price">$1,500 <span>/ month · 8 hours included</span></div>
+        <ul><li>Everything in Essentials</li><li>Monthly management pack with budget against actual and notes</li><li>Cash position and a 13-week cash forecast</li><li>Class or fund tracking and a quarterly review call</li></ul>
       </div>
       <div class="plan">
-        <span class="eyebrow">Fractional Finance Director</span>
-        <div class="price">$2,950 <span>/ month</span></div>
-        <ul><li>Everything in Board Ready</li><li>Annual budget and one finance committee meeting a month</li><li>Audit preparation and auditor questions</li><li>Policies and internal controls advice</li></ul>
+        <span class="eyebrow">Fractional CFO</span>
+        <div class="price">$3,000 <span>/ month · 16 hours included</span></div>
+        <ul><li>Everything in Board Ready</li><li>Annual budget, reforecast and one board meeting a month</li><li>Audit or review preparation</li><li>Controls, policies, pricing and hiring decisions</li></ul>
       </div>
     </div>
-    <p class="oneoff">Also by quote: catch-up bookkeeping ($150 an hour, or a fixed price per month behind), an annual budget build, year-end audit preparation, a finance policy manual, and support preparing a charity information return.</p>
+    <div class="two">
+      <div class="stack">
+        <h3>One-time setup</h3>
+        <p>Every plan starts with an implementation, so the system is built on your books before the first close: Essentials setup $1,500, Board Ready setup $3,000, Finance Office setup with three AI workflows $5,000. Half at signing, half at go-live.</p>
+      </div>
+      <div class="stack">
+        <h3>The terms, plainly</h3>
+        <p>Three months to start, then 30 days' notice. You own your QuickBooks file and your data at all times. If your books are not closed by the 10th working day, that month's fee drops by a quarter.</p>
+      </div>
+    </div>
+    <p class="oneoff">Not ready to commit? A finance health check is $1,000: a read-only review of your books, controls and reporting, a two-page findings note and a fixed quote. The fee is credited in full if you sign within 30 days.</p>
+  </div>
+</section>
+
+<section id="cleanup">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">Behind on your books</span>
+      <h2>Catch-up work at a fixed price</h2>
+      <p>$300 per month of backlog, or $450 for months with payroll, several accounts or inventory. Minimum $1,500. Up to six months caught up in four weeks; up to twelve in six to eight.</p>
+    </div>
+    <div class="stack">
+      <p>What you get at sign-off:</p>
+      <ul class="deliver"><li>Your QuickBooks file categorised and reconciled to the latest month-end</li><li>A reconciliation report for every bank, card and loan account, tied to its statement</li><li>Monthly profit and loss, balance sheet and a trial balance</li><li>A list of every adjusting entry and why it was made</li><li>An open-items list for anything only you can answer</li><li>A year-end package for your accountant, and a 30-minute walkthrough</li></ul>
+    </div>
   </div>
 </section>
 
@@ -186,6 +213,21 @@ footer nav a { color: var(--muted); }
   </div>
 </section>
 
+<section id="templates" class="band">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Templates</span>
+      <h2>Tools you can use on your own</h2>
+      <p>The same templates we use with clients, for teams that want to do it themselves.</p>
+    </div>
+    <div class="plans">
+      <div class="plan prod"><span class="eyebrow">AI Use Policy</span><div class="price">$79</div><p>Policy, staff questionnaire and client disclosures for a small organisation using AI. A short version is free.</p></div>
+      <div class="plan prod"><span class="eyebrow">Finance handover pack</span><div class="price">$99</div><p>Seven templates so finance work survives a staff change or a new treasurer.</p></div>
+      <div class="plan prod"><span class="eyebrow">Month-end close kit</span><div class="price">$59</div><p>Close checklist and a one-page management pack in Excel and Google Sheets.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="questions">
   <div class="wrap">
     <div class="col stack">
@@ -194,12 +236,12 @@ footer nav a { color: var(--muted); }
     </div>
     <div class="two">
       <dl>
-        <div><dt>Do you work outside Canada?</dt><dd>Yes, for bookkeeping and reporting. Tax returns outside Canada stay with a local preparer.</dd></div>
+        <div><dt>Do you work outside Canada?</dt><dd>Yes, for bookkeeping, reporting and CFO support. Tax returns outside Canada stay with a local preparer.</dd></div>
         <div><dt>Which software do you use?</dt><dd>QuickBooks Online. If you are on something else, we can talk about moving, or quote for working in your system.</dd></div>
         <div><dt>Do you do audits?</dt><dd>No. We prepare your books and schedules for your auditor and answer their questions. Audits, reviews and Notice to Reader reports come from a licensed public accountant.</dd></div>
       </dl>
       <dl>
-        <div><dt>We are behind by several months. Can you help?</dt><dd>Yes. After a free 30-minute look we give you a fixed price to catch up, then move you onto a monthly plan.</dd></div>
+        <div><dt>What does AI do, and what does a person do?</dt><dd>Software sorts transactions, matches receipts and drafts reconciliations and reports. A finance director reviews every one, decides anything that needs judgement, and signs off before it reaches you.</dd></div>
         <div><dt>Who signs things and who files?</dt><dd>Your organisation approves payments and files its own returns. We prepare, reconcile and report.</dd></div>
         <div><dt>How do we start?</dt><dd>A 30-minute call, read-only access to your books for a quick review, then a one-page engagement letter.</dd></div>
       </dl>
@@ -218,7 +260,7 @@ footer nav a { color: var(--muted); }
 
 <div class="wrap">
   <footer>
-    <p>Northbook Finance is a service of Jayvin Consulting Inc., Ontario, Canada.</p>
+    <p>Books to Board is a trade name of Jayvin Consulting Inc., Ontario, Canada.</p>
     <nav aria-label="Legal"><a href="terms.html">Terms and Conditions</a><a href="privacy.html">Privacy Policy</a></nav>
   </footer>
 </div>
