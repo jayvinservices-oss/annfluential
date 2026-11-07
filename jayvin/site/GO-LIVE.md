@@ -13,7 +13,7 @@ Files: this folder (`index.html`, `terms.html`, `privacy.html`, `favicon.svg`).
 - Photo: save a portrait as `ann-photo.jpg` in this folder (at least 800 x 1000 px, face and shoulders, plain or
   office background). It appears in the hero and the About section; the initials "AJ" show until then.
 - Name: "Ann James, MBA" in the hero and About. Search `EDIT:` in index.html for every spot to check.
-- Contact: confirm the email address (currently ann@jayvinconsulting.ca) and add a booking link
+- Contact: confirm the email address (now info@jayvinconsulting.ca) and add a booking link
   (Zoho Bookings or Google Calendar appointment page, both free).
 - Before going live: delete line 3 of index.html (`<meta name="robots" content="noindex, nofollow">`) so Google
   can find the site.
