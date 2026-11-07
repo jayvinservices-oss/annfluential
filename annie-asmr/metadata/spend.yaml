@@ -516,3 +516,59 @@
   seconds: 5
   free: false
   cost_usd: 0.1
+- date: '2026-11-07'
+  time: 12:46
+  route: nano-banana-pro (Replicate, realism test)
+  clip: A-hand-ace-start-1.png
+  seconds: 0
+  free: false
+  cost_usd: 0.15
+- date: '2026-11-07'
+  time: 12:46
+  route: nano-banana-pro (Replicate, realism test)
+  clip: A-hand-ace-start-2.png
+  seconds: 0
+  free: false
+  cost_usd: 0.15
+- date: '2026-11-07'
+  time: 12:49
+  route: kling4 (Replicate, realism test)
+  clip: A-hand-ace-kling4.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.79
+- date: '2026-11-07'
+  time: 12:50
+  route: veo31fast (Replicate, realism test)
+  clip: A-hand-ace-veo31fast.mp4
+  seconds: 6
+  free: false
+  cost_usd: 0.6
+- date: '2026-11-07'
+  time: 12:50
+  route: nano-banana-pro (Replicate, realism test)
+  clip: B-lips-gloss-start-1.png
+  seconds: 0
+  free: false
+  cost_usd: 0.15
+- date: '2026-11-07'
+  time: 12:51
+  route: nano-banana-pro (Replicate, realism test)
+  clip: B-lips-gloss-start-2.png
+  seconds: 0
+  free: false
+  cost_usd: 0.15
+- date: '2026-11-07'
+  time: 12:55
+  route: kling4 (Replicate, realism test)
+  clip: B-lips-gloss-kling4.mp4
+  seconds: 5
+  free: false
+  cost_usd: 0.79
+- date: '2026-11-07'
+  time: 12:57
+  route: veo31fast (Replicate, realism test)
+  clip: B-lips-gloss-veo31fast.mp4
+  seconds: 6
+  free: false
+  cost_usd: 0.6

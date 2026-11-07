@@ -64,7 +64,8 @@ def token():
 def call(method, url, body=None):
     req = urllib.request.Request(url, method=method, data=json.dumps(body).encode() if body is not None else None,
                                  headers={"Authorization": f"Bearer {token()}", "Content-Type": "application/json",
-                                          "Prefer": "wait=60"})
+                                          "Prefer": "wait=60",
+                                          "User-Agent": "annie-asmr/1.0"})  # Replicate 403s Python's default UA
     with urllib.request.urlopen(req, timeout=180) as r:
         return json.load(r)
 

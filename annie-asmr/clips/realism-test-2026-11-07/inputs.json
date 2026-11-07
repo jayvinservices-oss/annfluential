@@ -1,0 +1,30 @@
+{
+  "A-hand-ace-kling4.mp4": {
+    "prompt": "Very slow, gentle motion. The hand strokes once, slowly, from the top of the cat's head down to his neck, then rests. The cat's eyes slowly close and his whiskers relax. Static locked-off camera, no zoom, no cuts, calm and sleepy, realistic fur and fingers.",
+    "duration": 5,
+    "resolution": "720p",
+    "aspect_ratio": "16:9"
+  },
+  "A-hand-ace-veo31fast.mp4": {
+    "prompt": "Very slow, gentle motion. The hand strokes once, slowly, from the top of the cat's head down to his neck, then rests. The cat's eyes slowly close and his whiskers relax. Static locked-off camera, no zoom, no cuts, calm and sleepy, realistic fur and fingers.",
+    "duration": 6,
+    "resolution": "720p",
+    "generate_audio": false,
+    "aspect_ratio": "16:9",
+    "negative_prompt": "full face, eyes, extra fingers, deformed hands, fast motion, camera shake"
+  },
+  "B-lips-gloss-kling4.mp4": {
+    "prompt": "Very slow, gentle motion. The gloss wand glides slowly once across the lower lip, then the lips press together softly. Framing stays below the nose the whole time, no eyes. Static locked-off camera, no zoom, no cuts, realistic lips and fingers.",
+    "duration": 5,
+    "resolution": "720p",
+    "aspect_ratio": "16:9"
+  },
+  "B-lips-gloss-veo31fast.mp4": {
+    "prompt": "Very slow, gentle motion. The gloss wand glides slowly once across the lower lip, then the lips press together softly. Framing stays below the nose the whole time, no eyes. Static locked-off camera, no zoom, no cuts, realistic lips and fingers.",
+    "duration": 6,
+    "resolution": "720p",
+    "generate_audio": false,
+    "aspect_ratio": "16:9",
+    "negative_prompt": "full face, eyes, extra fingers, deformed hands, fast motion, camera shake"
+  }
+}
