@@ -3,6 +3,8 @@
 Ann's bookkeeping, grant compliance and fractional CFO practice under Jayvin Consulting Inc. (Ontario).
 Current plan: `finance-practice-plan-v6.md` (Drive Drop: "2026-11-05 · JAYVIN · Jayvin AI finance offer pricing and plan · v6").
 
+Launch board (who does what, live status; Claude reads it before each session): https://claude.ai/artifact/1sXQ3EXaHABd2hQHEssLab (source jayvin/board/index.html, data in its `steps` collection).
+
 Rules for any chat working here:
 - No name on the website ("Led by an internationally qualified Chartered Accountant"); Ann's name only in outreach,
   calls and engagement letters. Title: internationally qualified Chartered Accountant (ICAN), MBA.
