@@ -94,6 +94,13 @@ dd { margin: 6px 0 0; color: var(--muted); }
 .addr { font: 500 1rem/1.4 var(--mono); }
 footer { padding-block: 40px 56px; color: var(--muted); font-size: 0.9rem; display: grid; gap: 10px; }
 footer nav a { color: var(--muted); }
+.cform { display: grid; gap: 14px; max-width: 560px; }
+.frow { display: grid; gap: 6px; }
+.frow label { font-size: 0.92rem; color: var(--muted); }
+.frow input, .frow textarea { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 10px 12px; width: 100%; }
+.frow input:focus-visible, .frow textarea:focus-visible { outline: 2px solid var(--ledger); outline-offset: 1px; }
+button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+
 @media (max-width: 760px) { .sample { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: no-preference) { .btn { transition: background .15s; } }
 </style>
@@ -303,6 +310,16 @@ footer nav a { color: var(--muted); }
     <p>Tell us the size of your organisation, your software, and how far behind the books are, if they are.</p>
     <!-- EDIT: add the booking link here when it exists -->
     <p class="addr">info@jayvinconsulting.ca</p>
+    <form class="cform" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Leave this empty <input name="company_url"></label></p>
+      <div class="frow"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="frow"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="frow"><label for="f-org">Organisation</label><input id="f-org" name="organisation" autocomplete="organization"></div>
+      <div class="frow"><label for="f-msg">Your software, and how far behind the books are</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+      <p><button class="btn" type="submit">Send</button></p>
+      <p class="note" id="f-note">We reply within one business day.</p>
+    </form>
   </div>
 </section>
 
@@ -312,3 +329,12 @@ footer nav a { color: var(--muted); }
     <nav aria-label="Legal"><a href="terms.html">Terms and Conditions</a><a href="privacy.html">Privacy Policy</a></nav>
   </footer>
 </div>
+
+<script>
+document.querySelector('.cform').addEventListener('submit', function (e) {
+  if (location.hostname.indexOf('jayvinconsulting.ca') === -1 && location.hostname.indexOf('netlify.app') === -1) {
+    e.preventDefault();
+    document.getElementById('f-note').textContent = 'Preview only: the form sends once the site is live on jayvinconsulting.ca.';
+  }
+});
+</script>

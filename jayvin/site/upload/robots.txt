@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.jayvinconsulting.ca/sitemap.xml
