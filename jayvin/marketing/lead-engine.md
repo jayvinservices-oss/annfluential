@@ -46,6 +46,8 @@ partners and suppliers, DNC, QT, Rainbow Railroad); the CRM also blocks those na
 4. Google Business Profile + 5 reviews (QT first) + one article a fortnight on the site (IRAP claims, HST for small
    business, month-end close, cash flow forecast). These are the searches that bring inbound leads.
 5. Free tools as lead magnets: AI Use Policy lite, 13-week cash forecast template. Email address in exchange.
+   First one built: the "Comment GRANT" LinkedIn post and grant claim checklist (`marketing/lead-magnet-grant-checklist.md`,
+   Drive: "Lead magnet: GRANT post and grant claim checklist").
 6. Workshops: one free webinar a quarter ("Get your books grant-ready") through a library, Futurpreneur, Enterprise
    Toronto, a BIA or a Black or African business association. Small rooms convert well.
 7. Communities: local Facebook and LinkedIn business groups, Reddit r/smallbusiness Canada threads. Answer questions,
