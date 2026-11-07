@@ -19,3 +19,7 @@
   replies from info@ within one business day.
 - **First run to watch:** 7 Nov 2026, 5:47 pm Toronto. Claude checks after the first real enquiry that the lead lands
   in the CRM correctly.
+
+## Deploy rule (Ann, 7 Nov 2026)
+Netlify deploys use free-plan credits. No deploy until all pending website edits are batched, previewed
+(https://claude.ai/artifact/V4JbhgzrRa7mm2ycYE2s5E) and Ann says go; then ONE deploy. Co-work does not re-upload either.
