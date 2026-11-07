@@ -1,0 +1,30 @@
+{
+  "slug": "xmas-tree-decorating",
+  "file": null,
+  "title": "Christmas ASMR Ornaments Tapping With Long Nails | Tree Decorating for Sleep | AI ASMR",
+  "description": "Slow, close-up tree decorating: tapping gold and champagne glass baubles with long nails, hooking them onto pine branches and draping garland, with a few soft whispers.\n\nIn this video: gold glass baubles, champagne baubles, pine branches, garland, ornament box.\n\nSounds: glass bauble taps, ornament hooks, tinsel rustle, pine needle brushing, box rummaging.\n\nChapters\n(chapters are added after: python -m pipeline assemble xmas-tree-decorating)\n\nAI ASMR: AI presenter, my own voice (cloned), real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "christmas tree asmr",
+    "ornament tapping asmr",
+    "glass tapping asmr",
+    "christmas asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "2026-12-04",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

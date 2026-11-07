@@ -1,0 +1,42 @@
+# Christmas 2 of 4. Make by 24 Nov, publish from 1 Dec.
+slug: xmas-tree-decorating
+theme: christmas-tree-decorating
+title: "Christmas ASMR Ornaments Tapping With Long Nails | Tree Decorating for Sleep | AI ASMR"
+description: >-
+  Slow, close-up tree decorating: tapping gold and champagne glass baubles with long nails,
+  hooking them onto pine branches and draping garland, with a few soft whispers.
+made_by: 2026-11-24
+publish_after: 2026-12-04
+variation:
+  ornaments: glass baubles in gold and champagne
+  nail_colour: champagne gold
+objects: [gold glass baubles, champagne baubles, pine branches, garland, ornament box]
+sounds: [glass bauble taps, ornament hooks, tinsel rustle, pine needle brushing, box rummaging]
+tags: [christmas tree asmr, ornament tapping asmr, glass tapping asmr, christmas asmr]
+segments:
+  - id: box
+    chapter: Glass bauble tapping
+    minutes: 6
+    shots: [tap-baubles, admire]
+    sound_bed: [audio/sfx/glass-bauble-tap-01.wav, {file: audio/sfx/box-rummage-01.wav, gain_db: -8}]
+    voice:
+      - {at: 3, text: "Annie ASMR... Annie ASMR... Annie ASMR.", style: brand}
+  - id: glass
+    chapter: Bauble taps & ornament hooks
+    minutes: 17
+    shots: [tap-baubles, hang-ornament]
+    sound_bed: audio/sfx/glass-bauble-tap-01.wav
+    voice:
+      - {at: 20, text: "Gold ones first."}
+  - id: garland
+    chapter: Garland rustles & pine needle brushing
+    minutes: 14
+    shots: [tinsel, hang-ornament]
+    sound_bed: [audio/sfx/garland-rustle-01.wav, {file: audio/sfx/pine-brush-01.wav, gain_db: -4}]
+  - id: finish
+    chapter: Last bauble taps & goodnight whispers
+    minutes: 8
+    shots: [admire, hang-ornament]
+    sound_bed: audio/sfx/glass-bauble-tap-01.wav
+    voice:
+      - {at: 10, text: "There. It's beautiful. Goodnight."}

@@ -1,0 +1,31 @@
+{
+  "slug": "gloss-100-layers-01",
+  "file": null,
+  "title": "ASMR 100 Layers of Lip Gloss | Sticky Mouth Sounds & Wand Clicks | No Talking | AI ASMR",
+  "description": "One hundred slow layers of lip gloss, up close with no talking: wand clicks, tube taps and sticky mouth sounds as the gloss builds until it shines.\n\nIn this video: glass lip gloss tubes, gloss wands, glossy lips, long nails.\n\nSounds: gloss wand clicks, tube tapping, sticky mouth sounds, lip smacks.\n\nChapters\n(chapters are added after: python -m pipeline assemble gloss-100-layers-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "lip gloss asmr",
+    "lipgloss layers asmr",
+    "100 layers asmr",
+    "mouth sounds asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "title says '100': make sure the video really shows it (e.g. you counted 100 layers)",
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

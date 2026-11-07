@@ -1,0 +1,31 @@
+{
+  "slug": "xmas-rhinestone-ornament",
+  "file": null,
+  "title": "Christmas ASMR Rhinestone With Me | Glass Ornament Tapping & Tweezer Clicks | AI ASMR",
+  "description": "Rhinestone with me: shaking the crystal tray, picking up red and gold rhinestones one by one with a wax pick and long nails, until a clear glass ornament sparkles.\n\nIn this video: clear glass ornament, red rhinestones, gold rhinestones, rhinestone tray, wax pick, tweezers.\n\nSounds: rhinestone tray shaking, crystals pouring, tweezer clicks, wax pick taps.\n\nChapters\n(chapters are added after: python -m pipeline assemble xmas-rhinestone-ornament)\n\nAI ASMR: AI presenter, my own voice (cloned), real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "rhinestone asmr",
+    "bedazzling asmr",
+    "crafts asmr",
+    "christmas craft asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "2026-12-08",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "opening: first chapter 'Crystals pouring & tray shaking' does not name a trigger from the title; open on the trigger the title and thumbnail promise",
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

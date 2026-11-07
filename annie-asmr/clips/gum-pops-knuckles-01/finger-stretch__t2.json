@@ -1,0 +1,12 @@
+{
+  "provider": "replicate",
+  "model": "wan-video/wan-2.2-i2v-fast",
+  "prediction_id": "c8qv6b7bk9rmr0d1n5stwnkeh4",
+  "route": "wan-2.2-fast (Replicate)",
+  "cost_usd": 0.1,
+  "shot": "finger-stretch",
+  "take": 2,
+  "prompt": "Extreme close-up of the lower face of a young Black woman, framed from the tip of her nose to her chin and upper neck. Her eyes and upper face are never in frame. Warm caramel skin, lighter than Annie's chocolate, with golden undertones and a soft natural sheen. Full, rounded lips with a defined darker berry-brown liner and a glossy berry-mauve centre, high shine. Soft dark curly hair falls at the edges of the frame. Small gold hoop earrings, a thin gold chain with a tiny pendant. Her hands have medium-length coffin nails in a milky pink polish with a glossy top coat, neat cuticles, warm caramel skin. Fingers move slowly and gently. Seated very close to the camera, hands raised near her chin, a soft knit sleeve just visible, a cosy dim room with warm fairy lights blurred behind. Gum: pink bubble gum. Lip gloss: nude-pink gloss. Nails painted glazed chrome. Background light: warm amber fairy lights. She interlaces her fingers and stretches them forward toward the camera, then flexes each finger slowly. Static tripod camera, 16:9, shallow depth of field, macro beauty-shot look, soft warm frontal key light, low-key lighting, plain dark warm-brown background that falls off to near black. Photorealistic beauty close-up, very slow, calm movement, hands move slowly and only a little, ASMR video aesthetic, high detail, warm colour grade, no text on screen.",
+  "negative": "puckered lips, pursed lips, pouting, eyes, eyebrows, forehead, full face, straight hair, silky straight hair, text, captions, watermark, logo, extra fingers, missing fingers, fused fingers, deformed hands, short nails, square nails, chipped polish, matte lips, dry lips, blurry lips, distorted mouth, teeth close-up, tongue out, winking, blowing kisses, kissing gestures, suggestive pose, lingerie, cleavage, low-cut top, flickering, harsh shadows, bright background, oversaturated, cartoon, 3d render",
+  "created": "2026-11-05T02:05:47"
+}

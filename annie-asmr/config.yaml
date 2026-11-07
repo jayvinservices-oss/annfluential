@@ -1,0 +1,125 @@
+# Annie ASMR pipeline settings. Secrets go in .env, never here.
+
+channel:
+  name: Annie ASMR
+  handle: "@annieasmrai"
+  goal_watch_hours: 4000
+  goal_subscribers: 1000
+  target_date: 2027-01-17          # aim
+  hard_cutoff: "2027-01-31 18:59"  # Toronto time
+  timezone: America/Toronto
+  # Starting point from the brief (3 Nov 2026), used until the first report runs
+  baseline: {date: 2026-11-03, subscribers: 1034, watch_hours: 543}
+
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  crf: 18
+  preset: medium          # "slow" looks a little better, takes much longer on an Intel Mac
+  crossfade_seconds: 1.5  # between clips inside a segment
+  segment_crossfade_seconds: 2.0  # between chapters
+  loop_variants: 3        # different clip orders per segment, so loops do not repeat identically
+
+audio:
+  sample_rate: 48000
+  # YouTube turns loud videos down to about -14 LUFS but never turns quiet ones up.
+  # Whisper ASMR usually sits quieter; -18 keeps it gentle without being too faint on phones.
+  # Ann's real whisper, cleaned 'crisp B' (Ann, 5 Nov): apply to every new voice memo line
+  real_voice_filter: "highpass=f=110,afftdn=nr=16:nf=-46:tn=1,equalizer=f=250:t=q:w=1:g=-3,equalizer=f=4500:t=q:w=1.2:g=6,treble=g=4:f=8000,lowpass=f=15000,acompressor=threshold=-28dB:ratio=2:attack=5:release=80,loudnorm=I=-22:TP=-2:LRA=6"
+  target_lufs: -21   # Ann, 5 Nov: "a tad lower" (was -18)
+  true_peak: -1.5
+  lra: 11
+  bed_gain_db: -4      # sound bed (gum, gloss, paper ...)
+  voice_gain_db: 0     # whispers and talking
+
+opening:
+  # Viewers decide in the first 5 seconds. The first shot of the first chapter opens the video
+  # and is used for the thumbnail, so put the strongest trigger from the title there.
+  quiet_seconds: 30    # no talking before this except the brand whisper (style: brand)
+  brand_whisper: "Annie ASMR... Annie ASMR... Annie ASMR."   # replaces hello intros, whispered over the trigger
+  thumbnail_at: 3      # seconds into the opening shot for the default thumbnail frame
+
+generator:
+  provider: router     # router (free credits first, then cheapest, $20 cap) | fal | replicate | runway | manual
+  clip_seconds: 5      # 5-second clips, slowed and alternated in assembly; keeps cost down
+  takes_per_shot: 3   # Ann, 5 Nov: more takes = more variety (YouTube repetitive-content rules, watch hours)
+  router:
+    budget_usd: 20     # hard stop for all paid generation together (ledger: metadata/spend.yaml)
+    daily_usd: 5       # Ann, 5 Nov: never more than $5 in one day
+    # From reports/ai-video-options-2026-11-04.md (4 Nov 2026). Prices are estimates kept on the high side so the
+    # $20 cap is never passed; check the model page (input field names and price) before the first paid run.
+    routes:
+      - label: wan-2.2-fast (Replicate)      # cheapest: about $0.05 or less per 480p clip
+        provider: replicate
+        key_env: REPLICATE_API_TOKEN
+        model: wan-video/wan-2.2-i2v-fast
+        price_per_second: 0.01         # Ann, 5 Nov: $0.05 per 5 s clip (Replicate billed about $0.04 a clip)
+        prompt_field: prompt
+        image_field: image
+        negative_field: null
+        duration_field: null
+        extra_input: {resolution: "480p"}
+      - label: wan-2.2 (fal.ai)              # backup: $0.04/s at 480p
+        provider: fal
+        key_env: FAL_KEY
+        model: fal-ai/wan/v2.2-a14b/image-to-video
+        price_per_second: 0.08
+        prompt_field: prompt
+        image_field: image_url
+        negative_field: negative_prompt
+        duration_field: null
+        extra_input: {resolution: "480p"}
+  reference_image: prompts/reference/avatar.png   # export of Canva MAHZ22R5eUg (concept 2)
+  runway:
+    endpoint: https://api.dev.runwayml.com/v1
+    api_version: "2024-11-06"
+    model: gen4_turbo
+    ratio: "1280:720"
+  replicate:
+    model: "owner/model-name"      # e.g. a Kling, Wan, Hailuo or Veo model on Replicate
+    prompt_field: prompt
+    image_field: start_image       # check the model page; often "image" or "start_image"
+    negative_field: negative_prompt
+    duration_field: duration
+    extra_input: {}                # any other model inputs, e.g. {aspect_ratio: "16:9"}
+
+voice:
+  provider: voxcpm     # voxcpm (free) | elevenlabs | voicestudio | local | manual
+  elevenlabs:
+    model_id: eleven_v3
+    whisper_tag: "[whispers]"     # v3 audio tag; leave "" for other models
+    output_format: mp3_44100_128
+    stability: 0.5
+    similarity_boost: 0.85
+    style: 0.0
+  voxcpm:
+    # Free, Apache 2.0 (commercial use allowed). Clones the voice in the reference sample.
+    python: /home/user/voice-env/bin/python   # the environment VoxCPM is installed in (env VOXCPM_PYTHON overrides)
+    model: openbmb/VoxCPM2
+    reference: audio/voice-ref/annie-whisper.wav
+    whisper_control: "whispering softly and slowly, very close to the microphone"
+    soft_control: "soft, calm, quiet voice"
+    cfg_value: 2.0
+    timesteps: 10        # higher = cleaner and slower
+  voicestudio:
+    # Backend runs on another machine (not the Intel Mac). URL, key and profile id go in .env.
+    num_step: 32          # 32 = cleaner (audiobook default); 16 = faster
+    speed: 0.95           # a touch slower for whispers
+    effect_preset: broadcast
+    seed: null            # set a number once a take sounds right, to keep the voice consistent
+    engine: null          # null = backend default (OmniVoice)
+  local:
+    # Command that turns text into a file with your cloned voice (e.g. VoiceStudio's CLI if it has one).
+    # {text_file} and {out} are filled in. Leave empty if VoiceStudio is app-only: use manual instead.
+    command: ""
+
+youtube:
+  category_id: "26"    # Howto & Style
+  default_language: en
+  base_tags: [asmr, asmr beauty, asmr no talking, tingles, relaxing asmr, asmr for sleep]
+  # Short on purpose (Ann, 3 Nov): YouTube's "altered or synthetic content" box is ticked on every upload
+  # (upload.py), which shows YouTube's own label. "AI ASMR" is also a search term people use.
+  disclosure: >-
+    AI ASMR: AI presenter, my real voice, real sounds.
+  disclosure_no_voice: "AI ASMR: AI presenter, real sounds."

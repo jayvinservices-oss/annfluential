@@ -1,0 +1,43 @@
+# Christmas 1 of 4. Make by 24 Nov, publish from 1 Dec.
+slug: xmas-unwrapping-gifts
+theme: christmas-unwrapping
+title: "Christmas Mystery Gift Unboxing ASMR | No Talking | AI ASMR"
+title_terms_ok: [mystery, unboxing]
+description: >-
+  Cosy Christmas mystery gift unboxing with no talking: long nails tapping, peeling tape and
+  pulling satin ribbons off kraft paper gifts, then rustling tissue paper to see what is inside.
+made_by: 2026-11-24
+publish_after: 2026-12-01
+variation:
+  wrapping: brown kraft paper
+  ribbon: red satin ribbon
+  nail_colour: cranberry red chrome
+objects: [kraft paper gifts, red satin ribbon, gift boxes, white tissue paper, small gifts]
+sounds: [paper crinkle, tape peeling, ribbon pulling, box tapping, tissue rustle]
+tags: [asmr unboxing, asmr no talking, mystery gift asmr, asmr unwrapping, christmas asmr, asmr gift unwrapping, paper crinkle asmr, long nails asmr]
+segments:
+  - id: intro
+    chapter: Kraft paper gift tapping
+    minutes: 5
+    shots: [pick-gift, reveal]
+    sound_bed: audio/sfx/box-tapping-01.wav
+  - id: ribbons
+    chapter: Satin ribbon pulling
+    minutes: 11
+    shots: [pull-ribbon, pick-gift]
+    sound_bed: audio/sfx/ribbon-pull-01.wav
+  - id: tape
+    chapter: Tape peeling & kraft paper crinkles
+    minutes: 15
+    shots: [peel-tape, unwrap]
+    sound_bed: [audio/sfx/paper-crinkle-01.wav, {file: audio/sfx/tape-peel-01.wav, gain_db: -3}]
+  - id: tissue
+    chapter: Tissue paper rustling
+    minutes: 11
+    shots: [open-box, unwrap]
+    sound_bed: audio/sfx/tissue-rustle-01.wav
+  - id: inside
+    chapter: Gift box opening & reveal
+    minutes: 6
+    shots: [reveal, open-box]
+    sound_bed: audio/sfx/box-tapping-01.wav

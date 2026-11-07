@@ -1,0 +1,36 @@
+# Secrets: never commit
+.env
+.secrets/*
+!.secrets/README.md
+
+# Media is large; keep it on the Mac / cloud drive, not in git
+clips/**
+!clips/.gitkeep
+audio/sfx/**
+!audio/sfx/.gitkeep
+!audio/sfx/README.md
+audio/voice/**
+!audio/voice/.gitkeep
+renders/**
+!renders/.gitkeep
+prompts/reference/*
+!prompts/reference/README.md
+prompts/out/**
+!prompts/out/.gitkeep
+
+# Comment exports hold viewers' names and text
+metadata/comments/**
+!metadata/comments/.gitkeep
+
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Analysis of your own videos: keep the reports, not the raw per-frame dumps
+analysis/*/frames.txt
+analysis/*/motion.txt
+analysis/*/loudness.txt
+audio/voice-ref/**
+brand/assets/retitle/
+analysis/*/contact-sheet.jpg

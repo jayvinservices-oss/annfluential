@@ -1,0 +1,40 @@
+id: ace-cat
+name: Ace the cat (real cat, real purring)
+season: regular
+uses_hands: true
+subject: ace
+ace_stills:              # shot -> Ace photo (bedroom version made by tools/ace_stills.py)
+  pet-ace: ace-lying-on-blanket.png
+  chin-scratch: ace-face-closeup.png
+  ace-kneading: ace-lying-on-blanket.png
+  ace-curled: ace-sleeping-loaf.png
+  sleeping-together: ace-sleeping-loaf.png
+  rain-window: ace-sleeping-loaf.png
+  default: ace-face-closeup.png
+# Ace is Ann's real cat. His look must stay his own: start every clip from one of his real photos
+# (prompts/reference/ace/), or use his real phone videos directly. Description: prompts/ace.yaml.
+setting: >-
+  The cosy bedroom from the presenter stills at night: bed with dusty pink and burgundy bedding, a warm bedside
+  lamp, string fairy lights, a frosted window with snowy pine trees.
+variation_template: >-
+  Blanket: {blanket}. Weather outside: {weather}. Nails painted {nail_colour}.
+variation_pools:
+  blanket: [burgundy velvet throw, dusty pink knit blanket, cream sherpa blanket]
+  weather: [soft snowfall, light rain on the window, still frosty night]
+  nail_colour: [milky nude, chrome pink, berry]
+sounds: [cat purring, soft petting strokes, blanket rustle, rain on window]
+shots:
+  pet-ace:
+    action: Long-nailed hands slowly stroke Ace from his head down his back on the blanket; he half-closes his eyes and purrs.
+  chin-scratch:
+    action: Fingertips gently scratch under Ace's chin; he leans into the hand, eyes closed.
+  ace-kneading:
+    action: Ace kneads the soft blanket slowly with his front paws, purring, close up.
+  ace-curled:
+    action: Ace sleeps curled into a ball on the blanket, his side rising and falling slowly with each breath.
+  sleeping-together:
+    action: A woman sleeps under burgundy covers, seen from the shoulders down, and Ace is curled against her legs, both breathing slowly.
+    person: true
+  rain-window:
+    action: Ace sleeps on the bed in the foreground while snow falls slowly outside the frosted window behind him, lamp glow reflected in the glass.
+chapter_ideas: [Petting Ace until he purrs, Chin scratches, Kneading the blanket, Curled up and purring, Sleeping together]

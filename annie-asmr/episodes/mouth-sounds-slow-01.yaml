@@ -1,0 +1,25 @@
+# Mouth sounds, SLOW pace (about 40% fewer sounds per minute). Twin: mouth-sounds-xslow-01.
+slug: mouth-sounds-slow-01
+look: pink-glow
+priority: 4
+clip_speed: 0.7   # smooth slow motion (Ann: slow ASMR)
+theme: lip-gloss-layers
+title: "ASMR Slow Mouth Sounds for Sleep | Soft Lip Smacks & Gloss Clicks | No Talking | AI ASMR"
+title_terms_ok: [mouth, smacks]
+description: >-
+  Slow, soft mouth sounds up close with glossy lips: gentle lip smacks, wet clicks and the gloss
+  wand, with calm pauses in between. No talking.
+made_by: 2026-11-15
+publish_after: 2026-11-18
+variation:
+  gloss_shades: rose-brown, clear and a pink holographic shimmer
+  nail_colour: chrome pink
+  palette: blush and rose
+objects: [glossy lips, gloss wand, long nails]
+sounds: [slow mouth sounds, soft lip smacks, wet clicks, gloss clicks]
+tags: [slow mouth sounds asmr, mouth sounds for sleep, asmr no talking, lip smacking asmr, slow asmr]
+segments:
+  - {id: soft, chapter: Soft slow mouth sounds, minutes: 15, shots: [press-lips, apply-wand], sound_bed: audio/sfx/mouth-sounds-slow-01.wav}
+  - {id: gloss, chapter: Gloss clicks & lip smacks, minutes: 15, shots: [open-tubes, press-lips], sound_bed: [audio/sfx/mouth-sounds-slow-01.wav, {file: audio/sfx/gloss-and-gum-slow-01.wav, gain_db: -4}]}
+  - {id: wet, chapter: Wet clicks, close up, minutes: 15, shots: [press-lips, final-shine], sound_bed: audio/sfx/mouth-sounds-slow-01.wav}
+  - {id: sleep, chapter: Slow sounds for sleep, minutes: 15, shots: [final-shine, press-lips], sound_bed: {file: audio/sfx/mouth-sounds-slow-01.wav, gain_db: -3}}

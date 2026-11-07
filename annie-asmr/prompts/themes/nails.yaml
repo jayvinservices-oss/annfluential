@@ -1,0 +1,29 @@
+id: nails
+name: Nails (tapping, scratching, doing my nails)
+season: regular
+uses_hands: true
+setting: >-
+  Hands resting on a soft towel on a table near her chin, nail polish bottles, a buffer
+  and a cuticle pusher laid out neatly.
+variation_template: >-
+  Nail colour: {nail_colour}. Objects tapped today: {objects}. Background tones: {palette}.
+variation_pools:
+  nail_colour: [glazed donut chrome, deep burgundy, milky pink, espresso brown, gold foil french tips]
+  objects:
+    - a glass perfume bottle, a wooden comb and a leather notebook
+    - a ceramic mug, a hardcover book and a velvet box
+    - a marble coaster, a glass jar and a makeup palette
+  palette: [warm cream, sage and beige, dusty rose]
+sounds: [nail tapping, nail scratching, polish bottle clicks, brush strokes, buffing]
+shots:
+  tap-objects:
+    action: Long nails tap and scratch slowly across the objects on the table, close to the camera.
+  paint-nail:
+    action: She paints one long nail with slow even brush strokes.
+  buff:
+    action: She buffs the surface of a long nail slowly in small circles.
+  show-hands:
+    action: She turns both hands slowly to show the finished glossy nails under the light, lips softly smiling below.
+chapter_ideas: [Long nail tapping, Nail scratching, Polish brush strokes, Nail buffing, Tapping show and tell]
+title_patterns:
+  - "ASMR Long Nail Tapping on {objects_short} | No Talking"

@@ -1,0 +1,130 @@
+# Rebrand actions shown on the production board. Ann taps Yes / Not now on her phone; answers are saved in
+# the board's database (collection "approvals", one doc per id) and Claude reads them back (ArtifactData list).
+# who: claude = Claude does it after Ann's yes; ann = only Ann can (Studio, or her own time); access = a setting Ann gives.
+# needs_access: true = only after "access-youtube" is done.
+# group: signin = Ann gives a sign-in or key | approved = Claude does it once signed in | studio = only Ann, in
+# YouTube Studio | review = needs Ann's eye again | done = approved, Claude is on it
+- id: handle
+  who: ann
+  title: Choose a cleaner handle than @annieasmr9051
+  detail: 'Done by Ann 4 Nov: @annieasmrai (@annie.asmr was taken). Name stays Annie ASMR.'
+  group: done
+- id: profile-picture
+  who: ann
+  title: Upload the new profile picture
+  detail: 'Done by Ann 4 Nov: gold-ring lips picture is live.'
+  group: done
+- id: freesound-key
+  who: access
+  title: 'Lip gloss sounds: download a few from Freesound yourself'
+  detail: 'Key received, thank you. But Freesound blocks this cloud server completely (even its home page), so Claude
+    cannot download from it. Instead, on your phone or computer: freesound.org, search ''lip gloss'' / ''lip balm''
+    / ''cap click'', filter Licence = Creative Commons 0, download 5 to 10 sounds and upload them to Drive > Annie
+    ASMR > sfx. Or record a tube click and wand pull on your phone.'
+  group: done
+- id: private-gum
+  who: ann
+  group: done
+  title: Publish your private 43-minute gum video?
+  detail: 'Your call 4 Nov: stays private. Only new AI content gets published; the gum-with-a-friend idea is recreated
+    with the two avatars.'
+- id: seo-descriptions
+  who: claude
+  group: done
+  title: Search fixes on old video descriptions and tags
+  detail: 'Done 4 Nov: all 68 public videos start with a search line (+ playlist link); flirty tags removed. Originals
+    saved.'
+- id: old-titles
+  who: claude
+  needs_access: true
+  title: 'Old videos: new titles and descriptions (round 2)'
+  detail: 'Done 4 Nov: 12 old videos renamed (catchier, search-led, not flirty). Old titles saved, so any can be
+    put back.'
+  group: done
+- id: old-thumbnails
+  who: claude
+  needs_access: true
+  title: 'Old videos: thumbnails stay as they are'
+  detail: 'Your call 4 Nov: keep the old thumbnails; only titles changed.'
+  group: done
+- id: duo-avatar
+  who: ann
+  title: Bestie avatar for duo videos
+  detail: 'A second AI avatar based on your friend from the duo videos, for weekly split-screen videos together
+    (gum, lip gloss). Two things first: which side is your friend in the duo videos (left in the green T-shirt?),
+    and has she said yes to an AI character based on her look? Yes = both sorted; note = tell Claude which side.'
+  group: done
+- id: persona-videos
+  who: ann
+  title: 'Decide: the pet-name and flirty videos'
+  detail: 'Recommended: keep them public with the new PG-13 titles (private videos stop counting toward the 4,000
+    hours), but out of playlists and off the home page. Yes = do that. Not now = note what you want instead.'
+  group: done
+- id: access-youtube
+  who: access
+  title: Give Claude access to the channel
+  detail: 'Done 4 Nov: signed in to Annie ASMR (@annieasmr9051) from the cloud session.'
+  group: done
+- id: banner
+  who: claude
+  needs_access: true
+  title: Upload the new banner
+  detail: 'Done 4 Nov: banner v2 (lips on the right) is live. To switch to v1, tell Claude.'
+  group: done
+- id: about
+  who: claude
+  needs_access: true
+  title: Rewrite the About text and channel keywords
+  detail: 'Done 4 Nov: new About text (glossy, slow, up-close ASMR for sleep; AI ASMR line; Instagram and business
+    email kept) and 16 channel keywords.'
+  group: done
+- id: playlists
+  who: claude
+  needs_access: true
+  title: Create the six series playlists and sort old videos into them
+  detail: 'Done 4 Nov: Gum Club (6), Long ASMR for Sleep (8), Mouth Sounds & Crunchy (9), Nail Studio (9), Gloss
+    Lab (2), Craft Corner (3). Flirty and roleplay videos are in none. Your old playlists are untouched.'
+  group: done
+- id: watermark
+  who: claude
+  needs_access: true
+  title: Add a subscribe watermark
+  detail: 'Done 4 Nov: gold-ring subscribe watermark, bottom right, whole video.'
+  group: done
+- id: weekly-report
+  who: claude
+  needs_access: true
+  title: Read the channel numbers every week
+  detail: 'Done 4 Nov: first report from YouTube Analytics: 539 of 4,000 hours; last 7 days 3.3 hours (0.5 a day).
+    Numbers on this board now come straight from YouTube.'
+  group: done
+- id: layout
+  who: ann
+  title: Set the channel trailer and home-page sections
+  detail: 'Done 4 Nov: trailer for new visitors = the gum popping video; Gum Club and Long ASMR for Sleep added
+    as the top two home-page sections. Your older sections are still below; remove any in Studio > Customization
+    > Layout if you like.'
+  group: done
+- id: seo-every-video
+  who: claude
+  needs_access: true
+  title: Search wording, end screens and cards on every video
+  detail: 'Playlists, About and keywords are done. Titles and descriptions of old videos wait for your yes on ''Old
+    videos: new titles'' below.'
+  group: done
+- id: approve-style
+  who: ann
+  title: Approve the style guide and artwork
+  detail: Look at the banner, profile picture and thumbnail drafts above. Yes = use them. Not now = tell Claude
+    what to change in the note.
+  group: done
+- id: long-videos
+  who: claude
+  title: Make every new video 45 to 90 minutes
+  detail: Approved. Claude is lengthening the video plans to 45 to 90 minutes.
+  group: done
+- id: live-streams
+  who: ann
+  title: Weekly scheduled live stream (2 hours)
+  detail: Approved. Claude drafts the first 2-hour scheduled stream plan.
+  group: done

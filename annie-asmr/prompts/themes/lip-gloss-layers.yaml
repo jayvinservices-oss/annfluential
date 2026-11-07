@@ -1,0 +1,35 @@
+id: lip-gloss-layers
+name: Lip gloss layering ("300 layers")
+season: regular
+uses_hands: true
+setting: >-
+  A vanity table with a small round mirror out of focus, glass lip gloss tubes lined up
+  in front of her.
+variation_template: >-
+  Gloss shades today: {gloss_shades}. Nails painted {nail_colour}. Background tones: {palette}.
+variation_pools:
+  gloss_shades:
+    - clear, nude-pink and a champagne shimmer
+    - rose-brown, clear and a pink holographic shimmer
+    - cocoa, peach and clear high-shine
+    - berry tint, clear and a gold fleck topper
+  nail_colour: [milky nude, chrome pink, deep cocoa, pearl white, soft lilac]
+  palette: [warm cream and gold, blush and rose, soft peach, mocha and beige]
+sounds: [gloss wand clicks, tube pumping, lip smacks, gentle mouth sounds, soft whispers, layer counting]
+shots:
+  open-tubes:
+    action: She unscrews a glass lip gloss tube slowly and pulls the wand out, the doe-foot dripping with gloss.
+  apply-wand:
+    action: She glides the gloss wand slowly across her full lips, building a thick glossy layer.
+  press-lips:
+    action: She presses her lips together softly and parts them, the gloss stretching slightly.
+  layer-count:
+    action: She dips the wand back into the tube and applies another slow layer, lips getting glossier.
+  tap-tube:
+    action: Long nails tap rhythmically on the glass gloss tube near her chin.
+  final-shine:
+    action: Lips extremely glossy and reflective, she smiles softly with closed lips, light glinting on the gloss.
+chapter_ideas: [Gloss wand clicks, Layers 1 to 50 (wand on lips), Layers 50 to 150, Layers 150 to 300, Glossy lip smacks]
+title_patterns:
+  - "ASMR 300 Layers of Lip Gloss | {gloss_short} | Wand Clicks & Soft Whispers"
+  - "ASMR Applying {n} Layers of Lip Gloss Until It Drips | Mouth Sounds"

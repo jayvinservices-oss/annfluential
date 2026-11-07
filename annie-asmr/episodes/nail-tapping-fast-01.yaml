@@ -1,0 +1,44 @@
+# From the 4 Nov scan: "Addictive Fast Nail Tapping (No Talking)" style, 1 hour, steady new views.
+slug: nail-tapping-fast-01
+look: night-mic
+theme: nails
+title: "ASMR Fast Long Nail Tapping for Sleep | Glass, Wood & Velvet | No Talking | AI ASMR"
+title_terms_ok: [fast, glass, wood, velvet]
+description: >-
+  Fast, then slow, long nail tapping on glass, wood and velvet, up close with no talking.
+  Scratching, tapping and polish bottle clicks to help you sleep.
+made_by: null
+publish_after: null
+variation:
+  nail_colour: deep burgundy
+  objects: a glass perfume bottle, a wooden comb and a velvet box
+  palette: dusty rose
+objects: [glass perfume bottle, wooden comb, velvet box, nail polish bottles, long nails]
+sounds: [fast nail tapping, nail scratching, polish bottle clicks, slow tapping]
+tags: [nail tapping asmr, fast tapping asmr, asmr no talking, long nails asmr, tapping for sleep]
+segments:
+  - id: fast
+    chapter: Fast nail tapping on glass
+    minutes: 12
+    shots: [tap-objects, show-hands]
+    sound_bed: audio/sfx/nail-tap-glass-01.wav
+  - id: wood
+    chapter: Tapping & scratching on wood
+    minutes: 14
+    shots: [tap-objects, buff]
+    sound_bed: audio/sfx/nail-tap-wood-01.wav
+  - id: velvet
+    chapter: Velvet box scratching
+    minutes: 12
+    shots: [tap-objects, show-hands]
+    sound_bed: audio/sfx/nail-scratch-velvet-01.wav
+  - id: bottles
+    chapter: Polish bottle clicks & brush strokes
+    minutes: 12
+    shots: [paint-nail, tap-objects]
+    sound_bed: audio/sfx/polish-bottle-click-01.wav
+  - id: slow
+    chapter: Slow tapping for sleep
+    minutes: 10
+    shots: [show-hands, tap-objects]
+    sound_bed: {file: audio/sfx/nail-tap-glass-01.wav, gain_db: -4}

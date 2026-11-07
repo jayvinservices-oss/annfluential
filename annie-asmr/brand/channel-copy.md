@@ -1,0 +1,71 @@
+# Annie ASMR channel copy and search wording (draft, 3 Nov 2026)
+
+## Channel name
+Annie ASMR (unchanged: 1,034 people already know it).
+
+## About text (YouTube Studio > Customization > Basic info > Description)
+Glossy, slow, up-close ASMR for sleep.
+
+Gum chewing and popping, lip gloss layering, long-nail tapping and cosy crafts, filmed close with no
+intros: the sound starts in the first second. Long videos (30 minutes and up) made for falling asleep,
+studying or switching off.
+
+New long videos every week. Christmas videos from 1 December.
+
+New videos are AI ASMR, made with my own voice.
+
+Requests are welcome in the comments; I read them all.
+
+## Channel keywords (Settings > Channel > Basic info > Keywords)
+asmr, ai asmr, gum chewing asmr, gum popping asmr, asmr for sleep, asmr no talking, mouth sounds asmr,
+lip gloss asmr, nail tapping asmr, long nails asmr, asmr whispers, close up asmr, asmr crafts,
+christmas asmr, asmr tingles, relaxing asmr
+
+## Description template for every new video
+```
+<What you hear, one plain sentence with the two main triggers>
+
+<Chapters: 0:00 trigger one, ...>
+
+Gum Club playlist: <link>
+Long ASMR for sleep: <link>
+
+AI ASMR: AI presenter, my own voice (cloned), real sounds.
+
+#asmr #aiasmr #<trigger>asmr
+```
+
+## Search wording that matches the channel
+Put the first phrase in the title, the next two in the description's first line.
+| Series | Phrases people search |
+|---|---|
+| Gum Club | gum chewing asmr, gum popping asmr, gum cracking asmr, bubble gum asmr, gum snapping |
+| Gloss Lab | lip gloss asmr, lip gloss application asmr, 100 layers of lip gloss, glossy lips asmr |
+| Nail Studio | nail tapping asmr, long nails asmr, acrylic nails tapping, nail scratching asmr |
+| Mouth sounds | mouth sounds asmr, tongue clicking asmr, close mic asmr, no talking asmr |
+| Craft Corner | rhinestone asmr, crafting asmr, paper asmr, christmas card making asmr |
+| Sleep | asmr for sleep, 1 hour asmr, asmr whispers, shushing asmr |
+
+## Tags (each video, 5 to 10)
+Series phrases first, then "asmr", "asmr for sleep", "no talking asmr" when true. Tags matter less than
+the title, the first description line and the thumbnail.
+
+## Every video, after upload
+- End screen: the next video in the same series + subscribe (last 20 seconds).
+- One card at the halfway point to the series playlist.
+- Add to its series playlist and to "Long ASMR for Sleep" when 30 minutes or longer.
+- A Short trailer (45 seconds of the best trigger) with the long video set as its related video.
+
+## What people search (YouTube autocomplete, 3 Nov 2026; full lists in reports/search-trends-2026-11-03.md)
+Google Trends refused automated requests, so these come from YouTube's own search suggestions (what people type),
+not volumes.
+- "asmr sleep" is the top suggestion for "asmr"; "asmr mouth sounds" is in the top 6 (US) and top 5 (UK).
+- "asmr ai" is the first suggestion for "asmr a": "AI ASMR" at the end of new titles catches it.
+- Most common add-ons: no talking, for sleep, hour counts (1, 3, 8 hours), no ads, tingles, aggressive / fast.
+- Gum: asmr gum chewing, bubble gum popping, gum popping snapping. Lip gloss: application, mouth sounds,
+  collection. Nails: nails tapping, tapping and scratching, long nails mic scratching.
+- Christmas: christmas asmr sleep / no talking / ambience; asmr christmas wrapping, decorations, makeup;
+  gift wrapping tissue paper; christmas ornaments tapping. Interest peaks mid-December (vidIQ).
+- Name format: "ASMR <trigger the way people type it> ..." and "Christmas ASMR ..."; join two triggers with "&".
+- Next video ideas from the data: 1-hour gum chewing & bubble popping for sleep; long nails tapping & mic
+  scratching; lip gloss application & mouth sounds; Christmas gift wrapping with tissue paper.

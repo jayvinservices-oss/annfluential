@@ -1,0 +1,30 @@
+{
+  "slug": "mouth-sounds-xslow-01",
+  "file": null,
+  "title": "Extra Sleepy Mouth Sounds for Insomnia | If You Can't Sleep, Stay Here | No Talking | AI ASMR",
+  "description": "Can't sleep? Stay here. Very slow, gentle mouth sounds and soft lip smacks with long, quiet pauses, made for nights when nothing else works. No talking. Close your eyes and drift off.\n\nIn this video: glossy lips, gloss wand, long nails.\n\nSounds: very slow mouth sounds, soft lip smacks, gentle clicks.\n\nChapters\n(chapters are added after: python -m pipeline assemble mouth-sounds-xslow-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "extra sleepy asmr",
+    "asmr for insomnia",
+    "slow mouth sounds",
+    "asmr when tingles dont work"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "2026-11-11",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

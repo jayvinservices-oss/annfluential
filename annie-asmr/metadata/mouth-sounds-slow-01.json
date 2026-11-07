@@ -1,0 +1,30 @@
+{
+  "slug": "mouth-sounds-slow-01",
+  "file": null,
+  "title": "ASMR Slow Mouth Sounds for Sleep | Soft Lip Smacks & Gloss Clicks | No Talking | AI ASMR",
+  "description": "Slow, soft mouth sounds up close with glossy lips: gentle lip smacks, wet clicks and the gloss wand, with calm pauses in between. No talking.\n\nIn this video: glossy lips, gloss wand, long nails.\n\nSounds: slow mouth sounds, soft lip smacks, wet clicks, gloss clicks.\n\nChapters\n(chapters are added after: python -m pipeline assemble mouth-sounds-slow-01)\n\nAI ASMR: AI presenter, real sounds.\n\n#ASMR #ASMRbeauty",
+  "tags": [
+    "asmr",
+    "asmr beauty",
+    "asmr no talking",
+    "tingles",
+    "relaxing asmr",
+    "asmr for sleep",
+    "slow mouth sounds asmr",
+    "mouth sounds for sleep",
+    "lip smacking asmr",
+    "slow asmr"
+  ],
+  "category_id": "26",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "publish_after": "None",
+  "checks": {
+    "errors": [],
+    "warnings": [
+      "not rendered yet, so no chapters or length check"
+    ]
+  }
+}

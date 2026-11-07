@@ -1,0 +1,18 @@
+# Amazon affiliate setup (Ann, 5 Nov 2026). Tracking IDs are public (they appear in every link); never store logins.
+amazon:
+  ca_tag: annjames07-20          # Amazon.ca Associates (approved pending 3 qualifying sales within 180 days of 5 Nov 2026)
+  com_tag: null                  # Amazon.com Associates: Ann to sign up; then join OneLink so .ca links redirect US viewers
+  disclosure: "As an Amazon Associate I earn from qualifying purchases."
+  deadline_3_sales: 2027-05-04   # 180 days from 5 Nov 2026
+# Ace's real products (Ann to confirm names/ASINs). Only list things Ace actually uses.
+ace_favourites: []
+#  - {name: "Ace's water fountain", asin_ca: B0XXXXXXX, asin_com: B0XXXXXXX, note: "the fountain he drinks from"}
+
+# Direct brand programs (higher commission than Amazon). A link goes into descriptions only once `url` is filled in.
+partners:
+  - name: Litter-Robot (Ace's litter box)
+    program: Whisker / Litter-Robot affiliates (Impact) - apply at https://litter-robot.com/ca/affiliates.html (CA) / https://www.whisker.com/partnerships
+    commission: "8% CA (avg order CA$550+, 90-day cookie); about CA$96 per Litter-Robot 5 sale"
+    url: null            # Ann: paste her Impact tracking link (or her Whisker owner referral link) here
+    code: null           # optional discount/referral code to show viewers
+    line: "Ace's self-cleaning litter box (Litter-Robot)"

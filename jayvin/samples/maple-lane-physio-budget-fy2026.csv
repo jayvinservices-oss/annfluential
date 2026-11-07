@@ -1,0 +1,325 @@
+account,month,amount
+Physiotherapy Revenue,2025-11,78000.00
+Physiotherapy Revenue,2025-12,67080.00
+Physiotherapy Revenue,2026-01,84240.00
+Physiotherapy Revenue,2026-02,79560.00
+Physiotherapy Revenue,2026-03,82680.00
+Physiotherapy Revenue,2026-04,78000.00
+Physiotherapy Revenue,2026-05,80340.00
+Physiotherapy Revenue,2026-06,75660.00
+Physiotherapy Revenue,2026-07,73320.00
+Physiotherapy Revenue,2026-08,68640.00
+Physiotherapy Revenue,2026-09,78780.00
+Physiotherapy Revenue,2026-10,83460.00
+Kinesiology and Active Rehab Revenue,2025-11,9200.00
+Kinesiology and Active Rehab Revenue,2025-12,7912.00
+Kinesiology and Active Rehab Revenue,2026-01,9936.00
+Kinesiology and Active Rehab Revenue,2026-02,9384.00
+Kinesiology and Active Rehab Revenue,2026-03,9752.00
+Kinesiology and Active Rehab Revenue,2026-04,9200.00
+Kinesiology and Active Rehab Revenue,2026-05,9476.00
+Kinesiology and Active Rehab Revenue,2026-06,8924.00
+Kinesiology and Active Rehab Revenue,2026-07,8648.00
+Kinesiology and Active Rehab Revenue,2026-08,8096.00
+Kinesiology and Active Rehab Revenue,2026-09,9292.00
+Kinesiology and Active Rehab Revenue,2026-10,9844.00
+Product Sales,2025-11,3100.00
+Product Sales,2025-12,2666.00
+Product Sales,2026-01,3348.00
+Product Sales,2026-02,3162.00
+Product Sales,2026-03,3286.00
+Product Sales,2026-04,3100.00
+Product Sales,2026-05,3193.00
+Product Sales,2026-06,3007.00
+Product Sales,2026-07,2914.00
+Product Sales,2026-08,2728.00
+Product Sales,2026-09,3131.00
+Product Sales,2026-10,3317.00
+Discounts and Refunds,2025-11,-450.00
+Discounts and Refunds,2025-12,-450.00
+Discounts and Refunds,2026-01,-450.00
+Discounts and Refunds,2026-02,-450.00
+Discounts and Refunds,2026-03,-450.00
+Discounts and Refunds,2026-04,-450.00
+Discounts and Refunds,2026-05,-450.00
+Discounts and Refunds,2026-06,-450.00
+Discounts and Refunds,2026-07,-450.00
+Discounts and Refunds,2026-08,-450.00
+Discounts and Refunds,2026-09,-450.00
+Discounts and Refunds,2026-10,-450.00
+Contract Physiotherapists,2025-11,18500.00
+Contract Physiotherapists,2025-12,15910.00
+Contract Physiotherapists,2026-01,19980.00
+Contract Physiotherapists,2026-02,18870.00
+Contract Physiotherapists,2026-03,19610.00
+Contract Physiotherapists,2026-04,18500.00
+Contract Physiotherapists,2026-05,19055.00
+Contract Physiotherapists,2026-06,17945.00
+Contract Physiotherapists,2026-07,17390.00
+Contract Physiotherapists,2026-08,16280.00
+Contract Physiotherapists,2026-09,18685.00
+Contract Physiotherapists,2026-10,19795.00
+Product Cost,2025-11,1650.00
+Product Cost,2025-12,1419.00
+Product Cost,2026-01,1782.00
+Product Cost,2026-02,1683.00
+Product Cost,2026-03,1749.00
+Product Cost,2026-04,1650.00
+Product Cost,2026-05,1699.50
+Product Cost,2026-06,1600.50
+Product Cost,2026-07,1551.00
+Product Cost,2026-08,1452.00
+Product Cost,2026-09,1666.50
+Product Cost,2026-10,1765.50
+Merchant and Payment Processing Fees,2025-11,1900.00
+Merchant and Payment Processing Fees,2025-12,1634.00
+Merchant and Payment Processing Fees,2026-01,2052.00
+Merchant and Payment Processing Fees,2026-02,1938.00
+Merchant and Payment Processing Fees,2026-03,2014.00
+Merchant and Payment Processing Fees,2026-04,1900.00
+Merchant and Payment Processing Fees,2026-05,1957.00
+Merchant and Payment Processing Fees,2026-06,1843.00
+Merchant and Payment Processing Fees,2026-07,1786.00
+Merchant and Payment Processing Fees,2026-08,1672.00
+Merchant and Payment Processing Fees,2026-09,1919.00
+Merchant and Payment Processing Fees,2026-10,2033.00
+Wages and Salaries,2025-11,34500.00
+Wages and Salaries,2025-12,34500.00
+Wages and Salaries,2026-01,34500.00
+Wages and Salaries,2026-02,34500.00
+Wages and Salaries,2026-03,34500.00
+Wages and Salaries,2026-04,34500.00
+Wages and Salaries,2026-05,34500.00
+Wages and Salaries,2026-06,34500.00
+Wages and Salaries,2026-07,34500.00
+Wages and Salaries,2026-08,34500.00
+Wages and Salaries,2026-09,34500.00
+Wages and Salaries,2026-10,34500.00
+Employer CPP and EI,2025-11,2350.00
+Employer CPP and EI,2025-12,2350.00
+Employer CPP and EI,2026-01,2350.00
+Employer CPP and EI,2026-02,2350.00
+Employer CPP and EI,2026-03,2350.00
+Employer CPP and EI,2026-04,2350.00
+Employer CPP and EI,2026-05,2350.00
+Employer CPP and EI,2026-06,2350.00
+Employer CPP and EI,2026-07,2350.00
+Employer CPP and EI,2026-08,2350.00
+Employer CPP and EI,2026-09,2350.00
+Employer CPP and EI,2026-10,2350.00
+Employee Benefits,2025-11,1850.00
+Employee Benefits,2025-12,1850.00
+Employee Benefits,2026-01,1850.00
+Employee Benefits,2026-02,1850.00
+Employee Benefits,2026-03,1850.00
+Employee Benefits,2026-04,1850.00
+Employee Benefits,2026-05,1850.00
+Employee Benefits,2026-06,1850.00
+Employee Benefits,2026-07,1850.00
+Employee Benefits,2026-08,1850.00
+Employee Benefits,2026-09,1850.00
+Employee Benefits,2026-10,1850.00
+WSIB Premiums,2025-11,620.00
+WSIB Premiums,2025-12,620.00
+WSIB Premiums,2026-01,620.00
+WSIB Premiums,2026-02,620.00
+WSIB Premiums,2026-03,620.00
+WSIB Premiums,2026-04,620.00
+WSIB Premiums,2026-05,620.00
+WSIB Premiums,2026-06,620.00
+WSIB Premiums,2026-07,620.00
+WSIB Premiums,2026-08,620.00
+WSIB Premiums,2026-09,620.00
+WSIB Premiums,2026-10,620.00
+Accounting and Legal Fees,2025-11,1250.00
+Accounting and Legal Fees,2025-12,1250.00
+Accounting and Legal Fees,2026-01,1250.00
+Accounting and Legal Fees,2026-02,1250.00
+Accounting and Legal Fees,2026-03,1250.00
+Accounting and Legal Fees,2026-04,1250.00
+Accounting and Legal Fees,2026-05,1250.00
+Accounting and Legal Fees,2026-06,1250.00
+Accounting and Legal Fees,2026-07,1250.00
+Accounting and Legal Fees,2026-08,1250.00
+Accounting and Legal Fees,2026-09,1250.00
+Accounting and Legal Fees,2026-10,1250.00
+Advertising and Marketing,2025-11,2000.00
+Advertising and Marketing,2025-12,2000.00
+Advertising and Marketing,2026-01,2000.00
+Advertising and Marketing,2026-02,2000.00
+Advertising and Marketing,2026-03,2000.00
+Advertising and Marketing,2026-04,2000.00
+Advertising and Marketing,2026-05,2000.00
+Advertising and Marketing,2026-06,2000.00
+Advertising and Marketing,2026-07,2000.00
+Advertising and Marketing,2026-08,2000.00
+Advertising and Marketing,2026-09,2000.00
+Advertising and Marketing,2026-10,2000.00
+Bank Charges,2025-11,85.00
+Bank Charges,2025-12,85.00
+Bank Charges,2026-01,85.00
+Bank Charges,2026-02,85.00
+Bank Charges,2026-03,85.00
+Bank Charges,2026-04,85.00
+Bank Charges,2026-05,85.00
+Bank Charges,2026-06,85.00
+Bank Charges,2026-07,85.00
+Bank Charges,2026-08,85.00
+Bank Charges,2026-09,85.00
+Bank Charges,2026-10,85.00
+Clinical Supplies,2025-11,1200.00
+Clinical Supplies,2025-12,1032.00
+Clinical Supplies,2026-01,1296.00
+Clinical Supplies,2026-02,1224.00
+Clinical Supplies,2026-03,1272.00
+Clinical Supplies,2026-04,1200.00
+Clinical Supplies,2026-05,1236.00
+Clinical Supplies,2026-06,1164.00
+Clinical Supplies,2026-07,1128.00
+Clinical Supplies,2026-08,1056.00
+Clinical Supplies,2026-09,1212.00
+Clinical Supplies,2026-10,1284.00
+Dues and Subscriptions,2025-11,300.00
+Dues and Subscriptions,2025-12,300.00
+Dues and Subscriptions,2026-01,300.00
+Dues and Subscriptions,2026-02,300.00
+Dues and Subscriptions,2026-03,300.00
+Dues and Subscriptions,2026-04,300.00
+Dues and Subscriptions,2026-05,300.00
+Dues and Subscriptions,2026-06,300.00
+Dues and Subscriptions,2026-07,300.00
+Dues and Subscriptions,2026-08,300.00
+Dues and Subscriptions,2026-09,300.00
+Dues and Subscriptions,2026-10,300.00
+Insurance,2025-11,650.00
+Insurance,2025-12,650.00
+Insurance,2026-01,650.00
+Insurance,2026-02,650.00
+Insurance,2026-03,650.00
+Insurance,2026-04,650.00
+Insurance,2026-05,650.00
+Insurance,2026-06,650.00
+Insurance,2026-07,650.00
+Insurance,2026-08,650.00
+Insurance,2026-09,650.00
+Insurance,2026-10,650.00
+Interest Expense,2025-11,310.00
+Interest Expense,2025-12,310.00
+Interest Expense,2026-01,310.00
+Interest Expense,2026-02,310.00
+Interest Expense,2026-03,310.00
+Interest Expense,2026-04,310.00
+Interest Expense,2026-05,310.00
+Interest Expense,2026-06,310.00
+Interest Expense,2026-07,310.00
+Interest Expense,2026-08,310.00
+Interest Expense,2026-09,310.00
+Interest Expense,2026-10,310.00
+Office Supplies,2025-11,280.00
+Office Supplies,2025-12,280.00
+Office Supplies,2026-01,280.00
+Office Supplies,2026-02,280.00
+Office Supplies,2026-03,280.00
+Office Supplies,2026-04,280.00
+Office Supplies,2026-05,280.00
+Office Supplies,2026-06,280.00
+Office Supplies,2026-07,280.00
+Office Supplies,2026-08,280.00
+Office Supplies,2026-09,280.00
+Office Supplies,2026-10,280.00
+Rent,2025-11,9500.00
+Rent,2025-12,9500.00
+Rent,2026-01,9500.00
+Rent,2026-02,9500.00
+Rent,2026-03,9500.00
+Rent,2026-04,9500.00
+Rent,2026-05,9500.00
+Rent,2026-06,9500.00
+Rent,2026-07,9500.00
+Rent,2026-08,9500.00
+Rent,2026-09,9500.00
+Rent,2026-10,9500.00
+Repairs and Maintenance,2025-11,400.00
+Repairs and Maintenance,2025-12,400.00
+Repairs and Maintenance,2026-01,400.00
+Repairs and Maintenance,2026-02,400.00
+Repairs and Maintenance,2026-03,400.00
+Repairs and Maintenance,2026-04,400.00
+Repairs and Maintenance,2026-05,400.00
+Repairs and Maintenance,2026-06,400.00
+Repairs and Maintenance,2026-07,400.00
+Repairs and Maintenance,2026-08,400.00
+Repairs and Maintenance,2026-09,400.00
+Repairs and Maintenance,2026-10,400.00
+Software and Subscriptions,2025-11,860.00
+Software and Subscriptions,2025-12,860.00
+Software and Subscriptions,2026-01,860.00
+Software and Subscriptions,2026-02,860.00
+Software and Subscriptions,2026-03,860.00
+Software and Subscriptions,2026-04,860.00
+Software and Subscriptions,2026-05,860.00
+Software and Subscriptions,2026-06,860.00
+Software and Subscriptions,2026-07,860.00
+Software and Subscriptions,2026-08,860.00
+Software and Subscriptions,2026-09,860.00
+Software and Subscriptions,2026-10,860.00
+Telephone and Internet,2025-11,420.00
+Telephone and Internet,2025-12,420.00
+Telephone and Internet,2026-01,420.00
+Telephone and Internet,2026-02,420.00
+Telephone and Internet,2026-03,420.00
+Telephone and Internet,2026-04,420.00
+Telephone and Internet,2026-05,420.00
+Telephone and Internet,2026-06,420.00
+Telephone and Internet,2026-07,420.00
+Telephone and Internet,2026-08,420.00
+Telephone and Internet,2026-09,420.00
+Telephone and Internet,2026-10,420.00
+Training and Development,2025-11,450.00
+Training and Development,2025-12,450.00
+Training and Development,2026-01,450.00
+Training and Development,2026-02,450.00
+Training and Development,2026-03,450.00
+Training and Development,2026-04,450.00
+Training and Development,2026-05,450.00
+Training and Development,2026-06,450.00
+Training and Development,2026-07,450.00
+Training and Development,2026-08,450.00
+Training and Development,2026-09,450.00
+Training and Development,2026-10,450.00
+Utilities,2025-11,600.00
+Utilities,2025-12,600.00
+Utilities,2026-01,600.00
+Utilities,2026-02,600.00
+Utilities,2026-03,600.00
+Utilities,2026-04,600.00
+Utilities,2026-05,600.00
+Utilities,2026-06,600.00
+Utilities,2026-07,600.00
+Utilities,2026-08,600.00
+Utilities,2026-09,600.00
+Utilities,2026-10,600.00
+Interest Income,2025-11,60.00
+Interest Income,2025-12,60.00
+Interest Income,2026-01,60.00
+Interest Income,2026-02,60.00
+Interest Income,2026-03,60.00
+Interest Income,2026-04,60.00
+Interest Income,2026-05,60.00
+Interest Income,2026-06,60.00
+Interest Income,2026-07,60.00
+Interest Income,2026-08,60.00
+Interest Income,2026-09,60.00
+Interest Income,2026-10,60.00
+Amortization Expense,2025-11,1450.00
+Amortization Expense,2025-12,1450.00
+Amortization Expense,2026-01,1450.00
+Amortization Expense,2026-02,1450.00
+Amortization Expense,2026-03,1450.00
+Amortization Expense,2026-04,1450.00
+Amortization Expense,2026-05,1450.00
+Amortization Expense,2026-06,1450.00
+Amortization Expense,2026-07,1450.00
+Amortization Expense,2026-08,1450.00
+Amortization Expense,2026-09,1450.00
+Amortization Expense,2026-10,1450.00

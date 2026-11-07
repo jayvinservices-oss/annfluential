@@ -1,0 +1,65 @@
+Account Name,Type,Detail Type,Description
+Operating Chequing,Bank,Chequing,Main business chequing account. Rename to bank name and last 4 digits.
+Savings,Bank,Savings,Business savings or HST reserve account.
+Petty Cash,Bank,Cash on hand,Cash float. Keep small and reconcile monthly.
+Accounts Receivable,Accounts receivable (A/R),Accounts Receivable (A/R),Amounts owed by customers. Created by QuickBooks; map rather than import if it already exists.
+Undeposited Funds,Other Current Assets,Undeposited Funds,Customer payments received but not yet deposited. Created by QuickBooks.
+Prepaid Expenses,Other Current Assets,Prepaid Expenses,"Insurance, software and rent paid in advance."
+HST Receivable (ITCs),Other Current Assets,Other Current Assets,"Input tax credits claimable. Use only if not using the QuickBooks GST/HST centre, which nets ITCs inside GST/HST Payable."
+Employee Advances,Other Current Assets,Employee Cash Advances,"Advances to staff, cleared through payroll or expense claims."
+Computer Equipment,Fixed Assets,Machinery & Equipment,Computers and hardware. CCA class 50.
+Furniture and Equipment,Fixed Assets,Furniture & Fixtures,Furniture and general equipment. CCA class 8.
+Leasehold Improvements,Fixed Assets,Leasehold Improvements,Improvements to leased premises. CCA class 13.
+Accumulated Amortization,Fixed Assets,Accumulated Depreciation,Accumulated amortization on all fixed assets.
+Accounts Payable,Accounts payable (A/P),Accounts Payable (A/P),Amounts owed to suppliers. Created by QuickBooks; map rather than import if it already exists.
+Business Credit Card,Credit Card,Credit Card,Rename to card issuer and last 4 digits. One account per card.
+GST/HST Payable,Other Current Liabilities,GST/HST Payable,"HST collected less ITCs, owed to CRA. QuickBooks creates this when the GST/HST centre is set up; do not duplicate."
+CPP Payable,Other Current Liabilities,Payroll Liabilities,"Employee and employer CPP and CPP2 withheld, due to CRA with the payroll remittance."
+EI Payable,Other Current Liabilities,Payroll Liabilities,"Employee and employer EI withheld, due to CRA with the payroll remittance."
+Income Tax Withheld Payable,Other Current Liabilities,Payroll Liabilities,"Federal and Ontario income tax withheld from employees, due to CRA."
+EHT Payable,Other Current Liabilities,Payroll Liabilities,Ontario Employer Health Tax owed above the exemption threshold.
+WSIB Payable,Other Current Liabilities,Payroll Liabilities,WSIB premiums owed.
+Vacation Pay Payable,Other Current Liabilities,Payroll Liabilities,Accrued vacation pay owed to staff.
+Accrued Liabilities,Other Current Liabilities,Other Current Liabilities,Month-end and year-end accruals.
+Line of Credit,Other Current Liabilities,Line of Credit,Bank operating line of credit.
+Corporate Income Tax Payable,Other Current Liabilities,Current Tax Liability,T2 federal and Ontario corporate tax owed.
+Deferred Revenue,Other Current Liabilities,Other Current Liabilities,Customer deposits and prepaid packages not yet earned.
+Due to Shareholder,Long Term Liabilities,Shareholder Notes Payable,Shareholder loan account. Track personal expenses paid and repayments.
+Bank Loan,Long Term Liabilities,Notes Payable,Term loan or CEBA-type loan. Split current portion at year end.
+Share Capital,Equity,Common Stock,Common shares issued.
+Retained Earnings,Equity,Retained Earnings,Accumulated profits. Created by QuickBooks.
+Dividends Paid,Equity,Owner's Equity,Dividends declared to shareholders (T5 reportable).
+Opening Balance Equity,Equity,Opening Balance Equity,Created by QuickBooks. Should be zero after setup.
+Service Revenue,Income,Service/Fee Income,Fees for services. HST charged where applicable.
+Product Sales,Income,Sales of Product Income,Sales of goods.
+Discounts and Refunds,Income,Discounts/Refunds Given,Discounts and refunds given to customers.
+Subcontractors - Cost of Sales,Cost of Goods Sold,Cost of labour - COS,Subcontracted labour sold to customers. Construction services are T5018 reportable.
+Materials and Supplies - Cost of Sales,Cost of Goods Sold,Supplies & Materials - COGS,Materials used directly in jobs or products.
+Merchant and Payment Processing Fees,Cost of Goods Sold,Other Costs of Services - COS,"Stripe, Square, Moneris and similar fees."
+Wages and Salaries,Expenses,Payroll Expenses,Gross pay to employees (T4 reportable).
+Employer CPP and EI,Expenses,Payroll Expenses,"Employer share of CPP, CPP2 and EI."
+Employer Health Tax,Expenses,Taxes Paid,Ontario EHT on payroll above the exemption.
+WSIB Premiums,Expenses,Payroll Expenses,Workplace Safety and Insurance Board premiums.
+Employee Benefits,Expenses,Payroll Expenses,Group health and dental premiums. Taxable portions go on the T4.
+Contractors and Professional Services,Expenses,Legal & Professional Fees,Non-employee contractors. Review for T4A reporting at year end.
+Accounting and Legal Fees,Expenses,Legal & Professional Fees,"Bookkeeping, accounting, legal."
+Advertising and Marketing,Expenses,Advertising/Promotional,"Ads, website, printing, sponsorships."
+Bank Charges,Expenses,Bank Charges,Monthly bank fees and service charges.
+Dues and Subscriptions,Expenses,Dues & Subscriptions,Professional dues and memberships.
+Software and Subscriptions,Expenses,Dues & Subscriptions,"QuickBooks, Microsoft 365, Google Workspace, practice software, AI tools."
+Insurance,Expenses,Insurance,"General liability, professional liability, property."
+Interest Expense,Expenses,Interest Paid,"Interest on loans, line of credit and cards."
+Meals and Entertainment,Expenses,Entertainment Meals,Client meals. 50% deductible for tax.
+Office Supplies,Expenses,Office/General Administrative Expenses,"Stationery, small items under the capitalisation limit."
+Rent,Expenses,Rent or Lease of Buildings,Premises rent and common area costs.
+Repairs and Maintenance,Expenses,Repair & Maintenance,Repairs to premises and equipment.
+Telephone and Internet,Expenses,Utilities,"Phone, mobile and internet."
+Utilities,Expenses,Utilities,"Hydro, gas, water."
+Training and Development,Expenses,Other Business Expenses,"Courses, continuing education, conferences."
+Travel,Expenses,Travel,"Transit, flights, hotels, parking."
+Vehicle Expenses,Expenses,Auto,"Fuel, repairs, insurance for business vehicles. Keep a mileage log."
+Interest Income,Other Income,Interest Earned,Bank interest (T5 slips may be issued to the business).
+Government Assistance,Other Income,Other Miscellaneous Income,Wage subsidies and grants not tied to a specific cost.
+Amortization Expense,Other Expense,Depreciation,Book amortization of fixed assets.
+Foreign Exchange Gain or Loss,Other Expense,Exchange Gain or Loss,Realised and unrealised FX on USD accounts.
+Penalties and Interest - CRA,Other Expense,Penalties & Settlements,Non-deductible CRA penalties and interest.

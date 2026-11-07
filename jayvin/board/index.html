@@ -1,0 +1,137 @@
+<title>Jayvin Launch Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a launch ledger. Progress strip on top, then one row per step grouped by stage; tap a row to update it. */
+:root{
+  --paper:#f7f8f5; --card:#ffffff; --ink:#18231f; --muted:#55625c; --line:#d3dbd5; --ledger:#1d3b36; --band:#e7ece7;
+  --done:#2f6b4f; --doing:#9a5b1c; --blocked:#a3302a; --todo:#7d8a84;
+  --display:"Source Serif 4",Georgia,serif; --body:"Public Sans",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121816;--card:#18211d;--ink:#e6ebe7;--muted:#a3b0a9;--line:#2c3833;--ledger:#8fc2b2;--band:#1b2421;--done:#7fc3a0;--doing:#e0a868;--blocked:#ef8a83;--todo:#8a978f;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121816;--card:#18211d;--ink:#e6ebe7;--muted:#a3b0a9;--line:#2c3833;--ledger:#8fc2b2;--band:#1b2421;--done:#7fc3a0;--doing:#e0a868;--blocked:#ef8a83;--todo:#8a978f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 15px/1.5 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:980px;margin:0 auto;display:grid;gap:18px}
+h1{font:600 28px/1.15 var(--display);margin:0;text-wrap:balance}
+h2{font:600 18px/1.2 var(--display);margin:8px 0 0}
+.sub{color:var(--muted);font-size:13px}
+.prog{display:grid;gap:8px}
+.bar{height:10px;border-radius:5px;background:var(--band);overflow:hidden;display:flex}
+.bar span{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.legend b{font:500 14px var(--mono);color:var(--ink)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--ledger);background:var(--band)}
+.group{display:grid;gap:0;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;padding:12px 14px;border-top:1px solid var(--line);cursor:pointer;align-items:start}
+.row:first-child{border-top:0}
+.row:hover{background:var(--band)}
+.dot{width:12px;height:12px;border-radius:50%;margin-top:4px;background:var(--todo)}
+.dot.done{background:var(--done)}.dot.doing{background:var(--doing)}.dot.blocked{background:var(--blocked)}
+.t{font-weight:600;overflow-wrap:anywhere}.row.done .t{color:var(--muted);text-decoration:line-through}
+.n{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.who{font:500 12px var(--mono);color:var(--muted);white-space:nowrap}
+.ed{display:grid;gap:10px;padding:12px 14px;background:var(--band);border-top:1px solid var(--line)}
+.ed .opts{display:flex;flex-wrap:wrap;gap:8px}
+.ed textarea{width:100%;min-height:64px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px}
+.ed button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+.ed button.primary{background:var(--ledger);border-color:var(--ledger);color:var(--paper);font-weight:600}
+.ed button[aria-pressed="true"]{border-color:var(--ledger);outline:2px solid var(--ledger)}
+a{color:var(--ledger)}
+.links{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px}
+.empty{padding:20px;color:var(--muted)}
+button:focus-visible,.row:focus-visible{outline:2px solid var(--ledger);outline-offset:2px}
+@media (max-width:560px){.row{grid-template-columns:auto minmax(0,1fr)}.who{grid-column:2}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Jayvin Launch Board</h1>
+    <div class="sub" id="sync">Loading the launch steps...</div>
+  </header>
+
+  <div class="prog">
+    <div class="bar" id="bar" aria-hidden="true"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="links">
+    <a href="https://claude.ai/artifact/V4JbhgzrRa7mm2ycYE2s5E" target="_blank" rel="noopener">Website preview</a>
+    <a href="https://claude.ai/artifact/C2QtujxqG8jfP4ZciVZnRp" target="_blank" rel="noopener">Lead tracker</a>
+    <a href="https://drive.google.com/drive/folders/16s3GM97i6AaHEijZpu4aT9Su_RJKQig9" target="_blank" rel="noopener">Website files (Drive)</a>
+    <a href="https://drive.google.com/drive/folders/1uE3TVNgngr-zfCpoxNNBS5RjZirqtICf" target="_blank" rel="noopener">Drive Drop</a>
+  </div>
+
+  <div class="filters" id="filters" aria-label="Show steps for"></div>
+  <div id="list"><div class="group"><div class="empty">The launch steps appear here once the board connects. Open this page signed in to claude.ai.</div></div></div>
+  <p class="sub">Tap a step to change its status or leave a note. Claude reads this board before each work session.</p>
+</div>
+
+<script>
+const STAGES=["Email","Website","Bookings","LinkedIn","Business"];
+const STATUS={todo:"To do",doing:"In progress",blocked:"Blocked",done:"Done"};
+const WHO=["All","Ann","Co-work","Claude"];
+let db=null,items=[],who="All",open=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function renderFilters(){
+  $("filters").innerHTML=WHO.map(w=>`<button class="chip" type="button" data-w="${w}" aria-pressed="${who===w}">${w}</button>`).join("");
+}
+$("filters").addEventListener("click",e=>{const b=e.target.closest(".chip");if(b){who=b.dataset.w;render();}});
+
+function render(){
+  renderFilters();
+  const c={todo:0,doing:0,blocked:0,done:0};items.forEach(i=>c[i.status||"todo"]++);
+  const n=items.length||1;
+  $("bar").innerHTML=["done","doing","blocked","todo"].map(k=>`<span style="width:${c[k]/n*100}%;background:var(--${k})"></span>`).join("");
+  $("legend").innerHTML=["done","doing","blocked","todo"].map(k=>`<span>${STATUS[k]} <b>${c[k]}</b></span>`).join("");
+  if(!items.length)return;
+  const vis=items.filter(i=>who==="All"||i.owner===who).sort((a,b)=>(a.order||0)-(b.order||0));
+  $("list").innerHTML=STAGES.map(s=>{
+    const rows=vis.filter(i=>i.stage===s);if(!rows.length)return"";
+    return `<h2>${s}</h2><div class="group">${rows.map(i=>rowHTML(i)).join("")}</div>`;
+  }).join("")||`<div class="group"><div class="empty">Nothing for ${esc(who)} right now.</div></div>`;
+}
+function rowHTML(i){
+  const st=i.status||"todo";
+  let h=`<div class="row ${st}" tabindex="0" role="button" data-id="${esc(i.id)}"><span class="dot ${st}"></span>
+    <div><div class="t">${esc(i.title)}</div>${i.note?`<div class="n">${esc(i.note)}</div>`:""}${i.link?`<div class="n"><a href="${esc(i.link)}" target="_blank" rel="noopener">Open</a></div>`:""}</div>
+    <div class="who">${esc(i.owner)} · ${STATUS[st]}</div></div>`;
+  if(open===i.id){
+    h+=`<div class="ed"><div class="opts">${Object.entries(STATUS).map(([k,v])=>`<button type="button" data-st="${k}" aria-pressed="${st===k}">${v}</button>`).join("")}</div>
+      <label class="n" for="ed-note">Note (what happened, what is needed)</label><textarea id="ed-note">${esc(i.note)}</textarea>
+      <div class="opts"><button class="primary" type="button" data-save="1">Save</button><button type="button" data-close="1">Close</button><span class="n" id="ed-msg" role="status"></span></div></div>`;
+  }
+  return h;
+}
+let pending=null;
+$("list").addEventListener("click",async e=>{
+  const st=e.target.closest("[data-st]");
+  if(st){pending=st.dataset.st;st.parentElement.querySelectorAll("[data-st]").forEach(b=>b.setAttribute("aria-pressed",b===st));return;}
+  if(e.target.closest("[data-close]")){open=null;render();return;}
+  if(e.target.closest("[data-save]")){
+    const i=items.find(x=>x.id===open);const msg=$("ed-msg");
+    if(!db){msg.textContent="Saving needs the board connection.";return;}
+    try{await db.collection("steps").doc(open).update({status:pending||i.status||"todo",note:$("ed-note").value.trim(),updated:new Date().toISOString().slice(0,10)});msg.textContent="Saved.";open=null;pending=null;}
+    catch(err){msg.textContent="Not saved: "+(err&&err.message||"try again");}
+    return;
+  }
+  const r=e.target.closest(".row");if(r&&!e.target.closest("a")){open=open===r.dataset.id?null:r.dataset.id;pending=null;render();}
+});
+$("list").addEventListener("keydown",e=>{if(e.key==="Enter"){const r=e.target.closest(".row");if(r){open=r.dataset.id;render();}}});
+
+(async()=>{
+  const t=setTimeout(()=>{$("sync").textContent="The board did not answer. Reopen the page to try again.";},10000);
+  db=await window.claude?.use?.("db");
+  if(!db){clearTimeout(t);$("sync").textContent="Board data unavailable here. Open this page signed in to claude.ai.";render();return;}
+  db.collection("steps").onSnapshot(s=>{
+    clearTimeout(t);items=s.docs.map(d=>({id:d.id,...d.data()}));
+    $("sync").textContent=`${items.filter(i=>i.status==="done").length} of ${items.length} steps done · updated ${new Date().toLocaleTimeString("en-CA",{hour:"numeric",minute:"2-digit"})}`;
+    render();
+  },e=>{clearTimeout(t);$("sync").textContent="Could not load: "+(e.message||e.code);});
+})();
+</script>

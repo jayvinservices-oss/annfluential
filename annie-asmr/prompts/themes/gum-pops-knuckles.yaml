@@ -1,0 +1,32 @@
+id: gum-pops-knuckles
+name: Fast gum popping, knuckle cracking and close whispers (viewer request)
+season: regular
+uses_hands: true
+# Gum pops and knuckle cracks must be REAL recordings (audio/sfx/). Generated video only shows them.
+setting: >-
+  Seated very close to the camera, hands raised near her chin, a soft knit sleeve just visible,
+  a cosy dim room with warm fairy lights blurred behind.
+variation_template: >-
+  Gum: {gum}. Lip gloss: {gloss}. Nails painted {nail_colour}. Background light: {palette}.
+variation_pools:
+  gum: [pink bubble gum, watermelon gum, mint gum, grape bubble gum]
+  gloss: [nude-pink gloss, clear high-shine gloss, rose-brown gloss]
+  nail_colour: [milky nude, glazed chrome, cocoa brown, soft pink, deep red]
+  palette: [warm amber fairy lights, soft pink lamp light, cool blue evening light]
+sounds: [fast gum popping, gum snapping, knuckle cracking, finger cracking, close whispers]
+shots:
+  gum-pop:
+    action: She chews pink bubble gum with her mouth relaxed, the jaw moving up and down steadily, lips parting slightly on each chew to show a little pink gum, then a small gum pop. Her lips never pucker or pout.
+    uses_hands: false
+  knuckle-crack:
+    action: Both hands come close to the camera, long nails, she slowly presses and cracks her knuckles one finger at a time.
+  finger-stretch:
+    action: She interlaces her fingers and stretches them forward toward the camera, then flexes each finger slowly.
+  gum-and-hands:
+    action: She pops gum with glossy lips while her hands near her chin crack a knuckle, both in frame.
+  whisper-close:
+    action: She leans slightly closer, glossy lips moving softly as she whispers, gum held still.
+    uses_hands: false
+chapter_ideas: [Fast gum popping, Knuckle cracking, Gum pops & knuckle cracks, Finger cracking & stretches, Slow pops & close whispers]
+title_patterns:
+  - "ASMR Fast Gum Popping & Knuckle Cracking | Up Close Whispers"

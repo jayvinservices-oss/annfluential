@@ -1,0 +1,25 @@
+# Ace 1 of 2 (cat research 5 Nov: "ASMR ... with My Cat (Purring)" 6,400-7,400 views a day).
+# Visuals from Ace's real photos/videos; sound = Ace's real purring (audio/sfx/cat-purr-01.wav).
+slug: ace-petting-purr-01
+priority: 1
+clip_speed: 0.6   # smooth slow motion (Ann: slow ASMR)
+theme: ace-cat
+title: "ASMR Petting My Cat Until He Purrs | Real Cat Purring for Sleep | No Talking | AI ASMR"
+title_terms_ok: [petting, real, cat, purrs]
+description: >-
+  Meet Ace, my real cat, with his real purring. Slow petting with long nails, chin scratches and kneading,
+  until he purrs himself to sleep. No talking, just Ace.
+made_by: 2026-11-05
+publish_after: 2026-11-07
+variation:
+  blanket: burgundy velvet throw
+  weather: soft snowfall
+  nail_colour: milky nude
+objects: [Ace the cat, burgundy velvet throw, long nails]
+sounds: [cat purring, soft petting strokes, blanket rustle]
+tags: [cat purring asmr, asmr petting cat, cat purring for sleep, asmr no talking, real cat purring]
+segments:
+  - {id: pet, chapter: Petting Ace until he purrs, minutes: 15, shots: [pet-ace, chin-scratch], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: chin, chapter: Chin scratches & purring, minutes: 12, shots: [chin-scratch, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: knead, chapter: Blanket cuddles & purring, minutes: 12, shots: [ace-kneading, pet-ace], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: sleep, chapter: Resting by the snowy window, purring for sleep, minutes: 21, shots: [ace-curled, rain-window], sound_bed: {file: audio/sfx/cat-purr-01.wav, gain_db: -3}}

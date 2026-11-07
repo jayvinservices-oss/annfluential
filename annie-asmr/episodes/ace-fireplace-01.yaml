@@ -1,0 +1,25 @@
+# Ace series (Ann, 5 Nov: focus on Ace in different settings; real purring, nothing to lip-sync).
+slug: ace-fireplace-01
+priority: 3
+clip_speed: 0.6
+ace_location: fireplace
+theme: ace-cat
+setting: >-
+  A cosy living room at night beside a glowing fireplace, a cream knitted blanket on the sofa, warm firelight.
+title: "Real Cat Purring by the Fire for Sleep | Ace Curled Up & Purring | No Talking | AI ASMR"
+title_terms_ok: [real, cat, fire, ace, curled]
+description: >-
+  Ace, my real cat, purring by the fire on a cosy winter night. His real purr, slow petting with long nails, and a sleepy cat curled up in the firelight. No talking.
+made_by: 2026-11-12
+publish_after: 2026-11-14
+variation:
+  blanket: cream knitted blanket
+  weather: still frosty night
+  nail_colour: milky nude
+objects: [Ace the cat, cream knitted blanket, long nails]
+sounds: [real cat purring, soft petting strokes]
+tags: [cat purring for sleep, cat purring asmr, cozy fireplace cat, real cat purring, asmr no talking]
+segments:
+  - {id: s1, chapter: Petting Ace by the fire, minutes: 15, shots: [pet-ace, chin-scratch], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: s2, chapter: Chin scratches & purring, minutes: 15, shots: [chin-scratch, ace-curled], sound_bed: audio/sfx/cat-purr-01.wav}
+  - {id: s3, chapter: Curled up in the firelight, minutes: 30, shots: [ace-curled, pet-ace], sound_bed: {file: audio/sfx/cat-purr-01.wav, gain_db: -3}}

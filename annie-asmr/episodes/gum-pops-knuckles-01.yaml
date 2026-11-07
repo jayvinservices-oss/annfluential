@@ -1,0 +1,49 @@
+# ON HOLD (Ann, 5 Nov): no more gum; lips do not match the gum sounds. Draft stays private.
+# Next video. Pace: SLOW (about 40% fewer sounds per minute; Ann 5 Nov). From YouTube's concept list: viewers repeatedly ask for fast gum popping + knuckle cracking.
+# Opens straight on the trigger from the title (no talking anywhere: 'No Talking' is the top search phrase, scan 4 Nov); thumbnail = opening shot.
+# Gum pops and knuckle cracks must be real recordings in audio/sfx/.
+slug: gum-pops-knuckles-01
+look: night-mic
+short_x: 0.36   # presenter sits left of centre in the night-mic look
+priority: 99
+theme: gum-pops-knuckles
+title: "ASMR Slow Gum Chewing & Knuckle Cracking for Sleep | No Talking | AI ASMR"
+description: >-
+  Slow gum chewing, soft pops and slow knuckle cracking up close, the triggers you keep asking for.
+  No talking, just slow, sleepy sounds. Use the chapters to jump to your favourite sound.
+made_by: 2026-11-05
+publish_after: null
+variation:
+  gum: pink bubble gum
+  gloss: nude-pink gloss
+  nail_colour: glazed chrome
+  palette: warm amber fairy lights
+objects: [pink bubble gum, glossy lips, long nails]
+sounds: [slow gum chewing, soft gum pops, lip gloss tube opening, knuckle cracking, finger cracking]
+tags: [slow gum chewing asmr, slow asmr, asmr no talking, gum popping asmr, knuckle cracking asmr, gum chewing asmr, fast asmr, mouth sounds asmr]
+segments:
+  - id: pops
+    chapter: Slow gum chewing & pops
+    minutes: 10
+    shots: [gum-pop, gum-and-hands]
+    sound_bed: audio/sfx/gum-chew-slow-01.wav
+  - id: knuckles
+    chapter: Knuckle cracking
+    minutes: 12
+    shots: [knuckle-crack, finger-stretch]
+    sound_bed: audio/sfx/knuckle-crack-slow-01.wav
+  - id: both
+    chapter: Gum chewing & knuckle cracks
+    minutes: 16
+    shots: [gum-and-hands, gum-pop, knuckle-crack]
+    sound_bed: [audio/sfx/gum-chew-slow-01.wav, {file: audio/sfx/knuckle-crack-slow-01.wav, gain_db: -2}, {file: audio/sfx/gloss-and-gum-slow-01.wav, gain_db: -4}]
+  - id: fingers
+    chapter: Finger cracking & stretches
+    minutes: 10
+    shots: [finger-stretch, knuckle-crack]
+    sound_bed: audio/sfx/finger-crack-slow-01.wav
+  - id: whispers
+    chapter: Slowest gum chewing for sleep
+    minutes: 12
+    shots: [gum-pop, gum-and-hands]
+    sound_bed: {file: audio/sfx/gum-chew-slow-01.wav, gain_db: -3}

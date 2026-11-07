@@ -1,0 +1,31 @@
+id: shushing-sleep
+name: Slow shushing, hand movements and blanket sounds (sleep aid)
+season: regular
+uses_hands: true
+# Sleep aid, not roleplay: no "I'll take care of you" persona lines. Shushing, hand movements, fabric sounds.
+setting: >-
+  Very close to the camera in a dim warm room, a thick soft blanket draped near her chin,
+  one small lamp glowing low and blurred behind.
+variation_template: >-
+  Blanket: {blanket}. Lip gloss: {gloss}. Nails painted {nail_colour}. Light: {palette}.
+variation_pools:
+  blanket: [cream chunky knit blanket, grey faux-fur blanket, blush sherpa blanket, oatmeal waffle blanket]
+  gloss: [nude-pink gloss, sheer peach gloss, clear soft-shine gloss]
+  nail_colour: [milky nude, soft lilac, pearl white]
+  palette: [low amber lamp, dim candle glow, soft moonlight blue]
+sounds: [slow shushing, soft hand movements, blanket rustling, fabric brushing, breathy whispers]
+shots:
+  shush:
+    action: Her glossy lips purse softly and she makes a slow gentle shushing sound, very still.
+    uses_hands: false
+  hands-wave:
+    action: Both hands with long nails move slowly and softly toward the camera and away, gentle calming motions.
+  blanket-rustle:
+    action: She slowly gathers and smooths the thick blanket near her chin, fabric folding softly.
+  fabric-brush:
+    action: Her long nails brush slowly across the blanket texture close to the camera.
+  shush-hands:
+    action: She brings one finger near her glossy lips and shushes softly while her other hand moves slowly in front of the camera.
+chapter_ideas: [Slow shushing, Calming hand movements, Blanket rustling, Fabric brushing, Shushing to sleep]
+title_patterns:
+  - "ASMR Slow Shushing & Blanket Sounds for Deep Sleep | Hand Movements"

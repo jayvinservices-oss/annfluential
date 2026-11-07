@@ -1,0 +1,131 @@
+{
+  "name": "singing-wap",
+  "file": "singing-wap.mp4",
+  "width": 1280,
+  "height": 720,
+  "fps": 30.0,
+  "seconds": 223.283084,
+  "has_audio": true,
+  "cuts": 0,
+  "shots": 1,
+  "shot_seconds": {
+    "mean": 223.28,
+    "median": 223.28,
+    "min": 223.28,
+    "max": 223.28
+  },
+  "loudness_lufs": -37.3,
+  "first5_lufs": -50.0,
+  "first5_vs_rest_db": -12.7,
+  "biggest_jump_first15_db": 3.5,
+  "sound_starts_at_s": 2,
+  "brightness": 113.62,
+  "saturation": 38.09,
+  "opening": [
+    {
+      "t": 0,
+      "loudness": -52.1,
+      "motion": 12.47,
+      "cut": false
+    },
+    {
+      "t": 1,
+      "loudness": -52.1,
+      "motion": 7.04,
+      "cut": false
+    },
+    {
+      "t": 2,
+      "loudness": -49.6,
+      "motion": 5.82,
+      "cut": false
+    },
+    {
+      "t": 3,
+      "loudness": -50.0,
+      "motion": 10.28,
+      "cut": false
+    },
+    {
+      "t": 4,
+      "loudness": -48.2,
+      "motion": 4.45,
+      "cut": false
+    },
+    {
+      "t": 5,
+      "loudness": -46.4,
+      "motion": 8.27,
+      "cut": false
+    },
+    {
+      "t": 6,
+      "loudness": -49.9,
+      "motion": 27.34,
+      "cut": false
+    },
+    {
+      "t": 7,
+      "loudness": -48.5,
+      "motion": 8.06,
+      "cut": false
+    },
+    {
+      "t": 8,
+      "loudness": -49.7,
+      "motion": 8.91,
+      "cut": false
+    },
+    {
+      "t": 9,
+      "loudness": -49.1,
+      "motion": 6.77,
+      "cut": false
+    },
+    {
+      "t": 10,
+      "loudness": -49.3,
+      "motion": 7.1,
+      "cut": false
+    },
+    {
+      "t": 11,
+      "loudness": -49.2,
+      "motion": 6.31,
+      "cut": false
+    },
+    {
+      "t": 12,
+      "loudness": -49.4,
+      "motion": 6.49,
+      "cut": false
+    },
+    {
+      "t": 13,
+      "loudness": -48.5,
+      "motion": 2.43,
+      "cut": false
+    },
+    {
+      "t": 14,
+      "loudness": -51.7,
+      "motion": 6.91,
+      "cut": false
+    }
+  ],
+  "shots_detail": [
+    {
+      "start": 0.0,
+      "end": 223.283084,
+      "n": 1,
+      "seconds": 223.28,
+      "ts": "0:00",
+      "brightness": 113.62,
+      "saturation": 38.09,
+      "motion": 5.11,
+      "loudness": -37.3,
+      "frame": "prompts/reference/singing-wap/shot-001-00000s.jpg",
+      "colour": "#8e5a58"
+    }
+  ]
+}

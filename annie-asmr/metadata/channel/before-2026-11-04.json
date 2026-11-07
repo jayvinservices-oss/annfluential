@@ -1,0 +1,64 @@
+{
+  "kind": "youtube#channel",
+  "etag": "o-e5UeDYnWXeDMiRv98ZEiHhvnA",
+  "id": "UCRDoVPUbN6kshI59I7y-F-A",
+  "snippet": {
+    "title": "Annie ASMR",
+    "description": "Welcome to Annie ASMR. \n\nGOAL 1000 lovely subscribers \n\nPlease subscribe to my Channel \n\nFollow my social  Media \n\nInstagram  - @annieasmr01\n\nEmail me: annieasmr01@gmail.com\n\n\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\n\nComment your suggestions on what you would like to see me do next!",
+    "customUrl": "@annieasmr9051",
+    "publishedAt": "2019-09-04T09:57:39Z",
+    "thumbnails": {
+      "default": {
+        "url": "https://yt3.ggpht.com/ytc/AIdro_lV6i_TOb4xJO66TzT4vfcAhpouYm2bGI9R1yYbNRVoog=s88-c-k-c0x00ffffff-no-rj",
+        "width": 88,
+        "height": 88
+      },
+      "medium": {
+        "url": "https://yt3.ggpht.com/ytc/AIdro_lV6i_TOb4xJO66TzT4vfcAhpouYm2bGI9R1yYbNRVoog=s240-c-k-c0x00ffffff-no-rj",
+        "width": 240,
+        "height": 240
+      },
+      "high": {
+        "url": "https://yt3.ggpht.com/ytc/AIdro_lV6i_TOb4xJO66TzT4vfcAhpouYm2bGI9R1yYbNRVoog=s800-c-k-c0x00ffffff-no-rj",
+        "width": 800,
+        "height": 800
+      }
+    },
+    "localized": {
+      "title": "Annie ASMR",
+      "description": "Welcome to Annie ASMR. \n\nGOAL 1000 lovely subscribers \n\nPlease subscribe to my Channel \n\nFollow my social  Media \n\nInstagram  - @annieasmr01\n\nEmail me: annieasmr01@gmail.com\n\n\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\n\nComment your suggestions on what you would like to see me do next!"
+    },
+    "country": "CA"
+  },
+  "contentDetails": {
+    "relatedPlaylists": {
+      "likes": "LL",
+      "uploads": "UURDoVPUbN6kshI59I7y-F-A"
+    }
+  },
+  "statistics": {
+    "viewCount": "126915",
+    "subscriberCount": "1030",
+    "hiddenSubscriberCount": false,
+    "videoCount": "68"
+  },
+  "status": {
+    "privacyStatus": "public",
+    "isLinked": true,
+    "longUploadsStatus": "allowed",
+    "madeForKids": false,
+    "selfDeclaredMadeForKids": false,
+    "isChannelMonetizationEnabled": false
+  },
+  "brandingSettings": {
+    "channel": {
+      "title": "Annie ASMR",
+      "description": "Welcome to Annie ASMR. \n\nGOAL 1000 lovely subscribers \n\nPlease subscribe to my Channel \n\nFollow my social  Media \n\nInstagram  - @annieasmr01\n\nEmail me: annieasmr01@gmail.com\n\n\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\n\nComment your suggestions on what you would like to see me do next!",
+      "unsubscribedTrailer": "tWNzArWkWgs",
+      "country": "CA"
+    },
+    "image": {
+      "bannerExternalUrl": "https://yt3.googleusercontent.com/vBSbN6KjrSW1u19Q1N_IaQqkV8F-oClL3qylILKJ0tFoHC3rb5BIrV6Dc92yv7BeA_stKce1Vw"
+    }
+  }
+}

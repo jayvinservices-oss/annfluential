@@ -1,0 +1,4 @@
+# Ann's yes for each Short, recorded by Claude from the board or chat. Only Shorts listed here with
+# decision: yes can be published by `python -m pipeline publish-short <name>`.
+# <slug>-short1: {decision: yes, publish_at: 2026-12-02T21:00:00-05:00, noted: 2026-12-01}
+{}

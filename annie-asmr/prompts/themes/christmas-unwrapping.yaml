@@ -1,0 +1,30 @@
+id: christmas-unwrapping
+name: Christmas - unwrapping gifts
+season: christmas
+uses_hands: true
+setting: >-
+  A table in front of her chin piled with wrapped Christmas gifts, a softly blurred lit
+  Christmas tree with warm white lights behind her. No snow.
+variation_template: >-
+  Wrapping today: {wrapping}. Ribbons: {ribbon}. Nails painted {nail_colour}.
+variation_pools:
+  wrapping: [brown kraft paper, glossy red paper, gold foil paper, white tissue in gift boxes]
+  ribbon: [red satin ribbon, gold velvet ribbon, twine with pine sprigs, green grosgrain ribbon]
+  nail_colour: [cranberry red chrome, gold glitter, classic red, emerald green, milky white with gold tips]
+sounds: [paper crinkle, tape peeling, ribbon pulling, box tapping, tissue rustle, lid opening]
+shots:
+  pick-gift:
+    action: Long nails pick up a wrapped gift and tap slowly on the paper.
+  pull-ribbon:
+    action: She slowly pulls a satin ribbon loose from a wrapped gift, the bow coming undone.
+  peel-tape:
+    action: Long nails slowly peel the tape off the wrapping paper.
+  unwrap:
+    action: She slowly unwraps the paper from a gift box, paper crinkling in her hands.
+  open-box:
+    action: She lifts the lid of a gift box and folds back white tissue paper.
+  reveal:
+    action: She holds up a small gift close to her glossy lips and smiles softly with closed lips.
+chapter_ideas: [Kraft paper gift tapping, Satin ribbon pulling, Tape peeling & paper crinkles, Tissue paper rustling, Gift box opening]
+title_patterns:
+  - "ASMR Unwrapping Christmas Gifts with Long Nails | {wrapping_short} Crinkles & Whispers"

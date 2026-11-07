@@ -1,0 +1,131 @@
+{
+  "name": "gum-popping-crackling",
+  "file": "gum-popping-crackling.mp4",
+  "width": 1280,
+  "height": 720,
+  "fps": 30.0,
+  "seconds": 1818.377868,
+  "has_audio": true,
+  "cuts": 0,
+  "shots": 1,
+  "shot_seconds": {
+    "mean": 1818.38,
+    "median": 1818.38,
+    "min": 1818.38,
+    "max": 1818.38
+  },
+  "loudness_lufs": -33.9,
+  "first5_lufs": -40.7,
+  "first5_vs_rest_db": -6.8,
+  "biggest_jump_first15_db": 12.7,
+  "sound_starts_at_s": 0,
+  "brightness": 121.7,
+  "saturation": 15.11,
+  "opening": [
+    {
+      "t": 0,
+      "loudness": -33.8,
+      "motion": 8.45,
+      "cut": false
+    },
+    {
+      "t": 1,
+      "loudness": -44.6,
+      "motion": 13.27,
+      "cut": false
+    },
+    {
+      "t": 2,
+      "loudness": -44.3,
+      "motion": 7.43,
+      "cut": false
+    },
+    {
+      "t": 3,
+      "loudness": -44.8,
+      "motion": 7.39,
+      "cut": false
+    },
+    {
+      "t": 4,
+      "loudness": -50.2,
+      "motion": 6.16,
+      "cut": false
+    },
+    {
+      "t": 5,
+      "loudness": -40.1,
+      "motion": 4.25,
+      "cut": false
+    },
+    {
+      "t": 6,
+      "loudness": -41.4,
+      "motion": 8.19,
+      "cut": false
+    },
+    {
+      "t": 7,
+      "loudness": -51.1,
+      "motion": 4.91,
+      "cut": false
+    },
+    {
+      "t": 8,
+      "loudness": -38.4,
+      "motion": 12.13,
+      "cut": false
+    },
+    {
+      "t": 9,
+      "loudness": -47.7,
+      "motion": 8.85,
+      "cut": false
+    },
+    {
+      "t": 10,
+      "loudness": -51.0,
+      "motion": 9.79,
+      "cut": false
+    },
+    {
+      "t": 11,
+      "loudness": -51.4,
+      "motion": 10.31,
+      "cut": false
+    },
+    {
+      "t": 12,
+      "loudness": -50.0,
+      "motion": 3.8,
+      "cut": false
+    },
+    {
+      "t": 13,
+      "loudness": -50.0,
+      "motion": 4.04,
+      "cut": false
+    },
+    {
+      "t": 14,
+      "loudness": -52.9,
+      "motion": 4.25,
+      "cut": false
+    }
+  ],
+  "shots_detail": [
+    {
+      "start": 0.0,
+      "end": 1818.377868,
+      "n": 1,
+      "seconds": 1818.38,
+      "ts": "0:00",
+      "brightness": 121.7,
+      "saturation": 15.11,
+      "motion": 3.02,
+      "loudness": -33.9,
+      "frame": "prompts/reference/gum-popping-crackling/shot-001-00000s.jpg",
+      "colour": "#84796f"
+    }
+  ]
+}

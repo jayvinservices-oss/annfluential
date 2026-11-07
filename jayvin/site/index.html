@@ -1,0 +1,340 @@
+<title>Jayvin Finance</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column like a finance memo, with one wide band for the sample board pack. */
+:root {
+  --paper: #f7f8f5;
+  --ink: #18231f;
+  --muted: #55625c;
+  --ledger: #1d3b36;
+  --band: #e7ece7;
+  --rule-soft: #d3dbd5;
+  --ok: #2f6b4f;
+  --warn: #9a5b1c;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121816; --ink: #e6ebe7; --muted: #a3b0a9; --ledger: #8fc2b2; --band: #1b2421;
+    --rule-soft: #2c3833; --ok: #7fc3a0; --warn: #e0a868; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121816; --ink: #e6ebe7; --muted: #a3b0a9; --ledger: #8fc2b2; --band: #1b2421;
+  --rule-soft: #2c3833; --ok: #7fc3a0; --warn: #e0a868; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.col { max-width: 680px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+a { color: var(--ledger); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ledger); outline-offset: 3px; }
+.eyebrow { font: 500 0.78rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+header.top { padding-block: 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.brand small { display: block; font: 400 0.75rem/1.2 var(--body); color: var(--muted); }
+nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.95rem; }
+nav a { color: var(--ink); text-decoration: none; }
+section { padding-block: 56px; }
+.hero { padding-block: 40px 64px; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.hero-text { display: grid; gap: 22px; min-width: 0; }
+.photo { position: relative; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 8px; overflow: hidden; background: var(--band); display: grid; place-items: center; }
+.photo .initials { font: 600 3.4rem/1 var(--display); color: var(--ledger); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.who { display: grid; gap: 10px; }
+.who figcaption { font-size: 0.95rem; color: var(--muted); }
+.who figcaption b { display: block; color: var(--ink); font-family: var(--display); font-size: 1.1rem; }
+.about-photo { max-width: 220px; }
+@media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .hero .who { max-width: 280px; } }
+.hero p.lede { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+.btn { display: inline-block; background: var(--ledger); color: var(--paper); text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 4px; }
+.stack { display: grid; gap: 18px; }
+.close-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px; margin-top: 28px; }
+.day b { display: block; font: 500 0.85rem/1 var(--mono); color: var(--ledger); margin-bottom: 8px; }
+.day p { color: var(--muted); font-size: 0.97rem; }
+.band { background: var(--band); }
+.sample { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 40px; align-items: start; }
+.sheet { background: var(--paper); border-radius: 6px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,.06); min-width: 0; }
+.sheet .eyebrow { margin-bottom: 14px; display: block; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 7px 8px; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { font: 500 0.75rem/1.2 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+tbody tr:nth-child(odd) td { background: var(--band); }
+.pos { color: var(--ok); } .neg { color: var(--warn); }
+.note { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 30px; }
+.plan { display: grid; gap: 12px; align-content: start; padding: 24px; background: var(--band); border-radius: 6px; }
+.plan .price { font: 600 1.9rem/1 var(--display); }
+.plan .price span { font: 400 0.9rem/1.4 var(--body); color: var(--muted); }
+.plan ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.96rem; display: grid; gap: 6px; }
+.plan.feature { background: var(--ledger); color: var(--paper); }
+.plan.feature ul, .plan.feature .price span, .plan.feature .eyebrow { color: color-mix(in srgb, var(--paper) 78%, transparent); }
+.oneoff { margin-top: 26px; color: var(--muted); font-size: 0.97rem; }
+.deliver { margin: 0; padding-left: 18px; display: grid; gap: 8px; color: var(--muted); }
+.plan.prod p { color: var(--muted); font-size: 0.96rem; }
+h3 { margin: 0; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 26px; }
+dl { margin: 0; display: grid; gap: 22px; }
+dt { font-weight: 600; }
+dd { margin: 6px 0 0; color: var(--muted); }
+.contact { display: grid; gap: 14px; }
+.addr { font: 500 1rem/1.4 var(--mono); }
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 0.9rem; display: grid; gap: 10px; }
+footer nav a { color: var(--muted); }
+.cform { display: grid; gap: 14px; max-width: 560px; }
+.frow { display: grid; gap: 6px; }
+.frow label { font-size: 0.92rem; color: var(--muted); }
+.frow input, .frow textarea { font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 10px 12px; width: 100%; }
+.frow input:focus-visible, .frow textarea:focus-visible { outline: 2px solid var(--ledger); outline-offset: 1px; }
+button.btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+
+@media (max-width: 760px) { .sample { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: no-preference) { .btn { transition: background .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Jayvin<small>AI finance operations · Jayvin Consulting Inc.</small></a>
+    <nav aria-label="Main"><a href="#month">Your month</a><a href="#pricing">Pricing</a><a href="#grants">Grants</a><a href="#cleanup">Catch-up</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Outsourced bookkeeping and fractional CFO support</span>
+      <h1>Full finance support for small organisations. AI does the work, a Chartered Accountant makes the calls.</h1>
+      <p class="lede">We look after the books, reports and grant claims for owner-run businesses and small nonprofits without a finance person on staff. Your books closed by the 10th, every account reconciled, and a monthly report you can act on.</p>
+      <p><a class="btn" href="#contact">Book a 30-minute call</a></p>
+    </div>
+    <!-- EDIT: put your photo in this folder as ann-photo.jpg (portrait, at least 800 x 1000 px). Initials show until it is there. -->
+    <figure class="who" style="margin:0">
+      <div class="photo"><span class="initials" aria-hidden="true">AJ</span><img src="ann-photo.jpg" alt="Ann James, founder of Jayvin" onerror="this.remove()"></div>
+      <figcaption><b>Ann James, MBA</b>Founder and CEO · Internationally qualified Chartered Accountant</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section id="month">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">What a month looks like</span>
+      <h2>A close you can set your calendar by</h2>
+      <p>Working days after month end, on QuickBooks Online.</p>
+    </div>
+    <div class="close-days">
+      <div class="day"><b>Day 1 to 3</b><p>Bank and card transactions categorised and matched. Missing receipts requested in one email, not ten.</p></div>
+      <div class="day"><b>Day 4 to 5</b><p>Every bank, card and loan account reconciled to its statement. Payables and receivables checked.</p></div>
+      <div class="day"><b>Day 6 to 8</b><p>Month closed. Budget against actual, with a plain-language note on anything that moved more than you expected.</p></div>
+      <div class="day"><b>Day 9 to 10</b><p>Board or owner pack sent: results, cash on hand, a three-month cash forecast and restricted funds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap sample">
+    <div class="stack">
+      <span class="eyebrow">Sample page from a board pack</span>
+      <h2>Short enough to read before the meeting</h2>
+      <p>Most boards get a 40-page export and no explanation. You get one page of numbers and three sentences on what they mean.</p>
+      <p class="note">The figures on this page are an invented example, not a client's.</p>
+    </div>
+    <div class="sheet">
+      <span class="eyebrow">Statement of operations · year to date, September · example</span>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Line</th><th>Budget</th><th>Actual</th><th>Variance</th></tr></thead>
+          <tbody>
+            <tr><td>Grants and contributions</td><td>412,000</td><td>398,500</td><td class="neg">(13,500)</td></tr>
+            <tr><td>Program fees</td><td>58,000</td><td>63,200</td><td class="pos">5,200</td></tr>
+            <tr><td>Salaries and benefits</td><td>301,000</td><td>296,400</td><td class="pos">4,600</td></tr>
+            <tr><td>Program delivery</td><td>96,000</td><td>104,900</td><td class="neg">(8,900)</td></tr>
+            <tr><td>Operations</td><td>49,000</td><td>47,100</td><td class="pos">1,900</td></tr>
+            <tr><td><b>Surplus (deficit)</b></td><td><b>24,000</b></td><td><b>13,300</b></td><td class="neg"><b>(10,700)</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">What to know: a funder instalment of 15,000 arrives in October, so the grants gap is timing. Program delivery is over because the fall session ran two extra weeks; it stays within the annual budget if winter runs as planned.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Pricing in Canadian dollars, plus HST</span>
+      <h2>Three monthly plans</h2>
+      <p>Each plan includes a set number of finance director hours a month for review, calls and analysis. Routine processing by the AI system does not use them. Work beyond your hours is $150 an hour, agreed with you before it starts.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <span class="eyebrow">Essentials</span>
+        <div class="price">$750 <span>/ month · 4 hours included</span></div>
+        <ul><li>Up to about 150 transactions a month</li><li>Categorising and every reconciliation</li><li>Books closed by the 10th working day</li><li>HST working papers and a year-end package for your accountant</li></ul>
+      </div>
+      <div class="plan feature">
+        <span class="eyebrow">Books to Board</span>
+        <div class="price">$1,500 <span>/ month · 8 hours included</span></div>
+        <ul><li>Everything in Essentials</li><li>Monthly management pack with budget against actual and notes</li><li>Cash position and a 13-week cash forecast</li><li>Class or fund tracking and a quarterly review call</li></ul>
+      </div>
+      <div class="plan">
+        <span class="eyebrow">Fractional CFO</span>
+        <div class="price">$3,000 <span>/ month · 16 hours included</span></div>
+        <ul><li>Everything in Books to Board</li><li>Annual budget, reforecast and one board meeting a month</li><li>Audit or review preparation</li><li>Controls, policies, pricing and hiring decisions</li></ul>
+      </div>
+    </div>
+    <div class="two">
+      <div class="stack">
+        <h3>One-time setup</h3>
+        <p>Every plan starts with an implementation, so the system is built on your books before the first close: Essentials setup $1,500, Books to Board setup $3,000, Fractional CFO setup with three AI workflows $5,000. Half at signing, half at go-live.</p>
+      </div>
+      <div class="stack">
+        <h3>The terms, plainly</h3>
+        <p>Three months to start, then 30 days' notice. You own your QuickBooks file and your data at all times, and if you leave, you get a clean handover.</p>
+      </div>
+    </div>
+    <p class="oneoff">Not ready to commit? A finance health check is $1,000: a read-only review of your books, controls and reporting, a two-page findings note and a fixed quote. The fee is credited in full if you sign within 30 days.</p>
+  </div>
+</section>
+
+<section id="grants" class="band">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">Grant compliance</span>
+      <h2>Got the grant. Now the reporting.</h2>
+      <p>For small businesses and nonprofits with IRAP, CanExport, WAGE, IRCC, FedDev Ontario or Ontario Trillium Foundation funding.</p>
+    </div>
+    <div class="stack">
+      <p>We read the contribution agreement, set the grant up in your books with project codes and the funder's own categories, prepare claims and reports on time, and support the close-out. Add it to any monthly plan from $400 a month per active grant, or $1,200 and up per claim.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cleanup">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">Behind on your books</span>
+      <h2>Catch-up work at a fixed price</h2>
+      <p>$300 per month of backlog, or $450 for months with payroll, several accounts or inventory. Minimum $1,500. Up to six months caught up in four weeks; up to twelve in six to eight.</p>
+    </div>
+    <div class="stack">
+      <p>What you get at sign-off:</p>
+      <ul class="deliver"><li>Your QuickBooks file categorised and reconciled to the latest month-end</li><li>A reconciliation report for every bank, card and loan account, tied to its statement</li><li>Monthly profit and loss, balance sheet and a trial balance</li><li>A list of every adjusting entry and why it was made</li><li>An open-items list for anything only you can answer</li><li>A year-end package for your accountant, and a 30-minute walkthrough</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">How the work gets done</span>
+      <h2>Software does the sorting. A Chartered Accountant signs it off.</h2>
+    </div>
+    <div class="stack">
+      <p>Routine steps like categorising transactions and drafting reconciliations are prepared with AI tools inside QuickBooks Online. Nothing is posted or sent until it has been reviewed by an internationally qualified Chartered Accountant.</p>
+      <p>Your data stays in your QuickBooks file. It is not used to train AI models, and every report you receive has been read by a person before it reaches you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="templates" class="band">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Templates</span>
+      <h2>Tools you can use on your own</h2>
+      <p>The same templates we use with clients, for teams that want to do it themselves.</p>
+    </div>
+    <div class="plans">
+      <div class="plan prod"><span class="eyebrow">AI Use Policy</span><div class="price">$79</div><p>Policy, staff questionnaire and client disclosures for a small organisation using AI. A short version is free.</p></div>
+      <div class="plan prod"><span class="eyebrow">Finance handover pack</span><div class="price">$99</div><p>Seven templates so finance work survives a staff change or a new treasurer.</p></div>
+      <div class="plan prod"><span class="eyebrow">Month-end close kit</span><div class="price">$59</div><p>Close checklist and a one-page management pack in Excel and Google Sheets.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div class="stack">
+      <span class="eyebrow">Who leads the work</span>
+      <div class="photo about-photo"><span class="initials" aria-hidden="true">AJ</span><img src="ann-photo.jpg" alt="" onerror="this.remove()"></div>
+      <h2>Led by Ann James, Founder and CEO</h2>
+      <p>Every engagement is led by Ann James, an internationally qualified Chartered Accountant (ICAN) with an MBA and more than eight years of finance leadership across international nonprofits and a $60 million oil and gas operation, with reporting for Canadian and US entities.</p>
+      <ul class="deliver"><li>Built annual budgets and cash flow forecasts that owners and leadership used to plan hiring and spending</li><li>Delivered monthly management reports with variance notes to leadership and boards</li><li>Prepared funder, government and grant reports, including restricted funding from award to close-out</li><li>Built financial models (DCF, IRR, NPV) that supported venture capital investment in a growing business</li><li>Secured a US$4.5 million credit facility without collateral to fund growth</li><li>Set up a vendor process that handled 200% growth in suppliers without adding staff</li><li>Cleared reconciliation backlogs and delivered audit-ready books, including a first clean audit opinion</li><li>Kept multi-entity Canada and US filings on track (HST, EHT, T3010, Form 990)</li></ul>
+      <p class="note">MBA, Ted Rogers School of Management. ACCA (UK) Diploma in Accounting and Business. Certified Scrum Master and SAFe Product Owner. Works in QuickBooks, Dynamics GP, Salesforce, Plooto, Float and Syft.</p>
+    </div>
+    <div class="stack">
+      <span class="eyebrow">Case study · Queer Toronto Literary Magazine</span>
+      <h3>Several years of unreconciled books, an open grant, and an AGM coming</h3>
+      <p>QT, a Toronto arts and culture nonprofit, had no formal accounting system and multi-year records that had never been reconciled, alongside grant reporting obligations.</p>
+      <ul class="deliver"><li>Designed and set up the accounting system</li><li>Reconciled the historical records and cleared the backlog</li><li>Built a grant tracking tool and completed the grant close-out</li><li>Worked with the external accountants on year-end</li><li>Produced the organisation's first management financial statements, presented at its AGM</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="wrap">
+    <div class="col stack">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you book a call</h2>
+    </div>
+    <div class="two">
+      <dl>
+        <div><dt>Do you work outside Canada?</dt><dd>Yes, for bookkeeping, reporting and CFO support. Tax returns outside Canada stay with a local preparer.</dd></div>
+        <div><dt>Which software do you use?</dt><dd>QuickBooks Online. If you are on something else, we can talk about moving, or quote for working in your system.</dd></div>
+        <div><dt>Do you do audits?</dt><dd>No. We prepare your books and schedules for your auditor and answer their questions. Audits, reviews and Notice to Reader reports come from a licensed public accountant.</dd></div>
+      </dl>
+      <dl>
+        <div><dt>What does AI do, and what does a person do?</dt><dd>Software sorts transactions, matches receipts and drafts reconciliations and reports. Our team reviews every one, a Chartered Accountant decides anything that needs judgement, and nothing reaches you until it is signed off.</dd></div>
+        <div><dt>Who signs things and who files?</dt><dd>Your organisation approves payments and files its own returns. We prepare, reconcile and report.</dd></div>
+        <div><dt>How do we start?</dt><dd>A 30-minute call, read-only access to your books for a quick review, then a one-page engagement letter.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band">
+  <div class="wrap contact col">
+    <span class="eyebrow">Contact</span>
+    <h2>Book a 30-minute call</h2>
+    <p>Tell us the size of your organisation, your software, and how far behind the books are, if they are.</p>
+    <!-- EDIT: add the booking link here when it exists -->
+    <p class="addr">info@jayvinconsulting.ca</p>
+    <form class="cform" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company_url">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Leave this empty <input name="company_url"></label></p>
+      <div class="frow"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="frow"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="frow"><label for="f-org">Organisation</label><input id="f-org" name="organisation" autocomplete="organization"></div>
+      <div class="frow"><label for="f-msg">Your software, and how far behind the books are</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+      <p><button class="btn" type="submit">Send</button></p>
+      <p class="note" id="f-note">We reply within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <p>Jayvin Consulting Inc., Ontario, Canada.</p>
+    <nav aria-label="Legal"><a href="terms.html">Terms and Conditions</a><a href="privacy.html">Privacy Policy</a></nav>
+  </footer>
+</div>
+
+<script>
+document.querySelector('.cform').addEventListener('submit', function (e) {
+  if (location.hostname.indexOf('jayvinconsulting.ca') === -1 && location.hostname.indexOf('netlify.app') === -1) {
+    e.preventDefault();
+    document.getElementById('f-note').textContent = 'Preview only: the form sends once the site is live on jayvinconsulting.ca.';
+  }
+});
+</script>

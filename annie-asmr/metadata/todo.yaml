@@ -1,0 +1,35 @@
+# Drive folders live in the jayvin.services@gmail.com Drive (the one connected to Claude):
+drive:
+  root: https://drive.google.com/drive/folders/1VlvsYUXKa6-Zb4MYBDPAM8A7gPryRgKe
+  source: https://drive.google.com/drive/folders/1WItkj66srK-zCrvZg_YAWmNXHpMeVVGr
+  sfx: https://drive.google.com/drive/folders/1ycbZmRHAeK2SZn8iHjYSZam5nA2EZAGT
+  clips: https://drive.google.com/drive/folders/1wyEsGcwU05p-6BAzZ5B9XjktSKDDKsrX
+  avatars: https://drive.google.com/drive/folders/1uUA218LYI9TjHZ9QNQQJA5Tv8cF3s5eY
+  brand: https://drive.google.com/drive/folders/1kkFfh3zVuPJBCUanP0iua_ePdmT-IyoW
+  clips/gum-pops-knuckles-01: https://drive.google.com/drive/folders/1dm3-iXu5hDalnRgHkZ-8PrShL4NMqL85
+# What is waiting on whom. The production board shows this. Mark done: true when finished.
+ann:
+- text: 'Watch Ace''s draft (Fri 7 Nov slot): https://studio.youtube.com/video/1hxO9o7l58c/edit and its 3 Shorts.
+    Say yes or changes.'
+  done: false
+- text: 'Watch the 20-second mouth-sounds lip-sync test (in chat): yes = mouth-sound videos go ahead, no = Ace videos
+    instead.'
+  done: false
+- text: Gum video (30yBUNIU-zE) is on hold as you asked; it stays private.
+  done: false
+- text: 'Wed + Sat: I send 6 comment drafts for other ASMR channels; you post them yourself from Annie ASMR.'
+  done: false
+- text: 'Per Short: set ''Related video'' in the YouTube app. Once: end screen in Studio.'
+  done: false
+- text: 'By 20 Nov: Ace photos curled up asleep and on the bed (face visible).'
+  done: false
+claude:
+- text: 'Schedule: Fri 7 Nov Ace petting; Tue 11 extra sleepy mouth sounds (if lip-sync ok); Fri 14 Ace by the fire;
+    Tue 18 slow mouth sounds (if ok); Fri 21 Ace 3-hour sleeping; Tue 2 Dec Ace under the Christmas tree; Fri 5
+    Dec Ace compilation; mid-Dec face reveal.'
+  done: false
+- text: 'Tomorrow: Ace fireplace stills + clips (about $1.60), within the $5 cap.'
+  done: false
+- text: 'Done 5 Nov: video 1 + Ace drafts and 6 Shorts; 7 replies posted; Drive organised; production document;
+    Ace series planned.'
+  done: true
